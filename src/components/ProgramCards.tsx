@@ -47,9 +47,7 @@ const ProgramCards = () => {
               to={program.path}
               className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/50 to-black border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-105 ripple-effect"
             >
-              <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-20 transition-opacity duration-500" 
-                   style={{backgroundImage: `linear-gradient(135deg, var(--tw-gradient-stops))`}}
-                   className={`bg-gradient-to-br ${program.gradient}`}>
+              <div className={`absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-20 transition-opacity duration-500 ${program.gradient}`}>
               </div>
               
               <div className="relative p-8">
