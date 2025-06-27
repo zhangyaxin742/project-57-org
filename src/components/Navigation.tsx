@@ -11,7 +11,7 @@ const Navigation = () => {
   const navItems = [
     { name: 'Home', path: '/' },
     {
-      name: 'Programs',
+      name: 'Our Work',
       dropdown: [
         { name: 'Curriculum', path: '/curriculum' },
         { name: 'Enterprise', path: '/enterprise' },
