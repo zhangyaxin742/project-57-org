@@ -29,7 +29,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/630e7f99-a465-458e-a4c3-014da8e71d03.png" 
+              src="/lovable-uploads/547a147a-e3fa-42bc-bc39-35e32865f4fc.png" 
               alt="PROJECT 57" 
               className="h-10 w-10"
             />
