@@ -41,7 +41,7 @@ const Index = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-              Youth-led. Massachusetts-based. Transforming how young people learn about money, 
+              Transforming how Massachusetts youth learn about money, 
               entrepreneurship, and financial independence.
             </p>
             
@@ -85,7 +85,7 @@ const Index = () => {
             </div>
             
             <div className="text-gray-400 text-sm">
-              © 2024 PROJECT 57. Empowering Massachusetts youth through financial literacy.
+              © 2025 PROJECT 57. Empowering Massachusetts youth through financial literacy.
             </div>
           </div>
         </div>
