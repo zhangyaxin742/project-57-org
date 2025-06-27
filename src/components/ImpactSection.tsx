@@ -23,7 +23,7 @@ const ImpactSection = () => {
     {
       number: '6',
       label: 'Bills Tracked',
-      description: 'Empowering citizens to track and support key legislation'
+      description: 'Empowering passionate citizens to track and support key legislation'
     }
   ];
 
