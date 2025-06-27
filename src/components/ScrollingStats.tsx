@@ -1,31 +1,15 @@
 
-import React, { useState, useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
+import StatCard from './StatCard';
 
-const StatsSection = () => {
+const ScrollingStats = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
 
   const stats = [
-    {
-      number: "54%",
-      label: "of young adults lack basic financial knowledge",
-      description: "According to the National Financial Educators Council"
-    },
-    {
-      number: "73%",
-      label: "of teens want to learn about money management",
-      description: "But only 21% feel confident about their financial future"
-    },
-    {
-      number: "1 in 5",
-      label: "students receive comprehensive financial education",
-      description: "Despite financial literacy being crucial for adult success"
-    },
-    {
-      number: "500+",
-      label: "students impacted by Project 57 programs",
-      description: "Across Massachusetts communities"
-    }
+    { number: '54%', label: 'of Americans live paycheck to paycheck' },
+    { number: '37%', label: 'of US adults would struggle to cover a $400 emergency' },
+    { number: '21%', label: 'of high school students receive financial education' },
+    { number: '10,000+', label: 'Massachusetts youth need financial literacy' }
   ];
 
   useEffect(() => {
@@ -38,46 +22,39 @@ const StatsSection = () => {
       { threshold: 0.3 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const element = document.getElementById('stats-section');
+    if (element) {
+      observer.observe(element);
     }
 
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-dark-card">
-      <div className="max-w-6xl mx-auto px-4">
+    <section id="stats-section" className="py-20 bg-gradient-to-b from-black to-gray-900">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            The Financial Literacy 
-            <span className="text-gradient"> Crisis</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            The Financial Literacy {""}
+              <span className="bg-sunset-gradient bg-clip-text text-transparent">
+                Crisis
+              </span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Young people are entering adulthood without the financial tools they need to succeed. 
-            We're changing that, one student at a time.
+          <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+            57% of Americans graduate without the financial knowledge they need to succeed. 
+            Project 57 is changing that, one student at a time.
           </p>
         </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {stats.map((stat, index) => (
-            <div
+            <StatCard
               key={index}
-              className={`text-center p-6 rounded-xl bg-dark-bg border border-gray-800 hover:border-brand-orange/50 transition-all duration-500 ${
-                isVisible ? 'animate-fade-in-up' : 'opacity-0'
-              }`}
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              <div className="text-4xl md:text-5xl font-bold text-gradient mb-3">
-                {stat.number}
-              </div>
-              <div className="text-white font-semibold mb-2">
-                {stat.label}
-              </div>
-              <div className="text-gray-400 text-sm">
-                {stat.description}
-              </div>
-            </div>
+              number={stat.number}
+              label={stat.label}
+              isVisible={isVisible}
+              delay={index * 200}
+            />
           ))}
         </div>
       </div>
@@ -85,4 +62,4 @@ const StatsSection = () => {
   );
 };
 
-export default StatsSection;
+export default ScrollingStats;
