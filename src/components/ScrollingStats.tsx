@@ -7,10 +7,9 @@ const ScrollingStats = () => {
 
   const stats = [
     { number: '1 in 5', label: "teens can't create a basic budget." },
-    { number: '63%', label: "of American adults can’t afford a $500 emergency." },
-    { number: '29', label: "states require personal finance education—Massachusetts does not." },
-    { number: '250,000+', label: "young people are at risk of repeating the cycle today." }
-  ];
+    { number: '63%', label: "of adults can’t afford a $500 emergency." },
+    { number: '94%', label: "of Massachusetts school districts don’t require financial literacy." },
+    { number: '250,000+', label: "Massachusetts teens risk a lifetime of financial insecurity." }  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
