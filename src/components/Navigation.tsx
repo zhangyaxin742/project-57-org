@@ -34,7 +34,7 @@ const Navigation = () => {
               className="h-10 w-10"
             />
             <span className="text-xl font-bold bg-sunset-gradient bg-clip-text text-transparent">
-              PROJECT 57
+              Project 57
             </span>
           </Link>
 

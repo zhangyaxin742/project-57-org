@@ -68,7 +68,7 @@ const Index = () => {
             <div className="flex items-center space-x-3 mb-4 md:mb-0">
               <img alt="PROJECT 57" src="/lovable-uploads/ea031f7e-35e6-4d76-961e-35b9a699997d.png" className="h-8 w-8 object-fill" />
               <span className="text-lg font-bold bg-sunset-gradient bg-clip-text text-transparent">
-                PROJECT 57
+                Project 57
               </span>
             </div>
             
