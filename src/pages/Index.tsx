@@ -49,7 +49,7 @@ const Index = () => {
               </button>
               
               <button className="px-8 py-4 border-2 border-white/20 rounded-full text-white font-semibold text-lg hover:border-sunset-pink hover:text-sunset-pink transition-colors duration-300">
-                Learn Our Impact
+                Read Our Mission
               </button>
             </div>
           </div>
@@ -62,12 +62,12 @@ const Index = () => {
       <ProgramCards />
       
       {/* Footer */}
-      <footer className="bg-black border-t border-white/10 py-12">
+      <footer className="bg-dark-bg border-t border-gray-800 py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             
             <div className="text-gray-400 text-sm text-right">
-              © 2025 PROJECT 57. 
+              © 2025 PROJECT 57. ALL RIGHTS RESERVED.
             </div>
           </div>
         </div>
