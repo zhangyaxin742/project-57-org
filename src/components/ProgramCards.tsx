@@ -5,22 +5,22 @@ import { BookOpen, Users, Scale } from 'lucide-react';
 const ProgramCards = () => {
   const programs = [
     {
-      title: 'PFin Curriculum',
+      title: 'Curriculum',
       description: 'Comprehensive financial literacy courses and workshops designed by youth, for youth.',
       icon: BookOpen,
       path: '/curriculum',
       gradient: 'from-sunset-orange to-sunset-pink'
     },
     {
-      title: 'Youth Enterprise',
-      description: 'Pitch competitions, funding opportunities, and mentorship for young entrepreneurs.',
+      title: 'Enterprise',
+      description: 'Local pitch competitions, funding opportunities, and mentorship for young entrepreneurs.',
       icon: Users,
       path: '/enterprise',
       gradient: 'from-sunset-pink to-sunset-purple'
     },
     {
-      title: 'Legislative Advocacy',
-      description: 'Track bills, access policy briefs, and take action on financial literacy legislation.',
+      title: 'Advocacy',
+      description: 'Track bills, access our policy briefs, and take action on financial literacy legislation.',
       icon: Scale,
       path: '/advocacy',
       gradient: 'from-sunset-purple to-sunset-orange'
@@ -35,8 +35,7 @@ const ProgramCards = () => {
             Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Programs</span>
           </h2>
           <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-            Three pillars of financial empowerment designed to meet young people where they are 
-            and take them where they want to go.
+            Three pillars empowering teens to understand money, influence policy, and achieve financial independence.
           </p>
         </div>
 
