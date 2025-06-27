@@ -41,7 +41,7 @@ const Index = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-              Transforming how Massachusetts youth learn about money, 
+              Transforming how Massachusetts teens learn about money, 
               entrepreneurship, and financial independence.
             </p>
             

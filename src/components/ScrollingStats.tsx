@@ -38,8 +38,8 @@ const ScrollingStats = () => {
             The Financial Literacy Crisis
           </h2>
           <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-            Young people are entering adulthood without the financial knowledge they need to succeed. 
-            PROJECT 57 is changing that, one student at a time.
+            57% of Americans graduate without the financial knowledge they need to succeed. 
+            Project 57 is changing that, one student at a time.
           </p>
         </div>
         
