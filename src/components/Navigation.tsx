@@ -13,9 +13,9 @@ const Navigation = () => {
     {
       name: 'Programs',
       dropdown: [
-        { name: 'PFin Curriculum', path: '/curriculum' },
-        { name: 'Youth Enterprise', path: '/enterprise' },
-        { name: 'Legislative Advocacy', path: '/advocacy' }
+        { name: 'Curriculum', path: '/curriculum' },
+        { name: 'Enterprise', path: '/enterprise' },
+        { name: 'Advocacy', path: '/advocacy' }
       ]
     },
     { name: 'About', path: '/about' },
