@@ -8,7 +8,7 @@ const ImpactSection = () => {
     {
       number: '500+',
       label: 'Students Surveyed',
-      description: 'Uncovering critical gaps in financial knowledge across Massachusetts'
+      description: 'Uncovering critical gaps in financial knowledge across high schools'
     },
     {
       number: '420',
@@ -23,7 +23,7 @@ const ImpactSection = () => {
     {
       number: '6',
       label: 'Bills Tracked',
-      description: 'Empowering Massachusetts citizens to track and support key legislation'
+      description: 'Empowering citizens to track and support key legislation'
     }
   ];
 
@@ -53,7 +53,7 @@ const ImpactSection = () => {
             Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Impact</span>
           </h2>
           <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-            Since our founding, Project 57 has been committed to making a measurable difference for youth across Massachusetts.
+            Since our founding, Project 57 has been transforming financial literacy in Massachusetts—one student, one school, and one bill at a time.
           </p>
         </div>
 
