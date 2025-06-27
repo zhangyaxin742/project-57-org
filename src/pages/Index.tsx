@@ -72,8 +72,8 @@ const Index = () => {
               </span>
             </div>
             
-            <div className="text-gray-400 text-sm">
-              © 2025 PROJECT 57. Empowering Massachusetts youth through financial literacy.
+            <div className="text-gray-400 text-sm text-right">
+              © 2025 PROJECT 57. 
             </div>
           </div>
         </div>
