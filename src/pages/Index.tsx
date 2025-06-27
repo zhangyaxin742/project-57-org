@@ -65,12 +65,6 @@ const Index = () => {
       <footer className="bg-black border-t border-white/10 py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-3 mb-4 md:mb-0">
-              <img alt="PROJECT 57" src="/lovable-uploads/ea031f7e-35e6-4d76-961e-35b9a699997d.png" className="h-8 w-8 object-fill" />
-              <span className="text-lg font-bold bg-sunset-gradient bg-clip-text text-transparent">
-                Project 57
-              </span>
-            </div>
             
             <div className="text-gray-400 text-sm text-right">
               © 2025 PROJECT 57. 
