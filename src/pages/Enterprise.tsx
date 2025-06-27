@@ -1,7 +1,7 @@
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Lightbulb, Trophy, DollarSign, Users, Calendar, ExternalLink, Star, MapPin, Tools, ArrowRight, Download } from 'lucide-react';
+import { Lightbulb, Trophy, DollarSign, Users, Calendar, ExternalLink, Star, MapPin, Settings, ArrowRight, Download } from 'lucide-react';
 import { useState } from 'react';
 
 const Enterprise = () => {
@@ -226,7 +226,7 @@ const Enterprise = () => {
             {/* Main Toolkit Section */}
             <div className="lg:col-span-2">
               <div className="flex items-center gap-4 mb-8">
-                <Tools className="h-8 w-8 text-sunset-orange" />
+                <Settings className="h-8 w-8 text-sunset-orange" />
                 <div>
                   <h2 className="text-3xl md:text-4xl font-bold text-white">
                     Startup <span className="bg-sunset-gradient bg-clip-text text-transparent">Toolkit</span>
