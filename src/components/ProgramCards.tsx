@@ -32,7 +32,7 @@ const ProgramCards = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Our <span className="bg-sunset-gradient bg-clip-text text-transparent"> Our Work </span>
+            Our {""} <span className="bg-sunset-gradient bg-clip-text text-transparent"> Work </span>
           </h2>
           <p className="text-gray-300 text-lg max-w-3xl mx-auto">
             Three pillars empowering teens to understand money, influence policy, and achieve financial independence.
