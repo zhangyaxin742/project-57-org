@@ -1,84 +1,77 @@
+
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Lightbulb, Trophy, DollarSign, Users, Calendar, ExternalLink, Star, MapPin, Settings, ArrowRight, Download } from 'lucide-react';
-import { useState } from 'react';
+import { Lightbulb, Trophy, DollarSign, Users, Calendar, ExternalLink, Star, MapPin } from 'lucide-react';
 
 const Enterprise = () => {
-  const [selectedFounder, setSelectedFounder] = useState(null);
-
   const competitions = [
     {
       title: "MassChallenge Youth Pitch Competition",
-      description: "Statewide competition for innovative youth-led startups with mentorship and funding opportunities.",
-      date: "March 15, 2024",
-      time: "2:00 PM EST",
-      location: "Virtual",
+      deadline: "March 15, 2024",
       prize: "$50,000",
       status: "Applications Open",
-      type: "competition"
+      description: "Statewide competition for innovative youth-led startups"
     },
     {
-      title: "Boston Young Entrepreneurs Hackathon",
-      description: "48-hour intensive hackathon to build solutions for local community challenges.",
-      date: "April 12-14, 2024",
-      time: "6:00 PM - 8:00 PM",
-      location: "Boston University",
+      title: "Boston Young Entrepreneurs Showcase",
+      deadline: "April 30, 2024", 
       prize: "$25,000",
       status: "Registration Open",
-      type: "hackathon"
+      description: "Present your business idea to a panel of industry experts"
+    },
+    {
+      title: "Harvard Innovation Challenge",
+      deadline: "February 28, 2024",
+      prize: "$75,000",
+      status: "Deadline Approaching",
+      description: "Cross-industry innovation competition for students"
     }
   ];
 
-  const featuredFounders = [
+  const featuredBusinesses = [
     {
-      name: "Alex Martinez",
-      age: 17,
+      name: "EcoClean Solutions",
+      founder: "Alex Martinez, 17",
       location: "Cambridge, MA",
-      organization: "EcoClean Solutions",
-      tagline: "built a startup fighting food waste at 16",
-      photo: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=400&fit=crop&crop=face",
-      story: {
-        title: "From High School Project to $50K Revenue",
-        content: "Alex started EcoClean Solutions as a chemistry project and turned it into a thriving business...",
-        achievements: ["$50K first year revenue", "10+ retail partnerships", "Featured in Boston Globe"]
-      }
+      description: "Sustainable cleaning products made from recycled materials",
+      achievement: "Generated $50K revenue in first year"
     },
     {
-      name: "Priya Patel",
-      age: 16,
-      location: "Boston, MA", 
-      organization: "TutorConnect",
-      tagline: "connected 500+ students through peer tutoring",
-      photo: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=400&fit=crop&crop=face",
-      story: {
-        title: "Building Bridges Through Education",
-        content: "Priya's platform has revolutionized how students connect for academic support...",
-        achievements: ["500+ students served", "15 school partnerships", "Student Choice Award 2023"]
-      }
+      name: "TutorConnect",
+      founder: "Priya Patel, 16", 
+      location: "Boston, MA",
+      description: "Peer-to-peer tutoring platform connecting students",
+      achievement: "Served 500+ students across Massachusetts"
     },
     {
-      name: "Jordan Williams",
-      age: 18,
-      location: "Springfield, MA",
-      organization: "Fresh Farms Delivery",
-      tagline: "partnered with 15 local farms to serve urban communities",
-      photo: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=400&h=400&fit=crop&crop=face",
-      story: {
-        title: "Connecting Farms to Communities",
-        content: "Jordan's delivery service bridges the gap between local farms and urban consumers...",
-        achievements: ["15 farm partnerships", "200+ weekly deliveries", "Sustainability Award Winner"]
-      }
+      name: "Fresh Farms Delivery",
+      founder: "Jordan Williams, 18",
+      location: "Springfield, MA", 
+      description: "Local farm produce delivery service for urban communities",
+      achievement: "Partnered with 15 local farms"
     }
   ];
 
-  const toolkitItems = [
-    { title: "MVP Development Guide", color: "text-sunset-orange" },
-    { title: "Pitch Deck Templates", color: "text-sunset-pink" },
-    { title: "Logo & Design Resources", color: "text-sunset-purple" },
-    { title: "Website Building Tools", color: "text-blue-400" },
-    { title: "Legal Documentation", color: "text-green-400" },
-    { title: "Financial Planning Sheets", color: "text-yellow-400" }
+  const grantOpportunities = [
+    {
+      title: "Youth Entrepreneur Seed Grant",
+      amount: "Up to $10,000",
+      deadline: "Rolling Applications",
+      focus: "Early-stage business development"
+    },
+    {
+      title: "Social Impact Startup Fund",
+      amount: "Up to $25,000", 
+      deadline: "Quarterly Review",
+      focus: "Businesses addressing social issues"
+    },
+    {
+      title: "Tech Innovation Grant",
+      amount: "Up to $15,000",
+      deadline: "Annual Competition",
+      focus: "Technology-driven solutions"
+    }
   ];
 
   return (
@@ -91,66 +84,140 @@ const Enterprise = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Youth <span className="bg-sunset-gradient bg-clip-text text-transparent">Enterprise</span>
           </h1>
-          <p className="text-xl text-white max-w-4xl mx-auto mb-8">
-            Supporting young entrepreneurs with the skills, mentorship, and resources needed to launch successful businesses and build economic opportunity
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            Empowering young entrepreneurs with funding opportunities, mentorship, 
+            and the resources needed to turn ideas into successful businesses.
           </p>
         </div>
       </section>
 
-      {/* Pitch Competitions & Hackathons */}
+      {/* Pitch Competitions */}
       <section className="py-20 bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-            Pitch Competitions & <span className="bg-sunset-gradient bg-clip-text text-transparent">Hackathons</span>
+            Pitch <span className="bg-sunset-gradient bg-clip-text text-transparent">Competitions</span>
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {competitions.map((event, index) => (
-              <Card key={index} className="bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300 hover:scale-105">
+          <div className="space-y-6">
+            {competitions.map((competition, index) => (
+              <Card key={index} className="bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300">
                 <CardHeader>
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      {event.type === 'competition' ? 
-                        <Trophy className="h-6 w-6 text-sunset-orange" /> : 
-                        <Lightbulb className="h-6 w-6 text-sunset-pink" />
-                      }
-                      <span className={`text-xs px-3 py-1 rounded-full font-semibold ${
-                        event.status === 'Applications Open' ? 'bg-green-500 text-white' :
-                        'bg-sunset-gradient text-black'
-                      }`}>
-                        {event.status}
-                      </span>
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <CardTitle className="text-white flex items-center gap-3 mb-2">
+                        <Trophy className="h-5 w-5 text-sunset-orange" />
+                        {competition.title}
+                      </CardTitle>
+                      <CardDescription className="text-gray-300">
+                        {competition.description}
+                      </CardDescription>
                     </div>
-                    <div className="text-right">
-                      <div className="flex items-center text-sunset-pink font-bold">
-                        <DollarSign className="h-4 w-4 mr-1" />
-                        {event.prize}
-                      </div>
-                    </div>
+                    <span className={`text-xs px-3 py-1 rounded-full font-semibold ${
+                      competition.status === 'Deadline Approaching' ? 'bg-red-500 text-white' :
+                      competition.status === 'Applications Open' ? 'bg-green-500 text-white' :
+                      'bg-sunset-gradient text-black'
+                    }`}>
+                      {competition.status}
+                    </span>
                   </div>
-                  
-                  <CardTitle className="text-white text-xl mb-2">
-                    {event.title}
-                  </CardTitle>
-                  <CardDescription className="text-gray-300 mb-4">
-                    {event.description}
-                  </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-3 mb-6">
-                    <div className="flex items-center text-gray-400">
-                      <Calendar className="h-4 w-4 mr-2" />
-                      <span>{event.date} • {event.time}</span>
+                  <div className="flex items-center justify-between">
+                    <div className="space-y-2">
+                      <div className="flex items-center text-sunset-pink">
+                        <DollarSign className="h-4 w-4 mr-1" />
+                        <span className="font-semibold">{competition.prize} Prize</span>
+                      </div>
+                      <div className="flex items-center text-gray-400">
+                        <Calendar className="h-4 w-4 mr-1" />
+                        <span>Deadline: {competition.deadline}</span>
+                      </div>
                     </div>
-                    <div className="flex items-center text-gray-400">
-                      <MapPin className="h-4 w-4 mr-2" />
-                      <span>{event.location}</span>
+                    <Button 
+                      className="bg-sunset-gradient hover:opacity-90 text-black font-semibold"
+                      onClick={() => window.open('#', '_blank')}
+                    >
+                      Apply Now
+                      <ExternalLink className="ml-2 h-4 w-4" />
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Businesses */}
+      <section className="py-20 bg-black">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+            Featured <span className="bg-sunset-gradient bg-clip-text text-transparent">Businesses</span>
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {featuredBusinesses.map((business, index) => (
+              <Card key={index} className="bg-gray-900/50 border-white/10 hover:border-sunset-purple/50 transition-all duration-300 hover:scale-105">
+                <CardHeader>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Lightbulb className="h-5 w-5 text-sunset-orange" />
+                    <Star className="h-4 w-4 text-sunset-pink" />
+                  </div>
+                  <CardTitle className="text-white">{business.name}</CardTitle>
+                  <CardDescription className="text-sunset-pink">
+                    Founded by {business.founder}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p className="text-gray-300 text-sm">{business.description}</p>
+                  <div className="flex items-center text-gray-400 text-sm">
+                    <MapPin className="h-4 w-4 mr-1" />
+                    {business.location}
+                  </div>
+                  <div className="pt-2 border-t border-white/10">
+                    <p className="text-sunset-pink text-sm font-semibold">
+                      🏆 {business.achievement}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Grants & Funding */}
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+            Grants & <span className="bg-sunset-gradient bg-clip-text text-transparent">Funding</span>
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {grantOpportunities.map((grant, index) => (
+              <Card key={index} className="bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300">
+                <CardHeader>
+                  <DollarSign className="h-8 w-8 text-sunset-purple mb-2" />
+                  <CardTitle className="text-white">{grant.title}</CardTitle>
+                  <CardDescription className="text-gray-300">
+                    {grant.focus}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="space-y-2">
+                    <div className="text-sunset-pink font-semibold text-lg">
+                      {grant.amount}
+                    </div>
+                    <div className="text-gray-400 text-sm">
+                      Application: {grant.deadline}
                     </div>
                   </div>
                   <Button 
-                    className="w-full bg-sunset-gradient hover:opacity-90 text-black font-semibold ripple-effect"
+                    variant="outline" 
+                    className="w-full border-sunset-pink text-sunset-pink hover:bg-sunset-pink hover:text-white"
+                    onClick={() => window.open('https://airtable.com', '_blank')}
                   >
-                    {event.type === 'competition' ? 'Apply Now' : 'Register Now'}
+                    Apply via Airtable
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
                 </CardContent>
@@ -159,181 +226,6 @@ const Enterprise = () => {
           </div>
         </div>
       </section>
-
-      {/* Featured Founders */}
-      <section className="py-20 bg-black relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-sunset-orange/5 via-sunset-pink/5 to-sunset-purple/5 animate-pulse"></div>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-            Featured <span className="bg-sunset-gradient bg-clip-text text-transparent">Founders</span>
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {featuredFounders.map((founder, index) => (
-              <Card key={index} className="bg-gray-900/50 border-2 border-transparent hover:border-sunset-gradient transition-all duration-300 hover:scale-105 group">
-                <CardHeader className="text-center">
-                  <div className="relative mx-auto mb-4">
-                    <img 
-                      src={founder.photo} 
-                      alt={founder.name}
-                      className="w-24 h-24 rounded-full object-cover border-4 border-sunset-gradient"
-                    />
-                    <div className="absolute -top-1 -right-1">
-                      <Star className="h-6 w-6 text-sunset-pink fill-current" />
-                    </div>
-                  </div>
-                  <CardTitle className="text-white text-lg">{founder.name}</CardTitle>
-                  <div className="flex items-center justify-center text-gray-400 text-sm mb-2">
-                    <MapPin className="h-4 w-4 mr-1" />
-                    {founder.location}
-                  </div>
-                  <CardDescription className="text-sunset-pink font-semibold">
-                    {founder.organization}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <p className="text-gray-300 text-sm mb-6 italic">
-                    "{founder.tagline}"
-                  </p>
-                  <Button 
-                    variant="outline" 
-                    className="w-full border-sunset-pink text-sunset-pink hover:bg-sunset-pink hover:text-white ripple-effect"
-                    onClick={() => setSelectedFounder(founder)}
-                  >
-                    View Story
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          
-          <div className="text-center">
-            <Button 
-              variant="ghost" 
-              className="text-sunset-pink hover:text-white hover:bg-sunset-pink/20 group"
-            >
-              Nominate a Founder 
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Startup Toolkit */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Main Toolkit Section */}
-            <div className="lg:col-span-2">
-              <div className="flex items-center gap-4 mb-8">
-                <Settings className="h-8 w-8 text-sunset-orange" />
-                <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-white">
-                    Startup <span className="bg-sunset-gradient bg-clip-text text-transparent">Toolkit</span>
-                  </h2>
-                  <p className="text-gray-300 mt-2">
-                    Everything you need to build, launch, and scale your startup from idea to impact.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="space-y-4 mb-8">
-                {toolkitItems.map((item, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <div className={`w-2 h-2 rounded-full ${item.color.replace('text-', 'bg-')}`}></div>
-                    <span className="text-white">{item.title}</span>
-                  </div>
-                ))}
-              </div>
-              
-              <Button 
-                className="bg-sunset-gradient hover:opacity-90 text-black font-semibold px-8"
-              >
-                <Download className="mr-2 h-4 w-4" />
-                Download Resources
-              </Button>
-            </div>
-            
-            {/* Discord Community Card */}
-            <div className="lg:col-span-1">
-              <Card className="bg-gray-800/50 border-white/10 h-full">
-                <CardHeader>
-                  <CardTitle className="text-white text-xl">Looking for more?</CardTitle>
-                  <CardDescription className="text-gray-300">
-                    Join the Project 57 Discord community for real-time support, networking, and exclusive opportunities!
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Button 
-                    className="w-full bg-sunset-gradient hover:opacity-90 text-black font-semibold ripple-effect"
-                  >
-                    I'm In!
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Founder Story Overlay */}
-      {selectedFounder && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <Card className="bg-gray-900 border-white/20 max-w-2xl w-full max-h-[80vh] overflow-y-auto">
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <img 
-                    src={selectedFounder.photo} 
-                    alt={selectedFounder.name}
-                    className="w-16 h-16 rounded-full object-cover border-2 border-sunset-gradient"
-                  />
-                  <div>
-                    <CardTitle className="text-white text-xl">{selectedFounder.name}</CardTitle>
-                    <CardDescription className="text-sunset-pink">{selectedFounder.organization}</CardDescription>
-                  </div>
-                </div>
-                <Button 
-                  variant="ghost" 
-                  size="sm"
-                  onClick={() => setSelectedFounder(null)}
-                  className="text-gray-400 hover:text-white"
-                >
-                  ✕
-                </Button>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <h3 className="text-2xl font-bold text-white">{selectedFounder.story.title}</h3>
-              <p className="text-gray-300 leading-relaxed">{selectedFounder.story.content}</p>
-              
-              <div>
-                <h4 className="text-lg font-semibold text-white mb-3">Key Achievements</h4>
-                <div className="space-y-2">
-                  {selectedFounder.story.achievements.map((achievement, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <div className="w-2 h-2 rounded-full bg-sunset-pink"></div>
-                      <span className="text-gray-300">{achievement}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              
-              <div className="flex justify-center space-x-4 pt-4 border-t border-white/10">
-                <Button variant="ghost" size="sm" className="text-sunset-pink hover:text-white">
-                  LinkedIn
-                </Button>
-                <Button variant="ghost" size="sm" className="text-sunset-pink hover:text-white">
-                  Twitter
-                </Button>
-                <Button variant="ghost" size="sm" className="text-sunset-pink hover:text-white">
-                  Instagram
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      )}
 
       {/* Mentorship Program */}
       <section className="py-20 bg-black">
