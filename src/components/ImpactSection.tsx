@@ -6,24 +6,24 @@ const ImpactSection = () => {
 
   const impacts = [
     {
-      number: '2,500+',
-      label: 'Students Reached',
-      description: 'Across Massachusetts high schools'
+      number: '500+',
+      label: 'Students Surveyed',
+      description: 'Uncovering critical gaps in financial knowledge across Massachusetts'
     },
     {
-      number: '50+',
-      label: 'Partner Schools',
-      description: 'From Boston to Springfield'
+      number: '420+',
+      label: 'Schools Contacted',
+      description: 'Mobilizing educators and administrators, from Boston to Springfield'
     },
     {
-      number: '25+',
-      label: 'Youth Businesses',
-      description: 'Launched through our programs'
+      number: '200+',
+      label: 'Policymakers Engaged',
+      description: 'Advocating for personal finance as a statewide graduation requirement'
     },
     {
-      number: '12',
+      number: '6',
       label: 'Bills Tracked',
-      description: 'Financial literacy legislation'
+      description: 'Holding lawmakers accountable for progress on financial literacy legislation'
     }
   ];
 
@@ -53,8 +53,7 @@ const ImpactSection = () => {
             Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Impact</span>
           </h2>
           <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-            Led by youth, for youth. See how PROJECT 57 is transforming financial literacy 
-            education across Massachusetts.
+            Since our founding, Project 57 has been committed to making a measurable difference for youth across Massachusetts.
           </p>
         </div>
 
