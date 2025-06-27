@@ -9,7 +9,7 @@ const ScrollingStats = () => {
     { number: '1 in 5', label: "teens can't create a basic budget." },
     { number: '63%', label: "of American adults can’t afford a $500 emergency." },
     { number: '94%', label: "of Massachusetts districts don't require financial literacy." },
-    { number: '250,000+', label: "Massachusetts teens risk a lifetime of financial hardship." }
+    { number: '250,000+', label: "teens risk a lifetime of financial hardship." }
   ];
 
   useEffect(() => {
