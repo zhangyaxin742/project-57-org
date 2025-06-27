@@ -1,10 +1,8 @@
-
 import { useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import ScrollingStats from '../components/ScrollingStats';
 import ImpactSection from '../components/ImpactSection';
 import ProgramCards from '../components/ProgramCards';
-
 const Index = () => {
   useEffect(() => {
     // Page load animation
@@ -14,9 +12,7 @@ const Index = () => {
       document.body.style.opacity = '1';
     }, 100);
   }, []);
-
-  return (
-    <div className="min-h-screen bg-black">
+  return <div className="min-h-screen bg-black">
       <Navigation />
       
       {/* Hero Section */}
@@ -27,7 +23,9 @@ const Index = () => {
         {/* Animated background elements */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sunset-orange/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sunset-purple/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sunset-purple/10 rounded-full blur-3xl animate-pulse" style={{
+          animationDelay: '1s'
+        }}></div>
         </div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -68,11 +66,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-3 mb-4 md:mb-0">
-              <img 
-                src="/lovable-uploads/630e7f99-a465-458e-a4c3-014da8e71d03.png" 
-                alt="PROJECT 57" 
-                className="h-8 w-8"
-              />
+              <img alt="PROJECT 57" src="/lovable-uploads/ea031f7e-35e6-4d76-961e-35b9a699997d.png" className="h-8 w-8 object-fill" />
               <span className="text-lg font-bold bg-sunset-gradient bg-clip-text text-transparent">
                 PROJECT 57
               </span>
@@ -84,8 +78,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
