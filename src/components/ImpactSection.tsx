@@ -11,19 +11,19 @@ const ImpactSection = () => {
       description: 'Uncovering critical gaps in financial knowledge across Massachusetts'
     },
     {
-      number: '420+',
+      number: '420',
       label: 'Schools Contacted',
       description: 'Mobilizing educators and administrators, from Boston to Springfield'
     },
     {
       number: '200+',
       label: 'Policymakers Engaged',
-      description: 'Advocating for personal finance as a statewide graduation requirement'
+      description: 'Pushing to make personal finance mandatory for high school graduation'
     },
     {
       number: '6',
       label: 'Bills Tracked',
-      description: 'Holding lawmakers accountable for progress on financial literacy legislation'
+      description: 'Empowering Massachusetts citizens to track and support key legislation'
     }
   ];
 
