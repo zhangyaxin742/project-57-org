@@ -6,10 +6,10 @@ const ScrollingStats = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const stats = [
-    { number: '54%', label: 'of Americans live paycheck to paycheck' },
-    { number: '37%', label: 'of US adults would struggle to cover a $400 emergency' },
-    { number: '21%', label: 'of high school students receive financial education' },
-    { number: '10,000+', label: 'Massachusetts youth need financial literacy' }
+    { number: '1 in 5', label: "teens can't create a basic budget." },
+    { number: '63%', label: "of American adults can’t afford a $500 emergency." },
+    { number: '29', label: "states require personal finance education—Massachusetts does not." },
+    { number: '250,000+', label: "young people are at risk of repeating the cycle today." }
   ];
 
   useEffect(() => {
