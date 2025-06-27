@@ -35,7 +35,7 @@ const ProgramCards = () => {
             Our {""} <span className="bg-sunset-gradient bg-clip-text text-transparent"> Work </span>
           </h2>
           <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-            Three pillars: hands-on learning, civic engagement, and real-world opportunities that empower teens to own their financial futures. 
+            Three comprehensive pathways to financial empowerment.
           </p>
         </div>
 
