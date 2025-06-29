@@ -29,12 +29,12 @@ const Advocacy = () => {
       status: "In Committee",
       summary: "Expands access to banking services for minors with parental consent. Removes barriers to opening savings accounts for teens 16+.",
       sponsors: [
-        { name: "Rep. Kate Lipper-Garabedian", party: "D", district: "32nd Middlesex", email: "kate.lipper-garabedian@mahouse.gov", phone: "(617) 722-2960" }
- { name: "Rep. Steven Ultrino", party: "D", district: "33rd Middlesex", email: "Steven.Ultrino@mahouse.gov", phone: "(617) 722-2877" }
-{ name: "Rep. Mindy Domb", party: "D", district: "3rd Hampshire", email: "mindy.domb@mahouse.gov", phone: "(617) 722-2060" } 
-{ name: "Sen. James Eldridge", party: "D", district: "Middlesex and Worcester", email: "James.Eldridge@masenate.gov", phone: "(617) 722-1120" }
-{ name: "Rep, Russell Holmes", party: "D", district: "6th Suffolk", email: "Russell.Holmes@mahouse.gov", phone: "(617) 722-2220" }
-{ name: "Rep. Mark Sylvia", party: "D", district: "10th Bristol", email: "Mark.Sylvia@mahouse.gov", phone: "(617) 722-2400" }
+        { name: "Rep. Kate Lipper-Garabedian", party: "D", district: "32nd Middlesex", email: "kate.lipper-garabedian@mahouse.gov", phone: "(617) 722-2960" },
+ { name: "Rep. Steven Ultrino", party: "D", district: "33rd Middlesex", email: "Steven.Ultrino@mahouse.gov", phone: "(617) 722-2877" },
+{ name: "Rep. Mindy Domb", party: "D", district: "3rd Hampshire", email: "mindy.domb@mahouse.gov", phone: "(617) 722-2060" },
+{ name: "Sen. James Eldridge", party: "D", district: "Middlesex and Worcester", email: "James.Eldridge@masenate.gov", phone: "(617) 722-1120" },
+{ name: "Rep, Russell Holmes", party: "D", district: "6th Suffolk", email: "Russell.Holmes@mahouse.gov", phone: "(617) 722-2220" },
+{ name: "Rep. Mark Sylvia", party: "D", district: "10th Bristol", email: "Mark.Sylvia@mahouse.gov", phone: "(617) 722-2400" },
       ]
     },
     {
