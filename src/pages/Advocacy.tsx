@@ -42,7 +42,7 @@ const Advocacy = () => {
       title: "An Act Relative to Higher Education Financial Literacy Counseling",
       number: "H.1444",
       status: "Introduced",
-      summary: "Authorizes the Board of Higher Education to require all public colleges in MA to provide financial literacy counseling to incoming students. Also mandates that colleges give accepted applicants a standardized college financing plan.
+      summary: "Authorizes the Board of Higher Education to require all public colleges in MA to provide financial literacy counseling to incoming students. Also mandates that colleges give accepted applicants a standardized college financing plan.",
 .",
       sponsors: [
   { name: "Rep. Kimberly Ferguson", party: "R", district: "1st Worcester", email: "Kimberly.Ferguson@mahouse.gov", phone: "(617) 722-2100" },
