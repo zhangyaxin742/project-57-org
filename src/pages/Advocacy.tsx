@@ -177,19 +177,11 @@ const Advocacy = () => {
             <CarouselContent className="-ml-2 md:-ml-4">
               {bills.map((bill) => (
                 <CarouselItem key={bill.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card
-                    className="
-                      bg-dark-card
-                      border-2
-                      border-transparent
-                      hover:border-orange-500
-                      transform
-                      hover:scale-105
-                      transition-all
-                      duration-300
-                      h-full
-                    "
-                  >
+                     <Card 
+                key={index} 
+                className="bg-gray-900/50 border-white/10 hover:border-sunset-purple/50 transition-all duration-300 animate-fade-in group hover:scale-105"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                     <CardHeader className="pb-3">
                       <div className="flex items-start justify-between mb-2">
                         <div className="flex-1">
