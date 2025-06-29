@@ -40,12 +40,19 @@ const Advocacy = () => {
     {
       id: 3,
       title: "Consumer Protection for Students",
-      number: "H.7890",
-      status: "Introduced",
+      number: "H.1444",
+      status: "In Committee",
       summary: "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to students.",
       sponsors: [
-        { name: "Rep. David Kim", party: "D", district: "8th Norfolk", email: "david.kim@mahouse.gov", phone: "(617) 722-2002" }
-      ]
+  { name: "Rep. Kimberly Ferguson", party: "R", district: "1st Worcester", email: "Kimberly.Ferguson@mahouse.gov", phone: "(617) 722-2100" },
+  { name: "Rep. Paul Frost", party: "R", district: "7th Worcester", email: "Paul.Frost@mahouse.gov", phone: "(617) 722-2100" },
+  { name: "Rep. Bradley Jones", party: "R", district: "20th Middlesex", email: "Bradley.Jones@mahouse.gov", phone: "(617) 722-2100" },
+  { name: "Rep. Hannah Kane", party: "R", district: "11th Worcester", email: "Hannah.Kane@mahouse.gov", phone: "(617) 722-2810" },
+  { name: "Rep. Todd Smola", party: "R", district: "1st Hampden", email: "Todd.Smola@mahouse.gov", phone: "(617) 722-2100" },
+  { name: "Rep. Alyson Sullivan-Almeida", party: "R", district: "7th Plymouth", email: "alyson.sullivan@mahouse.gov", phone: "(617) 722-2488" },
+  { name: "Rep. Kelly Pease", party: "R", district: "4th Hampden", email: "Kelly.Pease@mahouse.gov", phone: "(413) 875-8787" }
+]
+
     },
     {
       id: 4,
