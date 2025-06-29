@@ -17,7 +17,7 @@ const Advocacy = () => {
       title: "An Act Relative to Personal Financial Literacy",
       number: "H.594",
       status: "In Committee",
-      summary: "Requires comprehensive financial literacy education in all Massachusetts high schools. Establishes minimum curriculum standards and teacher certification requirements.",
+      summary: "Requires all Massachusetts high school students to complete a personal financial literacy course covering budgeting, taxes, saving, investing, and emerging financial technologies before graduation. Also creates a Financial Literacy Trust Fund to support implementation, prioritize underserved communities, and fund teacher training and resources.",
       sponsors: [
         { name: "Rep. Sarah Johnson", party: "D", district: "5th Suffolk", email: "sarah.johnson@mahouse.gov", phone: "(617) 722-2000" },
         { name: "Rep. Michael Chen", party: "D", district: "12th Middlesex", email: "michael.chen@mahouse.gov", phone: "(617) 722-2001" }
