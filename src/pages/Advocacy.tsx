@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Badge } from '@/components/ui/badge';
-import { Scale, FileText, Calendar, Users, ExternalLink, Download, TrendingUp, Phone, Mail } from 'lucide-react';
+import { FileText, Calendar, Users, ExternalLink, TrendingUp, Phone, Mail } from 'lucide-react';
 import "../App.css";
 
 const Advocacy = () => {
@@ -110,7 +110,7 @@ const Advocacy = () => {
     },
     {
       title: "Grassroots Organizing Toolkit",
-      description: "Build community support for financial literacy initiatives", 
+      description: "Build community support for financial literacy initiatives",
       type: "Resource Kit"
     },
     {
@@ -140,7 +140,7 @@ const Advocacy = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -148,7 +148,7 @@ const Advocacy = () => {
             Legislative <span className="bg-sunset-gradient bg-clip-text text-transparent">Advocacy</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Track financial literacy legislation, access policy resources, and take action 
+            Track financial literacy legislation, access policy resources, and take action
             to create systemic change in Massachusetts.
           </p>
         </div>
@@ -166,57 +166,56 @@ const Advocacy = () => {
               Powered by Billtrack50.com API
             </div>
           </div>
-          
-        <Carousel className="w-full">
-  <CarouselContent className="-ml-2 md:-ml-4">
-    {bills.map((bill, index) => (
-      <CarouselItem key={bill.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-       <Card
-  key={bill.id}
-  className="
-    bg-gray-800
-    border-2
-    border-transparent
-    hover:border-orange-500
-    transform
-    hover:scale-105
-    transition-all
-    duration-300
-    animate-fade-in
-    shadow-md
-    h-full
-  "
->
-     <CardHeader className="pb-3">
-          <div className="flex items-start justify-between mb-2">
-<div className="flex-1 w-full">
-  <CardTitle className="text-white text-lg mb-1 block w-full">
-    {bill.title}
-  </CardTitle>
-  <p className="text-sunset-pink text-sm mb-1 block w-full">
-    {bill.number}
-  </p>
-</div>
-             </div>
-    <Badge className={`${getStatusColor(bill.status)} text-white text-xs ml-2`}>
-      {bill.status}
-    </Badge>
-  </div>
-  <CardDescription className="text-gray-300 text-xs leading-snug">
-    {bill.summary}
-  </CardDescription>
-</CardHeader>
+
+          <Carousel className="w-full">
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {bills.map((bill) => (
+                <CarouselItem key={bill.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card
+                    key={bill.id}
+                    className="
+                      bg-gray-800
+                      border-2
+                      border-transparent
+                      hover:border-orange-500
+                      transform
+                      hover:scale-105
+                      transition-all
+                      duration-300
+                      animate-fade-in
+                      shadow-md
+                      h-full
+                    "
+                  >
+                    <CardHeader className="pb-3">
+                      <div className="flex items-start justify-between mb-2">
+                        <div className="flex-1 w-full">
+                          <CardTitle className="text-white text-lg mb-1 block w-full">
+                            {bill.title}
+                          </CardTitle>
+                          <p className="text-sunset-pink text-sm mb-1 block w-full">
+                            {bill.number}
+                          </p>
+                        </div>
+                        <Badge className={`${getStatusColor(bill.status)} text-white text-xs ml-2`}>
+                          {bill.status}
+                        </Badge>
+                      </div>
+                      <CardDescription className="text-gray-300 text-xs leading-snug">
+                        {bill.summary}
+                      </CardDescription>
+                    </CardHeader>
                     <CardContent className="pt-0">
                       <div className="space-y-3">
                         <div className="flex gap-2">
-                          <Button 
+                          <Button
                             size="sm"
                             className="flex-1 bg-sunset-gradient hover:opacity-90 text-black font-semibold transition-all duration-300"
                             onClick={() => window.open('#', '_blank')}
                           >
                             View Full Text
                           </Button>
-                          <Button 
+                          <Button
                             size="sm"
                             variant="outline"
                             className="flex-1 border-sunset-purple text-sunset-purple hover:bg-sunset-purple hover:text-white transition-all duration-300"
