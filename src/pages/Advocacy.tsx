@@ -180,7 +180,7 @@ const Advocacy = () => {
        <Card
   key={bill.id}
   className="
-    bg-gray-900/50
+    bg-gray-800
     border-2
     border-transparent
     hover:border-orange-500
