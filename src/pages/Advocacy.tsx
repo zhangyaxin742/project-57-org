@@ -17,7 +17,7 @@ const Advocacy = () => {
       title: "An Act Relative to Personal Financial Literacy",
       number: "H.594",
       status: "In Committee",
-      summary: "Requires all Massachusetts high school students to complete a personal financial literacy course before graduation. Also creates a Financial Literacy Trust Fund to support implementation, prioritize underserved communities, and fund teacher training.",
+      summary: "Requires all Massachusetts high school students to complete a personal financial literacy course before graduation. Also creates a Financial Literacy Trust Fund to support implementation.",
       sponsors: [
         { name: "Rep. Ryan Hamilton", party: "D", district: "15th Essex", email: "Ryan.Hamilton@mahouse.gov", phone: "(617) 722-2090" },
       ]
