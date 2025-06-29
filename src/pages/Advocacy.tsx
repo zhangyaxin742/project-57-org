@@ -14,10 +14,9 @@ const Advocacy = () => {
   const bills = [
     {
       id: 1,
-      title: "Student Financial Literacy Education Act",
-      number: "H.3456",
+      title: "An Act Relative to Personal Financial Literacy",
+      number: "H.594",
       status: "In Committee",
-      progress: 60,
       summary: "Requires comprehensive financial literacy education in all Massachusetts high schools. Establishes minimum curriculum standards and teacher certification requirements.",
       sponsors: [
         { name: "Rep. Sarah Johnson", party: "D", district: "5th Suffolk", email: "sarah.johnson@mahouse.gov", phone: "(617) 722-2000" },
@@ -29,7 +28,6 @@ const Advocacy = () => {
       title: "Youth Banking Access Initiative",
       number: "S.1234",
       status: "Passed",
-      progress: 100,
       summary: "Expands access to banking services for minors with parental consent. Removes barriers to opening savings accounts for teens 16+.",
       sponsors: [
         { name: "Sen. Maria Rodriguez", party: "D", district: "1st Essex", email: "maria.rodriguez@masenate.gov", phone: "(617) 722-1500" }
@@ -40,7 +38,6 @@ const Advocacy = () => {
       title: "Consumer Protection for Students",
       number: "H.7890",
       status: "Introduced",
-      progress: 25,
       summary: "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to students.",
       sponsors: [
         { name: "Rep. David Kim", party: "D", district: "8th Norfolk", email: "david.kim@mahouse.gov", phone: "(617) 722-2002" }
@@ -51,7 +48,6 @@ const Advocacy = () => {
       title: "Financial Literacy Assessment Standards",
       number: "S.2156",
       status: "In Committee",
-      progress: 45,
       summary: "Establishes standardized assessment criteria for financial literacy education. Creates accountability measures for school districts.",
       sponsors: [
         { name: "Sen. Jennifer Walsh", party: "R", district: "2nd Plymouth", email: "jennifer.walsh@masenate.gov", phone: "(617) 722-1501" }
@@ -62,7 +58,6 @@ const Advocacy = () => {
       title: "Digital Financial Literacy Curriculum",
       number: "H.2847",
       status: "Introduced",
-      progress: 20,
       summary: "Modernizes financial education to include cryptocurrency, digital payments, and online banking security for the digital age.",
       sponsors: [
         { name: "Rep. Ashley Brown", party: "D", district: "3rd Worcester", email: "ashley.brown@masenate.gov", phone: "(617) 722-1502" }
@@ -211,18 +206,6 @@ const Advocacy = () => {
                     </CardHeader>
                     <CardContent className="pt-0">
                       <div className="space-y-3">
-                        <div>
-                          <div className="flex justify-between text-sm text-gray-400 mb-1">
-                            <span>Progress</span>
-                            <span>{bill.progress}%</span>
-                          </div>
-                          <div className="w-full bg-gray-700 rounded-full h-2">
-                            <div 
-                              className="bg-sunset-gradient h-2 rounded-full transition-all duration-500" 
-                              style={{ width: `${bill.progress}%` }}
-                            ></div>
-                          </div>
-                        </div>
                         <div className="flex gap-2">
                           <Button 
                             size="sm"
