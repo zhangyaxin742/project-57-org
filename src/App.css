@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Force all 4 borders orange on hover */
+.card-hover-orange {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+.card-hover-orange:hover {
+  border: 2px solid #FF8A00 !important;
+  transform: scale(1.05);
+}

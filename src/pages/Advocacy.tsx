@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Badge } from '@/components/ui/badge';
 import { Scale, FileText, Calendar, Users, ExternalLink, Download, TrendingUp, Phone, Mail } from 'lucide-react';
+import "../styles/App.css";
 
 const Advocacy = () => {
   const [selectedBill, setSelectedBill] = useState(null);
@@ -183,13 +184,9 @@ const Advocacy = () => {
     bg-gray-900/50
     border-2
     border-transparent
-    hover:!border-[#FF8A00]
-    transform
-    hover:scale-105
-    transition-all
-    duration-300
     animate-fade-in
     group
+    card-hover-orange
   "
 >
                     <CardHeader className="pb-3">
