@@ -27,7 +27,7 @@ const Advocacy = () => {
       title: "An Act Requiring Financial Education in Schools",
       number: "H.636",
       status: "In Committee",
-      summary: "Creates a Financial Literacy Trust Fund to support education in Massachusetts schools, with funding from both public and private sources alongside annual implementation reports."
+      summary: "Creates a Financial Literacy Trust Fund to support education in Massachusetts schools, with funding from both public and private sources alongside annual implementation reports.",
       sponsors: [
         { name: "Rep. Kate Lipper-Garabedian", party: "D", district: "32nd Middlesex", email: "kate.lipper-garabedian@mahouse.gov", phone: "(617) 722-2960" },
  { name: "Rep. Steven Ultrino", party: "D", district: "33rd Middlesex", email: "Steven.Ultrino@mahouse.gov", phone: "(617) 722-2877" },
