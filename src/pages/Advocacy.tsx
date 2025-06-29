@@ -189,16 +189,14 @@ const Advocacy = () => {
 >
      <CardHeader className="pb-3">
           <div className="flex items-start justify-between mb-2">
-             <div className="flex-1">
-<CardTitle className="text-white text-lg mb-1 text-left">
-               {bill.title}
-                     </CardTitle>
-                          <p className="text-sunset-pink text-base mb-1">{bill.number}</p>
-                        </div>
-                        <Badge className={`${getStatusColor(bill.status)} text-white text-xs ml-2`}>
-                          {bill.status}
-                        </Badge>
-                      </div>
+<div className="flex-1 w-full">
+  <CardTitle className="text-white text-lg mb-1 block w-full">
+    {bill.title}
+  </CardTitle>
+  <p className="text-sunset-pink text-sm mb-1 block w-full">
+    {bill.number}
+  </p>
+</div>
                       <CardDescription className="text-gray-300 text-xs leading-snug">
                         {bill.summary}
                       </CardDescription>
