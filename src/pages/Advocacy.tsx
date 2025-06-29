@@ -197,10 +197,15 @@ const Advocacy = () => {
     {bill.number}
   </p>
 </div>
-                      <CardDescription className="text-gray-300 text-xs leading-snug">
-                        {bill.summary}
-                      </CardDescription>
-                    </CardHeader>
+             </div>
+    <Badge className={`${getStatusColor(bill.status)} text-white text-xs ml-2`}>
+      {bill.status}
+    </Badge>
+  </div>
+  <CardDescription className="text-gray-300 text-xs leading-snug">
+    {bill.summary}
+  </CardDescription>
+</CardHeader>
                     <CardContent className="pt-0">
                       <div className="space-y-3">
                         <div className="flex gap-2">
