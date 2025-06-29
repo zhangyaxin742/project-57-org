@@ -190,16 +190,16 @@ const Advocacy = () => {
      <CardHeader className="pb-3">
           <div className="flex items-start justify-between mb-2">
              <div className="flex-1">
-        <CardTitle className="text-white text-lg mb-1 text-left">
-  {bill.title}
-</CardTitle>
-<p className="text-sunset-pink text-sm mb-3 text-left">{bill.number}</p>
+         <CardTitle className="text-white flex items-center gap-3 text-lg mb-2">
+               {bill.title}
+                     </CardTitle>
+                          <p className="text-sunset-pink text-base mb-1">{bill.number}</p>
                         </div>
                         <Badge className={`${getStatusColor(bill.status)} text-white text-xs ml-2`}>
                           {bill.status}
                         </Badge>
                       </div>
-                      <CardDescription className="text-gray-300 text-xs leading-relaxed">
+                      <CardDescription className="text-gray-300 text-sm leading-snug">
                         {bill.summary}
                       </CardDescription>
                     </CardHeader>
@@ -216,7 +216,7 @@ const Advocacy = () => {
                           <Button 
                             size="sm"
                             variant="outline"
-                            className="flex-1 border-sunset-purple text-sunset-purple hover:bg-sunset-pink hover:text-white transition-all duration-300"
+                            className="flex-1 border-sunset-pink text-sunset-pink hover:bg-sunset-pink hover:text-white transition-all duration-300"
                             onClick={() => setSelectedBill(bill)}
                           >
                             View Sponsors
