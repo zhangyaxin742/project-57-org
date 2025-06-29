@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
@@ -184,9 +183,14 @@ const Advocacy = () => {
     bg-gray-900/50
     border-2
     border-transparent
+    hover:border-orange-500
+    transform
+    hover:scale-105
+    transition-all
+    duration-300
     animate-fade-in
-    group
-    card-hover-orange
+    shadow-md
+    h-full
   "
 >
                     <CardHeader className="pb-3">
