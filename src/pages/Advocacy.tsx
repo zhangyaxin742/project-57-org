@@ -182,7 +182,6 @@ const Advocacy = () => {
                       <div className="flex items-start justify-between mb-2">
                         <div className="flex-1">
                           <CardTitle className="text-white flex items-center gap-3 text-lg mb-2">
-                            <Scale className="h-5 w-5 text-sunset-purple" />
                             {bill.number}: {bill.title}
                           </CardTitle>
                           <p className="text-sunset-pink text-sm mb-3">{bill.number}</p>
@@ -373,7 +372,7 @@ const Advocacy = () => {
       {/* Sponsors Side Panel */}
       {selectedBill && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 animate-fade-in">
-          <div className="fixed right-0 top-0 h-full w-full max-w-md bg-gray-900 border-l border-white/10 animate-slide-in-right">
+          <div className="fixed right-0 top-0 h-full w-full max-w-md bg-gray-900 border border-white/10 animate-slide-in-right">
             <div className="p-6 h-full overflow-y-auto">
               <div className="flex justify-between items-center mb-6">
                 <h3 className="text-xl font-bold text-white">Sponsors & Contacts</h3>
