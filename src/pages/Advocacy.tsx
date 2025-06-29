@@ -187,13 +187,13 @@ const Advocacy = () => {
     h-full
   "
 >
-                    <CardHeader className="pb-3">
-                      <div className="flex items-start justify-between mb-2">
-                        <div className="flex-1">
-                          <CardTitle className="text-white flex items-center gap-3 text-lg mb-2">
-                            {bill.number}: {bill.title}
-                          </CardTitle>
-                          <p className="text-sunset-pink text-sm mb-3">{bill.number}</p>
+     <CardHeader className="pb-3">
+          <div className="flex items-start justify-between mb-2">
+             <div className="flex-1">
+         <CardTitle className="text-white flex items-center gap-3 text-lg mb-2">
+               {bill.title}
+                     </CardTitle>
+                          <p className="text-sunset-pink text-base mb-3">{bill.number}</p>
                         </div>
                         <Badge className={`${getStatusColor(bill.status)} text-white text-xs ml-2`}>
                           {bill.status}
