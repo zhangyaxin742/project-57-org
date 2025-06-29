@@ -177,7 +177,7 @@ const Advocacy = () => {
             <CarouselContent className="-ml-2 md:-ml-4">
               {bills.map((bill) => (
                 <CarouselItem key={bill.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card className="bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300 hover:scale-105 h-full">
+                 <Card className="bg-dark-card border border-gray-800 hover:border-brand-orange transition-all duration-300 h-full">
                     <CardHeader className="pb-3">
                       <div className="flex items-start justify-between mb-2">
                         <div className="flex-1">
