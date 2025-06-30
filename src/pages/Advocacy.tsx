@@ -35,6 +35,7 @@ const Advocacy = () => {
 { name: "Sen. James Eldridge", party: "D", district: "Middlesex and Worcester", email: "James.Eldridge@masenate.gov", phone: "(617) 722-1120" },
 { name: "Rep. Russell Holmes", party: "D", district: "6th Suffolk", email: "Russell.Holmes@mahouse.gov", phone: "(617) 722-2220" },
 { name: "Rep. Mark Sylvia", party: "D", district: "10th Bristol", email: "Mark.Sylvia@mahouse.gov", phone: "(617) 722-2400" },
+      { name: "Deborah Goldberg", party: "State Treasurer", district: "", email: "dgoldberg@tre.state.ma.us", phone: "617-367-6900" }
       ]
     },
     {
@@ -73,7 +74,17 @@ const Advocacy = () => {
       sponsors: [
         { name: "Rep. Ashley Brown", party: "D", district: "3rd Worcester", email: "ashley.brown@masenate.gov", phone: "(617) 722-1502" }
       ]
-    }
+    },
+    {
+      id: 6,
+      title: "An Act Requiring Financial Education in Schools",
+      number: "H.46", 
+      status: "In Committee", 
+      summary: "Creates a Financial Literacy Trust Fund to support curriculum development, educator training, and expanded financial literacy standards. Makes financial literacy education mandatory in MA schools, effective the following academic year.",
+      sponsors: [
+      { name: "Deborah Goldberg", party: "State Treasurer", district: "", email: "dgoldberg@tre.state.ma.us", phone: "617-367-6900" }
+      ]
+    },
   ];
 
   const researchArticles = [
