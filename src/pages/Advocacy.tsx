@@ -83,7 +83,7 @@ const Advocacy = () => {
       title: "An Act Requiring Financial Education in Schools", 
       number: "H.46", 
       status: "In Committee", 
-      summary: "g", 
+      summary: "Creates a Financial Literacy Trust Fund to support curriculum development and educator training. Makes financial literacy education mandatory across MA schools and requires annual reports on funding and implementation.", 
       sponsors: [
         { name: "Deborah Goldberg", party: "State Treasurer", district: "", email: "dgoldberg@tre.state.ma.us", phone: "617-367-6900" },
       ]
@@ -93,7 +93,7 @@ const Advocacy = () => {
       title: "An Act Relative to the Strengthening of Financial Literacy Throughout the Commonwealth", 
       number: "H.627", 
       status: "In Committee", 
-      summary: "h", 
+      summary: "Mandates a standalone, half-semester financial literacy course for high school graduation in MA. Creates a legislative commission to develop a statewide financial literacy strategy for all residents, with recommendations due by December 2025.", 
       sponsors: [
      { name: "Rep. John Lawn", party: "D", district: "10th Middlesex", email: "John.Lawn@mahouse.gov", phone: "(617) 722-2430" },
       ]
