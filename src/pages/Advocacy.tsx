@@ -67,13 +67,16 @@ const Advocacy = () => {
     },
     {
       id: 5,
-      title: "Digital Financial Literacy Curriculum",
+      title: "An Act Requiring Financial Education in Schools",
       number: "H.421",
-      status: "Introduced",
-      summary: "Modernizes financial education to include cryptocurrency, digital payments, and online banking security for the digital age.",
+      status: "In Committee",
+      summary: "Establishes a Financial Literacy Trust Fund to support mandatory financial literacy education across MA schools. Expands standards to cover topics from budgeting and asset protection to cryptocurrencies, effective the following academic year.",
       sponsors: [
-        { name: "Rep. Ashley Brown", party: "D", district: "3rd Worcester", email: "ashley.brown@masenate.gov", phone: "(617) 722-1502" }
-      ]
+      { name: "Sen. James Eldridge", party: "D", district: "Middlesex and Worcester", email: "James.Eldridge@masenate.gov", phone: "(617) 722-1120" },
+      { name: "Sen. Patrick O'Connor", party: "R", district: "First Plymouth and Norfolk", email: "Patrick.OConnor@masenate.gov", phone: "(617) 722-1646" },
+      { name: "Sen. John Keenan", party: "D", district: "Norfolk and Plymouth", email: "John.Keenan@masenate.gov", phone: "(617) 722-1494" },
+      { name: "Deborah Goldberg", party: "State Treasurer", district: "", email: "dgoldberg@tre.state.ma.us", phone: "617-367-6900" }
+    ]
     }, 
     {
       id: 6, 
