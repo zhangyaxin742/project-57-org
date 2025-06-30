@@ -22,8 +22,19 @@ const Advocacy = () => {
         { name: "Rep. Ryan Hamilton", party: "D", district: "15th Essex", email: "Ryan.Hamilton@mahouse.gov", phone: "(617) 722-2090" },
       ]
     },
-    {
+        {
       id: 2,
+      title: "An Act Relative to Student Financial Literacy",
+      number: "S.423",
+      status: "Introduced",
+      summary: "Establishes financial literacy as a required subject in all MA public schools and mandates integration of financial literacy standards into existing courses like math, social sciences, and business. Instruction must cover specified topics, with funding available through the Economic Empowerment Trust Fund.",
+      sponsors: [
+      { name: "Sen. Patrick O'Connor", party: "R", district: "First Plymouth and Norfolk", email: "Patrick.OConnor@masenate.gov", phone: "(617) 722-1646" },
+      { name: "Sen. Patricia Jehlen", party: "D", district: "Second Middlesex", email: "Patricia.Jehlen@masenate.gov", phone: "(617) 722-1578" }
+    ]
+    },
+    {
+      id: 3,
       title: "An Act Requiring Financial Education in Schools",
       number: "H.636",
       status: "In Committee",
@@ -37,8 +48,22 @@ const Advocacy = () => {
 { name: "Rep. Mark Sylvia", party: "D", district: "10th Bristol", email: "Mark.Sylvia@mahouse.gov", phone: "(617) 722-2400" },
       ]
     },
+
     {
-      id: 3,
+      id: 4,
+      title: "An Act Requiring Financial Education in Schools",
+      number: "H.421",
+      status: "In Committee",
+      summary: "Establishes a Financial Literacy Trust Fund to support mandatory financial literacy education across MA schools. Expands standards to cover topics from budgeting and asset protection to cryptocurrencies, effective the following academic year.",
+      sponsors: [
+      { name: "Sen. James Eldridge", party: "D", district: "Middlesex and Worcester", email: "James.Eldridge@masenate.gov", phone: "(617) 722-1120" },
+      { name: "Sen. Patrick O'Connor", party: "R", district: "First Plymouth and Norfolk", email: "Patrick.OConnor@masenate.gov", phone: "(617) 722-1646" },
+      { name: "Sen. John Keenan", party: "D", district: "Norfolk and Plymouth", email: "John.Keenan@masenate.gov", phone: "(617) 722-1494" },
+      { name: "Deborah Goldberg", party: "State Treasurer", district: "", email: "dgoldberg@tre.state.ma.us", phone: "617-367-6900" }
+    ]
+    }, 
+    {
+      id: 5,
       title: "An Act Relative to Higher Education Financial Literacy Counseling",
       number: "H.1444",
       status: "Introduced",
@@ -55,30 +80,16 @@ const Advocacy = () => {
 
     },
     {
-      id: 4,
-      title: "An Act Relative to Student Financial Literacy",
-      number: "S.423",
-      status: "Introduced",
-      summary: "Establishes financial literacy as a required subject in all MA public schools and mandates integration of financial literacy standards into existing courses like math, social sciences, and business. Instruction must cover specified topics, with funding available through the Economic Empowerment Trust Fund.",
+      id: 6, 
+      title: "An Act Relative to the Strengthening of Financial Literacy Throughout the Commonwealth", 
+      number: "H.627", 
+      status: "In Committee", 
+      summary: "Mandates a standalone, half-semester financial literacy course for high school graduation in MA. Creates a legislative commission to develop a statewide financial literacy strategy for all residents, with recommendations due by December 2025.", 
       sponsors: [
-      { name: "Sen. Patrick O'Connor", party: "R", district: "First Plymouth and Norfolk", email: "Patrick.OConnor@masenate.gov", phone: "(617) 722-1646" },
-      { name: "Sen. Patricia Jehlen", party: "D", district: "Second Middlesex", email: "Patricia.Jehlen@masenate.gov", phone: "(617) 722-1578" }
-    ]
+     { name: "Rep. John Lawn", party: "D", district: "10th Middlesex", email: "John.Lawn@mahouse.gov", phone: "(617) 722-2430" },
+      ]
     },
-    {
-      id: 5,
-      title: "An Act Requiring Financial Education in Schools",
-      number: "H.421",
-      status: "In Committee",
-      summary: "Establishes a Financial Literacy Trust Fund to support mandatory financial literacy education across MA schools. Expands standards to cover topics from budgeting and asset protection to cryptocurrencies, effective the following academic year.",
-      sponsors: [
-      { name: "Sen. James Eldridge", party: "D", district: "Middlesex and Worcester", email: "James.Eldridge@masenate.gov", phone: "(617) 722-1120" },
-      { name: "Sen. Patrick O'Connor", party: "R", district: "First Plymouth and Norfolk", email: "Patrick.OConnor@masenate.gov", phone: "(617) 722-1646" },
-      { name: "Sen. John Keenan", party: "D", district: "Norfolk and Plymouth", email: "John.Keenan@masenate.gov", phone: "(617) 722-1494" },
-      { name: "Deborah Goldberg", party: "State Treasurer", district: "", email: "dgoldberg@tre.state.ma.us", phone: "617-367-6900" }
-    ]
-    }, 
-    {
+        {
       id: 6, 
       title: "An Act Requiring Financial Education in Schools", 
       number: "H.46", 
@@ -88,16 +99,6 @@ const Advocacy = () => {
         { name: "Deborah Goldberg", party: "State Treasurer", district: "", email: "dgoldberg@tre.state.ma.us", phone: "617-367-6900" },
       ]
     }, 
-    {
-      id: 7, 
-      title: "An Act Relative to the Strengthening of Financial Literacy Throughout the Commonwealth", 
-      number: "H.627", 
-      status: "In Committee", 
-      summary: "Mandates a standalone, half-semester financial literacy course for high school graduation in MA. Creates a legislative commission to develop a statewide financial literacy strategy for all residents, with recommendations due by December 2025.", 
-      sponsors: [
-     { name: "Rep. John Lawn", party: "D", district: "10th Middlesex", email: "John.Lawn@mahouse.gov", phone: "(617) 722-2430" },
-      ]
-    },
   ];
 
   const researchArticles = [
