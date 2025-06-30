@@ -68,13 +68,33 @@ const Advocacy = () => {
     {
       id: 5,
       title: "Digital Financial Literacy Curriculum",
-      number: "H.2847",
+      number: "H.421",
       status: "Introduced",
       summary: "Modernizes financial education to include cryptocurrency, digital payments, and online banking security for the digital age.",
       sponsors: [
         { name: "Rep. Ashley Brown", party: "D", district: "3rd Worcester", email: "ashley.brown@masenate.gov", phone: "(617) 722-1502" }
       ]
-    }
+    }, 
+    {
+      id: 6, 
+      title: "An Act Requiring Financial Education in Schools", 
+      number: "H.46", 
+      status: "In Committee", 
+      summary: "g", 
+      sponsors: [
+        { name: "Deborah Goldberg", party: "State Treasurer", district: "", email: "dgoldberg@tre.state.ma.us", phone: "617-367-6900" },
+      ]
+    }, 
+    {
+      id: 7, 
+      title: "An Act Relative to the Strengthening of Financial Literacy Throughout the Commonwealth", 
+      number: "H.627", 
+      status: "In Committee", 
+      summary: "h", 
+      sponsors: [
+     { name: "Rep. John Lawn", party: "D", district: "10th Middlesex", email: "John.Lawn@mahouse.gov", phone: "(617) 722-2430" },
+      ]
+    },
   ];
 
   const researchArticles = [
