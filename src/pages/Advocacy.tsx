@@ -56,15 +56,13 @@ const Advocacy = () => {
     },
     {
       id: 4,
-      title: "An Act Requiring Financial Education in Schools",
-      number: "S.421",
-      status: "In Committee",
-      summary: "Establishes a Financial Literacy Trust Fund to develop curriculum materials, train educators, and support mandatory education in MA schools. Expands standards to cover topics from budgeting and asset protection to cryptocurrencies.",
+      title: "An Act Relative to Student Financial Literacy",
+      number: "S.423",
+      status: "Introduced",
+      summary: "Establishes financial literacy as a required subject in all MA public schools and mandates integration of financial literacy standards into existing courses like math, social sciences, and business. Instruction must cover specified topics, with funding available through the Economic Empowerment Trust Fund.",
       sponsors: [
-      { name: "Sen. James Eldridge", party: "D", district: "Middlesex and Worcester", email: "James.Eldridge@masenate.gov", phone: "(617) 722-1120" },
       { name: "Sen. Patrick O'Connor", party: "R", district: "First Plymouth and Norfolk", email: "Patrick.OConnor@masenate.gov", phone: "(617) 722-1646" },
-      { name: "Sen. John Keenan", party: "D", district: "Norfolk and Plymouth", email: "John.Keenan@masenate.gov", phone: "(617) 722-1494" },
-      { name: "Deborah Goldberg", party: "State Treasurer", district: "", email: "dgoldberg@tre.state.ma.us", phone: "617-367-6900" }
+      { name: "Sen. Patricia Jehlen", party: "D", district: "Second Middlesex", email: "Patricia.Jehlen@masenate.gov", phone: "(617) 722-1578" }
     ]
     },
     {
