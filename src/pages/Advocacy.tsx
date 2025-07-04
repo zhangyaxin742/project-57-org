@@ -18,6 +18,7 @@ const bills = [
     summary:
       "Requires comprehensive financial literacy education in all Massachusetts high schools. Establishes minimum curriculum standards and teacher certification requirements.",
     status: "In Committee",
+    url: file:///C:/Users/user/Downloads/H46.pdf
     sponsors: [
       {
         name: "Deborah Goldberg",
@@ -335,12 +336,13 @@ const bills = [
                     </CardHeader>
                     <CardContent className="pt-0 mt-auto">
                       <div className="flex gap-2">
-                        <Button 
+                        <Button
+                          asChild
                           size="sm"
-                          className="flex-1 bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
-                          onClick={() => window.open('#', '_blank')}
-                        >
-                          View Full Text
+                          className="flex-1 bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300">
+                          <a href={bill.url} target=_"blank" rel="noopener noreferrer">
+                                                   View Full Text
+                          </a>
                         </Button>
                         <Button 
                           size="sm"
