@@ -43,7 +43,8 @@ const bills = [
     number: "S.421",
     summary:
       "Expands access to banking services for minors with parental consent. Creates new pathways for financial independence among teens.",
-    status: "Passed",
+    status: "Introduced",
+    url: "https://legiscan.com/MA/text/S421/id/3163196/Massachusetts-2025-S421-Introduced.pdf",
     sponsors: [
       {
         name: "Sen. James Eldridge",
@@ -86,6 +87,7 @@ const bills = [
     summary:
       "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
     status: "Introduced",
+    url: "https://legiscan.com/MA/text/H636/id/3169916/Massachusetts-2025-H636-Introduced.pdf",
     sponsors: [
       {
         name: "Rep. Kate Lipper-Garabedian",
@@ -146,7 +148,8 @@ const bills = [
     number: "H.1444",
     summary:
       "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
-    status: "Introduced",
+    status: "In Committee",
+    url: "https://legiscan.com/MA/text/H1444/id/3168790/Massachusetts-2025-H1444-Introduced.pdf", 
     sponsors: [
       {
         name: "Rep. Kimberly Ferguson",
@@ -210,6 +213,7 @@ const bills = [
     summary:
       "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
     status: "Introduced",
+    url: "https://legiscan.com/MA/text/S423/id/3164156/Massachusetts-2025-S423-Introduced.pdf", 
     sponsors: [
       {
         name: "Sen. Patrick O'Connor",
@@ -238,6 +242,7 @@ const bills = [
     summary:
       "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
     status: "Introduced",
+    url: "https://legiscan.com/MA/text/H627/id/3167243/Massachusetts-2025-H627-Introduced.pdf",
     sponsors: [
       {
         name: "John Lawn",
