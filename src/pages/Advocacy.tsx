@@ -312,7 +312,7 @@ const bills = [
             </div>
           </div>
           
-          <Carousel className="w-full">
+          <Carousel opts={{ loop: true}} className="w-full">
             <CarouselContent className="-ml-2 md:-ml-4">
               {bills.map((bill) => (
                 <CarouselItem key={bill.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
