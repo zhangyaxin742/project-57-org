@@ -18,7 +18,7 @@ const bills = [
     summary:
       "Requires comprehensive financial literacy education in all Massachusetts high schools. Establishes minimum curriculum standards and teacher certification requirements.",
     status: "In Committee",
-    url: "https://legiscan.com/MA/text/H46/id/3046995/Massachusetts-2025-H46-Introduced.pdf"
+    url: "https://legiscan.com/MA/text/H46/id/3046995/Massachusetts-2025-H46-Introduced.pdf",
     sponsors: [
       {
         name: "Deborah Goldberg",
