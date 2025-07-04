@@ -142,8 +142,7 @@ const bills = [
     id: 4,
     title: ( <> 
     An Act <br /> 
-     Relative to Higher Education <br /> 
-      Financial Literacy Counseling </> ), 
+     Relative to Higher Education Financial Literacy Counseling </> ), 
     number: "H.1444",
     summary:
       "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
@@ -232,8 +231,8 @@ const bills = [
     id: 6,
     title: (
       <>
-      An Act Relative to the <br /> 
-       Strengthening of Financial Literacy Throughout the Commonwealth </>
+      An Act <br /> 
+      Relative to the Strengthening of Financial Literacy Throughout the Commonwealth </>
       ),
     number: "H.627",
     summary:
