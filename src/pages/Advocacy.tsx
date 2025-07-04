@@ -323,7 +323,11 @@ const bills = [
                         <CardTitle className="text-white text-lg font-bold">
                           {bill.title}
                         </CardTitle>
-<Badge className={`${getStatusColor(bill.status)} text-[10px] leading-none truncate whitespace-nowrap px-2 py-1`}>
+                        <Badge className={`cn(
+                         `${getStatusColor(bill.status)}`,
+                        "text-[10px] leading-none truncate whitespace-nowrap px-2 py-1"
+                        )}
+                       >
                           {bill.status}
                         </Badge>
                       </div>
