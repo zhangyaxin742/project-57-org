@@ -35,7 +35,8 @@ const bills = [
     number: "S.421",
     summary:
       "Expands access to banking services for minors with parental consent. Creates new pathways for financial independence among teens.",
-    status: "Passed",
+    status: "In Committee",
+    url: "https://legiscan.com/MA/text/S421/id/3163196/Massachusetts-2025-S421-Introduced.pdf",
     sponsors: [
       {
         name: "Sen. James Eldridge",
@@ -73,7 +74,8 @@ const bills = [
     number: "H.636",
     summary:
       "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
-    status: "Introduced",
+    status: "In Committee",
+    url: "https://legiscan.com/MA/text/H636/id/3169916/Massachusetts-2025-H636-Introduced.pdf",
     sponsors: [
       {
         name: "Rep. Kate Lipper-Garabedian",
@@ -128,11 +130,73 @@ const bills = [
   },
   {
     id: 4,
+    title: "An Act Relative to Personal Financial Literacy",
+    number: "H.594",
+    summary:
+      "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
+    status: "In Committee",
+    url: "https://legiscan.com/MA/text/H594/id/3170318/Massachusetts-2025-H594-Introduced.pdf",
+    sponsors:  [
+    {
+      name: "Ryan Hamilton",
+      party: "D",
+      district: "15th Essex",
+      email: "Ryan.Hamilton@mahouse.gov",
+      phone: "(617) 722-2090"
+    }
+  ]
+  },
+  {
+    id: 5,
+    title: "An Act Relative to Student Financial Literacy",
+    number: "S.423",
+    summary:
+      "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
+    status: "Introduced",
+    url: "https://legiscan.com/MA/text/S423/id/3164156/Massachusetts-2025-S423-Introduced.pdf",
+    sponsors: [
+      {
+        name: "Sen. Patrick O'Connor",
+        party: "R",
+        district: "First Plymouth and Norfolk",
+        email: "Patrick.OConnor@masenate.gov",
+        phone: "(617) 722-1646"
+      },
+      {
+        name: "Sen. Patricia Jehlen",
+        party: "D",
+        district: "Second Middlesex",
+        email: "Patricia.Jehlen@masenate.gov",
+        phone: "(617) 722-1578"
+      }
+    ]
+  },
+  {
+    id: 6,
+    title: "An Act Relative to the Strengthening of Financial Literacy Throughout the Commonwealth",
+    number: "H.627",
+    summary:
+      "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
+    status: "Introduced",
+    url: "https://legiscan.com/MA/text/H627/id/3167243/Massachusetts-2025-H627-Introduced.pdf", 
+    sponsors: [
+      {
+        name: "John Lawn",
+        party: "D",
+        district: "10th Middlesex",
+        email: "John.Lawn@mahouse.gov",
+        phone: "(617) 722-2430"
+      }
+    ]
+  },
+  {
+    id: 7,
     title: "An Act Relative to Higher Education Financial Literacy Counseling",
     number: "H.1444",
     summary:
       "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
-    status: "Introduced",
+    status: "In Committee",
+    url: "https://legiscan.com/MA/text/H1444/id/3168790/Massachusetts-2025-H1444-Introduced.pdf",
     sponsors: [
       {
         name: "Rep. Kimberly Ferguson",
@@ -185,47 +249,6 @@ const bills = [
       }
     ]
   },
-  {
-    id: 5,
-    title: "An Act Relative to Student Financial Literacy",
-    number: "S.423",
-    summary:
-      "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
-    status: "Introduced",
-    sponsors: [
-      {
-        name: "Sen. Patrick O'Connor",
-        party: "R",
-        district: "First Plymouth and Norfolk",
-        email: "Patrick.OConnor@masenate.gov",
-        phone: "(617) 722-1646"
-      },
-      {
-        name: "Sen. Patricia Jehlen",
-        party: "D",
-        district: "Second Middlesex",
-        email: "Patricia.Jehlen@masenate.gov",
-        phone: "(617) 722-1578"
-      }
-    ]
-  },
-  {
-    id: 6,
-    title: "An Act Relative to the Strengthening of Financial Literacy Throughout the Commonwealth",
-    number: "H.627",
-    summary:
-      "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
-    status: "Introduced",
-    sponsors: [
-      {
-        name: "John Lawn",
-        party: "D",
-        district: "10th Middlesex",
-        email: "John.Lawn@mahouse.gov",
-        phone: "(617) 722-2430"
-      }
-    ]
-  }
 ];
 
   const policyBriefs = [
