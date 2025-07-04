@@ -527,7 +527,7 @@ const bills = [
       {selectedBill && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 animate-fade-in">
           <div className="fixed right-0 top-0 h-full w-full max-w-md bg-black/95 backdrop-blur-md border-l border-white/10 animate-slide-in-right">
-            <div className="p-6">
+            <div className="p-6 h-full overflow-y-auto pr-2">
               <div className="flex justify-between items-center mb-6">
                 <h3 className="text-xl font-bold text-white">Sponsors & Contacts</h3>
                 <Button 
