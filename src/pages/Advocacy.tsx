@@ -11,222 +11,39 @@ const Advocacy = () => {
   const [selectedBill, setSelectedBill] = useState(null);
 
   const bills = [
-const bills = [
-  {
-    id: 1,
-    title: "An Act Requiring Financial Education in Schools",
-    number: "H.46",
-    summary:
-      "Requires comprehensive financial literacy education in all Massachusetts high schools. Establishes minimum curriculum standards and teacher certification requirements.",
-    status: "In Committee",
-    sponsors: [
-      {
-        name: "Deborah Goldberg",
-        party: "State Treasurer",
-        district: "",
-        email: "dgoldberg@tre.state.ma.us",
-        phone: "617-367-6900"
-      }
-    ]
-  },
-  {
-    id: 2,
-    title: "An Act Requiring Financial Education in Schools",
-    number: "S.421",
-    summary:
-      "Expands access to banking services for minors with parental consent. Creates new pathways for financial independence among teens.",
-    status: "Passed",
-    sponsors: [
-      {
-        name: "Sen. James Eldridge",
-        party: "D",
-        district: "Middlesex and Worcester",
-        email: "James.Eldridge@masenate.gov",
-        phone: "(617) 722-1120"
-      },
-      {
-        name: "Sen. Patrick O'Connor",
-        party: "R",
-        district: "First Plymouth and Norfolk",
-        email: "Patrick.OConnor@masenate.gov",
-        phone: "(617) 722-1646"
-      },
-      {
-        name: "Sen. John Keenan",
-        party: "D",
-        district: "Norfolk and Plymouth",
-        email: "John.Keenan@masenate.gov",
-        phone: "(617) 722-1494"
-      },
-      {
-        name: "Deborah Goldberg",
-        party: "State Treasurer",
-        district: "",
-        email: "dgoldberg@tre.state.ma.us",
-        phone: "617-367-6900"
-      }
-    ]
-  },
-  {
-    id: 3,
-    title: "An Act Requiring Financial Education in Schools",
-    number: "H.636",
-    summary:
-      "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
-    status: "Introduced",
-    sponsors: [
-      {
-        name: "Rep. Kate Lipper-Garabedian",
-        party: "D",
-        district: "32nd Middlesex",
-        email: "kate.lipper-garabedian@mahouse.gov",
-        phone: "(617) 722-2960"
-      },
-      {
-        name: "Rep. Steven Ultrino",
-        party: "D",
-        district: "33rd Middlesex",
-        email: "Steven.Ultrino@mahouse.gov",
-        phone: "(617) 722-2877"
-      },
-      {
-        name: "Rep. Mindy Domb",
-        party: "D",
-        district: "3rd Hampshire",
-        email: "mindy.domb@mahouse.gov",
-        phone: "(617) 722-2060"
-      },
-      {
-        name: "Sen. James Eldridge",
-        party: "D",
-        district: "Middlesex and Worcester",
-        email: "James.Eldridge@masenate.gov",
-        phone: "(617) 722-1120"
-      },
-      {
-        name: "Rep. Russell Holmes",
-        party: "D",
-        district: "6th Suffolk",
-        email: "Russell.Holmes@mahouse.gov",
-        phone: "(617) 722-2220"
-      },
-      {
-        name: "Rep. Mark Sylvia",
-        party: "D",
-        district: "10th Bristol",
-        email: "Mark.Sylvia@mahouse.gov",
-        phone: "(617) 722-2400"
-      },
-      {
-        name: "Deborah Goldberg",
-        party: "State Treasurer",
-        district: "",
-        email: "dgoldberg@tre.state.ma.us",
-        phone: "617-367-6900"
-      }
-    ]
-  },
-  {
-    id: 4,
-    title: "An Act Relative to Higher Education Financial Literacy Counseling",
-    number: "H.1444",
-    summary:
-      "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
-    status: "Introduced",
-    sponsors: [
-      {
-        name: "Rep. Kimberly Ferguson",
-        party: "R",
-        district: "1st Worcester",
-        email: "Kimberly.Ferguson@mahouse.gov",
-        phone: "(617) 722-2100"
-      },
-      {
-        name: "Rep. Paul Frost",
-        party: "R",
-        district: "7th Worcester",
-        email: "Paul.Frost@mahouse.gov",
-        phone: "(617) 722-2100"
-      },
-      {
-        name: "Rep. Bradley Jones",
-        party: "R",
-        district: "20th Middlesex",
-        email: "Bradley.Jones@mahouse.gov",
-        phone: "(617) 722-2100"
-      },
-      {
-        name: "Rep. Hannah Kane",
-        party: "R",
-        district: "11th Worcester",
-        email: "Hannah.Kane@mahouse.gov",
-        phone: "(617) 722-2810"
-      },
-      {
-        name: "Rep. Todd Smola",
-        party: "R",
-        district: "1st Hampden",
-        email: "Todd.Smola@mahouse.gov",
-        phone: "(617) 722-2100"
-      },
-      {
-        name: "Rep. Alyson Sullivan-Almeida",
-        party: "R",
-        district: "7th Plymouth",
-        email: "alyson.sullivan@mahouse.gov",
-        phone: "(617) 722-2488"
-      },
-      {
-        name: "Rep. Kelly Pease",
-        party: "R",
-        district: "4th Hampden",
-        email: "Kelly.Pease@mahouse.gov",
-        phone: "(413) 875-8787"
-      }
-    ]
-  },
-  {
-    id: 5,
-    title: "An Act Relative to Student Financial Literacy",
-    number: "S.423",
-    summary:
-      "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
-    status: "Introduced",
-    sponsors: [
-      {
-        name: "Sen. Patrick O'Connor",
-        party: "R",
-        district: "First Plymouth and Norfolk",
-        email: "Patrick.OConnor@masenate.gov",
-        phone: "(617) 722-1646"
-      },
-      {
-        name: "Sen. Patricia Jehlen",
-        party: "D",
-        district: "Second Middlesex",
-        email: "Patricia.Jehlen@masenate.gov",
-        phone: "(617) 722-1578"
-      }
-    ]
-  },
-  {
-    id: 6,
-    title: "An Act Relative to the Strengthening of Financial Literacy Throughout the Commonwealth",
-    number: "H.627",
-    summary:
-      "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
-    status: "Introduced",
-    sponsors: [
-      {
-        name: "John Lawn",
-        party: "D",
-        district: "10th Middlesex",
-        email: "John.Lawn@mahouse.gov",
-        phone: "(617) 722-2430"
-      }
-    ]
-  }
-];
+    {
+      id: 1,
+      title: "Student Financial Literacy Education Act",
+      number: "H.3456",
+      summary: "Requires comprehensive financial literacy education in all Massachusetts high schools. Establishes minimum curriculum standards and teacher certification requirements.",
+      status: "In Committee",
+      sponsors: [
+        { name: "Rep. Sarah Johnson", party: "D", district: "5th Suffolk", email: "sarah.johnson@mahouse.gov", phone: "(617) 722-2000" },
+        { name: "Rep. Michael Chen", party: "D", district: "12th Middlesex", email: "michael.chen@mahouse.gov", phone: "(617) 722-2001" }
+      ]
+    },
+    {
+      id: 2,
+      title: "Youth Banking Access Initiative",
+      number: "S.1234",
+      summary: "Expands access to banking services for minors with parental consent. Creates new pathways for financial independence among teens.",
+      status: "Passed",
+      sponsors: [
+        { name: "Sen. Michael Chen", party: "D", district: "1st Essex", email: "michael.chen@masenate.gov", phone: "(617) 722-1500" }
+      ]
+    },
+    {
+      id: 3,
+      title: "Consumer Protection for Students",
+      number: "H.7890",
+      summary: "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
+      status: "Introduced",
+      sponsors: [
+        { name: "Rep. Maria Rodriguez", party: "D", district: "8th Norfolk", email: "maria.rodriguez@mahouse.gov", phone: "(617) 722-2002" }
+      ]
+    }
+  ];
+
   const policyBriefs = [
     {
       title: "The Impact of Peer-Led Financial Education on Youth Outcomes",
