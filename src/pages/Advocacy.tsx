@@ -319,10 +319,13 @@ const bills = [
                 <CarouselItem key={bill.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                   <Card className="flex flex-col justify-between  bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300 h-full">
                     <CardHeader className="pb-3">
-                      <div className="mb-2">
-                        <CardTitle className="text-white text-lg font-bold mb-2">
-                          {bill.title}
-                        </CardTitle>
+                      <div className="mb-2 flex flex-col items-start gap-1">
+  <Badge className={`${getStatusColor(bill.status)} text-white text-[10px] whitespace-nowrap`}>
+    {bill.status}
+  </Badge>
+  <CardTitle className="text-white text-lg font-bold">
+    {bill.title}
+  </CardTitle>
                         <Badge className={`${getStatusColor(bill.status)} text-white text-xs`}>
                           {bill.status}
                         </Badge>
