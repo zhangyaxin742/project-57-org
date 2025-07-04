@@ -222,6 +222,8 @@ const Advocacy = () => {
                       animate-fade-in
                       shadow-md
                       h-full
+                    relative 
+                    hover:z-20
                     "
                   >
                     <CardHeader className="pb-3">
