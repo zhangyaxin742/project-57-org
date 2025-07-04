@@ -320,7 +320,7 @@ const bills = [
                   <Card className="flex flex-col justify-between  bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300 h-full">
                     <CardHeader className="pb-3">
 <div className="flex justify-between items-start mb-2">
-  <CardTitle className="text-white text-base text-lg font-bold">
+  <CardTitle className="text-white text-[15px] text-lg font-bold">
     {bill.title}
   </CardTitle>
     <Badge className={`${getStatusColor(bill.status)} text-white text-[10px] whitespace-nowrap`}>
