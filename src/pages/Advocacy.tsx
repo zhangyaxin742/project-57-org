@@ -1,11 +1,11 @@
+
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Badge } from '@/components/ui/badge';
-import { FileText, Calendar, Users, ExternalLink, TrendingUp, Phone, Mail } from 'lucide-react';
-import "../App.css";
+import { Scale, FileText, Calendar, Users, ExternalLink, Download, TrendingUp, Phone, Mail } from 'lucide-react';
 
 const Advocacy = () => {
   const [selectedBill, setSelectedBill] = useState(null);
@@ -14,91 +14,60 @@ const Advocacy = () => {
   const bills = [
     {
       id: 1,
-      title: "An Act Relative to Personal Financial Literacy",
-      number: "H.594",
+      title: "Student Financial Literacy Education Act",
+      number: "H.3456",
       status: "In Committee",
-      summary: "Requires all Massachusetts high school students to complete a personal financial literacy course before graduation. Also creates a Financial Literacy Trust Fund to support implementation.",
+      progress: 60,
+      summary: "Requires comprehensive financial literacy education in all Massachusetts high schools. Establishes minimum curriculum standards and teacher certification requirements.",
       sponsors: [
-        { name: "Rep. Ryan Hamilton", party: "D", district: "15th Essex", email: "Ryan.Hamilton@mahouse.gov", phone: "(617) 722-2090" },
+        { name: "Rep. Sarah Johnson", party: "D", district: "5th Suffolk", email: "sarah.johnson@mahouse.gov", phone: "(617) 722-2000" },
+        { name: "Rep. Michael Chen", party: "D", district: "12th Middlesex", email: "michael.chen@mahouse.gov", phone: "(617) 722-2001" }
       ]
     },
-        {
+    {
       id: 2,
-      title: "An Act Relative to Student Financial Literacy",
-      number: "S.423",
-      status: "Introduced",
-      summary: "Establishes financial literacy as a required subject in all MA public schools and mandates integration of financial literacy standards into existing courses like math, social sciences, and business. Instruction must cover specified topics, with funding available through the Economic Empowerment Trust Fund.",
+      title: "Youth Banking Access Initiative",
+      number: "S.1234",
+      status: "Passed",
+      progress: 100,
+      summary: "Expands access to banking services for minors with parental consent. Removes barriers to opening savings accounts for teens 16+.",
       sponsors: [
-      { name: "Sen. Patrick O'Connor", party: "R", district: "First Plymouth and Norfolk", email: "Patrick.OConnor@masenate.gov", phone: "(617) 722-1646" },
-      { name: "Sen. Patricia Jehlen", party: "D", district: "Second Middlesex", email: "Patricia.Jehlen@masenate.gov", phone: "(617) 722-1578" }
-    ]
+        { name: "Sen. Maria Rodriguez", party: "D", district: "1st Essex", email: "maria.rodriguez@masenate.gov", phone: "(617) 722-1500" }
+      ]
     },
     {
       id: 3,
-      title: "An Act Requiring Financial Education in Schools",
-      number: "H.636",
-      status: "In Committee",
-      summary: "Creates a Financial Literacy Trust Fund to support education in Massachusetts schools, with funding from both public and private sources alongside annual implementation reports.",
+      title: "Consumer Protection for Students",
+      number: "H.7890",
+      status: "Introduced",
+      progress: 25,
+      summary: "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to students.",
       sponsors: [
-        { name: "Rep. Kate Lipper-Garabedian", party: "D", district: "32nd Middlesex", email: "kate.lipper-garabedian@mahouse.gov", phone: "(617) 722-2960" },
- { name: "Rep. Steven Ultrino", party: "D", district: "33rd Middlesex", email: "Steven.Ultrino@mahouse.gov", phone: "(617) 722-2877" },
-{ name: "Rep. Mindy Domb", party: "D", district: "3rd Hampshire", email: "mindy.domb@mahouse.gov", phone: "(617) 722-2060" },
-{ name: "Sen. James Eldridge", party: "D", district: "Middlesex and Worcester", email: "James.Eldridge@masenate.gov", phone: "(617) 722-1120" },
-{ name: "Rep. Russell Holmes", party: "D", district: "6th Suffolk", email: "Russell.Holmes@mahouse.gov", phone: "(617) 722-2220" },
-{ name: "Rep. Mark Sylvia", party: "D", district: "10th Bristol", email: "Mark.Sylvia@mahouse.gov", phone: "(617) 722-2400" },
+        { name: "Rep. David Kim", party: "D", district: "8th Norfolk", email: "david.kim@mahouse.gov", phone: "(617) 722-2002" }
       ]
     },
-
     {
       id: 4,
-      title: "An Act Requiring Financial Education in Schools",
-      number: "H.421",
+      title: "Financial Literacy Assessment Standards",
+      number: "S.2156",
       status: "In Committee",
-      summary: "Establishes a Financial Literacy Trust Fund to support mandatory financial literacy education across MA schools. Expands standards to cover topics from budgeting and asset protection to cryptocurrencies, effective the following academic year.",
+      progress: 45,
+      summary: "Establishes standardized assessment criteria for financial literacy education. Creates accountability measures for school districts.",
       sponsors: [
-      { name: "Sen. James Eldridge", party: "D", district: "Middlesex and Worcester", email: "James.Eldridge@masenate.gov", phone: "(617) 722-1120" },
-      { name: "Sen. Patrick O'Connor", party: "R", district: "First Plymouth and Norfolk", email: "Patrick.OConnor@masenate.gov", phone: "(617) 722-1646" },
-      { name: "Sen. John Keenan", party: "D", district: "Norfolk and Plymouth", email: "John.Keenan@masenate.gov", phone: "(617) 722-1494" },
-      { name: "Deborah Goldberg", party: "State Treasurer", district: "", email: "dgoldberg@tre.state.ma.us", phone: "617-367-6900" }
-    ]
-    }, 
+        { name: "Sen. Jennifer Walsh", party: "R", district: "2nd Plymouth", email: "jennifer.walsh@masenate.gov", phone: "(617) 722-1501" }
+      ]
+    },
     {
       id: 5,
-      title: "An Act Relative to Higher Education Financial Literacy Counseling",
-      number: "H.1444",
+      title: "Digital Financial Literacy Curriculum",
+      number: "H.2847",
       status: "Introduced",
-      summary: "Authorizes the Board of Higher Education to require all public colleges in MA to provide financial literacy counseling to incoming students. Also mandates that colleges give accepted applicants a standardized college financing plan.",
+      progress: 20,
+      summary: "Modernizes financial education to include cryptocurrency, digital payments, and online banking security for the digital age.",
       sponsors: [
-  { name: "Rep. Kimberly Ferguson", party: "R", district: "1st Worcester", email: "Kimberly.Ferguson@mahouse.gov", phone: "(617) 722-2100" },
-  { name: "Rep. Paul Frost", party: "R", district: "7th Worcester", email: "Paul.Frost@mahouse.gov", phone: "(617) 722-2100" },
-  { name: "Rep. Bradley Jones", party: "R", district: "20th Middlesex", email: "Bradley.Jones@mahouse.gov", phone: "(617) 722-2100" },
-  { name: "Rep. Hannah Kane", party: "R", district: "11th Worcester", email: "Hannah.Kane@mahouse.gov", phone: "(617) 722-2810" },
-  { name: "Rep. Todd Smola", party: "R", district: "1st Hampden", email: "Todd.Smola@mahouse.gov", phone: "(617) 722-2100" },
-  { name: "Rep. Alyson Sullivan-Almeida", party: "R", district: "7th Plymouth", email: "alyson.sullivan@mahouse.gov", phone: "(617) 722-2488" },
-  { name: "Rep. Kelly Pease", party: "R", district: "4th Hampden", email: "Kelly.Pease@mahouse.gov", phone: "(413) 875-8787" }
-]
-
-    },
-    {
-      id: 6, 
-      title: "An Act Relative to the Strengthening of Financial Literacy Throughout the Commonwealth", 
-      number: "H.627", 
-      status: "In Committee", 
-      summary: "Mandates a standalone, half-semester financial literacy course for high school graduation in MA. Creates a legislative commission to develop a statewide financial literacy strategy for all residents, with recommendations due by December 2025.", 
-      sponsors: [
-     { name: "Rep. John Lawn", party: "D", district: "10th Middlesex", email: "John.Lawn@mahouse.gov", phone: "(617) 722-2430" },
+        { name: "Rep. Ashley Brown", party: "D", district: "3rd Worcester", email: "ashley.brown@masenate.gov", phone: "(617) 722-1502" }
       ]
-    },
-        {
-      id: 6, 
-      title: "An Act Requiring Financial Education in Schools", 
-      number: "H.46", 
-      status: "In Committee", 
-      summary: "Creates a Financial Literacy Trust Fund to support curriculum development and educator training. Makes financial literacy education mandatory across MA schools and requires annual reports on funding and implementation.", 
-      sponsors: [
-        { name: "Deborah Goldberg", party: "State Treasurer", district: "", email: "dgoldberg@tre.state.ma.us", phone: "617-367-6900" },
-      ]
-    }, 
+    }
   ];
 
   const researchArticles = [
@@ -147,7 +116,7 @@ const Advocacy = () => {
     },
     {
       title: "Grassroots Organizing Toolkit",
-      description: "Build community support for financial literacy initiatives",
+      description: "Build community support for financial literacy initiatives", 
       type: "Resource Kit"
     },
     {
@@ -177,7 +146,7 @@ const Advocacy = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       <Navigation />
-
+      
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -185,7 +154,7 @@ const Advocacy = () => {
             Legislative <span className="bg-sunset-gradient bg-clip-text text-transparent">Advocacy</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Track financial literacy legislation, access policy resources, and take action
+            Track financial literacy legislation, access policy resources, and take action 
             to create systemic change in Massachusetts.
           </p>
         </div>
@@ -203,61 +172,66 @@ const Advocacy = () => {
               Powered by Billtrack50.com API
             </div>
           </div>
-
+          
           <Carousel className="w-full">
             <CarouselContent className="-ml-2 md:-ml-4">
               {bills.map((bill) => (
                 <CarouselItem key={bill.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card
-                    key={bill.id}
-                    className="
-                      bg-gray-800
-                      border-2
-                      border-transparent
-                      hover:border-orange-500
-                      transform
-                      hover:scale-105
-                      transition-all
-                      duration-300
-                      animate-fade-in
-                      shadow-md
-                      h-full
-                    relative 
-                    hover:z-20
-                    "
-                  >
+               <Card
+  className="
+    bg-dark-card
+    border-2
+    border-transparent
+    hover:border-orange-500
+    transform
+    hover:scale-105
+    transition-all
+    duration-300
+    h-full
+  "
+>
                     <CardHeader className="pb-3">
                       <div className="flex items-start justify-between mb-2">
-                        <div className="flex-1 w-full">
-                          <CardTitle className="text-white text-lg mb-1 block w-full">
-                            {bill.title}
+                        <div className="flex-1">
+                          <CardTitle className="text-white flex items-center gap-3 text-lg mb-2">
+                            {bill.number}: {bill.title}
                           </CardTitle>
-                          <p className="text-sunset-pink text-sm mb-1 block w-full">
-                            {bill.number}
-                          </p>
+                          <p className="text-sunset-pink text-sm mb-3">{bill.number}</p>
                         </div>
                         <Badge className={`${getStatusColor(bill.status)} text-white text-xs ml-2`}>
                           {bill.status}
                         </Badge>
                       </div>
-                      <CardDescription className="text-gray-300 text-xs leading-snug">
+                      <CardDescription className="text-gray-300 text-sm leading-relaxed">
                         {bill.summary}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="pt-0">
                       <div className="space-y-3">
+                        <div>
+                          <div className="flex justify-between text-sm text-gray-400 mb-1">
+                            <span>Progress</span>
+                            <span>{bill.progress}%</span>
+                          </div>
+                          <div className="w-full bg-gray-700 rounded-full h-2">
+                            <div 
+                              className="bg-sunset-gradient h-2 rounded-full transition-all duration-500" 
+                              style={{ width: `${bill.progress}%` }}
+                            ></div>
+                          </div>
+                        </div>
                         <div className="flex gap-2">
-                          <Button
+                          <Button 
                             size="sm"
                             className="flex-1 bg-sunset-gradient hover:opacity-90 text-black font-semibold transition-all duration-300"
                             onClick={() => window.open('#', '_blank')}
                           >
                             View Full Text
                           </Button>
-                          <Button
+                          <Button 
                             size="sm"
                             variant="outline"
-                            className="flex-1 border-sunset-purple text-sunset-purple hover:bg-sunset-purple hover:text-white transition-all duration-300"
+                            className="flex-1 border-sunset-pink text-sunset-pink hover:bg-sunset-pink hover:text-white transition-all duration-300"
                             onClick={() => setSelectedBill(bill)}
                           >
                             View Sponsors
