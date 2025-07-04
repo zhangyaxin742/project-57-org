@@ -1,59 +1,103 @@
 
+import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Scale, FileText, Calendar, Users, ExternalLink, Download, TrendingUp } from 'lucide-react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Badge } from '@/components/ui/badge';
+import { Scale, FileText, Calendar, Users, ExternalLink, Download, TrendingUp, Phone, Mail } from 'lucide-react';
 
 const Advocacy = () => {
+  const [selectedBill, setSelectedBill] = useState(null);
+
   const bills = [
     {
-      id: "H.3456",
+      id: 1,
       title: "Student Financial Literacy Education Act",
-      status: "Committee Review",
-      progress: 60,
-      sponsor: "Rep. Sarah Johnson",
-      summary: "Requires financial literacy education in all Massachusetts high schools"
-    },
-    {
-      id: "S.1234", 
-      title: "Youth Banking Access Initiative",
-      status: "Passed House",
-      progress: 80,
-      sponsor: "Sen. Michael Chen",
-      summary: "Expands access to banking services for minors with parental consent"
-    },
-    {
-      id: "H.7890",
-      title: "Consumer Protection for Students",
+      number: "H.3456",
+      summary: "Requires comprehensive financial literacy education in all Massachusetts high schools. Establishes minimum curriculum standards and teacher certification requirements.",
       status: "In Committee",
-      progress: 40,
-      sponsor: "Rep. Maria Rodriguez",
-      summary: "Enhanced protections against predatory lending targeting students"
+      sponsors: [
+        { name: "Rep. Sarah Johnson", party: "D", district: "5th Suffolk", email: "sarah.johnson@mahouse.gov", phone: "(617) 722-2000" },
+        { name: "Rep. Michael Chen", party: "D", district: "12th Middlesex", email: "michael.chen@mahouse.gov", phone: "(617) 722-2001" }
+      ]
+    },
+    {
+      id: 2,
+      title: "Youth Banking Access Initiative",
+      number: "S.1234",
+      summary: "Expands access to banking services for minors with parental consent. Creates new pathways for financial independence among teens.",
+      status: "Passed",
+      sponsors: [
+        { name: "Sen. Michael Chen", party: "D", district: "1st Essex", email: "michael.chen@masenate.gov", phone: "(617) 722-1500" }
+      ]
+    },
+    {
+      id: 3,
+      title: "Consumer Protection for Students",
+      number: "H.7890",
+      summary: "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
+      status: "Introduced",
+      sponsors: [
+        { name: "Rep. Maria Rodriguez", party: "D", district: "8th Norfolk", email: "maria.rodriguez@mahouse.gov", phone: "(617) 722-2002" }
+      ]
     }
   ];
 
-  const resources = [
+  const policyBriefs = [
     {
-      title: "Lobbying 101 Guide",
-      description: "Complete handbook for engaging with legislators",
-      type: "PDF Guide"
+      title: "The Impact of Peer-Led Financial Education on Youth Outcomes",
+      subheading: "Comprehensive analysis of peer education effectiveness in Massachusetts schools",
+      author: "Project 57 Research Team",
+      date: "Dec 2024",
+      readingTime: "8 min read"
     },
     {
-      title: "Grassroots Organizing Toolkit",
-      description: "Build community support for financial literacy initiatives", 
-      type: "Resource Kit"
+      title: "Legislative Barriers to Youth Financial Empowerment",
+      subheading: "Identifying policy gaps that limit young people's financial independence",
+      author: "Sarah Chen, Policy Analyst",
+      date: "Nov 2024",
+      readingTime: "12 min read"
     },
     {
-      title: "Email Templates & Scripts",
-      description: "Pre-written communications for contacting representatives",
-      type: "Templates"
+      title: "State-by-State Financial Literacy Requirements Analysis",
+      subheading: "Comparing Massachusetts standards with national best practices",
+      author: "Policy Research Coalition",
+      date: "Oct 2024",
+      readingTime: "15 min read"
     },
     {
-      title: "Social Media Shareables",
-      description: "Graphics and content for advocacy campaigns",
-      type: "Media Kit"
+      title: "Youth Voice in Financial Policy: A Massachusetts Case Study",
+      subheading: "How student advocacy shaped recent legislative victories",
+      author: "Emma Rodriguez",
+      date: "Oct 2024",
+      readingTime: "6 min read"
+    },
+    {
+      title: "Digital Financial Literacy: Preparing Youth for Tomorrow",
+      subheading: "Addressing gaps in cryptocurrency and digital payment education",
+      author: "Tech Policy Institute",
+      date: "Sep 2024",
+      readingTime: "10 min read"
+    },
+    {
+      title: "Community-Based Financial Education Models",
+      subheading: "Best practices from grassroots organizations across Massachusetts",
+      author: "Community Finance Network",
+      date: "Aug 2024",
+      readingTime: "9 min read"
     }
   ];
+
+  const getStatusColor = (status) => {
+    switch (status) {
+      case 'Introduced': return 'bg-blue-500';
+      case 'In Committee': return 'bg-yellow-500';
+      case 'Passed': return 'bg-green-500';
+      case 'Rejected': return 'bg-red-500';
+      default: return 'bg-gray-500';
+    }
+  };
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -85,84 +129,92 @@ const Advocacy = () => {
             </div>
           </div>
           
-          <div className="space-y-6">
-            {bills.map((bill, index) => (
-              <Card key={index} className="bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300">
-                <CardHeader>
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <CardTitle className="text-white flex items-center gap-3">
-                        <Scale className="h-5 w-5 text-sunset-purple" />
-                        {bill.id}: {bill.title}
-                      </CardTitle>
-                      <CardDescription className="text-gray-300 mt-2">
+          <Carousel className="w-full">
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {bills.map((bill) => (
+                <CarouselItem key={bill.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300 h-full">
+                    <CardHeader className="pb-3">
+                      <div className="flex justify-between items-start mb-2">
+                        <CardTitle className="text-white text-lg font-bold">
+                          {bill.title}
+                        </CardTitle>
+                        <Badge className={`${getStatusColor(bill.status)} text-white text-xs`}>
+                          {bill.status}
+                        </Badge>
+                      </div>
+                      <div className="text-sunset-orange font-semibold text-sm mb-3">
+                        {bill.number}
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed">
                         {bill.summary}
-                      </CardDescription>
-                      <p className="text-sunset-pink text-sm mt-2">Sponsored by {bill.sponsor}</p>
-                    </div>
-                    <span className="text-xs bg-sunset-gradient px-3 py-1 rounded-full text-black font-semibold">
-                      {bill.status}
-                    </span>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    <div>
-                      <div className="flex justify-between text-sm text-gray-400 mb-1">
-                        <span>Progress</span>
-                        <span>{bill.progress}%</span>
+                      </p>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <div className="flex gap-2">
+                        <Button 
+                          size="sm"
+                          className="flex-1 bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
+                          onClick={() => window.open('#', '_blank')}
+                        >
+                          View Full Text
+                        </Button>
+                        <Button 
+                          size="sm"
+                          variant="outline"
+                          className="flex-1 border-gray-600 text-gray-300 hover:bg-gray-800 transition-all duration-300"
+                          onClick={() => setSelectedBill(bill)}
+                        >
+                          View Sponsors
+                        </Button>
                       </div>
-                      <div className="w-full bg-gray-700 rounded-full h-2">
-                        <div 
-                          className="bg-sunset-gradient h-2 rounded-full transition-all duration-500" 
-                          style={{ width: `${bill.progress}%` }}
-                        ></div>
-                      </div>
-                    </div>
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      className="border-sunset-pink text-sunset-pink hover:bg-sunset-pink hover:text-white"
-                      onClick={() => window.open('#', '_blank')}
-                    >
-                      View Full Bill Text
-                      <ExternalLink className="ml-2 h-3 w-3" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex -left-12 border-gray-600 bg-black/50 hover:bg-gray-800" />
+            <CarouselNext className="hidden md:flex -right-12 border-gray-600 bg-black/50 hover:bg-gray-800" />
+          </Carousel>
         </div>
       </section>
 
       {/* Policy Brief Library */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-            Policy <span className="bg-sunset-gradient bg-clip-text text-transparent">Brief Library</span>
+            Policy <span className="bg-sunset-gradient bg-clip-text text-transparent">Research</span>
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <Card key={item} className="bg-gray-900/50 border-white/10 hover:border-sunset-purple/50 transition-all duration-300 hover:scale-105">
-                <CardHeader>
-                  <FileText className="h-8 w-8 text-sunset-orange mb-2" />
-                  <CardTitle className="text-white text-lg">
-                    Financial Literacy Policy Brief #{item}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {policyBriefs.map((brief, index) => (
+              <Card 
+                key={index} 
+                className="bg-black/50 border-white/10 hover:border-sunset-pink/50 transition-all duration-300 animate-fade-in group"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-white text-lg font-semibold leading-tight mb-2">
+                    {brief.title}
                   </CardTitle>
-                  <CardDescription className="text-gray-300">
-                    Comprehensive analysis of current legislation and policy recommendations.
-                  </CardDescription>
+                  <p className="text-gray-400 text-sm mb-3">
+                    {brief.subheading}
+                  </p>
+                  <div className="text-xs text-gray-500 space-y-1">
+                    <div>By {brief.author}</div>
+                    <div className="flex justify-between">
+                      <span>{brief.date}</span>
+                      <span>{brief.readingTime}</span>
+                    </div>
+                  </div>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="pt-0">
                   <Button 
-                    variant="ghost" 
-                    className="w-full text-sunset-pink hover:bg-sunset-pink/10"
+                    className="w-full bg-gradient-to-r from-sunset-pink to-sunset-purple hover:opacity-90 text-white font-medium transition-all duration-300 group-hover:scale-105"
                     onClick={() => window.open('#', '_blank')}
                   >
-                    <Download className="mr-2 h-4 w-4" />
-                    Download PDF
+                    <FileText className="h-4 w-4 mr-2" />
+                    Read Now
                   </Button>
                 </CardContent>
               </Card>
@@ -171,42 +223,88 @@ const Advocacy = () => {
         </div>
       </section>
 
-      {/* Civic Toolkit */}
+      {/* Civic Action Center */}
       <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-            Civic <span className="bg-sunset-gradient bg-clip-text text-transparent">Toolkit</span>
-          </h2>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 animate-fade-in">
+              Civic Action <span className="bg-sunset-gradient bg-clip-text text-transparent">Center</span>
+            </h2>
+            <div className="w-24 h-1 bg-sunset-gradient mx-auto animate-scale-in" style={{ animationDelay: '0.2s' }}></div>
+          </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {resources.map((resource, index) => (
-              <Card key={index} className="bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300">
-                <CardHeader>
-                  <CardTitle className="text-white flex items-center gap-3">
-                    <Users className="h-5 w-5 text-sunset-pink" />
-                    {resource.title}
-                  </CardTitle>
-                  <CardDescription className="text-gray-300">
-                    {resource.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs bg-gray-700 px-3 py-1 rounded-full text-gray-300">
-                      {resource.type}
-                    </span>
-                    <Button 
-                      size="sm"
-                      className="bg-sunset-gradient hover:opacity-90 text-black font-semibold"
-                      onClick={() => window.open('#', '_blank')}
-                    >
-                      Access Resource
-                      <ExternalLink className="ml-2 h-3 w-3" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-black/50 border-2 border-transparent hover:border-sunset-orange/50 transition-all duration-500 animate-fade-in group bg-gradient-to-br from-black/50 to-gray-900">
+              <CardHeader className="text-center pb-6">
+                <div className="mx-auto w-16 h-16 bg-gradient-to-r from-sunset-orange to-sunset-pink rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Calendar className="h-8 w-8 text-white" />
+                </div>
+                <CardTitle className="text-2xl text-white mb-3">
+                  Upcoming Hearings
+                </CardTitle>
+                <p className="text-gray-300 leading-relaxed">
+                  Stay informed about legislative hearings and public comment opportunities 
+                  that impact financial literacy education.
+                </p>
+              </CardHeader>
+              <CardContent className="text-center">
+                <Button 
+                  size="lg"
+                  className="bg-gradient-to-r from-sunset-orange to-sunset-pink hover:opacity-90 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
+                  onClick={() => window.open('https://malegislature.gov/Events', '_blank')}
+                >
+                  View Calendar
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-black/50 border-2 border-transparent hover:border-sunset-pink/50 transition-all duration-500 animate-fade-in group bg-gradient-to-br from-black/50 to-gray-900" style={{ animationDelay: '0.1s' }}>
+              <CardHeader className="text-center pb-6">
+                <div className="mx-auto w-16 h-16 bg-gradient-to-r from-sunset-pink to-sunset-purple rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Users className="h-8 w-8 text-white" />
+                </div>
+                <CardTitle className="text-2xl text-white mb-3">
+                  Intro to Lobbying
+                </CardTitle>
+                <p className="text-gray-300 leading-relaxed">
+                  Learn the fundamentals of effective advocacy with our comprehensive 
+                  guide to youth lobbying and civic engagement.
+                </p>
+              </CardHeader>
+              <CardContent className="text-center">
+                <Button 
+                  size="lg"
+                  className="bg-gradient-to-r from-sunset-pink to-sunset-purple hover:opacity-90 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
+                  onClick={() => window.open('#', '_blank')}
+                >
+                  Download Guide
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-black/50 border-2 border-transparent hover:border-sunset-purple/50 transition-all duration-500 animate-fade-in group bg-gradient-to-br from-black/50 to-gray-900" style={{ animationDelay: '0.2s' }}>
+              <CardHeader className="text-center pb-6">
+                <div className="mx-auto w-16 h-16 bg-gradient-to-r from-sunset-purple to-sunset-orange rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <FileText className="h-8 w-8 text-white" />
+                </div>
+                <CardTitle className="text-2xl text-white mb-3">
+                  Scripts & Shareables
+                </CardTitle>
+                <p className="text-gray-300 leading-relaxed">
+                  Access ready-to-use advocacy materials, social media templates, 
+                  and talking points for your legislative outreach.
+                </p>
+              </CardHeader>
+              <CardContent className="text-center">
+                <Button 
+                  size="lg"
+                  className="bg-gradient-to-r from-sunset-purple to-sunset-orange hover:opacity-90 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
+                  onClick={() => window.open('#', '_blank')}
+                >
+                  Get Shareables
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -241,6 +339,60 @@ const Advocacy = () => {
           </Card>
         </div>
       </section>
+
+      {/* Sponsors Side Panel */}
+      {selectedBill && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 animate-fade-in">
+          <div className="fixed right-0 top-0 h-full w-full max-w-md bg-black/95 backdrop-blur-md border-l border-white/10 animate-slide-in-right">
+            <div className="p-6">
+              <div className="flex justify-between items-center mb-6">
+                <h3 className="text-xl font-bold text-white">Sponsors & Contacts</h3>
+                <Button 
+                  variant="ghost" 
+                  size="sm"
+                  onClick={() => setSelectedBill(null)}
+                  className="text-gray-400 hover:text-white"
+                >
+                  ✕
+                </Button>
+              </div>
+              
+              <div className="mb-4">
+                <h4 className="text-lg font-semibold text-white mb-2">{selectedBill.title}</h4>
+                <p className="text-sunset-orange font-semibold">{selectedBill.number}</p>
+              </div>
+              
+              <div className="space-y-4">
+                {selectedBill.sponsors.map((sponsor, index) => (
+                  <div key={index} className="bg-gray-900/50 p-4 rounded-lg border border-white/10">
+                    <div className="flex justify-between items-start mb-2">
+                      <h5 className="text-white font-semibold">{sponsor.name}</h5>
+                      <Badge variant="outline" className="text-xs border-white/20 text-gray-300">
+                        {sponsor.party}
+                      </Badge>
+                    </div>
+                    <p className="text-gray-400 text-sm mb-3">{sponsor.district}</p>
+                    <div className="space-y-2">
+                      <div className="flex items-center text-gray-300 text-sm">
+                        <Mail className="h-4 w-4 mr-2" />
+                        <a href={`mailto:${sponsor.email}`} className="hover:text-sunset-orange transition-colors">
+                          {sponsor.email}
+                        </a>
+                      </div>
+                      <div className="flex items-center text-gray-300 text-sm">
+                        <Phone className="h-4 w-4 mr-2" />
+                        <a href={`tel:${sponsor.phone}`} className="hover:text-sunset-orange transition-colors">
+                          {sponsor.phone}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
