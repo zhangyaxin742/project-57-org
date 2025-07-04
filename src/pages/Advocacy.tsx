@@ -14,6 +14,7 @@ const bills = [
   {
     id: 1,
     title: (
+      <>
       An Act Requiring <br /> 
         Financial Education in Schools </>
       ),
