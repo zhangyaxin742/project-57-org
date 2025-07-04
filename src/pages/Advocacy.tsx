@@ -13,7 +13,10 @@ const Advocacy = () => {
 const bills = [
   {
     id: 1,
-    title: "An Act Requiring Financial Education in Schools",
+    title: (
+      An Act Requiring <br /> 
+        Financial Education in Schools </>
+      ),
     number: "H.46",
     summary:
       "Requires comprehensive financial literacy education in all Massachusetts high schools. Establishes minimum curriculum standards and teacher certification requirements.",
