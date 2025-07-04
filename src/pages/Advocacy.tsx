@@ -15,8 +15,8 @@ const bills = [
     id: 1,
     title: (
       <>
-      An Act Requiring <br /> 
-        Financial Education in Schools </>
+      An Act <br /> 
+        Requiring Financial Education in Schools </>
       ),
     number: "H.46",
     summary:
@@ -35,7 +35,11 @@ const bills = [
   },
   {
     id: 2,
-    title: "An Act Requiring Financial Education in Schools",
+    title: (
+      <>
+      An Act <br /> 
+        Requiring Financial Education in Schools </>
+      ),
     number: "S.421",
     summary:
       "Expands access to banking services for minors with parental consent. Creates new pathways for financial independence among teens.",
@@ -73,7 +77,11 @@ const bills = [
   },
   {
     id: 3,
-    title: "An Act Requiring Financial Education in Schools",
+    title: (
+      <>
+      An Act <br /> 
+        Requiring Financial Education in Schools </>
+      ),
     number: "H.636",
     summary:
       "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
@@ -132,7 +140,9 @@ const bills = [
   },
   {
     id: 4,
-    title: "An Act Relative to Higher Education Financial Literacy Counseling",
+    title: ( <> 
+    An Act Relative to <br /> 
+      Higher Education Financial Literacy Counseling </> ), 
     number: "H.1444",
     summary:
       "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
@@ -191,7 +201,11 @@ const bills = [
   },
   {
     id: 5,
-    title: "An Act Relative to Student Financial Literacy",
+    title: (
+      <>
+      An Act <br /> 
+        Relative to Student Financial Literacy </>
+      ),
     number: "S.423",
     summary:
       "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
@@ -215,7 +229,11 @@ const bills = [
   },
   {
     id: 6,
-    title: "An Act Relative to the Strengthening of Financial Literacy Throughout the Commonwealth",
+    title: (
+      <>
+      An Act Relative to the <br /> 
+       Strengthening of Financial Literacy Throughout the Commonwealth </>
+      ),
     number: "H.627",
     summary:
       "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
