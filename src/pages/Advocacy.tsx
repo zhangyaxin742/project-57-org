@@ -495,37 +495,6 @@ const bills = [
         </div>
       </section>
 
-      {/* Legislature Calendar */}
-      <section className="py-20 bg-black">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            Massachusetts <span className="bg-sunset-gradient bg-clip-text text-transparent">Legislature Calendar</span>
-          </h2>
-          <p className="text-gray-300 text-lg mb-8">
-            Stay informed about upcoming legislative sessions and committee meetings.
-          </p>
-          
-          <Card className="bg-gray-900/50 border-white/10">
-            <CardHeader>
-              <Calendar className="h-12 w-12 text-sunset-purple mx-auto mb-4" />
-              <CardTitle className="text-white">Upcoming Sessions</CardTitle>
-              <CardDescription className="text-gray-300">
-                Synced with the official Massachusetts State Government calendar
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button 
-                className="bg-sunset-gradient hover:opacity-90 text-black font-semibold"
-                onClick={() => window.open('https://malegislature.gov/Events', '_blank')}
-              >
-                View Full Calendar
-                <ExternalLink className="ml-2 h-4 w-4" />
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
       {/* Sponsors Side Panel */}
       {selectedBill && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 animate-fade-in">
