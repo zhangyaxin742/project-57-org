@@ -5,10 +5,16 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Badge } from '@/components/ui/badge';
-import { Scale, FileText, Calendar, Users, ExternalLink, Download, TrendingUp, Phone, Mail } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose } from '@/components/ui/dialog';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Scale, FileText, Calendar, Users, ExternalLink, Download, TrendingUp, Phone, Mail, ChevronDown } from 'lucide-react';
 
 const Advocacy = () => {
   const [selectedBill, setSelectedBill] = useState(null);
+  const [textModalOpen, setTextModalOpen] = useState(false);
+  const [sponsorsModalOpen, setSponsorsModalOpen] = useState(false);
+  const [modalBill, setModalBill] = useState(null);
 
 const bills = [
   {
@@ -349,7 +355,7 @@ const bills = [
       {/* Bill Tracker */}
       <section className="py-20 bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-16">
+          <div className="flex items-center justify-between mb-8">
             <h2 className="text-3xl md:text-4xl font-bold">
               Bill <span className="bg-sunset-gradient bg-clip-text text-transparent">Tracker</span>
             </h2>
@@ -358,6 +364,10 @@ const bills = [
               Powered by Billtrack50.com API
             </div>
           </div>
+          
+          <p className="text-gray-400 text-sm max-w-3xl mx-auto text-center mb-16">
+            Several of these bills share identical or nearly identical language, filed by different sponsors to build momentum. The tabs and FAQ below help clarify which versions exist and how they relate.
+          </p>
           
           <Carousel opts={{ loop: true}} className="w-full">
             <CarouselContent className="-ml-2 md:-ml-4">
@@ -382,20 +392,24 @@ const bills = [
                     </CardHeader>
                     <CardContent className="pt-0 mt-auto">
                       <div className="flex gap-2">
-<Button
-  asChild
-  size="sm"
-  className="flex-1 bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
->
-  <a href={bill.url} target="_blank" rel="noopener noreferrer">
-    View Full Text
-  </a>
-</Button>
+                        <Button
+                          size="sm"
+                          className="flex-1 bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
+                          onClick={() => {
+                            setModalBill(bill);
+                            setTextModalOpen(true);
+                          }}
+                        >
+                          View Full Text
+                        </Button>
                         <Button 
                           size="sm"
                           variant="outline"
                           className="flex-1 border-gray-600 text-gray-300 hover:bg-gray-800 transition-all duration-300"
-                          onClick={() => setSelectedBill(bill)}
+                          onClick={() => {
+                            setModalBill(bill);
+                            setSponsorsModalOpen(true);
+                          }}
                         >
                           View Sponsors
                         </Button>
@@ -408,6 +422,29 @@ const bills = [
             <CarouselPrevious className="hidden md:flex -left-12 border-gray-600 bg-black/50 hover:bg-gray-800" />
             <CarouselNext className="hidden md:flex -right-12 border-gray-600 bg-black/50 hover:bg-gray-800" />
           </Carousel>
+          
+          {/* FAQ Section */}
+          <div className="mt-16 max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="item-1" className="bg-black/50 border-white/10 rounded-lg px-6">
+                <AccordionTrigger className="text-gray-300 hover:text-white transition-colors py-6 text-left">
+                  Why are there multiple versions of the same bill?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-300 pb-6">
+                  Different legislators and the Treasurer filed identical bills in the House and Senate to show broad support and ensure the proposal moves procedurally through both chambers.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-2" className="bg-black/50 border-white/10 rounded-lg px-6">
+                <AccordionTrigger className="text-gray-300 hover:text-white transition-colors py-6 text-left">
+                  Which bill should I support or track?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-300 pb-6">
+                  All versions with identical text are effectively the same proposal. We recommend focusing on H.636 and S.421, the primary House and Senate vehicles, while recognizing the Treasurer's filing (H.46) as supportive.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
         </div>
       </section>
 
@@ -541,59 +578,245 @@ const bills = [
         </div>
       </section>
 
-      {/* Sponsors Side Panel */}
-      {selectedBill && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 animate-fade-in">
-          <div className="fixed right-0 top-0 h-full w-full max-w-md bg-black/95 backdrop-blur-md border-l border-white/10 animate-slide-in-right">
-            <div className="p-6 h-full overflow-y-auto pr-2">
-              <div className="flex justify-between items-center mb-6">
-                <h3 className="text-xl font-bold text-white">Sponsors & Contacts</h3>
-                <Button 
-                  variant="ghost" 
-                  size="sm"
-                  onClick={() => setSelectedBill(null)}
-                  className="text-gray-400 hover:text-white"
-                >
-                  ✕
-                </Button>
-              </div>
-              
+      {/* Text Modal */}
+      <Dialog open={textModalOpen} onOpenChange={setTextModalOpen}>
+        <DialogContent className="max-w-4xl max-h-[80vh] bg-black/95 backdrop-blur-md border-white/10 text-white">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-bold">Bill Text</DialogTitle>
+          </DialogHeader>
+          
+          {modalBill && (
+            <div className="overflow-y-auto">
               <div className="mb-4">
-                <h4 className="text-lg font-semibold text-white mb-2">{selectedBill.title}</h4>
-                <p className="text-sunset-orange font-semibold">{selectedBill.number}</p>
+                <h4 className="text-lg font-semibold mb-2">{modalBill.title}</h4>
+                <p className="text-sunset-orange font-semibold">{modalBill.number}</p>
               </div>
               
-              <div className="space-y-4">
-                {selectedBill.sponsors.map((sponsor, index) => (
-                  <div key={index} className="bg-gray-900/50 p-4 rounded-lg border border-white/10">
-                    <div className="flex justify-between items-start mb-2">
-                      <h5 className="text-white font-semibold">{sponsor.name}</h5>
-                      <Badge variant="outline" className="text-xs border-white/20 text-gray-300">
-                        {sponsor.party}
-                      </Badge>
-                    </div>
-                    <p className="text-gray-400 text-sm mb-3">{sponsor.district}</p>
-                    <div className="space-y-2">
-                      <div className="flex items-center text-gray-300 text-sm">
-                        <Mail className="h-4 w-4 mr-2" />
-                        <a href={`mailto:${sponsor.email}`} className="hover:text-sunset-orange transition-colors">
-                          {sponsor.email}
+              {/* For bills with multiple versions, show tabs */}
+              {modalBill.number === "H.636" || modalBill.number === "S.421" || modalBill.number === "H.46" ? (
+                <Tabs defaultValue={modalBill.number} className="w-full">
+                  <TabsList className="grid w-full grid-cols-3 bg-gray-800/50">
+                    <TabsTrigger value="H.46" className="data-[state=active]:bg-sunset-orange/20">
+                      H.46 (Treasurer)
+                    </TabsTrigger>
+                    <TabsTrigger value="S.421" className="data-[state=active]:bg-sunset-orange/20">
+                      S.421 (Senate)
+                    </TabsTrigger>
+                    <TabsTrigger value="H.636" className="data-[state=active]:bg-sunset-orange/20">
+                      H.636 (House)
+                    </TabsTrigger>
+                  </TabsList>
+                  
+                  <TabsContent value="H.46" className="mt-4">
+                    <div className="text-center">
+                      <Button
+                        asChild
+                        className="bg-sunset-gradient hover:opacity-90 text-black font-medium"
+                      >
+                        <a href="https://legiscan.com/MA/text/H46/id/3046995/Massachusetts-2025-H46-Introduced.pdf" target="_blank" rel="noopener noreferrer">
+                          View H.46 Full Text
                         </a>
-                      </div>
-                      <div className="flex items-center text-gray-300 text-sm">
-                        <Phone className="h-4 w-4 mr-2" />
-                        <a href={`tel:${sponsor.phone}`} className="hover:text-sunset-orange transition-colors">
-                          {sponsor.phone}
-                        </a>
-                      </div>
+                      </Button>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  </TabsContent>
+                  
+                  <TabsContent value="S.421" className="mt-4">
+                    <div className="text-center">
+                      <Button
+                        asChild
+                        className="bg-sunset-gradient hover:opacity-90 text-black font-medium"
+                      >
+                        <a href="https://legiscan.com/MA/text/S421/id/3163196/Massachusetts-2025-S421-Introduced.pdf" target="_blank" rel="noopener noreferrer">
+                          View S.421 Full Text
+                        </a>
+                      </Button>
+                    </div>
+                  </TabsContent>
+                  
+                  <TabsContent value="H.636" className="mt-4">
+                    <div className="text-center">
+                      <Button
+                        asChild
+                        className="bg-sunset-gradient hover:opacity-90 text-black font-medium"
+                      >
+                        <a href="https://legiscan.com/MA/text/H636/id/3169916/Massachusetts-2025-H636-Introduced.pdf" target="_blank" rel="noopener noreferrer">
+                          View H.636 Full Text
+                        </a>
+                      </Button>
+                    </div>
+                  </TabsContent>
+                </Tabs>
+              ) : (
+                /* For single version bills */
+                <div className="text-center">
+                  <Button
+                    asChild
+                    className="bg-sunset-gradient hover:opacity-90 text-black font-medium"
+                  >
+                    <a href={modalBill.url} target="_blank" rel="noopener noreferrer">
+                      View Full Text
+                    </a>
+                  </Button>
+                </div>
+              )}
             </div>
-          </div>
-        </div>
-      )}
+          )}
+        </DialogContent>
+      </Dialog>
+
+      {/* Sponsors Modal */}
+      <Dialog open={sponsorsModalOpen} onOpenChange={setSponsorsModalOpen}>
+        <DialogContent className="max-w-4xl max-h-[80vh] bg-black/95 backdrop-blur-md border-white/10 text-white">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-bold">Sponsors & Contacts</DialogTitle>
+          </DialogHeader>
+          
+          {modalBill && (
+            <div className="overflow-y-auto">
+              <div className="mb-4">
+                <h4 className="text-lg font-semibold mb-2">{modalBill.title}</h4>
+                <p className="text-sunset-orange font-semibold">{modalBill.number}</p>
+              </div>
+              
+              {/* For bills with multiple versions, show tabs */}
+              {modalBill.number === "H.636" || modalBill.number === "S.421" || modalBill.number === "H.46" ? (
+                <Tabs defaultValue={modalBill.number} className="w-full">
+                  <TabsList className="grid w-full grid-cols-3 bg-gray-800/50">
+                    <TabsTrigger value="H.46" className="data-[state=active]:bg-sunset-orange/20">
+                      H.46 Sponsors
+                    </TabsTrigger>
+                    <TabsTrigger value="S.421" className="data-[state=active]:bg-sunset-orange/20">
+                      S.421 Sponsors
+                    </TabsTrigger>
+                    <TabsTrigger value="H.636" className="data-[state=active]:bg-sunset-orange/20">
+                      H.636 Sponsors
+                    </TabsTrigger>
+                  </TabsList>
+                  
+                  {/* H.46 Sponsors */}
+                  <TabsContent value="H.46" className="mt-4">
+                    <div className="space-y-4">
+                      <div className="bg-gray-900/50 p-4 rounded-lg border border-white/10">
+                        <div className="flex justify-between items-start mb-2">
+                          <h5 className="text-white font-semibold">Deborah Goldberg</h5>
+                          <Badge variant="outline" className="text-xs border-white/20 text-gray-300">
+                            State Treasurer
+                          </Badge>
+                        </div>
+                        <div className="space-y-2">
+                          <div className="flex items-center text-gray-300 text-sm">
+                            <Mail className="h-4 w-4 mr-2" />
+                            <a href="mailto:dgoldberg@tre.state.ma.us" className="hover:text-sunset-orange transition-colors">
+                              dgoldberg@tre.state.ma.us
+                            </a>
+                          </div>
+                          <div className="flex items-center text-gray-300 text-sm">
+                            <Phone className="h-4 w-4 mr-2" />
+                            <a href="tel:617-367-6900" className="hover:text-sunset-orange transition-colors">
+                              617-367-6900
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </TabsContent>
+                  
+                  {/* S.421 Sponsors */}
+                  <TabsContent value="S.421" className="mt-4">
+                    <div className="space-y-4">
+                      {bills.find(b => b.number === "S.421")?.sponsors.map((sponsor, index) => (
+                        <div key={index} className="bg-gray-900/50 p-4 rounded-lg border border-white/10">
+                          <div className="flex justify-between items-start mb-2">
+                            <h5 className="text-white font-semibold">{sponsor.name}</h5>
+                            <Badge variant="outline" className="text-xs border-white/20 text-gray-300">
+                              {sponsor.party}
+                            </Badge>
+                          </div>
+                          <p className="text-gray-400 text-sm mb-3">{sponsor.district}</p>
+                          <div className="space-y-2">
+                            <div className="flex items-center text-gray-300 text-sm">
+                              <Mail className="h-4 w-4 mr-2" />
+                              <a href={`mailto:${sponsor.email}`} className="hover:text-sunset-orange transition-colors">
+                                {sponsor.email}
+                              </a>
+                            </div>
+                            <div className="flex items-center text-gray-300 text-sm">
+                              <Phone className="h-4 w-4 mr-2" />
+                              <a href={`tel:${sponsor.phone}`} className="hover:text-sunset-orange transition-colors">
+                                {sponsor.phone}
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </TabsContent>
+                  
+                  {/* H.636 Sponsors */}
+                  <TabsContent value="H.636" className="mt-4">
+                    <div className="space-y-4">
+                      {bills.find(b => b.number === "H.636")?.sponsors.map((sponsor, index) => (
+                        <div key={index} className="bg-gray-900/50 p-4 rounded-lg border border-white/10">
+                          <div className="flex justify-between items-start mb-2">
+                            <h5 className="text-white font-semibold">{sponsor.name}</h5>
+                            <Badge variant="outline" className="text-xs border-white/20 text-gray-300">
+                              {sponsor.party}
+                            </Badge>
+                          </div>
+                          <p className="text-gray-400 text-sm mb-3">{sponsor.district}</p>
+                          <div className="space-y-2">
+                            <div className="flex items-center text-gray-300 text-sm">
+                              <Mail className="h-4 w-4 mr-2" />
+                              <a href={`mailto:${sponsor.email}`} className="hover:text-sunset-orange transition-colors">
+                                {sponsor.email}
+                              </a>
+                            </div>
+                            <div className="flex items-center text-gray-300 text-sm">
+                              <Phone className="h-4 w-4 mr-2" />
+                              <a href={`tel:${sponsor.phone}`} className="hover:text-sunset-orange transition-colors">
+                                {sponsor.phone}
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </TabsContent>
+                </Tabs>
+              ) : (
+                /* For single version bills */
+                <div className="space-y-4">
+                  {modalBill.sponsors.map((sponsor, index) => (
+                    <div key={index} className="bg-gray-900/50 p-4 rounded-lg border border-white/10">
+                      <div className="flex justify-between items-start mb-2">
+                        <h5 className="text-white font-semibold">{sponsor.name}</h5>
+                        <Badge variant="outline" className="text-xs border-white/20 text-gray-300">
+                          {sponsor.party}
+                        </Badge>
+                      </div>
+                      <p className="text-gray-400 text-sm mb-3">{sponsor.district}</p>
+                      <div className="space-y-2">
+                        <div className="flex items-center text-gray-300 text-sm">
+                          <Mail className="h-4 w-4 mr-2" />
+                          <a href={`mailto:${sponsor.email}`} className="hover:text-sunset-orange transition-colors">
+                            {sponsor.email}
+                          </a>
+                        </div>
+                        <div className="flex items-center text-gray-300 text-sm">
+                          <Phone className="h-4 w-4 mr-2" />
+                          <a href={`tel:${sponsor.phone}`} className="hover:text-sunset-orange transition-colors">
+                            {sponsor.phone}
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
