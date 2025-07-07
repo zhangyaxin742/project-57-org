@@ -185,7 +185,14 @@ const Enterprise = () => {
           </div>
         </div>
       </section>
-
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
   );
 };
 
