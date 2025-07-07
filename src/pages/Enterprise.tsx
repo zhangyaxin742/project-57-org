@@ -1,8 +1,7 @@
-
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Lightbulb, Trophy, DollarSign, Users, Calendar, ExternalLink, Star, MapPin } from 'lucide-react';
+import { Lightbulb, Trophy, DollarSign, Calendar, ExternalLink, Star, MapPin } from 'lucide-react';
 
 const Enterprise = () => {
   const competitions = [
@@ -50,27 +49,6 @@ const Enterprise = () => {
       location: "Springfield, MA", 
       description: "Local farm produce delivery service for urban communities",
       achievement: "Partnered with 15 local farms"
-    }
-  ];
-
-  const grantOpportunities = [
-    {
-      title: "Youth Entrepreneur Seed Grant",
-      amount: "Up to $10,000",
-      deadline: "Rolling Applications",
-      focus: "Early-stage business development"
-    },
-    {
-      title: "Social Impact Startup Fund",
-      amount: "Up to $25,000", 
-      deadline: "Quarterly Review",
-      focus: "Businesses addressing social issues"
-    },
-    {
-      title: "Tech Innovation Grant",
-      amount: "Up to $15,000",
-      deadline: "Annual Competition",
-      focus: "Technology-driven solutions"
     }
   ];
 
@@ -185,14 +163,7 @@ const Enterprise = () => {
           </div>
         </div>
       </section>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
-  );
-};
   );
 };
 
