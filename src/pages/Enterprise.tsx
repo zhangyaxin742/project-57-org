@@ -82,11 +82,11 @@ const Enterprise = () => {
       <section className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Youth <span className="bg-sunset-gradient bg-clip-text text-transparent">Enterprise</span>
+            <span className="bg-sunset-gradient bg-clip-text text-transparent">Enterprise</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Empowering young entrepreneurs with funding opportunities, mentorship, 
-            and the resources needed to turn ideas into successful businesses.
+            Empowering young entrepreneurs with pitch opportunities, resources, 
+            and the community needed to turn ideas into successful businesses.
           </p>
         </div>
       </section>
@@ -186,82 +186,6 @@ const Enterprise = () => {
         </div>
       </section>
 
-      {/* Grants & Funding */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-            Grants & <span className="bg-sunset-gradient bg-clip-text text-transparent">Funding</span>
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {grantOpportunities.map((grant, index) => (
-              <Card key={index} className="bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300">
-                <CardHeader>
-                  <DollarSign className="h-8 w-8 text-sunset-purple mb-2" />
-                  <CardTitle className="text-white">{grant.title}</CardTitle>
-                  <CardDescription className="text-gray-300">
-                    {grant.focus}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="space-y-2">
-                    <div className="text-sunset-pink font-semibold text-lg">
-                      {grant.amount}
-                    </div>
-                    <div className="text-gray-400 text-sm">
-                      Application: {grant.deadline}
-                    </div>
-                  </div>
-                  <Button 
-                    variant="outline" 
-                    className="w-full border-sunset-pink text-sunset-pink hover:bg-sunset-pink hover:text-white"
-                    onClick={() => window.open('https://airtable.com', '_blank')}
-                  >
-                    Apply via Airtable
-                    <ExternalLink className="ml-2 h-4 w-4" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Mentorship Program */}
-      <section className="py-20 bg-black">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            Mentorship <span className="bg-sunset-gradient bg-clip-text text-transparent">Matching</span>
-          </h2>
-          <p className="text-gray-300 text-lg mb-8">
-            Connect with experienced entrepreneurs and business leaders who can guide your journey.
-          </p>
-          
-          <Card className="bg-gray-900/50 border-white/10 max-w-md mx-auto">
-            <CardHeader>
-              <Users className="h-12 w-12 text-sunset-orange mx-auto mb-4" />
-              <CardTitle className="text-white">1-on-1 Mentorship</CardTitle>
-              <CardDescription className="text-gray-300 space-y-2">
-                <p>• Industry-specific guidance</p>
-                <p>• Business plan development</p>
-                <p>• Networking opportunities</p>
-                <p>• Monthly check-ins</p>
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button 
-                className="w-full bg-sunset-gradient hover:opacity-90 text-black font-semibold"
-              >
-                Join Mentorship Program
-              </Button>
-              <p className="text-xs text-gray-400 mt-2">
-                Program details coming soon
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-    </div>
   );
 };
 
