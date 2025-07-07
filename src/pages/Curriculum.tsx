@@ -64,7 +64,7 @@ const Curriculum = () => {
           </p>
           <Button 
             className="bg-sunset-gradient hover:opacity-90 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
-            onClick={() => window.open('https://forms.google.com', '_blank')}
+            onClick={() => window.open('https://forms.gle/6m6XJQ4eYGyS5TG8A', '_blank')}
           >
             Feeling confident? Test your financial literacy knowledge today →
             <ExternalLink className="ml-2 h-4 w-4" />
