@@ -1,38 +1,51 @@
-
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { BookOpen, Users, Clock, ExternalLink, Lock, FileText } from 'lucide-react';
+import { Users, ExternalLink, MapPin, Download, Handshake } from 'lucide-react';
 
 const Curriculum = () => {
-  const courses = [
+  const curriculumModules = [
     {
       title: "Personal Finance Fundamentals",
       description: "Master budgeting, saving, and basic financial planning",
       duration: "6 weeks",
-      level: "Beginner",
-      format: "In-person & Virtual"
+      enrolled: 1247
     },
     {
       title: "Investment Literacy for Teens",
       description: "Learn about stocks, bonds, and long-term wealth building",
-      duration: "4 weeks", 
-      level: "Intermediate",
-      format: "Virtual"
+      duration: "4 weeks",
+      enrolled: 892
     },
     {
       title: "Credit & Debt Management",
       description: "Understanding credit scores, loans, and responsible borrowing",
       duration: "3 weeks",
-      level: "Beginner",
-      format: "In-person"
+      enrolled: 634
     },
     {
       title: "Entrepreneurship & Business Finance",
       description: "Financial planning for young entrepreneurs",
       duration: "8 weeks",
-      level: "Advanced", 
-      format: "Hybrid"
+      enrolled: 456
+    }
+  ];
+
+  const workshops = [
+    {
+      title: "Financial Planning Workshop",
+      location: "Virtual",
+      date: "Dec 15, 2024"
+    },
+    {
+      title: "Youth Entrepreneurship Bootcamp",
+      location: "Boston, MA",
+      date: "Jan 20, 2025"
+    },
+    {
+      title: "Credit Building Masterclass",
+      location: "Virtual",
+      date: "Feb 10, 2025"
     }
   ];
 
@@ -47,48 +60,47 @@ const Curriculum = () => {
             <span className="bg-sunset-gradient bg-clip-text text-transparent">PFin</span> Curriculum
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Comprehensive financial literacy education designed by youth, for youth. 
-            Build the skills you need for financial independence.
+            Peer-designed personal finance curriculum that makes complex financial concepts accessible, engaging, and culturally relevant.
           </p>
           <Button 
             className="bg-sunset-gradient hover:opacity-90 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
             onClick={() => window.open('https://forms.google.com', '_blank')}
           >
-            Test Your Financial Literacy Now
+            Feeling confident? Test your financial literacy knowledge today →
             <ExternalLink className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </section>
 
-      {/* Courses Grid */}
-      <section className="py-20 bg-gray-900">
+      {/* Curriculum Modules Section */}
+      <section className="py-20 bg-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-            Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Courses</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-white">
+            Curriculum Modules
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {courses.map((course, index) => (
-              <Card key={index} className="bg-black/50 border-white/10 hover:border-sunset-pink/50 transition-all duration-300 hover:scale-105">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {curriculumModules.map((module, index) => (
+              <Card 
+                key={index} 
+                className="bg-black/50 border-white/10 hover:border-sunset-pink/50 transition-all duration-300 hover:scale-105 animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <BookOpen className="h-6 w-6 text-sunset-orange" />
-                    <span className="text-sm text-sunset-pink font-semibold">{course.level}</span>
-                  </div>
-                  <CardTitle className="text-white">{course.title}</CardTitle>
-                  <CardDescription className="text-gray-300">{course.description}</CardDescription>
+                  <CardTitle className="text-white">{module.title}</CardTitle>
+                  <CardDescription className="text-gray-300">{module.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <div className="flex items-center gap-4 text-sm text-gray-400">
-                    <div className="flex items-center gap-1">
-                      <Clock className="h-4 w-4" />
-                      {course.duration}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Users className="h-4 w-4" />
-                      {course.format}
-                    </div>
+                <CardContent className="space-y-4">
+                  <div className="text-sm text-gray-400">{module.duration}</div>
+                  <div className="flex items-center gap-2 text-gray-400">
+                    <Users className="h-4 w-4" />
+                    <span className="text-sm">{module.enrolled.toLocaleString()} learners</span>
                   </div>
+                  <Button 
+                    className="w-full bg-sunset-gradient hover:opacity-90 text-white transition-all duration-300 hover:scale-105"
+                  >
+                    Start Learning
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -96,55 +108,101 @@ const Curriculum = () => {
         </div>
       </section>
 
-      {/* Educator Portal */}
-      <section className="py-20 bg-black">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            <span className="bg-sunset-gradient bg-clip-text text-transparent">Educator</span> Portal
-          </h2>
-          <p className="text-gray-300 text-lg mb-8">
-            Access exclusive teaching resources, lesson plans, and curriculum guides.
-          </p>
+      {/* Workshops & Events Section */}
+      <section className="py-20 bg-gray-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 md:mb-0">
+              Workshops & Events
+            </h2>
+            <Button 
+              className="bg-sunset-gradient hover:opacity-90 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+              onClick={() => window.open('https://forms.google.com', '_blank')}
+            >
+              Request a Workshop
+              <ExternalLink className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
           
-          <Card className="bg-gray-900/50 border-white/10 max-w-md mx-auto">
-            <CardHeader>
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <Lock className="h-6 w-6 text-sunset-purple" />
-                <FileText className="h-6 w-6 text-sunset-orange" />
-              </div>
-              <CardTitle className="text-white">Restricted Access</CardTitle>
-              <CardDescription className="text-gray-300">
-                Available only to verified educators with institutional email addresses
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button 
-                variant="outline" 
-                className="w-full border-sunset-pink text-sunset-pink hover:bg-sunset-pink hover:text-white"
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {workshops.map((workshop, index) => (
+              <Card 
+                key={index} 
+                className="bg-black/50 border-white/10 hover:border-sunset-pink/50 transition-all duration-300 hover:scale-105"
               >
-                Request Educator Access
-              </Button>
-            </CardContent>
-          </Card>
+                <CardHeader>
+                  <CardTitle className="text-white">{workshop.title}</CardTitle>
+                  <div className="flex items-center gap-2 text-gray-400">
+                    <MapPin className="h-4 w-4" />
+                    <span className="text-sm">{workshop.location}</span>
+                  </div>
+                  <div className="text-sunset-orange font-semibold">{workshop.date}</div>
+                </CardHeader>
+                <CardContent>
+                  <Button 
+                    className="w-full bg-sunset-gradient hover:opacity-90 text-white transition-all duration-300 hover:scale-105"
+                  >
+                    Register Now
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Partnership Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            Partner <span className="bg-sunset-gradient bg-clip-text text-transparent">with Us</span>
+      {/* Educator Portal Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-white">
+            Educator Portal
           </h2>
-          <p className="text-gray-300 text-lg mb-8">
-            Bring financial literacy education to your school or organization.
-          </p>
-          <Button 
-            className="bg-gradient-to-r from-sunset-orange to-sunset-pink hover:opacity-90 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
-            onClick={() => window.open('https://forms.google.com', '_blank')}
-          >
-            Partnership Application
-            <ExternalLink className="ml-2 h-4 w-4" />
-          </Button>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Downloadable Resources Card */}
+            <Card className="bg-gray-900/50 border-white/10 hover:border-sunset-pink/50 transition-all duration-300 hover:scale-105 text-center animate-fade-in">
+              <CardHeader>
+                <div className="flex items-center justify-center mb-4">
+                  <div className="w-16 h-16 rounded-full bg-sunset-gradient flex items-center justify-center">
+                    <Download className="h-8 w-8 text-white" />
+                  </div>
+                </div>
+                <CardTitle className="text-white">Downloadable Resources</CardTitle>
+                <CardDescription className="text-gray-300">
+                  Access comprehensive teaching materials, lesson plans, and interactive activities designed by students for educators nationwide.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button 
+                  className="w-full bg-sunset-gradient hover:opacity-90 text-white transition-all duration-300 hover:scale-105"
+                >
+                  Download Resources
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Classroom Collaboration Card */}
+            <Card className="bg-gray-900/50 border-white/10 hover:border-sunset-pink/50 transition-all duration-300 hover:scale-105 text-center animate-fade-in">
+              <CardHeader>
+                <div className="flex items-center justify-center mb-4">
+                  <div className="w-16 h-16 rounded-full bg-sunset-gradient flex items-center justify-center">
+                    <Handshake className="h-8 w-8 text-white" />
+                  </div>
+                </div>
+                <CardTitle className="text-white">Classroom Collaboration</CardTitle>
+                <CardDescription className="text-gray-300">
+                  Partner with Project 57 to bring peer-to-peer financial education directly to your classroom through our student ambassador program.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button 
+                  className="w-full bg-sunset-gradient hover:opacity-90 text-white transition-all duration-300 hover:scale-105"
+                >
+                  Partner with Us
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
     </div>
