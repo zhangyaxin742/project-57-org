@@ -5,138 +5,124 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Badge } from '@/components/ui/badge';
-import { Scale, FileText, Calendar, Users, ExternalLink, Download, TrendingUp, Phone, Mail } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { Scale, FileText, Calendar, Users, ExternalLink, Download, TrendingUp, Phone, Mail, ChevronDown } from 'lucide-react';
 
 const Advocacy = () => {
   const [selectedBill, setSelectedBill] = useState(null);
+  const [activeModal, setActiveModal] = useState(null);
+  const [openFaq1, setOpenFaq1] = useState(false);
+  const [openFaq2, setOpenFaq2] = useState(false);
 
 const bills = [
   {
-    id: 1,
+    id: 999,
     title: (
       <>
       An Act <br /> 
         Requiring Financial Education in Schools </>
-      ),
-    number: "H.46",
+    ),
+    number: "H.46/S.421/H.636",
     summary: "Requires comprehensive financial literacy education in all Massachusetts high schools. Establishes minimum curriculum standards and teacher certification requirements.",
     status: "In Committee",
-    url: "https://legiscan.com/MA/text/H46/id/3046995/Massachusetts-2025-H46-Introduced.pdf",
-    sponsors: [
-      {
-        name: "Deborah Goldberg",
-        party: "State Treasurer",
-        district: "",
-        email: "dgoldberg@tre.state.ma.us",
-        phone: "617-367-6900"
-      }
-    ]
-  },
-  {
-    id: 2,
-    title: (
-      <>
-      An Act <br /> 
-        Requiring Financial Education in Schools </>
-      ),
-    number: "S.421",
-    summary:
-      "Expands access to banking services for minors with parental consent. Creates new pathways for financial independence among teens.",
-    status: "Introduced",
-    url: "https://legiscan.com/MA/text/S421/id/3163196/Massachusetts-2025-S421-Introduced.pdf",
-    sponsors: [
-      {
-        name: "Sen. James Eldridge",
-        party: "D",
-        district: "Middlesex and Worcester",
-        email: "James.Eldridge@masenate.gov",
-        phone: "(617) 722-1120"
-      },
-      {
-        name: "Sen. Patrick O'Connor",
-        party: "R",
-        district: "First Plymouth and Norfolk",
-        email: "Patrick.OConnor@masenate.gov",
-        phone: "(617) 722-1646"
-      },
-      {
-        name: "Sen. John Keenan",
-        party: "D",
-        district: "Norfolk and Plymouth",
-        email: "John.Keenan@masenate.gov",
-        phone: "(617) 722-1494"
-      },
-      {
-        name: "Deborah Goldberg",
-        party: "State Treasurer",
-        district: "",
-        email: "dgoldberg@tre.state.ma.us",
-        phone: "617-367-6900"
-      }
-    ]
-  },
-  {
-    id: 3,
-    title: (
-      <>
-      An Act <br /> 
-        Requiring Financial Education in Schools </>
-      ),
-    number: "H.636",
-    summary:
-      "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
-    status: "Introduced",
-    url: "https://legiscan.com/MA/text/H636/id/3169916/Massachusetts-2025-H636-Introduced.pdf",
-    sponsors: [
-      {
-        name: "Rep. Kate Lipper-Garabedian",
-        party: "D",
-        district: "32nd Middlesex",
-        email: "kate.lipper-garabedian@mahouse.gov",
-        phone: "(617) 722-2960"
-      },
-      {
-        name: "Rep. Steven Ultrino",
-        party: "D",
-        district: "33rd Middlesex",
-        email: "Steven.Ultrino@mahouse.gov",
-        phone: "(617) 722-2877"
-      },
-      {
-        name: "Rep. Mindy Domb",
-        party: "D",
-        district: "3rd Hampshire",
-        email: "mindy.domb@mahouse.gov",
-        phone: "(617) 722-2060"
-      },
-      {
-        name: "Sen. James Eldridge",
-        party: "D",
-        district: "Middlesex and Worcester",
-        email: "James.Eldridge@masenate.gov",
-        phone: "(617) 722-1120"
-      },
-      {
-        name: "Rep. Russell Holmes",
-        party: "D",
-        district: "6th Suffolk",
-        email: "Russell.Holmes@mahouse.gov",
-        phone: "(617) 722-2220"
-      },
-      {
-        name: "Rep. Mark Sylvia",
-        party: "D",
-        district: "10th Bristol",
-        email: "Mark.Sylvia@mahouse.gov",
-        phone: "(617) 722-2400"
-      },
-      {
-        name: "Deborah Goldberg",
-        party: "State Treasurer",
-        district: "",
-        email: "dgoldberg@tre.state.ma.us",
-        phone: "617-367-6900"
-      }
+    urls: [
+      "https://legiscan.com/MA/text/H46/id/3046995/Massachusetts-2025-H46-Introduced.pdf",
+      "https://legiscan.com/MA/text/S421/id/3163196/Massachusetts-2025-S421-Introduced.pdf",
+      "https://legiscan.com/MA/text/H636/id/3169916/Massachusetts-2025-H636-Introduced.pdf"
+    ],
+    sponsorsByBill: [
+      [
+        {
+          name: "Deborah Goldberg",
+          party: "State Treasurer",
+          district: "",
+          email: "dgoldberg@tre.state.ma.us",
+          phone: "617-367-6900"
+        }
+      ],
+      [
+        {
+          name: "Sen. James Eldridge",
+          party: "D",
+          district: "Middlesex and Worcester",
+          email: "James.Eldridge@masenate.gov",
+          phone: "(617) 722-1120"
+        },
+        {
+          name: "Sen. Patrick O'Connor",
+          party: "R",
+          district: "First Plymouth and Norfolk",
+          email: "Patrick.OConnor@masenate.gov",
+          phone: "(617) 722-1646"
+        },
+        {
+          name: "Sen. John Keenan",
+          party: "D",
+          district: "Norfolk and Plymouth",
+          email: "John.Keenan@masenate.gov",
+          phone: "(617) 722-1494"
+        },
+        {
+          name: "Deborah Goldberg",
+          party: "State Treasurer",
+          district: "",
+          email: "dgoldberg@tre.state.ma.us",
+          phone: "617-367-6900"
+        }
+      ],
+      [
+        {
+          name: "Rep. Kate Lipper-Garabedian",
+          party: "D",
+          district: "32nd Middlesex",
+          email: "kate.lipper-garabedian@mahouse.gov",
+          phone: "(617) 722-2960"
+        },
+        {
+          name: "Rep. Steven Ultrino",
+          party: "D",
+          district: "33rd Middlesex",
+          email: "Steven.Ultrino@mahouse.gov",
+          phone: "(617) 722-2877"
+        },
+        {
+          name: "Rep. Mindy Domb",
+          party: "D",
+          district: "3rd Hampshire",
+          email: "mindy.domb@mahouse.gov",
+          phone: "(617) 722-2060"
+        },
+        {
+          name: "Sen. James Eldridge",
+          party: "D",
+          district: "Middlesex and Worcester",
+          email: "James.Eldridge@masenate.gov",
+          phone: "(617) 722-1120"
+        },
+        {
+          name: "Rep. Russell Holmes",
+          party: "D",
+          district: "6th Suffolk",
+          email: "Russell.Holmes@mahouse.gov",
+          phone: "(617) 722-2220"
+        },
+        {
+          name: "Rep. Mark Sylvia",
+          party: "D",
+          district: "10th Bristol",
+          email: "Mark.Sylvia@mahouse.gov",
+          phone: "(617) 722-2400"
+        },
+        {
+          name: "Deborah Goldberg",
+          party: "State Treasurer",
+          district: "",
+          email: "dgoldberg@tre.state.ma.us",
+          phone: "617-367-6900"
+        }
+      ]
     ]
   },
   {
@@ -349,13 +335,43 @@ const bills = [
       {/* Bill Tracker */}
       <section className="py-20 bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-16">
+          <div className="flex items-center justify-between mb-8">
             <h2 className="text-3xl md:text-4xl font-bold">
               Bill <span className="bg-sunset-gradient bg-clip-text text-transparent">Tracker</span>
             </h2>
             <div className="text-sm text-gray-400 flex items-center gap-2">
               <TrendingUp className="h-4 w-4" />
               Powered by Billtrack50.com API
+            </div>
+          </div>
+          
+          {/* Subheading */}
+          <p className="text-gray-400 text-sm max-w-3xl mb-8">
+            Multiple identical bills have been filed to show unified support. They are grouped here for clarity.
+          </p>
+          
+          {/* FAQ Section */}
+          <div className="mb-16 max-w-4xl">
+            <div className="space-y-4">
+              <Collapsible open={openFaq1} onOpenChange={setOpenFaq1}>
+                <CollapsibleTrigger className="flex items-center justify-between w-full p-4 bg-black/50 border border-white/10 rounded-lg text-gray-300 hover:bg-gray-800 transition-all duration-300">
+                  <span className="font-medium">Why are there multiple versions of the same bill?</span>
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openFaq1 ? 'rotate-180' : ''}`} />
+                </CollapsibleTrigger>
+                <CollapsibleContent className="p-4 bg-black/50 border border-white/10 border-t-0 rounded-b-lg text-gray-300">
+                  Different legislators and the Treasurer filed identical bills in the House and Senate to show broad support and ensure the proposal moves procedurally through both chambers.
+                </CollapsibleContent>
+              </Collapsible>
+              
+              <Collapsible open={openFaq2} onOpenChange={setOpenFaq2}>
+                <CollapsibleTrigger className="flex items-center justify-between w-full p-4 bg-black/50 border border-white/10 rounded-lg text-gray-300 hover:bg-gray-800 transition-all duration-300">
+                  <span className="font-medium">What should I support?</span>
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openFaq2 ? 'rotate-180' : ''}`} />
+                </CollapsibleTrigger>
+                <CollapsibleContent className="p-4 bg-black/50 border border-white/10 border-t-0 rounded-b-lg text-gray-300">
+                  All versions with identical text are effectively the same proposal. We recommend focusing on H.636 and S.421, the primary House and Senate vehicles, while recognizing the Treasurer's filing (H.46) as supportive.
+                </CollapsibleContent>
+              </Collapsible>
             </div>
           </div>
           
@@ -382,20 +398,36 @@ const bills = [
                     </CardHeader>
                     <CardContent className="pt-0 mt-auto">
                       <div className="flex gap-2">
-<Button
-  asChild
-  size="sm"
-  className="flex-1 bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
->
-  <a href={bill.url} target="_blank" rel="noopener noreferrer">
-    View Full Text
-  </a>
-</Button>
+                        {bill.urls ? (
+                          <Button
+                            size="sm"
+                            className="flex-1 bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
+                            onClick={() => {
+                              setSelectedBill(bill);
+                              setActiveModal('text');
+                            }}
+                          >
+                            View Text
+                          </Button>
+                        ) : (
+                          <Button
+                            asChild
+                            size="sm"
+                            className="flex-1 bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
+                          >
+                            <a href={bill.url} target="_blank" rel="noopener noreferrer">
+                              View Full Text
+                            </a>
+                          </Button>
+                        )}
                         <Button 
                           size="sm"
                           variant="outline"
                           className="flex-1 border-gray-600 text-gray-300 hover:bg-gray-800 transition-all duration-300"
-                          onClick={() => setSelectedBill(bill)}
+                          onClick={() => {
+                            setSelectedBill(bill);
+                            setActiveModal(bill.sponsorsByBill ? 'sponsors' : 'sponsors-single');
+                          }}
                         >
                           View Sponsors
                         </Button>
@@ -541,29 +573,168 @@ const bills = [
         </div>
       </section>
 
-      {/* Sponsors Side Panel */}
-      {selectedBill && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 animate-fade-in">
-          <div className="fixed right-0 top-0 h-full w-full max-w-md bg-black/95 backdrop-blur-md border-l border-white/10 animate-slide-in-right">
-            <div className="p-6 h-full overflow-y-auto pr-2">
-              <div className="flex justify-between items-center mb-6">
-                <h3 className="text-xl font-bold text-white">Sponsors & Contacts</h3>
-                <Button 
-                  variant="ghost" 
-                  size="sm"
-                  onClick={() => setSelectedBill(null)}
-                  className="text-gray-400 hover:text-white"
-                >
-                  ✕
-                </Button>
-              </div>
-              
-              <div className="mb-4">
-                <h4 className="text-lg font-semibold text-white mb-2">{selectedBill.title}</h4>
-                <p className="text-sunset-orange font-semibold">{selectedBill.number}</p>
-              </div>
-              
-              <div className="space-y-4">
+      {/* Tabbed Modals */}
+      {selectedBill && activeModal && (
+        <Dialog open={!!activeModal} onOpenChange={() => setActiveModal(null)}>
+          <DialogContent className="max-w-4xl max-h-[80vh] bg-black/95 border-white/10 text-white">
+            <DialogHeader>
+              <DialogTitle className="text-xl font-bold">
+                {activeModal === 'text' ? 'Bill Text' : 'Sponsors & Contacts'}
+              </DialogTitle>
+            </DialogHeader>
+            
+            <div className="mb-4">
+              <h4 className="text-lg font-semibold text-white mb-2">{selectedBill.title}</h4>
+              <p className="text-sunset-orange font-semibold">{selectedBill.number}</p>
+            </div>
+            
+            {selectedBill.urls && activeModal === 'text' ? (
+              <Tabs defaultValue="h46" className="w-full">
+                <TabsList className="grid w-full grid-cols-3 bg-gray-800">
+                  <TabsTrigger value="h46" className="text-white">H.46</TabsTrigger>
+                  <TabsTrigger value="s421" className="text-white">S.421</TabsTrigger>
+                  <TabsTrigger value="h636" className="text-white">H.636</TabsTrigger>
+                </TabsList>
+                <TabsContent value="h46" className="mt-4">
+                  <div className="p-4 bg-gray-900/50 rounded-lg border border-white/10">
+                    <h5 className="text-white font-semibold mb-3">House Bill 46 - Treasurer Filing</h5>
+                    <Button 
+                      asChild
+                      className="bg-sunset-gradient hover:opacity-90 text-black font-medium"
+                    >
+                      <a href={selectedBill.urls[0]} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        View Full Text
+                      </a>
+                    </Button>
+                  </div>
+                </TabsContent>
+                <TabsContent value="s421" className="mt-4">
+                  <div className="p-4 bg-gray-900/50 rounded-lg border border-white/10">
+                    <h5 className="text-white font-semibold mb-3">Senate Bill 421 - Senate Version</h5>
+                    <Button 
+                      asChild
+                      className="bg-sunset-gradient hover:opacity-90 text-black font-medium"
+                    >
+                      <a href={selectedBill.urls[1]} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        View Full Text
+                      </a>
+                    </Button>
+                  </div>
+                </TabsContent>
+                <TabsContent value="h636" className="mt-4">
+                  <div className="p-4 bg-gray-900/50 rounded-lg border border-white/10">
+                    <h5 className="text-white font-semibold mb-3">House Bill 636 - House Version</h5>
+                    <Button 
+                      asChild
+                      className="bg-sunset-gradient hover:opacity-90 text-black font-medium"
+                    >
+                      <a href={selectedBill.urls[2]} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        View Full Text
+                      </a>
+                    </Button>
+                  </div>
+                </TabsContent>
+              </Tabs>
+            ) : selectedBill.sponsorsByBill && activeModal === 'sponsors' ? (
+              <Tabs defaultValue="h46" className="w-full">
+                <TabsList className="grid w-full grid-cols-3 bg-gray-800">
+                  <TabsTrigger value="h46" className="text-white">H.46</TabsTrigger>
+                  <TabsTrigger value="s421" className="text-white">S.421</TabsTrigger>
+                  <TabsTrigger value="h636" className="text-white">H.636</TabsTrigger>
+                </TabsList>
+                <TabsContent value="h46" className="mt-4">
+                  <div className="space-y-4 max-h-96 overflow-y-auto">
+                    {selectedBill.sponsorsByBill[0].map((sponsor, index) => (
+                      <div key={index} className="bg-gray-900/50 p-4 rounded-lg border border-white/10">
+                        <div className="flex justify-between items-start mb-2">
+                          <h5 className="text-white font-semibold">{sponsor.name}</h5>
+                          <Badge variant="outline" className="text-xs border-white/20 text-gray-300">
+                            {sponsor.party}
+                          </Badge>
+                        </div>
+                        <p className="text-gray-400 text-sm mb-3">{sponsor.district}</p>
+                        <div className="space-y-2">
+                          <div className="flex items-center text-gray-300 text-sm">
+                            <Mail className="h-4 w-4 mr-2" />
+                            <a href={`mailto:${sponsor.email}`} className="hover:text-sunset-orange transition-colors">
+                              {sponsor.email}
+                            </a>
+                          </div>
+                          <div className="flex items-center text-gray-300 text-sm">
+                            <Phone className="h-4 w-4 mr-2" />
+                            <a href={`tel:${sponsor.phone}`} className="hover:text-sunset-orange transition-colors">
+                              {sponsor.phone}
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </TabsContent>
+                <TabsContent value="s421" className="mt-4">
+                  <div className="space-y-4 max-h-96 overflow-y-auto">
+                    {selectedBill.sponsorsByBill[1].map((sponsor, index) => (
+                      <div key={index} className="bg-gray-900/50 p-4 rounded-lg border border-white/10">
+                        <div className="flex justify-between items-start mb-2">
+                          <h5 className="text-white font-semibold">{sponsor.name}</h5>
+                          <Badge variant="outline" className="text-xs border-white/20 text-gray-300">
+                            {sponsor.party}
+                          </Badge>
+                        </div>
+                        <p className="text-gray-400 text-sm mb-3">{sponsor.district}</p>
+                        <div className="space-y-2">
+                          <div className="flex items-center text-gray-300 text-sm">
+                            <Mail className="h-4 w-4 mr-2" />
+                            <a href={`mailto:${sponsor.email}`} className="hover:text-sunset-orange transition-colors">
+                              {sponsor.email}
+                            </a>
+                          </div>
+                          <div className="flex items-center text-gray-300 text-sm">
+                            <Phone className="h-4 w-4 mr-2" />
+                            <a href={`tel:${sponsor.phone}`} className="hover:text-sunset-orange transition-colors">
+                              {sponsor.phone}
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </TabsContent>
+                <TabsContent value="h636" className="mt-4">
+                  <div className="space-y-4 max-h-96 overflow-y-auto">
+                    {selectedBill.sponsorsByBill[2].map((sponsor, index) => (
+                      <div key={index} className="bg-gray-900/50 p-4 rounded-lg border border-white/10">
+                        <div className="flex justify-between items-start mb-2">
+                          <h5 className="text-white font-semibold">{sponsor.name}</h5>
+                          <Badge variant="outline" className="text-xs border-white/20 text-gray-300">
+                            {sponsor.party}
+                          </Badge>
+                        </div>
+                        <p className="text-gray-400 text-sm mb-3">{sponsor.district}</p>
+                        <div className="space-y-2">
+                          <div className="flex items-center text-gray-300 text-sm">
+                            <Mail className="h-4 w-4 mr-2" />
+                            <a href={`mailto:${sponsor.email}`} className="hover:text-sunset-orange transition-colors">
+                              {sponsor.email}
+                            </a>
+                          </div>
+                          <div className="flex items-center text-gray-300 text-sm">
+                            <Phone className="h-4 w-4 mr-2" />
+                            <a href={`tel:${sponsor.phone}`} className="hover:text-sunset-orange transition-colors">
+                              {sponsor.phone}
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </TabsContent>
+              </Tabs>
+            ) : activeModal === 'sponsors-single' && selectedBill.sponsors ? (
+              <div className="space-y-4 max-h-96 overflow-y-auto">
                 {selectedBill.sponsors.map((sponsor, index) => (
                   <div key={index} className="bg-gray-900/50 p-4 rounded-lg border border-white/10">
                     <div className="flex justify-between items-start mb-2">
@@ -590,9 +761,9 @@ const bills = [
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-        </div>
+            ) : null}
+          </DialogContent>
+        </Dialog>
       )}
     </div>
   );
