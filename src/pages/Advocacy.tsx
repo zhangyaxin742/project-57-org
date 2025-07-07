@@ -19,7 +19,7 @@ const bills = [
         Requiring Financial Education in Schools </>
       ),
     number: "H.46",
-    summary:
+    summary: "eg"
       "Requires comprehensive financial literacy education in all Massachusetts high schools. Establishes minimum curriculum standards and teacher certification requirements.",
     status: "In Committee",
     url: "https://legiscan.com/MA/text/H46/id/3046995/Massachusetts-2025-H46-Introduced.pdf",
@@ -250,6 +250,26 @@ const bills = [
         district: "10th Middlesex",
         email: "John.Lawn@mahouse.gov",
         phone: "(617) 722-2430"
+      }
+    ]
+  }, 
+  {
+    id: 7, 
+    title: ( 
+      <> 
+      An Act <br /> 
+        Relative to Personal Financial Literacy </>
+      ),
+    number: "H.594", 
+    summary: "hamilton!!", 
+    url: "https://legiscan.com/MA/text/H594/id/3170318/Massachusetts-2025-H594-Introduced.pdf", 
+    sponsors: [
+      {
+        name: "Ryan Hamilton", 
+        party: "D", 
+        district: "15th Essex", 
+        email: "Ryan.Hamilton@mahouse.gov", 
+        phone: "(617) 722-2090"
       }
     ]
   }
