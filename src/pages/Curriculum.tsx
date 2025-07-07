@@ -151,6 +151,16 @@ const Curriculum = () => {
         </div>
       </section>
 
+      <section className="py-20 bg-black">
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+      Educator Portal
+    </h2>
+    <p className="text-gray-400 text-lg">
+      This section is coming soon. Check back later for educator resources and classroom partnerships!
+    </p>
+  </div>
+</section>
     
       {/* Educator Portal Section
       <section className="py-20 bg-black">
