@@ -60,7 +60,7 @@ const Curriculum = () => {
             <span className="bg-sunset-gradient bg-clip-text text-transparent"> Curriculum </span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Personal finance curriculum designed by youth, for youth -- aiming to make financial concepts accessible, engaging, and relevant.
+            Personal finance curriculum designed by youth, for youth — aiming to make financial concepts accessible, engaging, and relevant.
           </p>
           <Button 
             className="bg-sunset-gradient hover:opacity-90 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
