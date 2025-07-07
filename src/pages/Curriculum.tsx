@@ -60,7 +60,7 @@ const Curriculum = () => {
             <span className="bg-sunset-gradient bg-clip-text text-transparent"> Curriculum </span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Peer-designed curriculum aiming to make financial concepts accessible, engaging, and <em> relevant </em> for youth.
+            Peer-designed courses aiming to make financial concepts accessible, engaging, and relevant for youth.
           </p>
           <Button 
             className="bg-sunset-gradient hover:opacity-90 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
@@ -76,7 +76,7 @@ const Curriculum = () => {
       <section className="py-20 bg-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-white">
-            Curriculum Modules
+            Our Modules
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -151,15 +151,17 @@ const Curriculum = () => {
         </div>
       </section>
 
-      {/* Educator Portal Section */}
+    
+      {/* Educator Portal Section
       <section className="py-20 bg-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-white">
-            Educator Portal
+            Educator Portal 
           </h2>
-          
+
+        
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Downloadable Resources Card */}
+            {/* Downloadable Resources Card 
             <Card className="bg-gray-900/50 border-white/10 hover:border-sunset-pink/50 transition-all duration-300 hover:scale-105 text-center animate-fade-in">
               <CardHeader>
                 <div className="flex items-center justify-center mb-4">
@@ -181,7 +183,7 @@ const Curriculum = () => {
               </CardContent>
             </Card>
 
-            {/* Classroom Collaboration Card */}
+            {/* Classroom Collaboration Card 
             <Card className="bg-gray-900/50 border-white/10 hover:border-sunset-pink/50 transition-all duration-300 hover:scale-105 text-center animate-fade-in">
               <CardHeader>
                 <div className="flex items-center justify-center mb-4">
@@ -205,6 +207,7 @@ const Curriculum = () => {
           </div>
         </div>
       </section>
+      */ } 
     </div>
   );
 };
