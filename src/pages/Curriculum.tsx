@@ -147,7 +147,7 @@ const Curriculum = () => {
           </Button>
         </div>
       </section>
-
+    </div>
   );
 };
 
