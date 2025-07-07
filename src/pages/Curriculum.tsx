@@ -36,24 +36,6 @@ const Curriculum = () => {
     }
   ];
 
-  const testimonials = [
-    {
-      name: "Maya Chen",
-      school: "Boston Latin School",
-      quote: "The investment course completely changed how I think about my future financial goals."
-    },
-    {
-      name: "Marcus Johnson", 
-      school: "Cambridge Rindge & Latin",
-      quote: "Learning about credit scores at 16 gave me such a head start on my peers."
-    },
-    {
-      name: "Sofia Rodriguez",
-      school: "Newton North High School", 
-      quote: "The entrepreneurship workshop helped me launch my small business with confidence."
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-black text-white">
       <Navigation />
