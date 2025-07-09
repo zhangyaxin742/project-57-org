@@ -11,6 +11,7 @@ import Advocacy from "./pages/Advocacy";
 import Enterprise from "./pages/Enterprise";
 import About from "./pages/About";
 import GetInvolved from "./pages/GetInvolved";
+import Footer from "./components/Footer";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,8 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer />
+      </BrowserRouter>>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
