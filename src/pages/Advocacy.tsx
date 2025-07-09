@@ -326,8 +326,8 @@ const bills = [
          <span className="bg-sunset-gradient bg-clip-text text-transparent">Advocacy</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Track key legislation, read our research, and take action 
-            to mandate financial literacy education in schools across Massachusetts.
+            Track financial literacy legislation, access policy resources, and take action 
+            to create systemic change in Massachusetts.
           </p>
         </div>
       </section>
@@ -349,6 +349,31 @@ const bills = [
           <p className="text-gray-400 text-sm max-w-3xl mb-8">
             Multiple identical bills have been filed to show unified support. They are grouped here for clarity.
           </p>
+          
+          {/* FAQ Section */}
+          <div className="mb-16 max-w-4xl">
+            <div className="space-y-4">
+              <Collapsible open={openFaq1} onOpenChange={setOpenFaq1}>
+                <CollapsibleTrigger className="flex items-center justify-between w-full p-4 bg-black/50 border border-white/10 rounded-lg text-gray-300 hover:bg-gray-800 transition-all duration-300">
+                  <span className="font-medium">Why are there multiple versions of the same bill?</span>
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openFaq1 ? 'rotate-180' : ''}`} />
+                </CollapsibleTrigger>
+                <CollapsibleContent className="p-4 bg-black/50 border border-white/10 border-t-0 rounded-b-lg text-gray-300">
+                  Different legislators and the Treasurer filed identical bills in the House and Senate to show broad support and ensure the proposal moves procedurally through both chambers.
+                </CollapsibleContent>
+              </Collapsible>
+              
+              <Collapsible open={openFaq2} onOpenChange={setOpenFaq2}>
+                <CollapsibleTrigger className="flex items-center justify-between w-full p-4 bg-black/50 border border-white/10 rounded-lg text-gray-300 hover:bg-gray-800 transition-all duration-300">
+                  <span className="font-medium">What should I support?</span>
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openFaq2 ? 'rotate-180' : ''}`} />
+                </CollapsibleTrigger>
+                <CollapsibleContent className="p-4 bg-black/50 border border-white/10 border-t-0 rounded-b-lg text-gray-300">
+                  All versions with identical text are effectively the same proposal. We recommend focusing on H.636 and S.421, the primary House and Senate vehicles, while recognizing the Treasurer's filing (H.46) as supportive.
+                </CollapsibleContent>
+              </Collapsible>
+            </div>
+          </div>
           
           <Carousel opts={{ loop: true}} className="w-full">
             <CarouselContent className="-ml-2 md:-ml-4">
@@ -417,31 +442,6 @@ const bills = [
           </Carousel>
         </div>
       </section>
-
-                {/* FAQ Section */}
-          <div className="mb-16 max-w-4xl">
-            <div className="space-y-4">
-              <Collapsible open={openFaq1} onOpenChange={setOpenFaq1}>
-                <CollapsibleTrigger className="flex items-center justify-between w-full p-4 bg-black/50 border border-white/10 rounded-lg text-gray-300 hover:bg-gray-800 transition-all duration-300">
-                  <span className="font-medium">Why are there multiple versions of the same bill?</span>
-                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openFaq1 ? 'rotate-180' : ''}`} />
-                </CollapsibleTrigger>
-                <CollapsibleContent className="p-4 bg-black/50 border border-white/10 border-t-0 rounded-b-lg text-gray-300">
-                  Different legislators and the Treasurer filed identical bills in the House and Senate to show broad support and ensure the proposal moves procedurally through both chambers.
-                </CollapsibleContent>
-              </Collapsible>
-              
-              <Collapsible open={openFaq2} onOpenChange={setOpenFaq2}>
-                <CollapsibleTrigger className="flex items-center justify-between w-full p-4 bg-black/50 border border-white/10 rounded-lg text-gray-300 hover:bg-gray-800 transition-all duration-300">
-                  <span className="font-medium">What should I support?</span>
-                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openFaq2 ? 'rotate-180' : ''}`} />
-                </CollapsibleTrigger>
-                <CollapsibleContent className="p-4 bg-black/50 border border-white/10 border-t-0 rounded-b-lg text-gray-300">
-                  All versions with identical text are effectively the same proposal. We recommend focusing on H.636 and S.421, the primary House and Senate vehicles, while recognizing the Treasurer's filing (H.46) as supportive.
-                </CollapsibleContent>
-              </Collapsible>
-            </div>
-          </div>
 
       {/* Policy Brief Library */}
       <section className="py-20 bg-gradient-to-b from-black to-gray-900">
