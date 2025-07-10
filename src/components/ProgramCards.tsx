@@ -13,7 +13,7 @@ const ProgramCards = () => {
     }, 
         {
       title: 'Curriculum',
-      description: 'Attend financial literacy workshops near you — designed by youth, for youth.',
+      description: 'Attend a financial literacy workshop in your town — designed by youth, for youth.',
       icon: BookOpen,
       path: '/curriculum',
       gradient: 'from-sunset-orange to-sunset-pink'
