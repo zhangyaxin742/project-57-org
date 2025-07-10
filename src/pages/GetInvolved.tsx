@@ -101,6 +101,10 @@ const GetInvolved = () => {
         </div>
       </section>
 
+          </div>
+  );
+};
+
 export default GetInvolved;
 
      {/*    Support Our Mission 
@@ -149,13 +153,7 @@ export default GetInvolved;
           </div>
         </div>
       </section>
-
-    </div>
-  );
-};
-     
-     
-     
+      
      Partnership Opportunities 
       <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
