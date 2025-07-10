@@ -98,7 +98,7 @@ const Enterprise = () => {
   */
 
    return (
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-0 bg-black text-white">
         <Navigation />
         {/* Hero Section */}
         <section className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
