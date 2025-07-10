@@ -5,6 +5,8 @@ import { Users, Target, Heart, Award, MapPin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const About = () => {
+
+  {/*
   const teamMembers = [
     {
       name: "Yaxin Zhang",
@@ -12,7 +14,7 @@ const About = () => {
       bio: "Arlington High School senior passionate about Business, Economics, and Public Policy. Founded Project 57 at age 17.",
       image: "👩‍💼"
     }
-  ];
+  ]; */}
 
   const milestones = [
     {
@@ -95,7 +97,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Team Section 
       <section className="py-20 bg-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
@@ -121,7 +123,7 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Timeline */}
       <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
