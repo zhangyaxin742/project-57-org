@@ -7,28 +7,10 @@ import { Button } from '@/components/ui/button';
 const About = () => {
   const teamMembers = [
     {
-      name: "Sarah Chen",
+      name: "Yaxin Zhang",
       role: "Founder & Executive Director",
-      bio: "Harvard undergraduate studying Economics and Public Policy. Founded PROJECT 57 at age 16.",
+      bio: "Arlington High School senior passionate about Business, Economics, and Public Policy. Founded Project 57 at age 17.",
       image: "👩‍💼"
-    },
-    {
-      name: "Marcus Johnson", 
-      role: "Program Director",
-      bio: "MIT student passionate about financial technology and youth empowerment.",
-      image: "👨‍💻"
-    },
-    {
-      name: "Elena Rodriguez",
-      role: "Legislative Affairs Coordinator", 
-      bio: "Boston University Law student with expertise in education policy.",
-      image: "👩‍⚖️"
-    },
-    {
-      name: "Jordan Kim",
-      role: "Curriculum Development Lead",
-      bio: "Northeastern co-op student creating engaging financial literacy content.",
-      image: "👨‍🎓"
     }
   ];
 
