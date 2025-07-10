@@ -94,24 +94,8 @@ const Enterprise = () => {
         instagram: "https://instagram.com"
       }
     }
-  ]; */
-
-    return (
-    <div className="min-h-screen bg-black text-white">
-      <Navigation />
-    {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-sunset-gradient bg-clip-text text-transparent">Enterprise</span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            This page is under construction. Check back soon for pitch competitions, hackathons, and featured founders!
-          </p>
-        </div>
-      </section>
-
-      {/*   Pitch Competitions & Hackathons 
+  ]; 
+Pitch Competitions & Hackathons 
       <section className="py-20 bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 flex items-center justify-center gap-3">
@@ -313,7 +297,22 @@ const Enterprise = () => {
             </CardContent>
           </Card>
         </div>
-      </section> */
+      </section> */}
+
+   return (
+    <div className="min-h-screen bg-black text-white">
+      <Navigation />
+    {/* Hero Section */}
+      <section className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <span className="bg-sunset-gradient bg-clip-text text-transparent">Enterprise</span>
+          </h1>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            This page is under construction. Check back soon for pitch competitions, hackathons, and featured founders!
+          </p>
+        </div>
+      </section>
     </div> 
   
   );
