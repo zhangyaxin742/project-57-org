@@ -62,7 +62,7 @@ const About = () => {
       <section className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            About <span className="bg-sunset-gradient bg-clip-text text-transparent">PROJECT 57</span>
+            About <span className="bg-sunset-gradient bg-clip-text text-transparent">Project 57</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             A youth-led Massachusetts nonprofit transforming financial literacy education 
@@ -162,6 +162,33 @@ const About = () => {
           </div>
         </div>
       </section>
+
+                  {/* Contact Section */}
+            <div className="bg-gradient-to-r from-brand-orange/10 to-brand-purple/10 rounded-2xl p-8 md:p-12 border border-brand-pink/20 text-center">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                Ready to Make an Impact?
+              </h3>
+              <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+                Join hundreds of young people across Massachusetts who are working 
+                to create a more financially inclusive future.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-sunset hover:opacity-90 text-white font-semibold px-8 py-3"
+                >
+                  Contact Us
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-2 border-white/20 text-white hover:bg-white/10 px-8 py-3"
+                >
+                  Learn More
+                </Button>
+              </div>
+            </div>
+          </div>
 
       {/* Contact Section */}
       <section className="py-20 bg-gray-900">
