@@ -6,23 +6,22 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Trophy, Calendar, ExternalLink, MapPin, Users } from 'lucide-react';
 import { useState } from 'react';
 
-
 const Enterprise = () => {
   const [selectedFounder, setSelectedFounder] = useState(null);
 
-    return (
-        <section className="py-20 bg-black">
-  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-      Educator Portal
-    </h2>
-    <p className="text-gray-400 text-lg">
-      This section is coming soon. Check back later for educator resources and classroom partnerships!
-    </p>
-  </div>
-</section>
+  return (
+    <section className="py-20 bg-black">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+          Educator Portal
+        </h2>
+        <p className="text-gray-400 text-lg">
+          This section is coming soon. Check back later for educator resources and classroom partnerships!
+        </p>
+      </div>
+    </section>
           
-  {/*
+  /*
   const competitions = [
     {
       title: "Tech Innovation Hackathon",
@@ -328,6 +327,7 @@ const Enterprise = () => {
         </div>
       </section>
     </div> */
+    </>
   );
 };
 
