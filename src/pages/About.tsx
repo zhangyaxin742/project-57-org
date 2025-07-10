@@ -107,43 +107,55 @@ const About = () => {
         </div>
       </section>
 
-      {/* Mission Section */}
-        <section className="py-16 bg-dark-bg">
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-              <div>
-                <h2 className="text-3xl font-bold text-white mb-6">Our Mission</h2>
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  Project 57 exists to ensure that every young person in Massachusetts 
-                  has access to comprehensive, engaging, and culturally relevant financial 
-                  literacy education. We believe that financial empowerment is a 
-                  fundamental right, not a privilege.
-                </p>
-                <p className="text-gray-300 leading-relaxed">
-                  Through our three core programs - Legislative Advocacy, PFin Curriculum, 
-                  and Youth Enterprise - we are building a more financially inclusive 
-                  future for all young people.
-                </p>
-              </div>
-              
-              <div className="bg-dark-card p-8 rounded-2xl border border-gray-800">
-                <h3 className="text-2xl font-bold text-white mb-4">Our Values</h3>
-                <div className="space-y-4">
-                  <div className="border-l-4 border-brand-orange pl-4">
-                    <h4 className="text-white font-semibold">Youth Leadership</h4>
-                    <p className="text-gray-400 text-sm">Students lead, design, and deliver our programs</p>
-                  </div>
-                  <div className="border-l-4 border-brand-pink pl-4">
-                    <h4 className="text-white font-semibold">Accessibility</h4>
-                    <p className="text-gray-400 text-sm">Financial education should be free and available to all</p>
-                  </div>
-                  <div className="border-l-4 border-brand-purple pl-4">
-                    <h4 className="text-white font-semibold">Relevance</h4>
-                    <p className="text-gray-400 text-sm">Content that reflects diverse experiences and backgrounds</p>
-                  </div>
+      {/* Mission & Story Section */}
+      <section className="py-20 bg-gray-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Story</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              We are a youth-led nonprofit organization based in Massachusetts, 
+              dedicated to transforming financial literacy education for young people.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <h3 className="text-3xl font-bold text-white mb-6">Our Mission</h3>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Project 57 exists to ensure that every young person in Massachusetts 
+                has access to comprehensive, engaging, and culturally relevant financial 
+                literacy education. We believe that financial empowerment is a 
+                fundamental right, not a privilege.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                Through our three core programs - Legislative Advocacy, PFin Curriculum, 
+                and Youth Enterprise - we are building a more financially inclusive 
+                future for all young people.
+              </p>
+            </div>
+            
+            <div className="bg-black/50 p-8 rounded-2xl border border-white/10">
+              <h4 className="text-2xl font-bold text-white mb-4">Our Values</h4>
+              <div className="space-y-4">
+                <div className="border-l-4 border-sunset-orange pl-4">
+                  <h5 className="text-white font-semibold">Youth Leadership</h5>
+                  <p className="text-gray-400 text-sm">Students lead, design, and deliver our programs</p>
+                </div>
+                <div className="border-l-4 border-sunset-pink pl-4">
+                  <h5 className="text-white font-semibold">Accessibility</h5>
+                  <p className="text-gray-400 text-sm">Financial education should be free and available to all</p>
+                </div>
+                <div className="border-l-4 border-sunset-purple pl-4">
+                  <h5 className="text-white font-semibold">Relevance</h5>
+                  <p className="text-gray-400 text-sm">Content that reflects diverse experiences and backgrounds</p>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
       {/* Team Section */}
       <section className="py-20 bg-black">
@@ -265,35 +277,6 @@ const About = () => {
                 </p>
               </CardContent>
             </Card>
-
-                  <div className="pt-20">
-        {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-dark-bg to-dark-card">
-          <div className="max-w-4xl mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              About <span className="text-gradient">Project 57</span>
-            </h1>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              We are a youth-led nonprofit organization based in Massachusetts, 
-              dedicated to transforming financial literacy education for young people.
-            </p>
-          </div>
-        </section>
-
-            {/* Team Section */}
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-white mb-6">
-                Our <span className="text-gradient">Team</span>
-              </h2>
-              <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                Project 57 is led by a dedicated team of young people who are passionate 
-                about financial education and social justice.
-              </p>
-            </div>
-          </div>
-        </section>
-      </div>
-        
           </div>
         </div>
       </section>
