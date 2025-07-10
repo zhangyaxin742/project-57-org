@@ -5,8 +5,15 @@ import { BookOpen, Users, Scale } from 'lucide-react';
 const ProgramCards = () => {
   const programs = [
     {
+      title: 'Advocacy',
+      description: 'Track bills, access our research, and advocate for financial literacy education in your district.',
+      icon: Scale,
+      path: '/advocacy',
+      gradient: 'from-sunset-purple to-sunset-orange'
+    }, 
+        {
       title: 'Curriculum',
-      description: 'Financial literacy workshops near you — designed by youth, for youth.',
+      description: 'Attend financial literacy workshops near you — designed by youth, for youth.',
       icon: BookOpen,
       path: '/curriculum',
       gradient: 'from-sunset-orange to-sunset-pink'
@@ -18,13 +25,6 @@ const ProgramCards = () => {
       path: '/enterprise',
       gradient: 'from-sunset-pink to-sunset-purple'
     },
-    {
-      title: 'Advocacy',
-      description: 'Track bills, access our research, and advocate for financial literacy education in your district.',
-      icon: Scale,
-      path: '/advocacy',
-      gradient: 'from-sunset-purple to-sunset-orange'
-    }
   ];
 
   return (
