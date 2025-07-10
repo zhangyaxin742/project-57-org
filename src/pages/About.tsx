@@ -72,41 +72,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="py-20 bg-gray-900">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <Card className="bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300">
-              <CardHeader>
-                <Target className="h-8 w-8 text-sunset-orange mb-4" />
-                <CardTitle className="text-white text-2xl">Our Mission</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-300 leading-relaxed">
-                  To empower Massachusetts youth with the financial knowledge, entrepreneurial skills, 
-                  and civic engagement tools necessary to achieve economic independence and create 
-                  systemic change in financial education policy.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-black/50 border-white/10 hover:border-sunset-purple/50 transition-all duration-300">
-              <CardHeader>
-                <Heart className="h-8 w-8 text-sunset-purple mb-4" />
-                <CardTitle className="text-white text-2xl">Our Vision</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-300 leading-relaxed">
-                  A Massachusetts where every young person has access to comprehensive financial 
-                  literacy education, entrepreneurship opportunities, and the civic tools to 
-                  advocate for equitable economic policies.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Mission & Story Section */}
       <section className="py-20 bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
