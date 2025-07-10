@@ -6,17 +6,17 @@ const ImpactSection = () => {
 
   const impacts = [
     {
-      number: '500+',
+      number: '300+',
       label: 'Students Surveyed',
       description: 'Uncovering critical gaps in financial knowledge across high schools'
     },
     {
-      number: '420',
+      number: '17',
       label: 'Schools Contacted',
       description: 'Mobilizing educators and administrators, from Boston to Springfield'
     },
     {
-      number: '200+',
+      number: '20+',
       label: 'Policymakers Engaged',
       description: 'Pushing to make personal finance mandatory for high school graduation'
     },
