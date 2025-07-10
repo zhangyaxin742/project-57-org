@@ -2,6 +2,7 @@
 import Navigation from '@/components/Navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Users, Target, Heart, Award, MapPin, Mail } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const About = () => {
   const teamMembers = [
