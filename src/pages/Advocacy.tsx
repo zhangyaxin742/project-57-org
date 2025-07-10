@@ -246,7 +246,8 @@ const bills = [
         Relative to Personal Financial Literacy </>
       ),
     number: "H.594", 
-    summary: "hamilton!!", 
+    summary: "hamilton!!",
+    status: "In Committee",
     url: "https://legiscan.com/MA/text/H594/id/3170318/Massachusetts-2025-H594-Introduced.pdf", 
     sponsors: [
       {
@@ -281,13 +282,6 @@ const bills = [
       author: "Policy Research Coalition",
       date: "Oct 2024",
       readingTime: "15 min read"
-    },
-    {
-      title: "Youth Voice in Financial Policy: A Massachusetts Case Study",
-      subheading: "How student advocacy shaped recent legislative victories",
-      author: "Emma Rodriguez",
-      date: "Oct 2024",
-      readingTime: "6 min read"
     },
     {
       title: "Digital Financial Literacy: Preparing Youth for Tomorrow",
@@ -326,8 +320,8 @@ const bills = [
          <span className="bg-sunset-gradient bg-clip-text text-transparent">Advocacy</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Track key legislation, read our research, and take action 
-            to mandate financial literacy education in schools across Massachusetts.
+            Track state legislation, read our research, and take action 
+            to expand financial literacy education in schools across Massachusetts.
           </p>
         </div>
       </section>
@@ -347,7 +341,7 @@ const bills = [
           
           {/* Subheading */}
           <p className="text-gray-400 text-sm max-w-3xl mb-8">
-            Multiple identical bills have been filed to show unified support. They are grouped here for clarity.
+            Multiple identical bills have been filed to show unified support. They are grouped below for clarity.
           </p>
           
           <Carousel opts={{ loop: true}} className="w-full">
@@ -416,9 +410,7 @@ const bills = [
             <CarouselNext className="hidden md:flex -right-12 border-gray-600 bg-black/50 hover:bg-gray-800" />
           </Carousel>
         </div>
-      </section>
-
-                {/* FAQ Section */}
+                        {/* FAQ Section */}
           <div className="mb-16 max-w-4xl">
             <div className="space-y-4">
               <Collapsible open={openFaq1} onOpenChange={setOpenFaq1}>
@@ -442,6 +434,8 @@ const bills = [
               </Collapsible>
             </div>
           </div>
+      </section>
+
 
       {/* Policy Brief Library */}
       <section className="py-20 bg-gradient-to-b from-black to-gray-900">
