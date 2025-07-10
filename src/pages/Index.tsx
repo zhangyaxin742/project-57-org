@@ -61,17 +61,6 @@ const Index = () => {
       <ImpactSection />
       <ProgramCards />
       
-      {/* Footer */}
-      <footer className="bg-dark-bg border-t border-gray-800 py-12">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            
-            <div className="text-gray-400 text-sm text-right">
-              © 2025 PROJECT 57. ALL RIGHTS RESERVED.
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>;
 };
 export default Index;
