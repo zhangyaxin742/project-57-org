@@ -33,10 +33,11 @@ const Footer = () => {
 
           {/* Organization */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-white font-semibold mb-4">Organization</h3>
             <ul className="space-y-2 text-gray-400">
               <li><a href="/about" className="hover:text-brand-orange transition-colors">About</a></li>
               <li><a href="/get-involved" className="hover:text-brand-orange transition-colors">Get Involved</a></li>
+              <li><a href="/get-involved" className="hover:text-brand-orange transition-colors">Contact</a></li>
             </ul>
           </div>
         </div>
