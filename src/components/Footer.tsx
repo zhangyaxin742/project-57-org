@@ -17,12 +17,13 @@ const Footer = () => {
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
               Building financial futures, one student at a time. 
+              @ 2025 PROJECT 57. ALL RIGHTS RESERVED.
             </p>
           </div>
 
           {/* Programs */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Programs</h3>
+            <h3 className="text-white font-semibold mb-4">Our Work</h3>
             <ul className="space-y-2 text-gray-400">
               <li><a href="/legislative" className="hover:text-brand-orange transition-colors">Advocacy</a></li>
               <li><a href="/curriculum" className="hover:text-brand-orange transition-colors">Curriculum</a></li>
@@ -32,19 +33,12 @@ const Footer = () => {
 
           {/* Organization */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Organization</h3>
+            <h3 className="text-white font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="/about" className="hover:text-brand-orange transition-colors">About Us</a></li>
+              <li><a href="/about" className="hover:text-brand-orange transition-colors">About</a></li>
               <li><a href="/get-involved" className="hover:text-brand-orange transition-colors">Get Involved</a></li>
-              <li><a href="/contact" className="hover:text-brand-orange transition-colors">Contact</a></li>
             </ul>
           </div>
-        </div>
-
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-500 text-sm">
-            @ 2025 PROJECT 57. ALL RIGHTS RESERVED.
-          </p>
         </div>
       </div>
     </footer>
