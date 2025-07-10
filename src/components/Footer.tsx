@@ -19,9 +19,6 @@ const Footer = () => {
               Empowering Massachusetts youth with financial literacy education, 
               entrepreneurship skills, and advocacy training for a more financially inclusive future.
             </p>
-            <div className="text-sm text-gray-500">
-              © 2024 Project 57. All rights reserved.
-            </div>
           </div>
 
           {/* Programs */}
