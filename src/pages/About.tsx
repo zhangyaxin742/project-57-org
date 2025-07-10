@@ -75,19 +75,10 @@ const About = () => {
       {/* Mission & Story Section */}
       <section className="py-20 bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Story</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              We are a youth-led nonprofit organization based in Massachusetts, 
-              dedicated to transforming financial literacy education for young people.
-            </p>
-          </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div>
-              <h3 className="text-3xl font-bold text-white mb-6">Our Mission</h3>
+              <h3 className="text-3xl font-bold text-white mb-6">Our <span className="bg-sunset-gradient bg-clip-text text-transparent"> Mission </span> </h3>
               <p className="text-gray-300 mb-6 leading-relaxed">
                 Project 57 exists to ensure that every young person in Massachusetts 
                 has access to comprehensive, engaging, and culturally relevant financial 
