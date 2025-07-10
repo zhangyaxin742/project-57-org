@@ -14,7 +14,7 @@ const About = () => {
       bio: "Arlington High School senior passionate about Business, Economics, and Public Policy. Founded Project 57 at age 17.",
       image: "👩‍💼"
     }
-  ]; */}
+  ]; 
 
   const milestones = [
     {
@@ -37,7 +37,7 @@ const About = () => {
       title: "Statewide Impact",
       description: "Serving students across all Massachusetts counties"
     }
-  ];
+  ]; */}
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -123,9 +123,9 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section> */}
+      </section> 
 
-      {/* Timeline */}
+      Timeline
       <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
@@ -152,7 +152,7 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Call to Action Section */}
       <section className="py-20 bg-black">
