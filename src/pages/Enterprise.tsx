@@ -9,7 +9,7 @@ import { useState } from 'react';
 const Enterprise = () => {
   const [selectedFounder, setSelectedFounder] = useState(null);
           
-  /*
+  {/*
   const competitions = [
     {
       title: "Tech Innovation Hackathon",
