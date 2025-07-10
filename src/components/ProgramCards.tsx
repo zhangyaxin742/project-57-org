@@ -13,14 +13,14 @@ const ProgramCards = () => {
     },
     {
       title: 'Enterprise',
-      description: 'Local pitch competitions, networking, and mentorship for young entrepreneurs.',
+      description: 'Local pitch competitions, hackathons, and mentorship for young entrepreneurs.',
       icon: Users,
       path: '/enterprise',
       gradient: 'from-sunset-pink to-sunset-purple'
     },
     {
       title: 'Advocacy',
-      description: 'Track bills, access our research, and take action for financial literacy education in your district.',
+      description: 'Track bills, access our research, and advocate for financial literacy education in your district.',
       icon: Scale,
       path: '/advocacy',
       gradient: 'from-sunset-purple to-sunset-orange'
