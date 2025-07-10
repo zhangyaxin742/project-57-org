@@ -3,7 +3,11 @@ import Navigation from '../components/Navigation';
 import ScrollingStats from '../components/ScrollingStats';
 import ImpactSection from '../components/ImpactSection';
 import ProgramCards from '../components/ProgramCards';
+import { useNavigate } from 'react-router-dom';
 const Index = () => {
+
+const navigate = useNavigate(); 
+  
   useEffect(() => {
     // Page load animation
     document.body.style.opacity = '0';
@@ -43,15 +47,22 @@ const Index = () => {
               entrepreneurship, and financial independence.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <button className="group relative px-8 py-4 bg-sunset-gradient rounded-full text-white font-semibold text-lg hover:scale-105 transition-transform duration-300 ripple-effect">
-                <span className="relative z-10">Start Your Journey</span>
-              </button>
-              
-              <button className="px-8 py-4 border-2 border-white/20 rounded-full text-white font-semibold text-lg hover:border-sunset-pink hover:text-sunset-pink transition-colors duration-300">
-                Read Our Mission
-              </button>
-            </div>
+       <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+  <button
+    onClick={() => navigate('/get-involved')}
+    className="group relative px-8 py-4 bg-sunset-gradient rounded-full text-white font-semibold text-lg hover:scale-105 transition-transform duration-300 ripple-effect"
+  >
+    <span className="relative z-10">Start Your Journey</span>
+  </button>
+  
+  <button
+    onClick={() => navigate('/about')}
+    className="px-8 py-4 border-2 border-white/20 rounded-full text-white font-semibold text-lg hover:border-sunset-pink hover:text-sunset-pink transition-colors duration-300"
+  >
+    Read Our Mission
+  </button>
+</div>
+
           </div>
         </div>
         
