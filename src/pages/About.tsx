@@ -6,39 +6,6 @@ import { Button } from '@/components/ui/button';
 
 const About = () => {
 
-  {/*
-  const teamMembers = [
-    {
-      name: "Yaxin Zhang",
-      role: "Founder & Executive Director",
-      bio: "Arlington High School senior passionate about Business, Economics, and Public Policy. Founded Project 57 at age 17.",
-      image: "👩‍💼"
-    }
-  ]; 
-
-  const milestones = [
-    {
-      year: "2021",
-      title: "Founded",
-      description: "PROJECT 57 established by Massachusetts youth leaders"
-    },
-    {
-      year: "2022", 
-      title: "First Programs Launch",
-      description: "PFin Curriculum and Legislative Advocacy initiatives begin"
-    },
-    {
-      year: "2023",
-      title: "Youth Enterprise Added", 
-      description: "Expanded to include entrepreneurship programs and funding"
-    },
-    {
-      year: "2024",
-      title: "Statewide Impact",
-      description: "Serving students across all Massachusetts counties"
-    }
-  ]; */}
-
   return (
     <div className="min-h-screen bg-black text-white">
       <Navigation />
@@ -96,8 +63,78 @@ const About = () => {
           </div>
         </div>
       </section>
+      
+      {/* Call to Action Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-r from-sunset-orange/10 to-sunset-purple/10 rounded-2xl p-8 md:p-12 border border-sunset-pink/20 text-center">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              Ready to Make an Impact?
+            </h3>
+            <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+              Join hundreds of young people across Massachusetts who are working 
+              to create a more financially inclusive future.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                className="bg-sunset-gradient hover:opacity-90 text-white font-semibold px-8 py-3"
+              >
+                Contact Us
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-2 border-white/20 text-white hover:bg-white/10 px-8 py-3"
+              >
+                Learn More
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
 
-      {/* Team Section 
+export default About;
+
+
+  {/*
+  const teamMembers = [
+    {
+      name: "Yaxin Zhang",
+      role: "Founder & Executive Director",
+      bio: "Arlington High School senior passionate about Business, Economics, and Public Policy. Founded Project 57 at age 17.",
+      image: "👩‍💼"
+    }
+  ]; 
+
+  const milestones = [
+    {
+      year: "2021",
+      title: "Founded",
+      description: "PROJECT 57 established by Massachusetts youth leaders"
+    },
+    {
+      year: "2022", 
+      title: "First Programs Launch",
+      description: "PFin Curriculum and Legislative Advocacy initiatives begin"
+    },
+    {
+      year: "2023",
+      title: "Youth Enterprise Added", 
+      description: "Expanded to include entrepreneurship programs and funding"
+    },
+    {
+      year: "2024",
+      title: "Statewide Impact",
+      description: "Serving students across all Massachusetts counties"
+    }
+  ]; 
+
+  
+     Team Section 
       <section className="py-20 bg-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
@@ -154,38 +191,4 @@ const About = () => {
         </div>
       </section> */}
 
-      {/* Call to Action Section */}
-      <section className="py-20 bg-black">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-sunset-orange/10 to-sunset-purple/10 rounded-2xl p-8 md:p-12 border border-sunset-pink/20 text-center">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Ready to Make an Impact?
-            </h3>
-            <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-              Join hundreds of young people across Massachusetts who are working 
-              to create a more financially inclusive future.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-sunset-gradient hover:opacity-90 text-white font-semibold px-8 py-3"
-              >
-                Contact Us
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-2 border-white/20 text-white hover:bg-white/10 px-8 py-3"
-              >
-                Learn More
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-};
-
-export default About;
 
