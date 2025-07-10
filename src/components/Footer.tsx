@@ -9,15 +9,14 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <img 
-                src="/lovable-uploads/6faafe94-407c-4025-ad41-50e45f58bce3.png" 
-                alt="Project 57 Logo" 
+                src="/lovable-uploads/547a147a-e3fa-42bc-bc39-35e32865f4fc.png" 
+                alt="Project 57" 
                 className="h-8 w-8"
               />
-              <span className="text-xl font-bold text-white">PROJECT 57</span>
+              <span className="text-xl font-bold text-white">Project 57</span>
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
-              Empowering Massachusetts youth with financial literacy education, 
-              entrepreneurship skills, and advocacy training for a more financially inclusive future.
+              Building financial futures, one student at a time. 
             </p>
           </div>
 
@@ -25,9 +24,9 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Programs</h3>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="/legislative" className="hover:text-brand-orange transition-colors">Legislative Advocacy</a></li>
-              <li><a href="/curriculum" className="hover:text-brand-orange transition-colors">PFin Curriculum</a></li>
-              <li><a href="/enterprise" className="hover:text-brand-orange transition-colors">Youth Enterprise</a></li>
+              <li><a href="/legislative" className="hover:text-brand-orange transition-colors">Advocacy</a></li>
+              <li><a href="/curriculum" className="hover:text-brand-orange transition-colors">Curriculum</a></li>
+              <li><a href="/enterprise" className="hover:text-brand-orange transition-colors">Enterprise</a></li>
             </ul>
           </div>
 
