@@ -297,10 +297,10 @@ Pitch Competitions & Hackathons
             </CardContent>
           </Card>
         </div>
+         <div className="min-h-screen bg-black text-white"> BELOWW BG
       </section> */}
 
    return (
-    <div className="min-h-screen bg-black text-white">
       <Navigation />
     {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
