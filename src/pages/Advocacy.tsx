@@ -441,7 +441,7 @@ const bills = [
 
 
       {/* Policy Brief Library */}
-      <section className="py-16 bg-gradient-to-b from-dark-bg to-dark-card">
+      <section className="py-16 bg-gray-900">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-white mb-12 text-center">
             Our Research
@@ -451,7 +451,7 @@ const bills = [
             {displayedArticles.map((article, index) => (
               <Card 
                 key={index} 
-                className="bg-dark-bg border-gray-800 hover:border-brand-pink transition-all duration-300 animate-fade-in group"
+                className="bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300 animate-fade-in group"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardHeader className="pb-3">
@@ -471,7 +471,7 @@ const bills = [
                 </CardHeader>
                 <CardContent className="pt-0">
                   <Button 
-                    className="w-full bg-gradient-to-r from-brand-pink to-brand-purple hover:opacity-90 text-white font-medium transition-all duration-300 ripple-effect group-hover:scale-105"
+                    className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300 ripple-effect group-hover:scale-105"
                   >
                     <FileText className="h-4 w-4 mr-2" />
                     Read Now
@@ -484,7 +484,7 @@ const bills = [
           <div className="text-center">
             <Button 
               onClick={() => setShowAllResearch(prev => !prev)}
-              className="bg-gradient-sunset hover:opacity-90 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
+              className="bg-sunset-gradient hover:opacity-90 text-black font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
             >
               {showAllResearch ? "Hide Briefs" : "Show All Briefs"}
             </Button>
