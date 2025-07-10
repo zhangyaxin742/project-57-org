@@ -6,6 +6,18 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Trophy, Calendar, ExternalLink, MapPin, Users } from 'lucide-react';
 import { useState } from 'react';
 
+      <section className="py-20 bg-black">
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+      Educator Portal
+    </h2>
+    <p className="text-gray-400 text-lg">
+      This section is coming soon. Check back later for educator resources and classroom partnerships!
+    </p>
+  </div>
+</section>
+
+/*
 const Enterprise = () => {
   const [selectedFounder, setSelectedFounder] = useState(null);
 
@@ -99,7 +111,7 @@ const Enterprise = () => {
     <div className="min-h-screen bg-black text-white">
       <Navigation />
       
-      {/* Hero Section */}
+      {/* Hero Section 
       <section className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -112,7 +124,7 @@ const Enterprise = () => {
         </div>
       </section>
 
-      {/* Pitch Competitions & Hackathons */}
+     Pitch Competitions & Hackathons 
       <section className="py-20 bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 flex items-center justify-center gap-3">
@@ -165,7 +177,7 @@ const Enterprise = () => {
         </div>
       </section>
 
-      {/* Featured Founders */}
+      Featured Founders 
       <section className="py-20 bg-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -292,7 +304,7 @@ const Enterprise = () => {
         </div>
       </section>
 
-      {/* Discord Community */}
+      Discord Community 
       <section className="py-20 bg-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="bg-black/50 border-white/10 text-center">
@@ -317,6 +329,6 @@ const Enterprise = () => {
       </section>
     </div>
   );
-};
+}; 
 
 export default Enterprise;
