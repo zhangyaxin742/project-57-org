@@ -208,43 +208,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
-      {/* Contact Section */}
-      <section className="py-20 bg-gray-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            Get in <span className="bg-sunset-gradient bg-clip-text text-transparent">Touch</span>
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="bg-black/50 border-white/10">
-              <CardHeader>
-                <MapPin className="h-6 w-6 text-sunset-orange mx-auto mb-2" />
-                <CardTitle className="text-white">Location</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-300">
-                  Boston, Massachusetts<br />
-                  Serving statewide
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-black/50 border-white/10">
-              <CardHeader>
-                <Mail className="h-6 w-6 text-sunset-purple mx-auto mb-2" />
-                <CardTitle className="text-white">Contact</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-300">
-                  hello@project57.org<br />
-                  partnerships@project57.org
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
