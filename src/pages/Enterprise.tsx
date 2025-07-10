@@ -10,6 +10,7 @@ import { useState } from 'react';
 const Enterprise = () => {
   const [selectedFounder, setSelectedFounder] = useState(null);
 
+    return (
         <section className="py-20 bg-black">
   <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
@@ -107,8 +108,6 @@ const Enterprise = () => {
       }
     }
   ];
-
-  return (
     <div className="min-h-screen bg-black text-white">
       <Navigation />
       
