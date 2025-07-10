@@ -36,47 +36,6 @@ const GetInvolved = () => {
     }
   ];
 
-  const donationTiers = [
-    {
-      amount: "$25",
-      title: "Supporter",
-      impact: "Provides course materials for 1 student for a semester"
-    },
-    {
-      amount: "$100", 
-      title: "Advocate",
-      impact: "Funds workshop hosting and materials for 5 students"
-    },
-    {
-      amount: "$500",
-      title: "Champion", 
-      impact: "Sponsors a complete financial literacy workshop series"
-    },
-    {
-      amount: "$1,000",
-      title: "Partner",
-      impact: "Enables program expansion to a new school district"
-    }
-  ];
-
-  const partnerTypes = [
-    {
-      title: "Educational Institutions",
-      description: "Schools, colleges, and educational organizations",
-      benefits: ["Custom curriculum development", "Teacher training", "Student workshops"]
-    },
-    {
-      title: "Financial Organizations",
-      description: "Banks, credit unions, and fintech companies",
-      benefits: ["Brand visibility", "Community impact", "Talent pipeline"]
-    },
-    {
-      title: "Community Organizations",
-      description: "Nonprofits, youth groups, and community centers",
-      benefits: ["Shared resources", "Cross-promotion", "Collaborative programming"]
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-black text-white">
       <Navigation />
@@ -240,4 +199,46 @@ export default GetInvolved;
           </div>
         </div>
       </section>
+
+
+        const donationTiers = [
+    {
+      amount: "$25",
+      title: "Supporter",
+      impact: "Provides course materials for 1 student for a semester"
+    },
+    {
+      amount: "$100", 
+      title: "Advocate",
+      impact: "Funds workshop hosting and materials for 5 students"
+    },
+    {
+      amount: "$500",
+      title: "Champion", 
+      impact: "Sponsors a complete financial literacy workshop series"
+    },
+    {
+      amount: "$1,000",
+      title: "Partner",
+      impact: "Enables program expansion to a new school district"
+    }
+  ];
+
+  const partnerTypes = [
+    {
+      title: "Educational Institutions",
+      description: "Schools, colleges, and educational organizations",
+      benefits: ["Custom curriculum development", "Teacher training", "Student workshops"]
+    },
+    {
+      title: "Financial Organizations",
+      description: "Banks, credit unions, and fintech companies",
+      benefits: ["Brand visibility", "Community impact", "Talent pipeline"]
+    },
+    {
+      title: "Community Organizations",
+      description: "Nonprofits, youth groups, and community centers",
+      benefits: ["Shared resources", "Cross-promotion", "Collaborative programming"]
+    }
+  ];
       */}
