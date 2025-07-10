@@ -6,7 +6,11 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Trophy, Calendar, ExternalLink, MapPin, Users } from 'lucide-react';
 import { useState } from 'react';
 
-      <section className="py-20 bg-black">
+
+const Enterprise = () => {
+  const [selectedFounder, setSelectedFounder] = useState(null);
+
+        <section className="py-20 bg-black">
   <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
       Educator Portal
@@ -16,11 +20,8 @@ import { useState } from 'react';
     </p>
   </div>
 </section>
-
-/*
-const Enterprise = () => {
-  const [selectedFounder, setSelectedFounder] = useState(null);
-
+          
+  {/*
   const competitions = [
     {
       title: "Tech Innovation Hackathon",
@@ -46,7 +47,7 @@ const Enterprise = () => {
       status: "Deadline Approaching",
       description: "Sustainability-focused innovation competition"
     }
-  ];
+  ]; 
 
   const featuredFounders = [
     {
@@ -111,7 +112,7 @@ const Enterprise = () => {
     <div className="min-h-screen bg-black text-white">
       <Navigation />
       
-      {/* Hero Section 
+      Hero Section 
       <section className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -327,8 +328,8 @@ const Enterprise = () => {
           </Card>
         </div>
       </section>
-    </div>
+    </div> */
   );
-}; 
+};
 
 export default Enterprise;
