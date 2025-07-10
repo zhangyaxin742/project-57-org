@@ -15,6 +15,7 @@ const Advocacy = () => {
   const [activeModal, setActiveModal] = useState(null);
   const [openFaq1, setOpenFaq1] = useState(false);
   const [openFaq2, setOpenFaq2] = useState(false);
+  const [showAllResearch, setShowAllResearch] = useState(false);
 
 const bills = [
   {
@@ -299,6 +300,8 @@ const bills = [
     }
   ];
 
+  const displayedArticles = showAllResearch ? policyBriefs : policyBriefs.slice(0, 3);
+
   const getStatusColor = (status) => {
     switch (status) {
       case 'Introduced': return 'bg-blue-500';
@@ -438,38 +441,37 @@ const bills = [
 
 
       {/* Policy Brief Library */}
-      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-            Policy <span className="bg-sunset-gradient bg-clip-text text-transparent">Research</span>
+      <section className="py-16 bg-gradient-to-b from-dark-bg to-dark-card">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">
+            Our Research
           </h2>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {policyBriefs.map((brief, index) => (
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {displayedArticles.map((article, index) => (
               <Card 
                 key={index} 
-                className="bg-black/50 border-white/10 hover:border-sunset-pink/50 transition-all duration-300 animate-fade-in group"
+                className="bg-dark-bg border-gray-800 hover:border-brand-pink transition-all duration-300 animate-fade-in group"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardHeader className="pb-3">
                   <CardTitle className="text-white text-lg font-semibold leading-tight mb-2">
-                    {brief.title}
+                    {article.title}
                   </CardTitle>
                   <p className="text-gray-400 text-sm mb-3">
-                    {brief.subheading}
+                    {article.subheading}
                   </p>
                   <div className="text-xs text-gray-500 space-y-1">
-                    <div>By {brief.author}</div>
+                    <div>By {article.author}</div>
                     <div className="flex justify-between">
-                      <span>{brief.date}</span>
-                      <span>{brief.readingTime}</span>
+                      <span>{article.date}</span>
+                      <span>{article.readingTime}</span>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent className="pt-0">
                   <Button 
-                    className="w-full bg-gradient-to-r from-sunset-pink to-sunset-purple hover:opacity-90 text-white font-medium transition-all duration-300 group-hover:scale-105"
-                    onClick={() => window.open('#', '_blank')}
+                    className="w-full bg-gradient-to-r from-brand-pink to-brand-purple hover:opacity-90 text-white font-medium transition-all duration-300 ripple-effect group-hover:scale-105"
                   >
                     <FileText className="h-4 w-4 mr-2" />
                     Read Now
@@ -477,6 +479,15 @@ const bills = [
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          <div className="text-center">
+            <Button 
+              onClick={() => setShowAllResearch(prev => !prev)}
+              className="bg-gradient-sunset hover:opacity-90 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
+            >
+              {showAllResearch ? "Hide Briefs" : "Show All Briefs"}
+            </Button>
           </div>
         </div>
       </section>
