@@ -89,7 +89,7 @@ const GetInvolved = () => {
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             Join our mission to transform financial literacy education in Massachusetts. 
-            Whether you're a student, educator, professional, or supporter, there's a place for you.
+            Whether you're a student, parent, educator, or advocate, we'd love you on board.
           </p>
         </div>
       </section>
@@ -142,7 +142,9 @@ const GetInvolved = () => {
         </div>
       </section>
 
-      {/* Support Our Mission */}
+export default GetInvolved;
+
+     {/*    Support Our Mission 
       <section className="py-20 bg-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
@@ -175,7 +177,7 @@ const GetInvolved = () => {
           
           <div className="text-center mt-12">
             <p className="text-gray-300 mb-4">
-              PROJECT 57 is a registered 501(c)(3) nonprofit. All donations are tax-deductible.
+              DISCLAIMER: Project 57 is NOT a registered 501(c)(3) nonprofit. We are currently in the process of filing with the IRS.
             </p>
             <Button 
               size="lg"
@@ -189,7 +191,13 @@ const GetInvolved = () => {
         </div>
       </section>
 
-      {/* Partnership Opportunities */}
+    </div>
+  );
+};
+     
+     
+     
+     Partnership Opportunities 
       <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
@@ -232,9 +240,4 @@ const GetInvolved = () => {
           </div>
         </div>
       </section>
-
-    </div>
-  );
-};
-
-export default GetInvolved;
+      */}
