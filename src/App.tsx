@@ -22,6 +22,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+      <Analytics />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/curriculum" element={<Curriculum />} />
