@@ -5,6 +5,7 @@ import { Users, ExternalLink, MapPin, Download, Handshake } from 'lucide-react';
 
 const Curriculum = () => {
 
+  /*
   const curriculumModules = [
     {
       title: "Personal Finance Fundamentals",
@@ -31,6 +32,7 @@ const Curriculum = () => {
       enrolled: 456
     }
   ];
+*/ 
   
   const workshops = [
     {
@@ -73,7 +75,7 @@ const Curriculum = () => {
         </div>
       </section>
 
-      Curriculum Modules 
+      { /* Curriculum Modules 
       <section className="py-20 bg-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-white">
