@@ -1,7 +1,6 @@
 
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
-import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Analytics } from "@vercel/analytics/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -14,6 +13,7 @@ import Enterprise from "./pages/Enterprise";
 import About from "./pages/About";
 import GetInvolved from "./pages/GetInvolved";
 import Footer from "./components/Footer";
+import ScrollToTop from "@/components/ui/scroll-to-top";
 
 const queryClient = new QueryClient();
 
