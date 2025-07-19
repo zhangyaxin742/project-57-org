@@ -23,6 +23,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
       <Analytics />
+        <ScrollToTop /> 
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/curriculum" element={<Curriculum />} />
