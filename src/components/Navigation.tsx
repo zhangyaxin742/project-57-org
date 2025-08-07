@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown, Menu, X } from 'lucide-react';
+import {HashLink as Link} from 'react-router-hash-link';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,9 +13,9 @@ const Navigation = () => {
     {
       name: 'Our Work',
       dropdown: [
-       { name: 'Advocacy', path: '/advocacy' },
-        { name: 'Curriculum', path: '/curriculum' },
-        { name: 'Enterprise', path: '/enterprise' }
+       { name: 'Advocacy', path: '/ourwork#advocacy' },
+        { name: 'Curriculum', path: '/ourwork#curriculum' },
+        { name: 'Enterprise', path: '/ourwork#enterprise' }
       ]
     },
     { name: 'About', path: '/about' },
@@ -56,26 +56,27 @@ const Navigation = () => {
                     {dropdownOpen === item.name && (
                       <div className="absolute top-full left-0 mt-2 w-48 bg-black/95 backdrop-blur-md rounded-lg border border-white/10 shadow-lg animate-fade-in">
                         {item.dropdown.map((subItem) => (
-                          <Link
+                          <HashLink
                             key={subItem.name}
+                            smooth
                             to={subItem.path}
                             className="block px-4 py-3 text-sm text-white hover:text-sunset-pink hover:bg-white/5 transition-colors first:rounded-t-lg last:rounded-b-lg"
                           >
                             {subItem.name}
-                          </Link>
+                          </HashLink>
                         ))}
                       </div>
                     )}
                   </div>
                 ) : (
-                  <Link
+                  <RouterLink
                     to={item.path}
                     className={`text-white hover:text-sunset-pink transition-colors ${
                       location.pathname === item.path ? 'text-sunset-pink' : ''
                     }`}
                   >
                     {item.name}
-                  </Link>
+                  </RouterLink>
                 )}
               </div>
             ))}
@@ -108,20 +109,20 @@ const Navigation = () => {
                       {dropdownOpen === item.name && (
                         <div className="pl-4 space-y-1">
                           {item.dropdown.map((subItem) => (
-                            <Link
+                            <HashLink
                               key={subItem.name}
                               to={subItem.path}
                               className="block px-3 py-2 text-sm text-white hover:text-sunset-pink transition-colors"
                               onClick={() => setIsOpen(false)}
                             >
                               {subItem.name}
-                            </Link>
+                            </HashLink>
                           ))}
                         </div>
                       )}
                     </div>
                   ) : (
-                    <Link
+                    <RouterLink
                       to={item.path}
                       className={`block px-3 py-2 text-white hover:text-sunset-pink transition-colors ${
                         location.pathname === item.path ? 'text-sunset-pink' : ''
@@ -129,7 +130,7 @@ const Navigation = () => {
                       onClick={() => setIsOpen(false)}
                     >
                       {item.name}
-                    </Link>
+                    </RouterLink>
                   )}
                 </div>
               ))}
