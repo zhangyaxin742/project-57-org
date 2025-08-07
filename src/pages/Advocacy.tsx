@@ -552,9 +552,8 @@ const bills = [
           </div>
         </div>
       </section>
-      
                              {/* FAQ Section */}
-          <section div className="mb-16 max-w-4xl">
+          <section className="mb-16 max-w-4xl">
             <div className="space-y-4">
               <Collapsible open={openFaq1} onOpenChange={setOpenFaq1}>
                 <CollapsibleTrigger className="flex items-center justify-between w-full p-4 bg-black/50 border border-white/10 rounded-lg text-gray-300 hover:bg-gray-800 transition-all duration-300">
@@ -575,7 +574,6 @@ const bills = [
                   All versions with identical text are effectively the same proposal. We recommend focusing on H.636 and S.421, the primary House and Senate vehicles, while recognizing the Treasurer's filing (H.46) as supportive.
                 </CollapsibleContent>
               </Collapsible>
-            </div>
           </div>
       </section>
     
