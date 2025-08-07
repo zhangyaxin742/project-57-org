@@ -32,6 +32,7 @@ const Advocacy = () => {
   const [openFaq1, setOpenFaq1] = useState(false);
   const [openFaq2, setOpenFaq2] = useState(false);
   const [showAllResearch, setShowAllResearch] = useState(false);
+};
 
 const bills = [
   {
@@ -1136,4 +1137,4 @@ const OurWork = () => {
   );
 }; 
 
-export default OurWork;
+export default OurWork; 
