@@ -118,12 +118,45 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 {/* Declare OurWork component */}
 
 const OurWork = () => {
+  // Define types
+  type BillStatus = 'Introduced' | 'In Committee' | 'Passed' | 'Rejected';
+  
+  type Sponsor = {
+    name: string;
+    party: string;
+    district: string;
+    email: string;
+    phone: string;
+  };
 
-{/* Declare advocacy constants */}
+  type Bill = {
+    id: number;
+    title: React.ReactNode;
+    number: string;
+    summary: string;
+    status: BillStatus;
+    url?: string;
+    urls?: string[];
+    sponsors?: Sponsor[];
+    sponsorsByBill?: Sponsor[][];
+  };
 
-const Advocacy = () => {
+  type PolicyBrief = {
+    title: string;
+    subheading: string;
+    author: string;
+    date: string;
+    readingTime: string;
+  };
 
-const bills = [
+  type Workshop = {
+    title: string;
+    location: string;
+    date: string;
+  };
+
+  // Data constants
+  const bills: Bill[] = [
   {
     id: 1,
     title: (
@@ -367,7 +400,8 @@ const bills = [
     ]
   }
 ];
-const policyBriefs = [
+
+const policyBriefs: PolicyBrief[] = [
     {
       title: "The Impact of Peer-Led Financial Education on Youth Outcomes",
       subheading: "Comprehensive analysis of peer education effectiveness in Massachusetts schools",
@@ -405,50 +439,17 @@ const policyBriefs = [
     }
   ];
 
-const getStatusColor = (status) => {
+const getStatusColor = (status: BillStatus): string => {
     switch (status) {
-      case 'Introduced': return 'bg-blue-500';
-      case 'In Committee': return 'bg-yellow-500';
-      case 'Passed': return 'bg-green-500';
-      case 'Rejected': return 'bg-red-500';
-      default: return 'bg-gray-500';
+      case 'Introduced': return 'bg-primary/20 text-primary border-primary/30';
+      case 'In Committee': return 'bg-accent/20 text-accent-foreground border-accent/30';
+      case 'Passed': return 'bg-green-500/20 text-green-400 border-green-500/30';
+      case 'Rejected': return 'bg-destructive/20 text-destructive border-destructive/30';
+      default: return 'bg-muted/20 text-muted-foreground border-muted/30';
     }
-  }
-}
+  };
 
-{/* Declare curriculum component */}
-const Curriculum = () => {
-
-  /*
-  const curriculumModules = [
-    {
-      title: "Personal Finance Fundamentals",
-      description: "Master budgeting, saving, and basic financial planning",
-      duration: "6 weeks",
-      enrolled: 1247
-    },
-    {
-      title: "Investment Literacy for Teens",
-      description: "Learn about stocks, bonds, and long-term wealth building",
-      duration: "4 weeks",
-      enrolled: 892
-    },
-    {
-      title: "Credit & Debt Management",
-      description: "Understanding credit scores, loans, and responsible borrowing",
-      duration: "3 weeks",
-      enrolled: 634
-    },
-    {
-      title: "Entrepreneurship & Business Finance",
-      description: "Financial planning for young entrepreneurs",
-      duration: "8 weeks",
-      enrolled: 456
-    }
-  ];
-*/ 
-  
-  const workshops = [
+  const workshops: Workshop[] = [
     {
       title: "Financial Planning Workshop",
       location: "Virtual",
@@ -465,7 +466,11 @@ const Curriculum = () => {
       date: "Feb 10, 2025"
     }
   ];
-}
+
+  // Stub components
+  const Advocacy = () => null;
+  const Curriculum = () => null;
+
     const [selectedBill, setSelectedBill] = useState(null);
   const [activeModal, setActiveModal] = useState(null);
   const [openFaq1, setOpenFaq1] = useState(false);
