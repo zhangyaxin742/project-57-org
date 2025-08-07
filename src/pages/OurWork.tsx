@@ -1,3 +1,94 @@
+
+/*   const Enterprise = () => {}
+ const [selectedFounder, setSelectedFounder] = useState(null);
+const competitions = [
+    {
+      title: "Tech Innovation Hackathon",
+      time: "March 15-17, 2024 | 9:00 AM - 6:00 PM",
+      location: "Boston, MA",
+      prize: "$5,000",
+      status: "Applications Open",
+      description: "48-hour hackathon focused on fintech solutions"
+    },
+    {
+      title: "Young Entrepreneurs Pitch Night",
+      time: "April 30, 2024 | 7:00 PM - 9:30 PM", 
+      location: "Virtual",
+      prize: "$2,500",
+      status: "Registration Open",
+      description: "Present your business idea to a panel of industry experts"
+    },
+    {
+      title: "Climate Action Challenge",
+      time: "February 28, 2024 | 2:00 PM - 5:00 PM",
+      location: "Cambridge, MA",
+      prize: "$10,000",
+      status: "Deadline Approaching",
+      description: "Sustainability-focused innovation competition"
+    }
+  ]; 
+
+  const featuredFounders = [
+    {
+      name: "Maya Chen",
+      location: "San Francisco, CA",
+      organization: "EcoTech Solutions",
+      tagline: "Building sustainable tech for tomorrow",
+      image: "https://images.unsplash.com/photo-1494790108755-2616b9b9c36b?w=150&h=150&fit=crop&crop=face",
+      story: "Maya started EcoTech Solutions at age 17 to address environmental challenges through innovative technology. Her company develops AI-powered systems for waste reduction and energy optimization.",
+      achievements: [
+        "Raised $500K in seed funding",
+        "Deployed solutions in 15+ cities",
+        "Winner of Global Climate Tech Award 2024",
+        "Featured in Forbes 30 Under 30"
+      ],
+      social: {
+        twitter: "https://twitter.com",
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com"
+      }
+    },
+    {
+      name: "Jordan Williams",
+      location: "Boston, MA",
+      organization: "HealthBridge",
+      tagline: "Connecting communities to better healthcare",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      story: "Jordan founded HealthBridge to bridge the gap between underserved communities and quality healthcare. The platform connects patients with local health resources and affordable care options.",
+      achievements: [
+        "Served 10,000+ patients in first year",
+        "Partnered with 50+ healthcare providers",
+        "Received MIT Innovation Award",
+        "Expanded to 3 states"
+      ],
+      social: {
+        twitter: "https://twitter.com",
+        linkedin: "https://linkedin.com"
+      }
+    },
+    {
+      name: "Aisha Patel",
+      location: "New York, NY",
+      organization: "EduConnect",
+      tagline: "Democratizing access to quality education",
+      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
+      story: "Aisha created EduConnect to provide personalized learning experiences for students in underserved areas. Her platform uses AI to adapt to individual learning styles and needs.",
+      achievements: [
+        "Impacted 25,000+ students nationwide",
+        "Raised $1M in Series A funding",
+        "TechCrunch Startup of the Year finalist",
+        "Deployed in 100+ schools"
+      ],
+      social: {
+        twitter: "https://twitter.com",
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com"
+      }
+    }
+  ]; 
+  */
+ // #endregion
+
 import React from 'react';
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
@@ -24,15 +115,13 @@ import {
   Handshake } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
+{/* Declare OurWork component */}
+
+const OurWork = () => {
+
 {/* Declare advocacy constants */}
 
 const Advocacy = () => {
-  const [selectedBill, setSelectedBill] = useState(null);
-  const [activeModal, setActiveModal] = useState(null);
-  const [openFaq1, setOpenFaq1] = useState(false);
-  const [openFaq2, setOpenFaq2] = useState(false);
-  const [showAllResearch, setShowAllResearch] = useState(false);
-};
 
 const bills = [
   {
@@ -203,7 +292,7 @@ const bills = [
         email: "Kelly.Pease@mahouse.gov",
         phone: "(413) 875-8787"
       }
-    ]
+    ],
   },
   {
     id: 5,
@@ -278,8 +367,7 @@ const bills = [
     ]
   }
 ];
-
-  const policyBriefs = [
+const policyBriefs = [
     {
       title: "The Impact of Peer-Led Financial Education on Youth Outcomes",
       subheading: "Comprehensive analysis of peer education effectiveness in Massachusetts schools",
@@ -317,9 +405,7 @@ const bills = [
     }
   ];
 
-  const displayedArticles = showAllResearch ? policyBriefs : policyBriefs.slice(0, 3);
-
-  const getStatusColor = (status) => {
+const getStatusColor = (status) => {
     switch (status) {
       case 'Introduced': return 'bg-blue-500';
       case 'In Committee': return 'bg-yellow-500';
@@ -327,7 +413,8 @@ const bills = [
       case 'Rejected': return 'bg-red-500';
       default: return 'bg-gray-500';
     }
-  };
+  }
+}
 
 {/* Declare curriculum component */}
 const Curriculum = () => {
@@ -378,103 +465,14 @@ const Curriculum = () => {
       date: "Feb 10, 2025"
     }
   ];
+}
+    const [selectedBill, setSelectedBill] = useState(null);
+  const [activeModal, setActiveModal] = useState(null);
+  const [openFaq1, setOpenFaq1] = useState(false);
+  const [openFaq2, setOpenFaq2] = useState(false);
+  const [showAllResearch, setShowAllResearch] = useState(false);
+  const displayedArticles = showAllResearch ? policyBriefs : policyBriefs.slice(0, 3);
 
-{/* Declare Enterprise component */}
-
-const Enterprise = () => {
-  const [selectedFounder, setSelectedFounder] = useState(null);
-          
-  /*
-  const competitions = [
-    {
-      title: "Tech Innovation Hackathon",
-      time: "March 15-17, 2024 | 9:00 AM - 6:00 PM",
-      location: "Boston, MA",
-      prize: "$5,000",
-      status: "Applications Open",
-      description: "48-hour hackathon focused on fintech solutions"
-    },
-    {
-      title: "Young Entrepreneurs Pitch Night",
-      time: "April 30, 2024 | 7:00 PM - 9:30 PM", 
-      location: "Virtual",
-      prize: "$2,500",
-      status: "Registration Open",
-      description: "Present your business idea to a panel of industry experts"
-    },
-    {
-      title: "Climate Action Challenge",
-      time: "February 28, 2024 | 2:00 PM - 5:00 PM",
-      location: "Cambridge, MA",
-      prize: "$10,000",
-      status: "Deadline Approaching",
-      description: "Sustainability-focused innovation competition"
-    }
-  ]; 
-
-  const featuredFounders = [
-    {
-      name: "Maya Chen",
-      location: "San Francisco, CA",
-      organization: "EcoTech Solutions",
-      tagline: "Building sustainable tech for tomorrow",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b9b9c36b?w=150&h=150&fit=crop&crop=face",
-      story: "Maya started EcoTech Solutions at age 17 to address environmental challenges through innovative technology. Her company develops AI-powered systems for waste reduction and energy optimization.",
-      achievements: [
-        "Raised $500K in seed funding",
-        "Deployed solutions in 15+ cities",
-        "Winner of Global Climate Tech Award 2024",
-        "Featured in Forbes 30 Under 30"
-      ],
-      social: {
-        twitter: "https://twitter.com",
-        linkedin: "https://linkedin.com",
-        instagram: "https://instagram.com"
-      }
-    },
-    {
-      name: "Jordan Williams",
-      location: "Boston, MA",
-      organization: "HealthBridge",
-      tagline: "Connecting communities to better healthcare",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-      story: "Jordan founded HealthBridge to bridge the gap between underserved communities and quality healthcare. The platform connects patients with local health resources and affordable care options.",
-      achievements: [
-        "Served 10,000+ patients in first year",
-        "Partnered with 50+ healthcare providers",
-        "Received MIT Innovation Award",
-        "Expanded to 3 states"
-      ],
-      social: {
-        twitter: "https://twitter.com",
-        linkedin: "https://linkedin.com"
-      }
-    },
-    {
-      name: "Aisha Patel",
-      location: "New York, NY",
-      organization: "EduConnect",
-      tagline: "Democratizing access to quality education",
-      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
-      story: "Aisha created EduConnect to provide personalized learning experiences for students in underserved areas. Her platform uses AI to adapt to individual learning styles and needs.",
-      achievements: [
-        "Impacted 25,000+ students nationwide",
-        "Raised $1M in Series A funding",
-        "TechCrunch Startup of the Year finalist",
-        "Deployed in 100+ schools"
-      ],
-      social: {
-        twitter: "https://twitter.com",
-        linkedin: "https://linkedin.com",
-        instagram: "https://instagram.com"
-      }
-    }
-  ]; 
-  */
-
-{/* Declare OurWork component */}
-
-const OurWork = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       <Navigation />

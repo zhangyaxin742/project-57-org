@@ -5,7 +5,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Analytics } from "@vercel/analytics/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import OurWork from "./pages/OurWork";
@@ -26,13 +25,10 @@ const App = () => (
         <ScrollToTop /> 
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/ourwork" element={<OurWork />} />
-          <Route path="/curriculum" 
-          element={<Navigate to="/ourwork#curriculum" replace />} />
-          <Route path="/enterprise" 
-          element={<Navigate to="/ourwork#enterprise" replace />} />
-          <Route path="/advocacy" 
-          element={<Navigate to="/ourwork#advocacy" replace />} />
+            <Route path="/ourwork" element={<OurWork />} />
+            <Route path="/curriculum" element={<Navigate to="/ourwork#curriculum" replace />} />
+            <Route path="/enterprise" element={<Navigate to="/ourwork#enterprise" replace />} />
+          <Route path="/advocacy" element={<Navigate to="/ourwork#advocacy" replace />} />
           <Route path="/about" element={<About />} />
           <Route path="/get-involved" element={<GetInvolved />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

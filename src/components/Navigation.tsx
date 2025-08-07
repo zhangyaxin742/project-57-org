@@ -1,7 +1,7 @@
-
 import { useState } from 'react';
+import { useLocation, Link as RouterLink } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { ChevronDown, Menu, X } from 'lucide-react';
-import {HashLink as Link} from 'react-router-hash-link';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,15 +11,16 @@ const Navigation = () => {
   const navItems = [
     { name: 'Home', path: '/' },
     {
-      name: 'Our Work', path:'/ourwork' },
+      name: 'Our Work',
+      path: '/ourwork',
       dropdown: [
-       { name: 'Advocacy', path: '/ourwork#advocacy' },
+        { name: 'Advocacy',   path: '/ourwork#advocacy' },
         { name: 'Curriculum', path: '/ourwork#curriculum' },
-        { name: 'Enterprise', path: '/ourwork#enterprise' }
+        { name: 'Enterprise', path: '/ourwork#enterprise' },
       ]
     },
-    { name: 'About', path: '/about' },
-    { name: 'Get Involved', path: '/get-involved' }
+    { name: 'About',        path: '/about' },
+    { name: 'Get Involved', path: '/get-involved' },
   ];
 
   return (
@@ -27,7 +28,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
+          <RouterLink to="/" className="flex items-center space-x-3">
             <img 
               src="/lovable-uploads/547a147a-e3fa-42bc-bc39-35e32865f4fc.png" 
               alt="Project 57" 
@@ -36,15 +37,14 @@ const Navigation = () => {
             <span className="text-xl font-bold bg-sunset-gradient bg-clip-text text-transparent">
               Project 57
             </span>
-          </Link>
+          </RouterLink>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+            {navItems.map(item => (
               <div key={item.name} className="relative">
                 {item.dropdown ? (
                   <div
-                    className="relative"
                     onMouseEnter={() => setDropdownOpen(item.name)}
                     onMouseLeave={() => setDropdownOpen('')}
                   >
@@ -52,10 +52,9 @@ const Navigation = () => {
                       <span>{item.name}</span>
                       <ChevronDown className="h-4 w-4" />
                     </button>
-                    
                     {dropdownOpen === item.name && (
                       <div className="absolute top-full left-0 mt-2 w-48 bg-black/95 backdrop-blur-md rounded-lg border border-white/10 shadow-lg animate-fade-in">
-                        {item.dropdown.map((subItem) => (
+                        {item.dropdown.map(subItem => (
                           <HashLink
                             key={subItem.name}
                             smooth
@@ -95,22 +94,31 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden bg-black/95 backdrop-blur-md border-b border-white/10 animate-fade-in">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) => (
+              {navItems.map(item => (
                 <div key={item.name}>
                   {item.dropdown ? (
-                    <div>
+                    <>
                       <button
-                        onClick={() => setDropdownOpen(dropdownOpen === item.name ? '' : item.name)}
-                        className="flex items-center justify-between w-full text-left px-3 py-2 text-white hover:text-sunset-pink transition-colors"
+                        onClick={() =>
+                          setDropdownOpen(
+                            dropdownOpen === item.name ? '' : item.name
+                          )
+                        }
+                        className="flex items-center justify-between w-full px-3 py-2 text-white hover:text-sunset-pink transition-colors"
                       >
                         <span>{item.name}</span>
-                        <ChevronDown className={`h-4 w-4 transition-transform ${dropdownOpen === item.name ? 'rotate-180' : ''}`} />
+                        <ChevronDown
+                          className={`h-4 w-4 transition-transform ${
+                            dropdownOpen === item.name ? 'rotate-180' : ''
+                          }`}
+                        />
                       </button>
                       {dropdownOpen === item.name && (
                         <div className="pl-4 space-y-1">
-                          {item.dropdown.map((subItem) => (
+                          {item.dropdown.map(subItem => (
                             <HashLink
                               key={subItem.name}
+                              smooth
                               to={subItem.path}
                               className="block px-3 py-2 text-sm text-white hover:text-sunset-pink transition-colors"
                               onClick={() => setIsOpen(false)}
@@ -120,7 +128,7 @@ const Navigation = () => {
                           ))}
                         </div>
                       )}
-                    </div>
+                    </>
                   ) : (
                     <RouterLink
                       to={item.path}
