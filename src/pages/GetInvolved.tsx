@@ -177,8 +177,8 @@ const GridSection = ({
 }) => (
   <section className="py-12">
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 className="text-2xl md:text-3xl font-bold mb-6">{title}</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">{title}</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
         {roles.map((role, idx) => (
           <SingleRoleCard key={idx} role={role} />
         ))}
@@ -204,7 +204,8 @@ function GetInvolved() {
             Get <span className="bg-sunset-gradient bg-clip-text text-transparent">Involved</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Join our mission to transform financial literacy education in Massachusetts.
+            Whether you're a freshman exploring opportunities or a senior who's been to ICDC several times over, 
+            join our mission to finally put financial literacy education on the docket in Massachusetts.
           </p>
         </div>
       </section>
