@@ -41,16 +41,27 @@ const Navigation = () => {
             {navItems.map(item => (
               <div key={item.name} className="relative">
                 {item.dropdown ? (
-                  <div
+                  <div className = "relative group"
                     onMouseEnter={() => setDropdownOpen(item.name)}
                     onMouseLeave={() => setDropdownOpen('')}
                   >
-                    <button className="flex items-center space-x-1 text-white hover:text-sunset-pink transition-colors">
+                     <HashLink
+    smooth
+    to="/ourwork#top" // make sure you have <section id="top" /> at the top of OurWork
+    className="flex items-center space-x-1 text-white hover:text-sunset-pink transition-colors"
+    onClick={() => setDropdownOpen('')} // optional: close dropdown on click
+  >
                       <span>{item.name}</span>
                       <ChevronDown className="h-4 w-4" />
-                    </button>
+                    </HashLink>
                     {dropdownOpen === item.name && (
-                      <div className="absolute top-full left-0 mt-2 w-48 bg-black/95 backdrop-blur-md rounded-lg border border-white/10 shadow-lg animate-fade-in">
+                   <div
+          className="
+            absolute top-full left-0 mt-2 w-48 bg-black/95 backdrop-blur-md 
+            rounded-lg border border-white/10 shadow-lg animate-fade-in
+            before:content-[''] before:absolute before:top-[-8px] before:left-0 before:w-full before:h-8
+          "
+        >
                         {item.dropdown.map(subItem => (
                           <HashLink
                             key={subItem.name}
@@ -92,24 +103,22 @@ const Navigation = () => {
           <div className="md:hidden bg-black/95 backdrop-blur-md border-b border-white/10 animate-fade-in">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map(item => (
-                <div key={item.name}>
+                <div key={item.name} className = "relative">
                   {item.dropdown ? (
                     <>
-                      <button
-                        onClick={() =>
-                          setDropdownOpen(
-                            dropdownOpen === item.name ? '' : item.name
-                          )
-                        }
-                        className="flex items-center justify-between w-full px-3 py-2 text-white hover:text-sunset-pink transition-colors"
-                      >
+ <HashLink
+    smooth
+    to="/ourwork#top" // make sure you have <section id="top" /> at the top of OurWork
+    className="flex items-center space-x-1 text-white hover:text-sunset-pink transition-colors"
+    onClick={() => setDropdownOpen('')} // optional: close dropdown on click
+  >
                         <span>{item.name}</span>
                         <ChevronDown
                           className={`h-4 w-4 transition-transform ${
                             dropdownOpen === item.name ? 'rotate-180' : ''
                           }`}
                         />
-                      </button>
+                      </HashLink>
                       {dropdownOpen === item.name && (
                         <div className="pl-4 space-y-1">
                           {item.dropdown.map(subItem => (

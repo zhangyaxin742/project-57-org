@@ -934,7 +934,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
+      <section id="top" className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             <span className="bg-sunset-gradient bg-clip-text text-transparent">Our Work</span>
