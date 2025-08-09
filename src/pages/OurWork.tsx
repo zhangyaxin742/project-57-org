@@ -473,6 +473,7 @@ const getStatusColor = (status: BillStatus): string => {
   ];
 
   const briefs = getBriefs(); 
+  console.log("OurWork briefs:", briefs);
 
   // normalize mdx 
   const articles = briefs.map(b => ({

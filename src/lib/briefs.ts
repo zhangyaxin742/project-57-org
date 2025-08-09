@@ -1,8 +1,10 @@
 import type { ComponentType } from "react";
 
-type Mod = { default: ComponentType<any>; meta?: Record<string, any>; frontmatter?: Record<string, any> };
+// src/lib/briefs.ts
+type Mod = { default: React.ComponentType<any>; meta?: Record<string, any>; frontmatter?: Record<string, any> };
 
-const modules = import.meta.glob("../briefs/*.mdx", { eager: true }) as Record<string, Mod>;
+// Most robust: root-anchored, recursive, both md/mdx
+const modules = import.meta.glob("/src/briefs/**/*.{md,mdx}", { eager: true }) as Record<string, Mod>;
 
 export type BriefEntry = {
   slug: string;
@@ -49,6 +51,10 @@ entries.sort((a, b) => {
   const bv = Number.isNaN(tb) ? 0 : tb;
   return bv - av;
 });
+
+// TEMP DEBUG
+console.log("MDX modules keys:", Object.keys(modules));
+console.log("Brief entries:", entries.map(e => e.slug));
 
 export const getBriefs = () => entries;
 export const getBriefBySlug = (slug: string) => entries.find(b => b.slug === slug);
