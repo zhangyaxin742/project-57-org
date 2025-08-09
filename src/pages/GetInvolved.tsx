@@ -187,7 +187,7 @@ const volunteerRole: Role[] = [
   },
 ]
 
-const GridSection = ({ title, roles, compact = false, }: { title: string; roles: Role[]; compact?: boolean}) => {
+const GridSection = ({ title, roles, compact = false, centerLast = true, }: { title: string; roles: Role[]; compact?: boolean; centerLast?: boolean;}) => {
   const [expanded, setExpanded] = useState<number | null>(null); 
   const controls = useAnimation();
   const ref = useRef<HTMLDivElement | null>(null);
@@ -210,16 +210,14 @@ const GridSection = ({ title, roles, compact = false, }: { title: string; roles:
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
         {roles.map((role, idx) => {
-          const isOpen = expanded === idx;
+          const isOpen = expanded === idx; 
+    const isOddLast = roles.length % 2 === 1 && idx === roles.length - 1;
+    
           return (
           <motion.div
             key={idx}
             variants={cardVariants}
-            className={
-              roles.length % 2 === 1 && idx === roles.length - 1
-                ? "md:col-span-2 flex justify-center"
-                : ""
-            }
+            className={className={centerLast && isOddLast ? "md:col-span-2" : ""}
           >
                 <motion.div
                   layout
@@ -235,7 +233,11 @@ const GridSection = ({ title, roles, compact = false, }: { title: string; roles:
                       setExpanded(isOpen ? null : idx);
                     }
                   }}
-                  className="w-full"
+                  className={
+                    centerLast && isOddLast
+                      ? "w-full md:max-w-[560px] mx-auto" // center + cap width only for odd-last
+                      : "w-full"
+                  }
                 >
                   <Card
                     className={
@@ -335,16 +337,7 @@ function GetInvolved() {
 
       <GridSection title="Executive Team" roles={execPositions} />
       <GridSection title="Associate Team" roles={associatePositions} />
-      <section className = "py-12">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-          <div>
-            <GridSection compact title="Chapter President" roles={chapterPresident} />
-          </div>
-          <div></div>
-          <GridSection compact title="Event Volunteer" roles={volunteerRole} />
-        </div>
-      </section>
-    </div>
+    <GridSection compact centerLast={false} title="Local Opportunities" roles={[chapterPresident[0], volunterRole[0]]} />
   );
 }
 
