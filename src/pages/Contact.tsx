@@ -15,7 +15,7 @@ const fadeUp = {
 
 const Contact = () => {
   const navigate = useNavigate(); 
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     document.body.style.opacity = '0';
@@ -28,6 +28,8 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
+    if (!form.current) return;
+
     emailjs.sendForm(
       'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
       'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
@@ -37,7 +39,7 @@ const Contact = () => {
       (result) => {
         console.log(result.text);
         alert('Message sent successfully!');
-        form.current.reset();
+        form.current?.reset();
       },
       (error) => {
         console.log(error.text);
@@ -116,7 +118,7 @@ const Contact = () => {
                 <label className="block text-gray-300 mb-2">Message</label>
                 <textarea 
                   name="message" 
-                  rows="5" 
+                  rows={5} 
                   required
                   className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-sunset-orange"
                 ></textarea>
