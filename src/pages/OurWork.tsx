@@ -985,7 +985,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
       layout
       className={
         expandedSection
-          ? "grid grid-cols-1 gap-6"
+          ? "grid grid-cols-3 gap-6"
           : "grid grid-cols-1 md:grid-cols-3 gap-6"
       }
     >
