@@ -25,22 +25,6 @@ const About = () => {
       {/* Mission & Story Section */}
       <section className="py-20 bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                Project 57 exists to ensure that every young person in Massachusetts 
-                has access to comprehensive, engaging, and culturally relevant financial 
-                literacy education. We believe that financial empowerment is a 
-                fundamental right, not a privilege.
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                Through our three core programs - Legislative Advocacy, PFin Curriculum, 
-                and Youth Enterprise - we are building a more financially inclusive 
-                future for all young people.
-              </p>
-            </div>
-            
             <div className="bg-black/50 p-8 rounded-2xl border border-white/10">
               <h4 className="text-2xl font-bold text-white mb-4">Our Values</h4>
               <div className="space-y-4">
