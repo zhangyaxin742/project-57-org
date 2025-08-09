@@ -12,12 +12,22 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  // Force a fresh Vite cache between dev and preview builds
+  cacheDir: mode === "production" ? "node_modules/.vite-prod" : "node_modules/.vite",
   plugins: [
-    mdx({ remarkPlugins: [remarkGfm, remarkFrontmatter] }),
+    mdx({
+      development: false,
+      jsxImportSource: "react",
+      remarkPlugins: [remarkGfm, remarkFrontmatter],
+    }),
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === 'development' && componentTagger(),
   ].filter(Boolean),
+  // Ensure automatic JSX runtime consistency
+  esbuild: {
+    jsx: "automatic",
+    jsxImportSource: "react",
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
