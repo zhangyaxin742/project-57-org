@@ -1,0 +1,22 @@
+export const meta = {
+  title: "Hello World: MDX Rendering Test",
+  description: "A simple brief to verify routing and MDX rendering.",
+  date: "2023-01-01",
+  author: "Project 57",
+  readingTime: "1 min",
+  tags: ["test", "mdx"],
+};
+
+# {meta.title}
+
+*By {meta.author} — {new Date(meta.date).toLocaleDateString()}*
+
+---
+
+This is a minimal MDX brief used to confirm that:
+
+- The `/briefs/:slug` route loads correctly
+- The `getBriefs()` import/glob works
+- SEO tags from `<Helmet>` render via `react-helmet-async`
+
+If you can read this, routing and MDX compilation are working.
