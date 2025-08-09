@@ -317,7 +317,7 @@ const GridSection = ({ title, roles, compact = false, }: { title: string; roles:
 
 function GetInvolved() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black to-gray-900 text-white">
       <Navigation />
 
       {/* Hero */}
