@@ -114,7 +114,7 @@ import {
   Mail, 
   ChevronDown, 
   Handshake } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { getBriefs } from "../lib/briefs";
 import { formatMonthYear } from "../lib/utils";
@@ -170,6 +170,8 @@ const OurWork = () => {
 
   const [expandedSection, setExpandedSection] = useState<SectionKey | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const prefersReducedMotion = useReducedMotion();
+  const motionTransition = prefersReducedMotion ? { duration: 0 } : { duration: 0.3 };
 
   // on mount, open based on hash if present
   useEffect(() => {
@@ -841,37 +843,43 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                 <motion.div key={key} layout>
                   <Card
                     className={[
-                      "cursor-pointer bg-black/60 border border-white/10 rounded-2xl overflow-hidden",
-                      isOpen ? "border-sunset-orange/70" : "hover:border-sunset-orange/60",
+                      "rounded-2xl bg-black/60 border border-white/10 transition-colors duration-300",
+                      isOpen
+                        ? "border-orange-400/70 shadow-[0_0_0_1px_rgba(251,146,60,.3)]"
+                        : "hover:border-orange-400/60",
                     ].join(" ")}
                   >
+                    {/* CLICK TARGET: Header only */}
                     <button
                       type="button"
                       onClick={() => setExpandedSection(isOpen ? null : key)}
-                      className="w-full text-left"
+                      className="w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black rounded-2xl"
                       aria-expanded={isOpen}
                       aria-controls={`section-panel-${key}`}
                     >
-                      <CardHeader className="flex flex-row items-center justify-between p-5">
-                        <span className="text-xl font-semibold text-white">{label}</span>
+                      <CardHeader className="flex items-center justify-between p-5 md:p-6">
+                        <span className="text-xl md:text-2xl font-semibold tracking-tight text-white">{label}</span>
                         <ChevronDown
                           className={`shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}
+                          aria-hidden
                         />
                       </CardHeader>
                     </button>
 
+                    {/* EXPANDING REGION */}
                     <AnimatePresence initial={false}>
                       {isOpen && (
                         <motion.div
                           key="panel"
                           layout
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3, ease: "easeOut" }}
+                          initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                          animate={{ height: "auto", opacity: 1, marginTop: 16 }}
+                          exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                          transition={motionTransition}
                           className="overflow-hidden"
                           id={`section-panel-${key}`}
                         >
+                          {/* IMPORTANT: stopPropagation so clicks inside content don't toggle */}
                           <CardContent
                             className="p-0"
                             onClick={(e) => e.stopPropagation()}
