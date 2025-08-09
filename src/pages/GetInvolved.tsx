@@ -163,7 +163,6 @@ const GetInvolved = () => {
   </div>
 </section>
 
-          </div>
   );
 };
 
