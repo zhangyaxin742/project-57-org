@@ -32,7 +32,7 @@ const App = () => (
               <Route path="/curriculum" element={<Navigate to="/ourwork#curriculum" replace />} />
               <Route path="/enterprise" element={<Navigate to="/ourwork#enterprise" replace />} />
             <Route path="/advocacy" element={<Navigate to="/ourwork#advocacy" replace />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={<Navigate to="/ourwork#about" replace />} />
             <Route path="/get-involved" element={<GetInvolved />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="/briefs/:slug" element={<Brief />} />
