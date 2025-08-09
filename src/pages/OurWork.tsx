@@ -797,142 +797,132 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
         </div>
       </section>
 
-{/* Tabbed Content (Home-style 3 cards) */}
-<section id="our-work-tabs" className="py-16 bg-black">
-  <div ref={containerRef} className="max-w-6xl mx-auto px-4 ticky top-0 bg-black z-10">
-    <motion.div
-      layout
-      className={
-        expandedSection
-          ? "grid grid-cols-1 md: grid-cols-3 gap-6"
-          : "grid grid-cols-1 md:grid-cols-3 gap-6"
-      }
-    >
-      {([
-        {
-          key: "advocacy" as SectionKey,
-          title: "Advocacy",
-          description:
-            "Track bills, read our research, and advocate for financial literacy education in your district.",
-          Icon: Scale,
-          gradient: "from-sunset-purple to-sunset-orange",
-        },
-        {
-          key: "curriculum" as SectionKey,
-          title: "Curriculum",
-          description:
-            "Attend (or run) a financial literacy workshop in your town — designed by youth, for youth.",
-          Icon: BookOpen,
-          gradient: "from-sunset-orange to-sunset-pink",
-        },
-        {
-          key: "enterprise" as SectionKey,
-          title: "Enterprise",
-          description:
-            "Explore pitch competitions, hackathons, and mentorship for young entrepreneurs.",
-          Icon: Users,
-          gradient: "from-sunset-pink to-sunset-purple",
-        },
-      ]).map(({ key, title, description, Icon, gradient }) => {
-        const isOpen = expandedSection === key;
+{/* Sticky Card Header (Home-style 3 cards) */}
+<section id="our-work-tabs" className="py-0 bg-black">
+  <div
+    ref={containerRef}
+    className="
+      sticky top-16   /* adjust to your navbar height (64px => top-16) */
+      z-30
+      bg-black/95 backdrop-blur-md
+      border-b border-white/10
+    "
+  >
+    <div className="max-w-6xl mx-auto px-4 py-6">
+      <motion.div
+        layout
+        className="grid grid-cols-1 md:grid-cols-3 gap-6"  /* always 3 across on md+ */
+      >
+        {([
+          {
+            key: "advocacy" as SectionKey,
+            title: "Advocacy",
+            description:
+              "Track bills, read our research, and advocate for financial literacy education in your district.",
+            Icon: Scale,
+            gradient: "from-sunset-purple to-sunset-orange",
+          },
+          {
+            key: "curriculum" as SectionKey,
+            title: "Curriculum",
+            description:
+              "Attend (or run) a financial literacy workshop in your town — designed by youth, for youth.",
+            Icon: BookOpen,
+            gradient: "from-sunset-orange to-sunset-pink",
+          },
+          {
+            key: "enterprise" as SectionKey,
+            title: "Enterprise",
+            description:
+              "Explore pitch competitions, hackathons, and mentorship for young entrepreneurs.",
+            Icon: Users,
+            gradient: "from-sunset-pink to-sunset-purple",
+          },
+        ]).map(({ key, title, description, Icon, gradient }) => {
+          const isOpen = expandedSection === key;
 
-        return (
-          <motion.div key={key} layout>
-            {/* Entire card is clickable to toggle open/close */}
-            <Card
-              onClick={() => setExpandedSection(isOpen ? null : key)}
-              aria-expanded={isOpen}
-              aria-controls={`section-panel-${key}`}
-              className={[
-                "group relative overflow-hidden rounded-2xl",
-                "bg-gradient-to-br from-gray-900/50 to-black",
-                "border border-white/10 transition-all duration-500",
-                isOpen
-                  ? "border-orange-400/70 shadow-[0_0_0_1px_rgba(251,146,60,.3)]"
-                  : "hover:border-white/20 hover:scale-[1.02]",
-              ].join(" ")}
-            >
-              {/* Top gradient bar */}
-              <div className={`h-2 bg-gradient-to-r ${gradient}`} />
+          return (
+            <motion.div key={key} layout>
+              {/* Entire card is a trigger ONLY */}
+              <Card
+                onClick={() => setExpandedSection(isOpen ? null : key)}
+                aria-expanded={isOpen}
+                aria-controls="section-panel"   /* single panel below */
+                className={[
+                  "group relative overflow-hidden rounded-2xl",
+                  "bg-gradient-to-br from-gray-900/50 to-black",
+                  "border border-white/10 transition-all duration-500",
+                  isOpen
+                    ? "border-orange-400/70 shadow-[0_0_0_1px_rgba(251,146,60,.3)]"
+                    : "hover:border-white/20 hover:scale-[1.02]",
+                ].join(" ")}
+              >
+                {/* Top gradient bar */}
+                <div className={`h-2 bg-gradient-to-r ${gradient}`} />
 
-              {/* Hover color wash overlay (subtle) */}
-              <div
-                className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
-                aria-hidden
-              />
-
-              {/* Collapsed card content (icon, title, copy, CTA) */}
-              <div className="relative p-8">
-                {/* Icon pill with gradient bg */}
+                {/* Hover color wash overlay */}
                 <div
-                  className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${gradient} mb-6`}
-                >
-                  <Icon className="h-8 w-8 text-white" />
+                  className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                  aria-hidden
+                />
+
+                {/* Collapsed card content (icon, title, copy, CTA) */}
+                <div className="relative p-8">
+                  <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${gradient} mb-6`}>
+                    <Icon className="h-8 w-8 text-white" />
+                  </div>
+
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 transition-colors duration-300 group-hover:text-sunset-pink">
+                    {title}
+                  </h3>
+
+                  <p className="text-gray-300 leading-relaxed">{description}</p>
+
+                  <div className="mt-6 flex items-center text-sunset-pink transition-transform duration-300 group-hover:translate-x-2">
+                    <span className="text-sm font-semibold">Learn More</span>
+                    <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+
+                  {/* Active underline indicator */}
+                  <div className={`mt-4 h-[3px] rounded-full bg-sunset-pink transition-opacity ${isOpen ? "opacity-100" : "opacity-0"}`} />
                 </div>
-
-                {/* Title */}
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4 transition-colors duration-300 group-hover:text-sunset-pink">
-                  {title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-gray-300 leading-relaxed">
-                  {description}
-                </p>
-
-                {/* Learn More row (kept for visual parity; click handled by card) */}
-                <div className="mt-6 flex items-center text-sunset-pink transition-transform duration-300 group-hover:translate-x-2">
-                  <span className="text-sm font-semibold">Learn More</span>
-                  <svg
-                    className="ml-2 h-4 w-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </div>
-              </div>
-
-              {/* EXPANDING REGION (same logic as before) */}
-              <AnimatePresence initial={false}>
-                {isOpen && (
-                  <motion.div
-                    key="panel"
-                    layout
-                    initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                    animate={{ height: "auto", opacity: 1, marginTop: 16 }}
-                    exit={{ height: 0, opacity: 0, marginTop: 0 }}
-                    transition={motionTransition}
-                    className="overflow-hidden"
-                    id={`section-panel-${key}`}
-                  >
-                    {/* Critical: stopPropagation so clicking inside content doesn't toggle/close */}
-                    <CardContent
-                      className="p-0"
-                      onClick={(e) => e.stopPropagation()}
-                      onMouseDown={(e) => e.stopPropagation()}
-                    >
-                      {key === "advocacy" && <Advocacy />}
-                      {key === "curriculum" && <Curriculum />}
-                      {key === "enterprise" && <Enterprise />}
-                    </CardContent>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </Card>
-          </motion.div>
-        );
-      })}
-    </motion.div>
+              </Card>
+            </motion.div>
+          );
+        })}
+      </motion.div>
+    </div>
   </div>
 </section>
+
+      {/* Full-width expanding content panel */}
+<AnimatePresence initial={false}>
+  {expandedSection && (
+    <motion.div
+      key={expandedSection}
+      id="section-panel"
+      aria-live="polite"
+      layout
+      initial={{ opacity: 0, height: 0, marginTop: 0 }}
+      animate={{ opacity: 1, height: "auto", marginTop: 24 }}
+      exit={{ opacity: 0, height: 0, marginTop: 0 }}
+      transition={motionTransition}
+      className="overflow-hidden"
+    >
+      <div
+        className="max-w-6xl mx-auto px-4"
+        onClick={(e) => e.stopPropagation()}
+        onMouseDown={(e) => e.stopPropagation()}
+      >
+        {expandedSection === "advocacy" && <Advocacy />}
+        {expandedSection === "curriculum" && <Curriculum />}
+        {expandedSection === "enterprise" && <Enterprise />}
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
 
       {/* About Section */}
       <section id="about" className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
