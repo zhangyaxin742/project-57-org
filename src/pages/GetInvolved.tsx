@@ -12,11 +12,12 @@ const GetInvolved = () => {
       description: "Direct the statewide growth, operations, and strategy of Project 57.",
       commitment: "5-10 hours/week",
       benefits: [
-      "Lead dedicated teams across curriculum, policy, operations, marketing, and enterprise",
-      "Gain extensive project management & nonprofit leadership experience",
-      "Network with legislators, educators, and business leaders across the state",
-      "Build a competitive resume for college & internships"
-      ]
+        "Lead and manage cross-functional teams impacting 500+ students annually",
+        "Gain extensive project management & nonprofit leadership experience",
+        "Network with legislators, educators, and business leaders statewide"
+      ], 
+      link: "https://forms.gle/BEZx25HUU8Me1Q5K8",
+      cta: "Apply for Executive Team"
     },
     {
       title: "Associate Team",
@@ -24,11 +25,12 @@ const GetInvolved = () => {
       description: "Drive specialized initiatives in curriculum, policy, enterprise, or marketing.",
       commitment: "3-5 hours/week",
       benefits: [
-      "Own projects with real deliverables (e.g., published briefs, live workshops)",
-      "Collaborate with statewide peers & exec mentors",
-      "Develop skills in public speaking, outreach, and content creation",
-      "Showcase tangible outputs in a professional portfolio"
-      ]
+        "Produce portfolio-ready outputs (e.g., published briefs, live workshops)",
+        "Collaborate with statewide peers under executive mentorship",
+        "Develop expertise in public speaking, outreach, and content creation"
+      ], 
+      link: "https://forms.gle/i77LyrGBKr7mofxs8", 
+      cta: "Apply as an Associate"
     },
     {
       title: "Chapter President",
@@ -36,11 +38,12 @@ const GetInvolved = () => {
       description: "Launch and lead a Project 57 chapter at your high school.",
       commitment: "3-5 hours/week",
       benefits: [
-      "Found and manage a local chapter impacting 10+ students annually",
-      "Coordinate workshops, advocacy campaigns, and recruitment",
-      "Serve as the link between your school and statewide leadership",
-      "Strengthen college apps with leadership, policy advocacy, and event planning credentials"
-      ]
+        "Found and grow a chapter impacting (at least) 10 students annually",
+        "Organize workshops, advocacy campaigns, and recruitment drives",
+        "Earn standout leadership & policy impact for college apps"
+      ], 
+      link: "https://forms.gle/Fbu1pSboTZzRoiBYA", 
+      cta: "Start a Chapter"
     },
     {
       title: "Volunteer",
@@ -48,11 +51,12 @@ const GetInvolved = () => {
       description: "Support events, workshops, hackathons, and outreach efforts.",
       commitment: "Event-based / flexible",
       benefits: [
-      "Earn verifiable community service hours through a local 501(c)(3)",
-      "Choose between one-off events and recurring contributions",
-      "Participate in statewide hackathons & advocacy drives",
-      "Make a direct impact on financial literacy education in your community"
-      ]
+        "Earn verifiable community service hours through a 501(c)(3)",
+        "Choose from one-off events or recurring contributions",
+        "Participate in statewide hackathons & advocacy initiatives for financial literacy"
+      ], 
+      link: "https://forms.gle/Fm6r326rC72Hff449", 
+      cta: "Sign Up to Volunteer"
     }
   ];
 
@@ -109,9 +113,9 @@ const GetInvolved = () => {
                   </div>
                   <Button 
                     className="w-full bg-sunset-gradient hover:opacity-90 text-black font-semibold"
-                    onClick={() => window.open('mailto:volunteer@project57.org', '_blank')}
+                    onClick={() => window.open(opportunity.link, '_blank', "noopener, noreferrer")}
                   >
-                    Apply to Volunteer
+                    {opportunity.cta ?? "Apply"}
                     <Mail className="ml-2 h-4 w-4" />
                   </Button>
                 </CardContent>
