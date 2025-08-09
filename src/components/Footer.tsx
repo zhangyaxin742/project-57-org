@@ -16,9 +16,9 @@ const Footer = () => {
               <span className="text-xl font-bold text-white">Project 57</span>
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
-              Building financial futures, one student at a time. <br /> <br />
+              Un-cooking financial futures, one student at a time. <br /> <br />
               <span className = "text-sm font-mono text-grey"> 
-                            @ 2025 PROJECT 57. ALL RIGHTS RESERVED. </span>
+                            © 2025 PROJECT 57. ALL RIGHTS RESERVED. </span>
             </p>
           </div>
 
