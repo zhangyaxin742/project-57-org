@@ -3,11 +3,10 @@ import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Users, Megaphone, Heart, Gift, HandHeart, ExternalLink, Mail, ClipboardCheck } from 'lucide-react';
-import { useRef } from 'react'; 
-
-const scroller = useRef<HTMLDivElement | null>(null);
+import { useRef } from 'react';
 
 const GetInvolved = () => {
+  const scroller = useRef<HTMLDivElement | null>(null);
   const opportunities = [
     {
       title: "Executive Team",
