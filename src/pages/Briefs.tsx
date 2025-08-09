@@ -2,20 +2,9 @@ import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { getBriefBySlug } from "../lib/briefs"; 
 
-type Mod = { default: React.ComponentType<any>; meta?: Record<string, any>; frontmatter?: Record<string, any> };
-const modules = import.meta.glob("../briefs/*.mdx", { eager: true }) as Record<string, Mod>;
-
-const BRIEFS = Object.fromEntries(
-  Object.entries(modules).map(([path, mod]) => {
-    const slug = path.split("/").pop()!.replace(".mdx", "");
-    const meta = mod.meta ?? mod.frontmatter ?? {};
-    return [slug, { Component: mod.default, meta }];
-  })
-);
-
 export default function Brief () {
   const { slug = "" } = useParams();
-  const entry = getBriefBySlug[slug];
+  const entry = getBriefBySlug(slug);
   if (!entry) {
     return (
       <div className="min-h-screen bg-black text-white flex items-center justify-center px-6">
@@ -29,6 +18,8 @@ export default function Brief () {
   }
 
   const { Component, meta } = entry;
+  const origin = typeof window !== 'undefined' ? window.location.origin : '';
+  const url = `${origin}/briefs/${slug}`;
 
   return (
     <article className="min-h-screen bg-black text-white">
@@ -38,7 +29,19 @@ export default function Brief () {
         <meta property="og:title" content={meta.title ?? "Brief"} />
         <meta property="og:description" content={meta.description ?? ""} />
         <meta property="og:type" content="article" />
-        <link rel="canonical" href={`/briefs/${slug}`} />
+        <meta property="og:url" content={url} />
+        {meta.cover ? <meta property="og:image" content={meta.cover} /> : null}
+        <link rel="canonical" href={url} />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: meta.title,
+          description: meta.description,
+          author: meta.author,
+          datePublished: meta.date,
+          image: meta.cover,
+          url
+        })}</script>
       </Helmet>
       <div className="max-w-3xl mx-auto px-4 py-16 prose prose-invert">
         <Component />
