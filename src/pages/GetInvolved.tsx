@@ -1,6 +1,6 @@
 import Navigation from '@/components/Navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, Users, Megaphone, HandHeart, BookOpenCheck, Landmark, LineChart, Lightbulb, FileText } from 'lucide-react';
+import { Mail, Users, ChevronDown, HandHeart, BookOpenCheck, Landmark, LineChart, Lightbulb, FileText } from 'lucide-react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 import type React from 'react';
@@ -247,18 +247,38 @@ const GridSection = ({ title, roles }: { title: string; roles: Role[] }) => {
                   >
                     {/* Header */}
                     <CardHeader className="pb-2">
-                      <div className="flex items-center gap-3">
-                        <role.icon className="h-7 w-7 text-sunset-orange" />
-                        <div>
-                          <CardTitle className="text-white text-lg">{role.title}</CardTitle>
-                          <p className="text-sunset-pink text-xs">{role.commitment}</p>
-                        </div>
-                      </div>
-                      <CardDescription className="text-gray-300 mt-3">
-                        {role.description}
-                      </CardDescription>
-                    </CardHeader>
+                        <div
+    role="button"
+    tabIndex={0}
+    aria-expanded={isOpen}
+    onClick={() => setExpanded(isOpen ? null : idx)}
+    onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && setExpanded(isOpen ? null : idx)}
+    className="flex items-start justify-between gap-3 cursor-pointer select-none"
+  >
+    {/* Left: icon + titles */}
+    <div className="flex items-center gap-3">
+      <role.icon className="h-7 w-7 text-sunset-orange" />
+      <div>
+        <CardTitle className="text-white text-lg">{role.title}</CardTitle>
+        <p className="text-sunset-pink text-xs">{role.commitment}</p>
+      </div>
+    </div>
 
+    {/* Right: chevron + hint */}
+    <div className="flex items-center gap-2 text-xs text-gray-400">
+      {!isOpen && <span className="hidden sm:inline">Expand</span>}
+      <ChevronDown
+        className={`h-5 w-5 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+        aria-hidden="true"
+      />
+    </div>
+  </div>
+
+  {/* Keep your description below the clickable row */}
+  <CardDescription className="text-gray-300 mt-3">
+    {role.description}
+  </CardDescription>
+</CardHeader>
                     {/* Expandable body */}
                     <CardContent className="pt-0">
                       <motion.div
@@ -270,7 +290,7 @@ const GridSection = ({ title, roles }: { title: string; roles: Role[] }) => {
                           marginTop: isOpen ? 16 : 0
                         }}
                         className={isOpen ? "overflow-visible" : "overflow-hidden"}
-                      >
+                        id={`role-panel-${idx}`}>
                         <ul className="text-sm text-gray-200 space-y-2">
                           {role.benefits.map((b, i) => (
                             <li key={i} className="flex items-start gap-2">
@@ -303,7 +323,7 @@ const GridSection = ({ title, roles }: { title: string; roles: Role[] }) => {
 
 function GetInvolved() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white">
       <Navigation />
 
       {/* Hero */}
