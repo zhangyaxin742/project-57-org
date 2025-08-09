@@ -1,6 +1,10 @@
 import Navigation from '@/components/Navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, Users, ClipboardCheck, Megaphone, HandHeart, Crown, BookOpenCheck, Landmark, LineChart, Lightbulb, FileText } from 'lucide-react';
+import { Mail, Users, Megaphone, HandHeart, BookOpenCheck, Landmark, LineChart, Lightbulb, FileText } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useState, useRef } from 'react';
+import type React from 'react';
+import type { Variants } from 'framer-motion';
 
 type Role = {
   title: string;
@@ -10,6 +14,22 @@ type Role = {
   benefits: string[];
   link: string;
   cta: string;
+};
+
+// variants (top of file)
+
+const sectionVariants: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1, y: 0,
+    transition: { duration: 0.5, ease: "easeOut", when: "beforeChildren", staggerChildren: 0.08 }
+  }
+};
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  show:   { opacity: 1, y: 0, 
+    transition: { duration: 0.35, ease: "easeOut" }
+   }
 };
 
 const execPositions: Role[] = [
@@ -168,27 +188,141 @@ const SingleRoleCard = ({ role }: { role: Role }) => (
   </Card>
 );
 
-const GridSection = ({ title, roles }: { title: string; roles: Role[] }) => (
-  <section className="py-12">
+const GridSection = ({ title, roles }: { title: string; roles: Role[] }) => {
+  const [expanded, setExpanded] = useState<number | null>(null); 
+
+  return (
+  <motion.section
+  className="py-12"
+  initial="hidden"
+  whileInView="show"
+  viewport={{ amount: 0.25, once: true }}
+  variants={sectionVariants} 
+  > 
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">{title}</h2>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
-        {roles.map((role, idx) => (
-          <div
+        {roles.map((role, idx) => {
+          const isOpen = expanded === idx;
+          return (
+          <motion.div
             key={idx}
+            variants={cardVariants}
             className={
               roles.length % 2 === 1 && idx === roles.length - 1
-                ? "md:col-span-2 flex justify-center"
-                : ""
+                ? "md:col-span-2 flex justify-center w-full"
+                : "w-full"
             }
           >
-            <SingleRoleCard role={role} />
-          </div>
-        ))}
+ <motion.div
+                  layout
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.995 }}
+                  transition={{ type: "spring", stiffness: 320, damping: 24 }}
+                  onClick={() => setExpanded(isOpen ? null : idx)}
+                  className="w-full"
+                >
+                  <Card
+                    className={
+                      "border transition-colors " +
+                      (isOpen
+                        ? "bg-white/10 border-sunset-orange/70"
+                        : "bg-black/60 border-white/10 hover:border-sunset-orange/60")
+                    }
+                  >
+                    {/* Header */}
+                    <CardHeader className="pb-2">
+                      <div className="flex items-center gap-3">
+                        <role.icon className="h-7 w-7 text-sunset-orange" />
+                        <div>
+                          <CardTitle className="text-white text-lg">{role.title}</CardTitle>
+                          <p className="text-sunset-pink text-xs">{role.commitment}</p>
+                        </div>
+                      </div>
+                      <CardDescription className="text-gray-300 mt-3">
+                        {role.description}
+                      </CardDescription>
+                    </CardHeader>
+
+                    {/* Expandable body */}
+                    <CardContent className="pt-0">
+                      <motion.div
+                        layout
+                        initial={false}
+                        animate={{
+                          height: isOpen ? "auto" : 0,
+                          opacity: isOpen ? 1 : 0,
+                          marginTop: isOpen ? 16 : 0
+                        }}
+                        className={isOpen ? "overflow-visible" : "overflow-hidden"}
+                      >
+                        <ul className="text-sm text-gray-200 space-y-2">
+                          {role.benefits.map((b, i) => (
+                            <li key={i} className="flex items-start gap-2">
+                              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-sunset-pink" />
+                              <span>{b}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </motion.div>
+                      <a
+                        href={role.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-sunset-gradient px-4 py-3 font-semibold text-black hover:opacity-90"
+                        onClick={(e) => e.stopPropagation()} > 
+
+                        {role.cta} <Mail className="ml-2 h-4 w-4" />
+                      </a>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
+    </motion.section>
+  );
+};
+
+function StickySections({
+  execRoles,
+  associateRoles,
+  finalBlock
+}: {
+  execRoles: Role[];
+  associateRoles: Role[];
+  finalBlock: React.ReactNode;
+}) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end end"]
+  });
+
+  // fade/replace windows (tweak to taste)
+  const execOpacity = useTransform(scrollYProgress, [0.00, 0.25, 0.40], [1, 1, 0]);
+  const assocOpacity = useTransform(scrollYProgress, [0.25, 0.40, 0.65], [0, 1, 0]);
+  const finalOpacity = useTransform(scrollYProgress, [0.65, 0.80, 1.00], [0, 1, 1]);
+
+  return (
+    <div ref={ref} className="relative h-[300vh]">
+      <motion.div className="sticky top-24" style={{ opacity: execOpacity }}>
+        <GridSection title="Executive Team" roles={execRoles} />
+      </motion.div>
+
+      <motion.div className="sticky top-24" style={{ opacity: assocOpacity }}>
+        <GridSection title="Associate Team" roles={associateRoles} />
+      </motion.div>
+
+      <motion.div className="sticky top-24" style={{ opacity: finalOpacity }}>
+        {finalBlock}
+      </motion.div>
     </div>
-  </section>
-);
+  );
+}
 
 function GetInvolved() {
   return (
@@ -208,16 +342,15 @@ function GetInvolved() {
         </div>
       </section>
 
-      {/* Executive Team */}
-      <GridSection title="Executive Team" roles={execPositions} />
-
-      {/* Associate Team */}
-      <GridSection title="Associate Team" roles={associatePositions} />
-
-      {/* Chapter President & Volunteer (side-by-side) */}
-      <section className="py-12 bg-gray-900">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  {/* Sticky, replacing sections */}
+      <StickySections
+        execRoles={execPositions}
+        associateRoles={associatePositions}
+        finalBlock={
+          <section className="py-12 bg-gray-900">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Chapter President Card */}
             <Card className="bg-black/60 border-white/10">
               <CardHeader>
                 <div className="flex items-center gap-3">
@@ -280,7 +413,9 @@ function GetInvolved() {
           </div>
         </div>
       </section>
-    </div>
+        }
+        />
+        </div>
   );
 }
 
