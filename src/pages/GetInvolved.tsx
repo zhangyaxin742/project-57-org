@@ -1,170 +1,289 @@
-
 import Navigation from '@/components/Navigation';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Users, Megaphone, Heart, Gift, HandHeart, ExternalLink, Mail, ClipboardCheck } from 'lucide-react';
-import { useRef } from 'react';
+import { Mail, Users, ClipboardCheck, Megaphone, HandHeart, Crown, BookOpenCheck, Landmark, LineChart, Lightbulb, FileText } from 'lucide-react';
 
-const GetInvolved = () => {
-  const scroller = useRef<HTMLDivElement | null>(null);
-  const opportunities = [
-    {
-      title: "Executive Team",
-      icon: Users,
-      description: "Direct the statewide growth, operations, and strategy of Project 57.",
-      commitment: "5-10 hours/week",
-      benefits: [
-        "Lead and manage cross-functional teams impacting 500+ students annually",
-        "Gain extensive project management & nonprofit leadership experience",
-        "Network with legislators, educators, and business leaders statewide"
-      ], 
-      link: "https://forms.gle/BEZx25HUU8Me1Q5K8",
-      cta: "Apply for Executive Team"
-    },
-    {
-      title: "Associate Team",
-      icon: ClipboardCheck,
-      description: "Drive specialized initiatives in curriculum, policy, enterprise, or marketing.",
-      commitment: "3-5 hours/week",
-      benefits: [
-        "Produce portfolio-ready outputs (e.g., published briefs, live workshops)",
-        "Collaborate with statewide peers under executive mentorship",
-        "Develop expertise in public speaking, outreach, and content creation"
-      ], 
-      link: "https://forms.gle/i77LyrGBKr7mofxs8", 
-      cta: "Apply as an Associate"
-    },
-    {
-      title: "Chapter President",
-      icon: Megaphone,
-      description: "Launch and lead a Project 57 chapter at your high school.",
-      commitment: "3-5 hours/week",
-      benefits: [
-        "Found and grow a chapter impacting (at least) 10 students annually",
-        "Organize workshops, advocacy campaigns, and recruitment drives",
-        "Earn standout leadership & policy impact for college apps"
-      ], 
-      link: "https://forms.gle/Fbu1pSboTZzRoiBYA", 
-      cta: "Start a Chapter"
-    },
-    {
-      title: "Volunteer",
-      icon: HandHeart,
-      description: "Support events, workshops, hackathons, and outreach efforts.",
-      commitment: "Event-based / flexible",
-      benefits: [
-        "Earn verifiable community service hours through a 501(c)(3)",
-        "Choose from one-off events or recurring contributions",
-        "Participate in statewide hackathons & advocacy initiatives for financial literacy"
-      ], 
-      link: "https://forms.gle/Fm6r326rC72Hff449", 
-      cta: "Sign Up to Volunteer"
-    }
-  ];
+type Role = {
+  title: string;
+  icon: React.ComponentType<any>;
+  description: string;
+  commitment: string;
+  benefits: string[];
+  link: string;
+  cta: string;
+};
 
+const execPositions: Role[] = [
+  {
+    title: "Chief Curriculum Officer (CCO)",
+    icon: BookOpenCheck,
+    description: "Build and scale statewide financial literacy workshops and resources.",
+    commitment: "≈10 hrs/week",
+    benefits: [
+      "Approve 5–10 workshop proposals/month",
+      "Ship 2 live workshop plans/month",
+      "Oversee 10+ resources/month in the bank",
+    ],
+    link: "https://forms.gle/BEZx25HUU8Me1Q5K8",
+    cta: "Apply for CCO"
+  },
+  {
+    title: "Chief Policy Officer (CPO)",
+    icon: Landmark,
+    description: "Lead legislative research, testimony, and statewide advocacy.",
+    commitment: "≈10 hrs/week",
+    benefits: [
+      "Publish 1 article/week + 1 brief/quarter",
+      "Coordinate testimony & legislator outreach",
+      "Run weekly policy syncs",
+    ],
+    link: "https://forms.gle/BEZx25HUU8Me1Q5K8",
+    cta: "Apply for CPO"
+  },
+  {
+    title: "Chief Marketing Officer (CMO)",
+    icon: LineChart,
+    description: "Own brand, content, and growth across IG/TikTok/LinkedIn.",
+    commitment: "≈10 hrs/week",
+    benefits: [
+      "Post 3+ carousels & 2+ reels per platform weekly",
+      "Track KPIs monthly",
+      "Lead a marketing associate pod",
+    ],
+    link: "https://forms.gle/BEZx25HUU8Me1Q5K8",
+    cta: "Apply for CMO"
+  },
+  {
+    title: "Chief Operating Officer (COO)",
+    icon: Users,
+    description: "Build chapters, train leaders, and run district operations.",
+    commitment: "≈10 hrs/week",
+    benefits: [
+      "Recruit 10–15 Chapter Presidents",
+      "Maintain statewide ops dashboard",
+      "Run weekly chapter leader calls",
+    ],
+    link: "https://forms.gle/BEZx25HUU8Me1Q5K8",
+    cta: "Apply for COO"
+  },
+  {
+    title: "Chief Innovation Officer (CIO)",
+    icon: Lightbulb,
+    description: "Run founder spotlights and two hackathons by Summer ‘26.",
+    commitment: "≈10 hrs/week",
+    benefits: [
+      "Lead 2 hackathons (virtual + Boston)",
+      "Source 5–7 founder features/month",
+      "Manage enterprise associates",
+    ],
+    link: "https://forms.gle/BEZx25HUU8Me1Q5K8",
+    cta: "Apply for CIO"
+  },
+];
+
+const associatePositions: Role[] = [
+  {
+    title: "Marketing Associate",
+    icon: LineChart,
+    description: "Create content and amplify statewide campaigns.",
+    commitment: "3–5 hrs/week",
+    benefits: [
+      "Post 2–3 pieces/week",
+      "Run outreach to schools/media weekly",
+      "Track performance in shared dashboard",
+    ],
+    link: "https://forms.gle/i77LyrGBKr7mofxs8",
+    cta: "Apply as Marketing Associate"
+  },
+  {
+    title: "Enterprise Associate",
+    icon: Lightbulb,
+    description: "Source founders and support hackathon logistics.",
+    commitment: "3–5 hrs/week",
+    benefits: [
+      "Verify/interview founders monthly",
+      "Promote to FBLA/DECA & clubs statewide",
+      "Maintain clean outreach records",
+    ],
+    link: "https://forms.gle/i77LyrGBKr7mofxs8",
+    cta: "Apply as Enterprise Associate"
+  },
+  {
+    title: "Curriculum Associate",
+    icon: BookOpenCheck,
+    description: "Design and deliver monthly workshops in your community.",
+    commitment: "3–5 hrs/week",
+    benefits: [
+      "Run 1+ local workshop/month",
+      "Draft 1–2 explainers/month",
+      "Update resource bank with vetted sources",
+    ],
+    link: "https://forms.gle/i77LyrGBKr7mofxs8",
+    cta: "Apply as Curriculum Associate"
+  },
+  {
+    title: "Policy Associate",
+    icon: FileText,
+    description: "Support bill tracking, writing, and legislator outreach.",
+    commitment: "3–5 hrs/week",
+    benefits: [
+      "Write 1–2 posts/month",
+      "Help prep testimony & petitions",
+      "Distribute + analyze survey data",
+    ],
+    link: "https://forms.gle/i77LyrGBKr7mofxs8",
+    cta: "Apply as Policy Associate"
+  },
+];
+
+const SingleRoleCard = ({ role }: { role: Role }) => (
+  <Card className="bg-black/60 border-white/10 hover:border-sunset-orange/60 transition">
+    <CardHeader className="pb-2">
+      <div className="flex items-center gap-3">
+        <role.icon className="h-7 w-7 text-sunset-orange" />
+        <div>
+          <CardTitle className="text-white text-lg">{role.title}</CardTitle>
+          <p className="text-sunset-pink text-xs">{role.commitment}</p>
+        </div>
+      </div>
+      <CardDescription className="text-gray-300 mt-3">{role.description}</CardDescription>
+    </CardHeader>
+    <CardContent className="pt-0">
+      <ul className="mt-4 text-sm text-gray-200 space-y-2">
+        {role.benefits.map((b, i) => (
+          <li key={i} className="flex items-start gap-2">
+            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-sunset-pink" />
+            <span>{b}</span>
+          </li>
+        ))}
+      </ul>
+      <a
+        href={role.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-sunset-gradient px-4 py-3 font-semibold text-black hover:opacity-90"
+      >
+        {role.cta} <Mail className="ml-2 h-4 w-4" />
+      </a>
+    </CardContent>
+  </Card>
+);
+
+const GridSection = ({
+  title,
+  roles
+}: {
+  title: string;
+  roles: Role[];
+}) => (
+  <section className="py-12">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 className="text-2xl md:text-3xl font-bold mb-6">{title}</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {roles.map((role, idx) => (
+          <SingleRoleCard key={idx} role={role} />
+        ))}
+
+        {/* If odd count, add a placeholder to center the last card on md+ */}
+        {roles.length % 2 === 1 && (
+          <div className="hidden md:block" aria-hidden />
+        )}
+      </div>
+    </div>
+  </section>
+);
+
+export default function GetInvolved() {
   return (
     <div className="min-h-screen bg-black text-white">
       <Navigation />
-      
-      {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
+
+      {/* Hero */}
+      <section className="pt-24 pb-10 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Get <span className="bg-sunset-gradient bg-clip-text text-transparent">Involved</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Join our mission to transform financial literacy education in Massachusetts. 
-            Whether you're a student, parent, educator, or advocate, we'd love you on board.
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Join our mission to transform financial literacy education in Massachusetts.
           </p>
         </div>
       </section>
 
-      {/* Volunteer Opportunities */}
-{/* Opportunities Carousel */}
-<section className="py-20 bg-gray-900">
-  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="flex items-center justify-between mb-6">
-      <h2 className="text-2xl md:text-3xl font-bold">Opportunities</h2>
-      {/* optional arrows */}
-      <div className="hidden md:flex gap-2">
-        <button
-          onClick={() => scroller.current?.scrollBy({ left: -520, behavior: 'smooth' })}
-          className="rounded-lg px-3 py-2 bg-white/5 hover:bg-white/10"
-        >‹</button>
-        <button
-          onClick={() => scroller.current?.scrollBy({ left: 520, behavior: 'smooth' })}
-          className="rounded-lg px-3 py-2 bg-white/5 hover:bg-white/10"
-        >›</button>
-      </div>
-    </div>
+      {/* Executive Team */}
+      <GridSection title="Executive Team" roles={execPositions} />
 
-    <div
-      ref={scroller}
-      className="
-        flex gap-6 overflow-x-auto scroll-smooth
-        snap-x snap-mandatory
-        [-ms-overflow-style:none] [scrollbar-width:none]
-      "
-      style={{scrollbarWidth:'none'} as any}
-    >
-      {/* hide scrollbars */}
-      <style>{`
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-      `}</style>
+      {/* Associate Team */}
+      <GridSection title="Associate Team" roles={associatePositions} />
 
-      {opportunities.map((o, i) => (
-        <div
-          key={i}
-          className="
-            snap-center shrink-0
-            w-[88%] sm:w-[70%] md:w-[520px]
-          "
-        >
-          <Card className="h-full bg-gradient-to-b from-black/70 to-black/40 border border-white/10 hover:border-sunset-orange/60 transition">
-            <CardHeader className="pb-2">
-              <div className="flex items-center gap-3">
-                <o.icon className="h-8 w-8 text-sunset-orange" />
-                <div>
-                  <CardTitle className="text-xl">{o.title}</CardTitle>
-                  <p className="text-sunset-pink text-sm">{o.commitment}</p>
+      {/* Chapter President & Volunteer (side-by-side) */}
+      <section className="py-12 bg-gray-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Card className="bg-black/60 border-white/10">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <Megaphone className="h-7 w-7 text-sunset-orange" />
+                  <div>
+                    <CardTitle className="text-lg">Chapter President</CardTitle>
+                    <p className="text-sunset-pink text-xs">3–5 hrs/week</p>
+                  </div>
                 </div>
-              </div>
-              <CardDescription className="text-gray-300 mt-4 text-base">
-                {o.description}
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="pt-0">
-              <div className="mt-4 rounded-xl bg-white/5 p-4">
-                <p className="text-sm font-semibold text-sunset-purple mb-2">Benefits</p>
+                <CardDescription className="text-gray-300 mt-3">
+                  Launch and lead a Project 57 chapter at your school; run workshops, advocacy, and recruitment.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
                 <ul className="text-sm text-gray-200 space-y-2">
-                  {o.benefits.map((b, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-sunset-pink" />
-                      <span>{b}</span>
-                    </li>
-                  ))}
+                  <li className="flex gap-2 items-start"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-sunset-pink" />Impact 10+ students annually with monthly events</li>
+                  <li className="flex gap-2 items-start"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-sunset-pink" />Distribute 50+ survey responses per chapter</li>
+                  <li className="flex gap-2 items-start"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-sunset-pink" />Direct support + training from the COO</li>
                 </ul>
-              </div>
+                <a
+                  href="https://forms.gle/Fbu1pSboTZzRoiBYA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-sunset-gradient px-4 py-3 font-semibold text-black hover:opacity-90"
+                >
+                  Start a Chapter <Mail className="ml-2 h-4 w-4" />
+                </a>
+              </CardContent>
+            </Card>
 
-              <a
-                href={o.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-sunset-gradient px-4 py-3 font-semibold text-black hover:opacity-90"
-              >
-                {o.cta ?? "Apply"}
-              </a>
-            </CardContent>
-          </Card>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
+            <Card className="bg-black/60 border-white/10">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <HandHeart className="h-7 w-7 text-sunset-orange" />
+                  <div>
+                    <CardTitle className="text-lg">Volunteer</CardTitle>
+                    <p className="text-sunset-pink text-xs">Event-based / flexible</p>
+                  </div>
+                </div>
+                <CardDescription className="text-gray-300 mt-3">
+                  Help at workshops, hackathons, and outreach drives—low commitment, real impact.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-sm text-gray-200 space-y-2">
+                  <li className="flex gap-2 items-start"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-sunset-pink" />Earn verifiable hours via 501(c)(3) sponsorship</li>
+                  <li className="flex gap-2 items-start"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-sunset-pink" />Pick one-off events or recurring projects</li>
+                  <li className="flex gap-2 items-start"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-sunset-pink" />Join advocacy & hackathon crews statewide</li>
+                </ul>
+                <a
+                  href="https://forms.gle/Fm6r326rC72Hff449"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-sunset-gradient px-4 py-3 font-semibold text-black hover:opacity-90"
+                >
+                  Sign Up to Volunteer <Mail className="ml-2 h-4 w-4" />
+                </a>
+              </CardContent>
+            </Card>
           </div>
+        </div>
+      </section>
+    </div>
   );
-};
+}
 
 export default GetInvolved;
 
