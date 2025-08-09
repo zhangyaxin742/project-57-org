@@ -15,6 +15,10 @@ const About = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Our <span className="bg-sunset-gradient bg-clip-text text-transparent"> Mission </span>
           </h1>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            Project 57 was founded after a shocking statistic: <br/> 
+            Just 57% of Americans today are financially literate.
+          </p>
         </div>
       </section>
 
