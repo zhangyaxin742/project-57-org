@@ -13,11 +13,11 @@ const About = () => {
       <section className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            About <span className="bg-sunset-gradient bg-clip-text text-transparent">Project 57</span>
+            Our <span className="bg-sunset-gradient bg-clip-text text-transparent"> Mission </span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            A youth-led Massachusetts nonprofit transforming financial literacy education 
-            through innovative programs, legislative advocacy, and entrepreneurship support.
+            Project 57 was founded after a shocking statistic: <br/> 
+            Just 57% of Americans today are financially literate.
           </p>
         </div>
       </section>
@@ -25,23 +25,6 @@ const About = () => {
       {/* Mission & Story Section */}
       <section className="py-20 bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <h3 className="text-3xl font-bold text-white mb-6">Our <span className="bg-sunset-gradient bg-clip-text text-transparent"> Mission </span> </h3>
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                Project 57 exists to ensure that every young person in Massachusetts 
-                has access to comprehensive, engaging, and culturally relevant financial 
-                literacy education. We believe that financial empowerment is a 
-                fundamental right, not a privilege.
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                Through our three core programs - Legislative Advocacy, PFin Curriculum, 
-                and Youth Enterprise - we are building a more financially inclusive 
-                future for all young people.
-              </p>
-            </div>
-            
             <div className="bg-black/50 p-8 rounded-2xl border border-white/10">
               <h4 className="text-2xl font-bold text-white mb-4">Our Values</h4>
               <div className="space-y-4">
@@ -60,7 +43,6 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
       </section>
       
     </div>
