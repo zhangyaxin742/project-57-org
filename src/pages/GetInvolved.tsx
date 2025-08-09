@@ -1,6 +1,6 @@
 import Navigation from '@/components/Navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, Users, ChevonRight, HandHeart, BookOpenCheck, Landmark, LineChart, Lightbulb, FileText } from 'lucide-react';
+import { Mail, Users, ChevronRight, HandHeart, BookOpenCheck, Landmark, LineChart, Lightbulb, FileText } from 'lucide-react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 import type React from 'react';
@@ -267,7 +267,7 @@ const GridSection = ({ title, roles, compact = false, }: { title: string; roles:
       }}
       className="ml-2 inline-flex items-center rounded-md p-1.5 align-middle text-sunset-orange hover:text-white/90 hover:bg-white/5 transition"
     >
-      <ChevonRight
+      <ChevronRight
         className={`h-4 w-4 transition-transform ${isOpen ? "rotate-90" : ""}`}
       />
     </button>
