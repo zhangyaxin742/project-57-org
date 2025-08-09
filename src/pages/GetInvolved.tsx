@@ -168,28 +168,24 @@ const SingleRoleCard = ({ role }: { role: Role }) => (
   </Card>
 );
 
-const GridSection = ({
-  title,
-  roles
-}: {
-  title: string;
-  roles: Role[];
-}) => (
+const GridSection = ({ title, roles }: { title: string; roles: Role[] }) => (
   <section className="py-12">
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">{title}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
         {roles.map((role, idx) => (
-          <div 
+          <div
             key={idx}
             className={
               roles.length % 2 === 1 && idx === roles.length - 1
-              ? "md:col-span-2 flex justify-center"
-              : ""
+                ? "md:col-span-2 flex justify-center"
+                : ""
             }
-          <SingleRoleCard role={role} /> 
+          >
+            <SingleRoleCard role={role} />
+          </div>
+        ))}
       </div>
-    ))}
     </div>
   </section>
 );
