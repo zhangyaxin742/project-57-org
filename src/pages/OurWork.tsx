@@ -91,7 +91,7 @@ const competitions = [
 
 import React from 'react';
 import { useState, useEffect, useMemo } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom'; 
+import { useLocation, useNavigate, Link } from 'react-router-dom'; 
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -547,11 +547,12 @@ const getStatusColor = (status: BillStatus): string => {
                   </div>
                 </CardHeader>
                 <CardContent className="pt-0">
-                  <Button 
-                    className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300 ripple-effect group-hover:scale-105"
-                  >
+                  <Button asChild
+                    className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300 ripple-effect group-hover:scale-105">
+                    <Link to="/briefs/peer-led-education-impact" className="flex items-center justify-center"> 
                     <FileText className="h-4 w-4 mr-2" />
-                    Read Now
+                    Read Now 
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>

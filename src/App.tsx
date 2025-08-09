@@ -12,6 +12,7 @@ import About from "./pages/About";
 import GetInvolved from "./pages/GetInvolved";
 import Footer from "./components/Footer";
 import ScrollToTop from "@/components/ui/scroll-to-top";
+import Brief from "./pages/Briefs";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/get-involved" element={<GetInvolved />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="/briefs/:slug" element={<Brief />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
