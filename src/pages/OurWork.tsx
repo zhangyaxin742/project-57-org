@@ -217,8 +217,7 @@ import { formatMonthYear } from "../lib/utils";
 const VALID_SECTIONS = ["advocacy", "curriculum", "enterprise"] as const;
 type SectionKey = (typeof VALID_SECTIONS)[number];
 
-{/* Declare OurWork component */}
-
+// Declare OurWork component
 const OurWork = () => {
   // Define types
   type BillStatus = 'Introduced' | 'In Committee' | 'Passed' | 'Rejected';
@@ -317,284 +316,178 @@ useEffect(() => {
   }
 }, [location.hash]); // intentionally depends on hash
   
-
-// Program Cards (again) 
-
-const OurCards = () => {
-  const sections = [
-    {
-      title: 'Advocacy',
-      key: 'advocacy',
-      description: 'Track bills, read our research, and advocate for financial literacy education in your district.',
-      icon: Scale,
-      path: '/advocacy',
-      gradient: 'from-sunset-purple to-sunset-orange'
-    }, 
-        {
-      title: 'Curriculum',
-      key: 'curriculum',
-      description: 'Attend (or run) a financial literacy workshop in your town — designed by youth, for youth.',
-      icon: BookOpen,
-      path: '/curriculum',
-      gradient: 'from-sunset-orange to-sunset-pink'
-    },
-    {
-      title: 'Enterprise',
-      key: 'enterprise',
-      description: 'Explore pitch competitions, hackathons, and mentorship for young entrepreneurs.',
-      icon: Users,
-      path: '/enterprise',
-      gradient: 'from-sunset-pink to-sunset-purple'
-    },
-  ];
-
   // Data constants
   const bills: Bill[] = [
-  {
-    id: 1,
-    title: (
-      <>
+    {
+      id: 1,
+      title: (
+        <>
+        An Act <br /> 
+          Requiring Financial Education in Schools </>
+      ),
+      number: "H.46/S.421/H.636",
+      summary: "Requires comprehensive financial literacy education in all Massachusetts high schools. Establishes minimum curriculum standards and teacher certification requirements.",
+      status: "In Committee",
+      urls: [
+        "https://legiscan.com/MA/text/H46/id/3046995/Massachusetts-2025-H46-Introduced.pdf",
+        "https://legiscan.com/MA/text/S421/id/3163196/Massachusetts-2025-S421-Introduced.pdf",
+        "https://legiscan.com/MA/text/H636/id/3169916/Massachusetts-2025-H636-Introduced.pdf"
+      ],
+      sponsorsByBill: [
+        [
+          {
+            name: "Deborah Goldberg",
+            party: "State Treasurer",
+            district: "",
+            email: "dgoldberg@tre.state.ma.us",
+            phone: "617-367-6900"
+          }
+        ],
+        [
+          {
+            name: "Sen. James Eldridge",
+            party: "D",
+            district: "Middlesex and Worcester",
+            email: "James.Eldridge@masenate.gov",
+            phone: "(617) 722-1120"
+          },
+          {
+            name: "Sen. Patrick O'Connor",
+            party: "R",
+            district: "First Plymouth and Norfolk",
+            email: "Patrick.OConnor@masenate.gov",
+            phone: "(617) 722-1646"
+          },
+          {
+            name: "Sen. John Keenan",
+            party: "D",
+            district: "Norfolk and Plymouth",
+            email: "John.Keenan@masenate.gov",
+            phone: "(617) 722-1494"
+          },
+          {
+            name: "Deborah Goldberg",
+            party: "State Treasurer",
+            district: "",
+            email: "dgoldberg@tre.state.ma.us",
+            phone: "617-367-6900"
+          }
+        ],
+        [
+          {
+            name: "Rep. Kate Lipper-Garabedian",
+            party: "D",
+            district: "32nd Middlesex",
+            email: "kate.lipper-garabedian@mahouse.gov",
+            phone: "(617) 722-2960"
+          },
+          {
+            name: "Rep. Steven Ultrino",
+            party: "D",
+            district: "33rd Middlesex",
+            email: "Steven.Ultrino@mahouse.gov",
+            phone: "(617) 722-2877"
+          },
+          {
+            name: "Rep. Mindy Domb",
+            party: "D",
+            district: "3rd Hampshire",
+            email: "mindy.domb@mahouse.gov",
+            phone: "(617) 722-2060"
+          },
+          {
+            name: "Sen. James Eldridge",
+            party: "D",
+            district: "Middlesex and Worcester",
+            email: "James.Eldridge@masenate.gov",
+            phone: "(617) 722-1120"
+          },
+          {
+            name: "Rep. Russell Holmes",
+            party: "D",
+            district: "6th Suffolk",
+            email: "Russell.Holmes@mahouse.gov",
+            phone: "(617) 722-2220"
+          },
+          {
+            name: "Rep. Mark Sylvia",
+            party: "D",
+            district: "10th Bristol",
+            email: "Mark.Sylvia@mahouse.gov",
+            phone: "(617) 722-2400"
+          },
+          {
+            name: "Deborah Goldberg",
+            party: "State Treasurer",
+            district: "",
+            email: "dgoldberg@tre.state.ma.us",
+            phone: "617-367-6900"
+          }
+        ]
+      ]
+    },
+    {
+      id: 4,
+      title: ( <> 
       An Act <br /> 
-        Requiring Financial Education in Schools </>
-    ),
-    number: "H.46/S.421/H.636",
-    summary: "Requires comprehensive financial literacy education in all Massachusetts high schools. Establishes minimum curriculum standards and teacher certification requirements.",
-    status: "In Committee",
-    urls: [
-      "https://legiscan.com/MA/text/H46/id/3046995/Massachusetts-2025-H46-Introduced.pdf",
-      "https://legiscan.com/MA/text/S421/id/3163196/Massachusetts-2025-S421-Introduced.pdf",
-      "https://legiscan.com/MA/text/H636/id/3169916/Massachusetts-2025-H636-Introduced.pdf"
-    ],
-    sponsorsByBill: [
-      [
+       Relative to Higher Education Financial Literacy Counseling </> ), 
+      number: "H.1444",
+      summary:
+        "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
+      status: "In Committee",
+      url: "https://legiscan.com/MA/text/H1444/id/3168790/Massachusetts-2025-H1444-Introduced.pdf", 
+      sponsors: [
         {
-          name: "Deborah Goldberg",
-          party: "State Treasurer",
-          district: "",
-          email: "dgoldberg@tre.state.ma.us",
-          phone: "617-367-6900"
-        }
-      ],
-      [
-        {
-          name: "Sen. James Eldridge",
-          party: "D",
-          district: "Middlesex and Worcester",
-          email: "James.Eldridge@masenate.gov",
-          phone: "(617) 722-1120"
-        },
-        {
-          name: "Sen. Patrick O'Connor",
+          name: "Rep. Kimberly Ferguson",
           party: "R",
-          district: "First Plymouth and Norfolk",
-          email: "Patrick.OConnor@masenate.gov",
-          phone: "(617) 722-1646"
+          district: "1st Worcester",
+          email: "Kimberly.Ferguson@mahouse.gov",
+          phone: "(617) 722-2100"
         },
         {
-          name: "Sen. John Keenan",
-          party: "D",
-          district: "Norfolk and Plymouth",
-          email: "John.Keenan@masenate.gov",
-          phone: "(617) 722-1494"
+          name: "Rep. Paul Frost",
+          party: "R",
+          district: "7th Worcester",
+          email: "Paul.Frost@mahouse.gov",
+          phone: "(617) 722-2100"
         },
         {
-          name: "Deborah Goldberg",
-          party: "State Treasurer",
-          district: "",
-          email: "dgoldberg@tre.state.ma.us",
-          phone: "617-367-6900"
-        }
-      ],
-      [
-        {
-          name: "Rep. Kate Lipper-Garabedian",
-          party: "D",
-          district: "32nd Middlesex",
-          email: "kate.lipper-garabedian@mahouse.gov",
-          phone: "(617) 722-2960"
+          name: "Rep. Bradley Jones",
+          party: "R",
+          district: "20th Middlesex",
+          email: "Bradley.Jones@mahouse.gov",
+          phone: "(617) 722-2100"
         },
         {
-          name: "Rep. Steven Ultrino",
-          party: "D",
-          district: "33rd Middlesex",
-          email: "Steven.Ultrino@mahouse.gov",
-          phone: "(617) 722-2877"
-        },
-        {
-          name: "Rep. Mindy Domb",
-          party: "D",
-          district: "3rd Hampshire",
-          email: "mindy.domb@mahouse.gov",
-          phone: "(617) 722-2060"
-        },
-        {
-          name: "Sen. James Eldridge",
-          party: "D",
-          district: "Middlesex and Worcester",
-          email: "James.Eldridge@masenate.gov",
-          phone: "(617) 722-1120"
-        },
-        {
-          name: "Rep. Russell Holmes",
-          party: "D",
-          district: "6th Suffolk",
-          email: "Russell.Holmes@mahouse.gov",
-          phone: "(617) 722-2220"
-        },
-        {
-          name: "Rep. Mark Sylvia",
-          party: "D",
-          district: "10th Bristol",
-          email: "Mark.Sylvia@mahouse.gov",
-          phone: "(617) 722-2400"
-        },
-        {
-          name: "Deborah Goldberg",
-          party: "State Treasurer",
-          district: "",
-          email: "dgoldberg@tre.state.ma.us",
-          phone: "617-367-6900"
+          name: "Rep. Hannah Kane",
+          party: "R",
+          district: "11th Worcester",
+          email: "Hannah.Kane@mahouse.gov",
+          phone: "(617) 722-2810"
         }
       ]
-    ]
-  },
-  {
-    id: 4,
-    title: ( <> 
-    An Act <br /> 
-     Relative to Higher Education Financial Literacy Counseling </> ), 
-    number: "H.1444",
-    summary:
-      "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
-    status: "In Committee",
-    url: "https://legiscan.com/MA/text/H1444/id/3168790/Massachusetts-2025-H1444-Introduced.pdf", 
-    sponsors: [
-      {
-        name: "Rep. Kimberly Ferguson",
-        party: "R",
-        district: "1st Worcester",
-        email: "Kimberly.Ferguson@mahouse.gov",
-        phone: "(617) 722-2100"
-      },
-      {
-        name: "Rep. Paul Frost",
-        party: "R",
-        district: "7th Worcester",
-        email: "Paul.Frost@mahouse.gov",
-        phone: "(617) 722-2100"
-      },
-      {
-        name: "Rep. Bradley Jones",
-        party: "R",
-        district: "20th Middlesex",
-        email: "Bradley.Jones@mahouse.gov",
-        phone: "(617) 722-2100"
-      },
-      {
-        name: "Rep. Hannah Kane",
-        party: "R",
-        district: "11th Worcester",
-        email: "Hannah.Kane@mahouse.gov",
-        phone: "(617) 722-2810"
-      },
-      {
-        name: "Rep. Todd Smola",
-        party: "R",
-        district: "1st Hampden",
-        email: "Todd.Smola@mahouse.gov",
-        phone: "(617) 722-2100"
-      },
-      {
-        name: "Rep. Alyson Sullivan-Almeida",
-        party: "R",
-        district: "7th Plymouth",
-        email: "alyson.sullivan@mahouse.gov",
-        phone: "(617) 722-2488"
-      },
-      {
-        name: "Rep. Kelly Pease",
-        party: "R",
-        district: "4th Hampden",
-        email: "Kelly.Pease@mahouse.gov",
-        phone: "(413) 875-8787"
-      }
-    ],
-  },
-  {
-    id: 5,
-    title: (
-      <>
-      An Act <br /> 
-        Relative to Student Financial Literacy </>
-      ),
-    number: "S.423",
-    summary:
-      "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
-    status: "Introduced",
-    url: "https://legiscan.com/MA/text/S423/id/3164156/Massachusetts-2025-S423-Introduced.pdf", 
-    sponsors: [
-      {
-        name: "Sen. Patrick O'Connor",
-        party: "R",
-        district: "First Plymouth and Norfolk",
-        email: "Patrick.OConnor@masenate.gov",
-        phone: "(617) 722-1646"
-      },
-      {
-        name: "Sen. Patricia Jehlen",
-        party: "D",
-        district: "Second Middlesex",
-        email: "Patricia.Jehlen@masenate.gov",
-        phone: "(617) 722-1578"
-      }
-    ]
-  },
-  {
-    id: 6,
-    title: (
-      <>
-      An Act <br /> 
-      Relative to the Strengthening of Financial Literacy Throughout the Commonwealth </>
-      ),
-    number: "H.627",
-    summary:
-      "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
-    status: "Introduced",
-    url: "https://legiscan.com/MA/text/H627/id/3167243/Massachusetts-2025-H627-Introduced.pdf",
-    sponsors: [
-      {
-        name: "John Lawn",
-        party: "D",
-        district: "10th Middlesex",
-        email: "John.Lawn@mahouse.gov",
-        phone: "(617) 722-2430"
-      }
-    ]
-  }, 
-  {
-    id: 7, 
-    title: ( 
-      <> 
-      An Act <br /> 
-        Relative to Personal Financial Literacy </>
-      ),
-    number: "H.594", 
-    summary: "hamilton!!",
-    status: "In Committee",
-    url: "https://legiscan.com/MA/text/H594/id/3170318/Massachusetts-2025-H594-Introduced.pdf", 
-    sponsors: [
-      {
-        name: "Ryan Hamilton", 
-        party: "D", 
-        district: "15th Essex", 
-        email: "Ryan.Hamilton@mahouse.gov", 
-        phone: "(617) 722-2090"
-      }
-    ]
-  }
-];
+    }
+  ];
 
-const getStatusColor = (status: BillStatus): string => {
+  const briefs = getBriefs();
+  const articles = briefs.map(b => ({
+    title: b.meta.title,
+    subheading: b.meta.description,
+    author: b.meta.author ?? "Project 57",
+    date: formatMonthYear?.(b.meta.date) ?? b.meta.date ?? "",
+    readingTime: b.meta.readingTime ?? "",
+    tags: b.meta.tags ?? [],
+  }));
+
+  // State variables
+  const [selectedBill, setSelectedBill] = useState(null);
+  const [activeModal, setActiveModal] = useState(null);
+  const [openFaq1, setOpenFaq1] = useState(false);
+  const [openFaq2, setOpenFaq2] = useState(false);
+  const [showAllResearch, setShowAllResearch] = useState(false);
+  const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
+
+  const getStatusColor = (status: BillStatus): string => {
     switch (status) {
       case 'Introduced': return 'bg-primary/20 text-primary border-primary/30';
       case 'In Committee': return 'bg-accent/20 text-accent-foreground border-accent/30';
@@ -616,33 +509,11 @@ const getStatusColor = (status: BillStatus): string => {
       date: "Jan 20, 2025"
     },
     {
-      title: "Credit Building Masterclass",
-      location: "Virtual",
+      title: "College Financial Literacy Session",
+      location: "Cambridge, MA",
       date: "Feb 10, 2025"
     }
   ];
-
-  const briefs = getBriefs(); 
-  console.log("OurWork briefs:", briefs);
-
-  // normalize mdx 
-  const articles = briefs.map(b => ({
-  slug: b.slug,
-  title: b.meta.title,
-  subheading: b.meta.description,
-  author: b.meta.author ?? "Project 57",
-  date: formatMonthYear?.(b.meta.date) ?? b.meta.date ?? "",
-  readingTime: b.meta.readingTime ?? "",
-  tags: b.meta.tags ?? [],
-}));
-
-// toggle logic 
-  const [selectedBill, setSelectedBill] = useState(null);
-  const [activeModal, setActiveModal] = useState(null);
-  const [openFaq1, setOpenFaq1] = useState(false);
-  const [openFaq2, setOpenFaq2] = useState(false);
-const [showAllResearch, setShowAllResearch] = useState(false);
-const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
 
   // Component definitions
   const Advocacy = () => (
@@ -656,245 +527,142 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {displayedArticles.map((article, index) => (
-              <Card 
-                key={index} 
-                className="bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300 animate-fade-in group"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-white text-lg font-semibold leading-tight mb-2">
+              <Card key={index} className="bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300 group">
+                <CardHeader>
+                  <CardTitle className="text-white text-lg group-hover:text-sunset-orange transition-colors">
                     {article.title}
                   </CardTitle>
-                  <p className="text-gray-400 text-sm mb-3">
+                  <CardDescription className="text-gray-400 text-sm">
                     {article.subheading}
-                  </p>
-                  <div className="text-xs text-gray-500 space-y-1">
-                    <div>By {article.author}</div>
-                    <div className="flex justify-between">
-                      <span>{article.date}</span>
-                      <span>{article.readingTime}</span>
-                    </div>
-                  </div>
+                  </CardDescription>
                 </CardHeader>
-                <CardContent className="pt-0">
-                  <Button asChild
-                    className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300 ripple-effect group-hover:scale-105">
-<Link to={`/briefs/${article.slug}`} className="flex items-center justify-center">
-  <FileText className="h-4 w-4 mr-2" />
-  Read Now
-</Link>
+                <CardContent>
+                  <div className="flex justify-between items-center text-sm text-gray-500 mb-4">
+                    <span>{article.author}</span>
+                    <span>{article.readingTime}</span>
+                  </div>
+                  <p className="text-gray-300 text-sm mb-4">{article.date}</p>
+                  <Button 
+                    asChild
+                    variant="outline" 
+                    size="sm"
+                    className="border-sunset-orange text-sunset-orange hover:bg-sunset-orange hover:text-black transition-all duration-300"
+                  >
+                    <Link to={`/briefs/${article.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                      Read More
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
             ))}
           </div>
-
-          <div className="text-center">
-            <Button 
-              onClick={() => setShowAllResearch(prev => !prev)}
-              className="bg-sunset-gradient hover:opacity-90 text-black font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
-            >
-              {showAllResearch ? "Hide Briefs" : "Show All Briefs"}
-            </Button>
-          </div>
+          
+          {articles.length > 3 && (
+            <div className="text-center">
+              <Button 
+                onClick={() => setShowAllResearch(!showAllResearch)}
+                variant="outline"
+                className="border-sunset-pink text-sunset-pink hover:bg-sunset-pink hover:text-black"
+              >
+                {showAllResearch ? 'Show Less' : `Show All ${articles.length} Articles`}
+              </Button>
+            </div>
+          )}
         </div>
       </section>
 
-      {/* Bill Tracker */}
-      <section className="py-20 bg-gray-900">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold">
-              Bill <span className="bg-sunset-gradient bg-clip-text text-transparent">Tracker</span>
-            </h2>
-            <div className="text-sm text-gray-400 flex items-center gap-2">
-              <TrendingUp className="h-4 w-4" />
-              Powered by Billtrack50.com API
-            </div>
-          </div>
+      {/* Legislative Tracker */}
+      <section className="py-16 bg-black">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">
+            Track Massachusetts Bills
+          </h2>
           
-          {/* Subheading */}
-          <p className="text-gray-400 text-sm max-w-3xl mb-8">
-            Multiple identical bills have been filed to show unified support. They are grouped below for clarity.
-          </p>
-          
-          <Carousel opts={{ loop: true}} className="w-full">
-            <CarouselContent className="-ml-2 md:-ml-4">
-              {bills.map((bill) => (
-                <CarouselItem key={bill.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card className="flex flex-col justify-between  bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300 h-full">
-                    <CardHeader className="pb-3">
-<div className="flex justify-between items-start mb-2">
-  <CardTitle className="text-white text-[15px] text-lg font-bold">
-    {bill.title}
-  </CardTitle>
-    <Badge className={`${getStatusColor(bill.status)} text-white text-[10px] whitespace-nowrap`}>
-    {bill.status}
-  </Badge>
-                      </div>
-                      <div className="text-sunset-orange font-semibold text-sm mb-3">
+          <div className="space-y-6">
+            {bills.map((bill) => (
+              <Card key={bill.id} className="bg-gray-900/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300">
+                <CardHeader>
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                    <div className="flex-1">
+                      <CardTitle className="text-white text-xl mb-2">
+                        {bill.title}
+                      </CardTitle>
+                      <div className="text-sunset-orange font-semibold mb-3">
                         {bill.number}
                       </div>
-                      <p className="text-gray-300 text-sm leading-relaxed">
+                      <CardDescription className="text-gray-300 leading-relaxed">
                         {bill.summary}
-                      </p>
-                    </CardHeader>
-                    <CardContent className="pt-0 mt-auto">
-                      <div className="flex gap-2">
+                      </CardDescription>
+                    </div>
+                    <div className="flex flex-col items-start md:items-end gap-3">
+                      <Badge className={getStatusColor(bill.status)}>
+                        {bill.status}
+                      </Badge>
+                      <div className="flex flex-wrap gap-2">
                         {bill.urls ? (
-                          <Button
-                            size="sm"
-                            className="flex-1 bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
-                            onClick={() => {
-                              setSelectedBill(bill);
-                              setActiveModal('text');
-                            }}
-                          >
-                            View Text
-                          </Button>
+                          <>
+                            <Button 
+                              size="sm" 
+                              variant="outline"
+                              onClick={() => {
+                                setSelectedBill(bill);
+                                setActiveModal('text');
+                              }}
+                              className="border-sunset-orange text-sunset-orange hover:bg-sunset-orange hover:text-black text-xs"
+                            >
+                              <FileText className="h-3 w-3 mr-1" />
+                              View Bills
+                            </Button>
+                            <Button 
+                              size="sm" 
+                              variant="outline"
+                              onClick={() => {
+                                setSelectedBill(bill);
+                                setActiveModal('sponsors');
+                              }}
+                              className="border-sunset-pink text-sunset-pink hover:bg-sunset-pink hover:text-black text-xs"
+                            >
+                              <Users className="h-3 w-3 mr-1" />
+                              Contact Sponsors
+                            </Button>
+                          </>
                         ) : (
-                          <Button
-                            asChild
-                            size="sm"
-                            className="flex-1 bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
-                          >
-                            <a href={bill.url} target="_blank" rel="noopener noreferrer">
-                              View Full Text
-                            </a>
-                          </Button>
+                          <>
+                            {bill.url && (
+                              <Button 
+                                asChild
+                                size="sm" 
+                                variant="outline"
+                                className="border-sunset-orange text-sunset-orange hover:bg-sunset-orange hover:text-black text-xs"
+                              >
+                                <a href={bill.url} target="_blank" rel="noopener noreferrer">
+                                  <FileText className="h-3 w-3 mr-1" />
+                                  View Bill
+                                </a>
+                              </Button>
+                            )}
+                            {bill.sponsors && (
+                              <Button 
+                                size="sm" 
+                                variant="outline"
+                                onClick={() => {
+                                  setSelectedBill(bill);
+                                  setActiveModal('sponsors-single');
+                                }}
+                                className="border-sunset-pink text-sunset-pink hover:bg-sunset-pink hover:text-black text-xs"
+                              >
+                                <Users className="h-3 w-3 mr-1" />
+                                Contact Sponsors
+                              </Button>
+                            )}
+                          </>
                         )}
-                        <Button 
-                          size="sm"
-                          variant="outline"
-                          className="flex-1 border-gray-600 text-gray-300 hover:bg-gray-800 transition-all duration-300"
-                          onClick={() => {
-                            setSelectedBill(bill);
-                            setActiveModal(bill.sponsorsByBill ? 'sponsors' : 'sponsors-single');
-                          }}
-                        >
-                          View Sponsors
-                        </Button>
                       </div>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex -left-12 border-gray-600 bg-black/50 hover:bg-gray-800" />
-            <CarouselNext className="hidden md:flex -right-12 border-gray-600 bg-black/50 hover:bg-gray-800" />
-          </Carousel>
-        </div>
-      </section>
-    
-      {/* Civic Action Center */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 animate-fade-in">
-              Civic Action <span className="bg-sunset-gradient bg-clip-text text-transparent">Center</span>
-            </h2>
-            <div className="w-24 h-1 bg-sunset-gradient mx-auto animate-scale-in" style={{ animationDelay: '0.2s' }}></div>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-black/50 border-2 border-transparent hover:border-sunset-orange/50 transition-all duration-500 animate-fade-in group bg-gradient-to-br from-black/50 to-gray-900">
-              <CardHeader className="text-center pb-6">
-                <div className="mx-auto w-16 h-16 bg-gradient-to-r from-sunset-orange to-sunset-pink rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Calendar className="h-8 w-8 text-white" />
-                </div>
-                <CardTitle className="text-2xl text-white mb-3">
-                  Upcoming Hearings
-                </CardTitle>
-                <p className="text-gray-300 leading-relaxed">
-                  Stay informed about legislative hearings and public comment opportunities 
-                  that impact financial literacy education.
-                </p>
-              </CardHeader>
-              <CardContent className="text-center">
-                <Button 
-                  size="lg"
-                  className="bg-gradient-to-r from-sunset-orange to-sunset-pink hover:opacity-90 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
-                  onClick={() => window.open('https://malegislature.gov/Events', '_blank')}
-                >
-                  View Calendar
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-black/50 border-2 border-transparent hover:border-sunset-pink/50 transition-all duration-500 animate-fade-in group bg-gradient-to-br from-black/50 to-gray-900" style={{ animationDelay: '0.1s' }}>
-              <CardHeader className="text-center pb-6">
-                <div className="mx-auto w-16 h-16 bg-gradient-to-r from-sunset-pink to-sunset-purple rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Users className="h-8 w-8 text-white" />
-                </div>
-                <CardTitle className="text-2xl text-white mb-3">
-                  Intro to Lobbying
-                </CardTitle>
-                <p className="text-gray-300 leading-relaxed">
-                  Learn the fundamentals of effective advocacy with our comprehensive 
-                  guide to youth lobbying and civic engagement.
-                </p>
-              </CardHeader>
-              <CardContent className="text-center">
-                <Button 
-                  size="lg"
-                  className="bg-gradient-to-r from-sunset-pink to-sunset-purple hover:opacity-90 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
-                  onClick={() => window.open('#', '_blank')}
-                >
-                  Download Guide
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-black/50 border-2 border-transparent hover:border-sunset-purple/50 transition-all duration-500 animate-fade-in group bg-gradient-to-br from-black/50 to-gray-900" style={{ animationDelay: '0.2s' }}>
-              <CardHeader className="text-center pb-6">
-                <div className="mx-auto w-16 h-16 bg-gradient-to-r from-sunset-purple to-sunset-orange rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <FileText className="h-8 w-8 text-white" />
-                </div>
-                <CardTitle className="text-2xl text-white mb-3">
-                  Scripts & Shareables
-                </CardTitle>
-                <p className="text-gray-300 leading-relaxed">
-                  Access ready-to-use advocacy materials, social media templates, 
-                  and talking points for your legislative outreach.
-                </p>
-              </CardHeader>
-              <CardContent className="text-center">
-                <Button 
-                  size="lg"
-                  className="bg-gradient-to-r from-sunset-purple to-sunset-orange hover:opacity-90 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
-                  onClick={() => window.open('#', '_blank')}
-                >
-                  Get Shareables
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-16 bg-black">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="space-y-4">
-            <Collapsible open={openFaq1} onOpenChange={setOpenFaq1}>
-              <CollapsibleTrigger className="flex items-center justify-between w-full p-4 bg-black/50 border border-white/10 rounded-lg text-gray-300 hover:bg-gray-800 transition-all duration-300">
-                <span className="font-medium">Why are there multiple versions of the same bill?</span>
-                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openFaq1 ? 'rotate-180' : ''}`} />
-              </CollapsibleTrigger>
-              <CollapsibleContent className="p-4 bg-black/50 border border-white/10 border-t-0 rounded-b-lg text-gray-300">
-                Different legislators and the Treasurer filed identical bills in the House and Senate to show broad support and ensure the proposal moves procedurally through both chambers.
-              </CollapsibleContent>
-            </Collapsible>
-            
-            <Collapsible open={openFaq2} onOpenChange={setOpenFaq2}>
-              <CollapsibleTrigger className="flex items-center justify-between w-full p-4 bg-black/50 border border-white/10 rounded-lg text-gray-300 hover:bg-gray-800 transition-all duration-300">
-                <span className="font-medium">What should I support?</span>
-                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openFaq2 ? 'rotate-180' : ''}`} />
-              </CollapsibleTrigger>
-              <CollapsibleContent className="p-4 bg-black/50 border border-white/10 border-t-0 rounded-b-lg text-gray-300">
-                All versions with identical text are effectively the same proposal. We recommend focusing on H.636 and S.421, the primary House and Senate vehicles, while recognizing the Treasurer's filing (H.46) as supportive.
-              </CollapsibleContent>
-            </Collapsible>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -902,52 +670,94 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
   );
 
   const Curriculum = () => (
-    <div className="py-16 bg-gray-900">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-white mb-12 text-center">
-          Educational Workshops
-        </h2>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {workshops.map((workshop, index) => (
-            <Card 
-              key={index} 
-              className="bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300"
-            >
-              <CardHeader>
-                <CardTitle className="text-white text-lg font-semibold">
-                  {workshop.title}
-                </CardTitle>
-                <div className="text-gray-400 text-sm space-y-1">
-                  <div className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4" />
+    <div className="space-y-16">
+      {/* Workshop Directory */}
+      <section className="py-16 bg-gray-900">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">
+            Upcoming Workshops
+          </h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {workshops.map((workshop, index) => (
+              <Card key={index} className="bg-black/50 border-white/10 hover:border-sunset-pink/50 transition-all duration-300 group">
+                <CardHeader>
+                  <CardTitle className="text-white group-hover:text-sunset-pink transition-colors">
+                    {workshop.title}
+                  </CardTitle>
+                  <CardDescription className="text-gray-300 flex items-center">
+                    <MapPin className="h-4 w-4 mr-2" />
                     {workshop.location}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4" />
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center text-sunset-orange mb-4">
+                    <Calendar className="h-4 w-4 mr-2" />
                     {workshop.date}
                   </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <Button 
-                  className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
-                >
-                  Register Now
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+                  <Button 
+                    className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium"
+                  >
+                    Register Now
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Curriculum Principles */}
+      <section className="py-16 bg-black">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-white mb-8">
+            Our Curriculum Principles
+          </h2>
+          <p className="text-gray-300 text-lg mb-12">
+            Financial literacy education that meets students where they are
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-gray-900/50 p-6 rounded-xl border border-white/10">
+              <div className="bg-sunset-gradient w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Heart className="h-6 w-6 text-black" />
+              </div>
+              <h3 className="text-white font-semibold mb-3">Relatable</h3>
+              <p className="text-gray-400 text-sm">
+                Real scenarios that reflect diverse student experiences and backgrounds
+              </p>
+            </div>
+            
+            <div className="bg-gray-900/50 p-6 rounded-xl border border-white/10">
+              <div className="bg-sunset-gradient w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Target className="h-6 w-6 text-black" />
+              </div>
+              <h3 className="text-white font-semibold mb-3">Practical</h3>
+              <p className="text-gray-400 text-sm">
+                Skills and knowledge students can immediately apply to their lives
+              </p>
+            </div>
+            
+            <div className="bg-gray-900/50 p-6 rounded-xl border border-white/10">
+              <div className="bg-sunset-gradient w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Users className="h-6 w-6 text-black" />
+              </div>
+              <h3 className="text-white font-semibold mb-3">Interactive</h3>
+              <p className="text-gray-400 text-sm">
+                Hands-on activities, discussions, and peer-to-peer learning
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 
   const Enterprise = () => (
     <div className="py-16 bg-gray-900">
-      <div className="max-w-6xl mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold text-white mb-8">
-          Enterprise Programs
+      <div className="max-w-4xl mx-auto px-4 text-center">
+        <h2 className="text-3xl font-bold mb-6">
+          Youth <span className="bg-sunset-gradient bg-clip-text text-transparent">Enterprise</span>
         </h2>
         <p className="text-gray-300 text-lg mb-8">
           Coming soon - Youth entrepreneurship and financial innovation programs.
@@ -963,6 +773,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
 
   return (
     <div className="min-h-screen bg-black text-white">
+      <div id="top" className="sr-only" />
       <Navigation />
 
       {/* Hero Section */}
