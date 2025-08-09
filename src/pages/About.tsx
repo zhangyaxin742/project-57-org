@@ -13,12 +13,8 @@ const About = () => {
       <section className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            About <span className="bg-sunset-gradient bg-clip-text text-transparent">Project 57</span>
+            Our <span className="bg-sunset-gradient bg-clip-text text-transparent"> Mission </span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            A youth-led Massachusetts nonprofit transforming financial literacy education 
-            through innovative programs, legislative advocacy, and entrepreneurship support.
-          </p>
         </div>
       </section>
 
@@ -28,7 +24,6 @@ const About = () => {
 
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div>
-              <h3 className="text-3xl font-bold text-white mb-6">Our <span className="bg-sunset-gradient bg-clip-text text-transparent"> Mission </span> </h3>
               <p className="text-gray-300 mb-6 leading-relaxed">
                 Project 57 exists to ensure that every young person in Massachusetts 
                 has access to comprehensive, engaging, and culturally relevant financial 
