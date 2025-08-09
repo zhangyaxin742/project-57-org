@@ -847,15 +847,15 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
               <Card
                 onClick={() => setExpandedSection(isOpen ? null : key)}
                 aria-expanded={isOpen}
-                aria-controls="section-panel"   /* single panel below */
-                className={[
-                  "group relative overflow-hidden rounded-2xl",
-                  "bg-gradient-to-br from-gray-900/50 to-black",
-                  "border border-white/10 transition-all duration-500",
-                  isOpen
-                    ? "border-orange-400/70 shadow-[0_0_0_1px_rgba(251,146,60,.3)]"
-                    : "hover:border-white/20 hover:scale-[1.02]",
-                ].join(" ")}
+                aria-controls={`section-panel-${key}`} /* single panel below */
+  className={[
+    "group relative overflow-hidden rounded-2xl",
+    "bg-gradient-to-br from-gray-900/50 to-black",
+    "border border-white/10 transition-all duration-500",
+    isOpen
+      ? "border-orange-400/70 shadow-[0_0_0_1px_rgba(251,146,60,.3)]"
+      : "hover:border-white/20 hover:scale-[1.02]",
+  ].join(" ")}
               >
                 {/* Top gradient bar */}
                 <div className={`h-2 bg-gradient-to-r ${gradient}`} />
@@ -872,9 +872,13 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                     <Icon className="h-8 w-8 text-white" />
                   </div>
 
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 transition-colors duration-300 group-hover:text-sunset-pink">
-                    {title}
-                  </h3>
+<h3
+  className={`text-xl md:text-2xl font-bold mb-4 transition-colors duration-300 ${
+    isOpen ? "text-white" : "text-gray-200 group-hover:text-sunset-pink"
+  }`}
+>
+  {title}
+</h3>
 
                   <p className="text-gray-300 leading-relaxed">{description}</p>
 
@@ -885,8 +889,12 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                     </svg>
                   </div>
 
-                  {/* Active underline indicator */}
-                  <div className={`mt-4 h-[3px] rounded-full bg-sunset-pink transition-opacity ${isOpen ? "opacity-100" : "opacity-0"}`} />
+                  {/* Active gradient indicator */}
+                 {isOpen && (
+                <div 
+                   className={`absolue inset-0 bg-gradient-to-br ${gradient} opacity-20 pointer-events-none`}
+                  aria-hidden="true" />
+                )}
                 </div>
               </Card>
             </motion.div>
