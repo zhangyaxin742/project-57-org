@@ -90,7 +90,7 @@ const competitions = [
  // #endregion
 
 import React from 'react';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom'; 
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
@@ -114,18 +114,14 @@ import {
   Mail, 
   ChevronDown, 
   Handshake } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { getBriefs } from "../lib/briefs";
 import { formatMonthYear } from "../lib/utils";
 
 
-const VALID_TABS = ["advocacy", "curriculum", "enterprise"] as const;
-type TabKey = (typeof VALID_TABS)[number];
-
-const getTabFromHash = (hash: string): TabKey => {
-  const h = (hash || "").replace("#", "");
-  return (VALID_TABS as readonly string[]).includes(h) ? (h as TabKey) : "advocacy";
-};
+const VALID_SECTIONS = ["advocacy", "curriculum", "enterprise"] as const;
+type SectionKey = (typeof VALID_SECTIONS)[number];
 
 {/* Declare OurWork component */}
 
@@ -172,31 +168,27 @@ const OurWork = () => {
     const location = useLocation();
   const navigate = useNavigate();
 
-  const [activeTab, setActiveTab] = useState<TabKey>(() => getTabFromHash(location.hash));
+  const [expandedSection, setExpandedSection] = useState<SectionKey | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
-  // Sync with hash changes (e.g., user hits a deep link or back button)
+  // on mount, open based on hash if present
   useEffect(() => {
-    const next = getTabFromHash(location.hash);
-    setActiveTab(next);
-    // optional: scroll to the tabs top
-    const anchorEl = document.getElementById("our-work-tabs");
-    if (anchorEl) anchorEl.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, [location.hash]);
+    const hash = (location.hash || "").replace("#", "") as SectionKey;
+    if ((VALID_SECTIONS as readonly string[]).includes(hash)) {
+      setExpandedSection(hash);
+      setTimeout(() => containerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  // When tab changes, update the hash (replace so back button isn't spammy)
-  const handleTabChange = (val: string) => {
-    if (!VALID_TABS.includes(val as TabKey)) return;
-    setActiveTab(val as TabKey);
-    navigate(`${location.pathname}#${val}`, { replace: true });
-  };
-
-  const tabProps = useMemo(
-    () => ({
-      value: activeTab,
-      onValueChange: handleTabChange,
-    }),
-    [activeTab]
-  );
+  // whenever expandedSection changes, reflect in URL hash (or clear it)
+  useEffect(() => {
+    const newHash = expandedSection ? `#${expandedSection}` : "";
+    navigate(`${location.pathname}${newHash}`, { replace: true });
+    if (expandedSection) {
+      setTimeout(() => containerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
+    }
+  }, [expandedSection, navigate, location.pathname]);
   
   // Data constants
   const bills: Bill[] = [
@@ -830,44 +822,73 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
 
       {/* Tabbed Content */}
       <section id="our-work-tabs" className="py-16 bg-black">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card
-              onClick={() => console.log("Advocacy card clicked")}
-              className="cursor-pointer bg-black/60 border border-white/10 hover:border-sunset-orange/60 transition-colors duration-300"
-            >
-              <CardHeader>
-                <CardTitle className="text-lg font-bold">Advocacy</CardTitle>
-                <CardDescription>
-                  Explore our research library, bill tracker, and civic action tools.
-                </CardDescription>
-              </CardHeader>
-            </Card>
+        <div ref={containerRef} className="max-w-6xl mx-auto px-4">
+          <motion.div
+            layout
+            className={
+              expandedSection
+                ? "grid grid-cols-1 gap-6"
+                : "grid grid-cols-1 md:grid-cols-3 gap-6"
+            }
+          >
+            {([
+              { key: "advocacy", label: "Advocacy" },
+              { key: "curriculum", label: "Curriculum" },
+              { key: "enterprise", label: "Enterprise" },
+            ] as { key: SectionKey; label: string }[]).map(({ key, label }) => {
+              const isOpen = expandedSection === key;
+              return (
+                <motion.div key={key} layout>
+                  <Card
+                    className={[
+                      "cursor-pointer bg-black/60 border border-white/10 rounded-2xl overflow-hidden",
+                      isOpen ? "border-sunset-orange/70" : "hover:border-sunset-orange/60",
+                    ].join(" ")}
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setExpandedSection(isOpen ? null : key)}
+                      className="w-full text-left"
+                      aria-expanded={isOpen}
+                      aria-controls={`section-panel-${key}`}
+                    >
+                      <CardHeader className="flex flex-row items-center justify-between p-5">
+                        <span className="text-xl font-semibold text-white">{label}</span>
+                        <ChevronDown
+                          className={`shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}
+                        />
+                      </CardHeader>
+                    </button>
 
-            <Card
-              onClick={() => console.log("Curriculum card clicked")}
-              className="cursor-pointer bg-black/60 border border-white/10 hover:border-sunset-orange/60 transition-colors duration-300"
-            >
-              <CardHeader>
-                <CardTitle className="text-lg font-bold">Curriculum</CardTitle>
-                <CardDescription>
-                  Discover workshops and learning experiences for students.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card
-              onClick={() => console.log("Enterprise card clicked")}
-              className="cursor-pointer bg-black/60 border border-white/10 hover:border-sunset-orange/60 transition-colors duration-300"
-            >
-              <CardHeader>
-                <CardTitle className="text-lg font-bold">Enterprise</CardTitle>
-                <CardDescription>
-                  Upcoming youth entrepreneurship and innovation programs.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          key="panel"
+                          layout
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: "easeOut" }}
+                          className="overflow-hidden"
+                          id={`section-panel-${key}`}
+                        >
+                          <CardContent
+                            className="p-0"
+                            onClick={(e) => e.stopPropagation()}
+                            onMouseDown={(e) => e.stopPropagation()}
+                          >
+                            {key === "advocacy" && <Advocacy />}
+                            {key === "curriculum" && <Curriculum />}
+                            {key === "enterprise" && <Enterprise />}
+                          </CardContent>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </Card>
+                </motion.div>
+              );
+            })}
+          </motion.div>
         </div>
       </section>
 
