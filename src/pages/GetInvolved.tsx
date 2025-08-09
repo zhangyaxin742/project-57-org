@@ -192,7 +192,6 @@ const GridSection = ({
   </section>
 );
 
-export default function GetInvolved() {
   return (
     <div className="min-h-screen bg-black text-white">
       <Navigation />
