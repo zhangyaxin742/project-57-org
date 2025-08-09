@@ -180,14 +180,16 @@ const GridSection = ({
       <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">{title}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
         {roles.map((role, idx) => (
-          <SingleRoleCard key={idx} role={role} />
-        ))}
-
-        {/* If odd count, add a placeholder to center the last card on md+ */}
-        {roles.length % 2 === 1 && (
-          <div className="hidden md:block" aria-hidden />
-        )}
+          <div 
+            key={idx}
+            className={
+              roles.length % 2 === 1 && idx === roles.length - 1
+              ? "md:col-span-2 flex justify-center"
+              : ""
+            }
+          <SingleRoleCard role={role} /> 
       </div>
+    ))}
     </div>
   </section>
 );
