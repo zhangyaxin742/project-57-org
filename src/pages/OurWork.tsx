@@ -217,7 +217,7 @@ import { formatMonthYear } from "../lib/utils";
 const VALID_SECTIONS = ["advocacy", "curriculum", "enterprise"] as const;
 type SectionKey = (typeof VALID_SECTIONS)[number];
 
-{/* Declare OurWork component */}
+// Declare OurWork component
 
 const OurWork = () => {
   // Define types
@@ -1345,6 +1345,10 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
       )}
     </div>
   );
+};
+
+// Final render for OurWork
+return <OurCards />;
 };
 
 export default OurWork;
