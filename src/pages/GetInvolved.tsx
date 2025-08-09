@@ -337,7 +337,9 @@ function GetInvolved() {
 
       <GridSection title="Executive Team" roles={execPositions} />
       <GridSection title="Associate Team" roles={associatePositions} />
+      < div className = "mb-12">
       <GridSection compact centerLast={false} title="Local Opportunities" roles={[chapterPresident[0], volunteerRole[0]]} />
+        </div>
     </div>
   );
 }
