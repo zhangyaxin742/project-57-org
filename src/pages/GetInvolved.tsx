@@ -323,7 +323,7 @@ function GetInvolved() {
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-24 pb-10">
+      <section className="pt-24 pb-10 mt-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Get <span className="bg-sunset-gradient bg-clip-text text-transparent">Involved</span>
