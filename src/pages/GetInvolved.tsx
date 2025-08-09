@@ -1,8 +1,8 @@
 import Navigation from '@/components/Navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Mail, Users, Megaphone, HandHeart, BookOpenCheck, Landmark, LineChart, Lightbulb, FileText } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { motion, useAnimation, useInView } from 'framer-motion';
+import { useState, useRef, useEffect } from 'react';
 import type React from 'react';
 import type { Variants } from 'framer-motion';
 
@@ -155,49 +155,55 @@ const associatePositions: Role[] = [
   },
 ];
 
-const SingleRoleCard = ({ role }: { role: Role }) => (
-  <Card className="bg-black/60 border-white/10 hover:border-sunset-orange/60 transition">
-    <CardHeader className="pb-2">
-      <div className="flex items-center gap-3">
-        <role.icon className="h-7 w-7 text-sunset-orange" />
-        <div>
-          <CardTitle className="text-white text-lg">{role.title}</CardTitle>
-          <p className="text-sunset-pink text-xs">{role.commitment}</p>
-        </div>
-      </div>
-      <CardDescription className="text-gray-300 mt-3">{role.description}</CardDescription>
-    </CardHeader>
-    <CardContent className="pt-0">
-      <ul className="mt-4 text-sm text-gray-200 space-y-2">
-        {role.benefits.map((b, i) => (
-          <li key={i} className="flex items-start gap-2">
-            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-sunset-pink" />
-            <span>{b}</span>
-          </li>
-        ))}
-      </ul>
-      <a
-        href={role.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-sunset-gradient px-4 py-3 font-semibold text-black hover:opacity-90"
-      >
-        {role.cta} <Mail className="ml-2 h-4 w-4" />
-      </a>
-    </CardContent>
-  </Card>
-);
+const chapterPresident: Role[] = [
+  {
+    title: "Chapter President",
+    icon: LineChart,
+    description: "Launch and lead a Project 57 chapter at your school; run workshops, advocacy, and recruitment.",
+    commitment: "3–5 hrs/week",
+    benefits: [
+      "Build a team of 5–10 members",
+      "Gain leadership experience and mentorship",
+      "Join a statewide network of leaders",
+    ],
+    link: "https://forms.gle/Fbu1pSboTZzRoiBYA",
+    cta: "Start A Chapter"
+  },
+];
+
+const volunteerRole: Role[] = [ 
+  {
+    title: "Volunteer",
+    icon: HandHeart,
+    description: "Help at workshops, hackathons, and outreach drives—low commitment, real impact.",
+    commitment: "Event-based / flexible",
+    benefits: [
+      "Earn verifiable hours via 501(c)(3) sponsorship",
+      "Pick one-off events or recurring projects",
+      "Join advocacy & hackathon crews statewide",
+    ],
+    link: "https://forms.gle/Fm6r326rC72Hff449",
+    cta: "Sign Up to Volunteer"
+  },
+]
 
 const GridSection = ({ title, roles }: { title: string; roles: Role[] }) => {
   const [expanded, setExpanded] = useState<number | null>(null); 
+  const controls = useAnimation();
+  const ref = useRef<HTMLDivElement | null>(null);
+  const inView = useInView(ref, { amount: 0.25 }); 
+    useEffect(() => {
+    controls.start(inView ? "show" : "hidden");
+  }, [inView, controls]);
 
   return (
   <motion.section
-  className="py-12"
-  initial="hidden"
-  whileInView="show"
-  viewport={{ amount: 0.25, once: true }}
-  variants={sectionVariants} 
+      ref={ref}
+      className="py-12"
+      variants={sectionVariants}
+      initial="hidden"
+      animate={controls}
+      transition={{ staggerChildren: 0.08 }}
   > 
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">{title}</h2>
@@ -215,12 +221,20 @@ const GridSection = ({ title, roles }: { title: string; roles: Role[] }) => {
                 : "w-full"
             }
           >
- <motion.div
+                <motion.div
                   layout
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.995 }}
                   transition={{ type: "spring", stiffness: 320, damping: 24 }}
                   onClick={() => setExpanded(isOpen ? null : idx)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setExpanded(isOpen ? null : idx);
+                    }
+                  }}
                   className="w-full"
                 >
                   <Card
@@ -287,43 +301,6 @@ const GridSection = ({ title, roles }: { title: string; roles: Role[] }) => {
   );
 };
 
-function SnapSections ({
-  execRoles,
-  associateRoles,
-  finalBlock
-}: {
-  execRoles: Role[];
-  associateRoles: Role[];
-  finalBlock: React.ReactNode;
-}) {
-return (
- <div className="h-screen overflow-y-auto snap-y snap-mandatory scroll-pt-24">
-      {/* Exec */}
-      <section className="snap-start h-screen flex">
-        {/* inner scroller so tall grids don't break snapping */}
-        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 my-auto max-h-[calc(100vh-120px)] overflow-y-auto">
-          <GridSection title="Executive Team" roles={execRoles} />
-        </div>
-      </section>
-
-      {/* Associates */}
-      <section className="snap-start h-screen flex">
-        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 my-auto max-h-[calc(100vh-120px)] overflow-y-auto">
-          <GridSection title="Associate Team" roles={associateRoles} />
-        </div>
-      </section>
-
-      {/* Chapter + Volunteer */}
-      <section className="snap-start h-screen flex items-center">
-        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-          {finalBlock}
-        </div>
-      </section>
-    </div>
-  );
-}
-
-
 function GetInvolved() {
   return (
     <div className="min-h-screen bg-black text-white">
@@ -342,80 +319,11 @@ function GetInvolved() {
         </div>
       </section>
 
-  {/* Sticky, replacing sections */}
-      <SnapSections
-        execRoles={execPositions}
-        associateRoles={associatePositions}
-        finalBlock={
-          <section className="py-12 bg-gray-900">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Chapter President Card */}
-            <Card className="bg-black/60 border-white/10">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <Megaphone className="h-7 w-7 text-sunset-orange" />
-                  <div>
-                    <CardTitle className="text-lg">Chapter President</CardTitle>
-                    <p className="text-sunset-pink text-xs">3–5 hrs/week</p>
-                  </div>
-                </div>
-                <CardDescription className="text-gray-300 mt-3">
-                  Launch and lead a Project 57 chapter at your school; run workshops, advocacy, and recruitment.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-sm text-gray-200 space-y-2">
-                  <li className="flex gap-2 items-start"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-sunset-pink" />Impact 10+ students annually with monthly events</li>
-                  <li className="flex gap-2 items-start"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-sunset-pink" />Distribute 50+ survey responses per chapter</li>
-                  <li className="flex gap-2 items-start"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-sunset-pink" />Direct support + training from the COO</li>
-                </ul>
-                <a
-                  href="https://forms.gle/Fbu1pSboTZzRoiBYA"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-sunset-gradient px-4 py-3 font-semibold text-black hover:opacity-90"
-                >
-                  Start a Chapter <Mail className="ml-2 h-4 w-4" />
-                </a>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-black/60 border-white/10">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <HandHeart className="h-7 w-7 text-sunset-orange" />
-                  <div>
-                    <CardTitle className="text-lg">Volunteer</CardTitle>
-                    <p className="text-sunset-pink text-xs">Event-based / flexible</p>
-                  </div>
-                </div>
-                <CardDescription className="text-gray-300 mt-3">
-                  Help at workshops, hackathons, and outreach drives—low commitment, real impact.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-sm text-gray-200 space-y-2">
-                  <li className="flex gap-2 items-start"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-sunset-pink" />Earn verifiable hours via 501(c)(3) sponsorship</li>
-                  <li className="flex gap-2 items-start"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-sunset-pink" />Pick one-off events or recurring projects</li>
-                  <li className="flex gap-2 items-start"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-sunset-pink" />Join advocacy & hackathon crews statewide</li>
-                </ul>
-                <a
-                  href="https://forms.gle/Fm6r326rC72Hff449"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-sunset-gradient px-4 py-3 font-semibold text-black hover:opacity-90"
-                >
-                  Sign Up to Volunteer <Mail className="ml-2 h-4 w-4" />
-                </a>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-        }
-        />
-        </div>
+      <GridSection title="Executive Team" roles={execPositions} />
+      <GridSection title="Associate Team" roles={associatePositions} />
+      <GridSection title="Chapter President" roles={chapterPresident} />
+      <GridSection title="Event Volunteer" roles={volunteerRole} />
+    </div>
   );
 }
 
