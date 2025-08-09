@@ -337,14 +337,14 @@ function GetInvolved() {
       <GridSection title="Associate Team" roles={associatePositions} />
       <section className = "py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-    <div>
-      <GridSection compact title="Chapter President" roles={chapterPresident} />
-    </div>
+          <div>
+            <GridSection compact title="Chapter President" roles={chapterPresident} />
+          </div>
           <div></div>
-      <GridSection compact title="Event Volunteer" roles={volunteerRole} />
+          <GridSection compact title="Event Volunteer" roles={volunteerRole} />
         </div>
+      </section>
     </div>
-    </section>
   );
 }
 
