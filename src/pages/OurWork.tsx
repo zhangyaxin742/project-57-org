@@ -205,14 +205,14 @@ import {
   Download, 
   TrendingUp,
   Phone, 
-  Mail, 
+  Mail,
+  BookOpen, 
   ChevronDown, 
   Handshake } from 'lucide-react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { getBriefs } from "../lib/briefs";
 import { formatMonthYear } from "../lib/utils";
-import ProgramCards from "../components/ProgramCards"; 
 
 const VALID_SECTIONS = ["advocacy", "curriculum", "enterprise"] as const;
 type SectionKey = (typeof VALID_SECTIONS)[number];
@@ -317,6 +317,37 @@ useEffect(() => {
   }
 }, [location.hash]); // intentionally depends on hash
   
+
+// Program Cards (again) 
+
+const OurCards = () => {
+  const sections = [
+    {
+      title: 'Advocacy',
+      key: 'advocacy',
+      description: 'Track bills, read our research, and advocate for financial literacy education in your district.',
+      icon: Scale,
+      path: '/advocacy',
+      gradient: 'from-sunset-purple to-sunset-orange'
+    }, 
+        {
+      title: 'Curriculum',
+      key: 'curriculum',
+      description: 'Attend (or run) a financial literacy workshop in your town — designed by youth, for youth.',
+      icon: BookOpen,
+      path: '/curriculum',
+      gradient: 'from-sunset-orange to-sunset-pink'
+    },
+    {
+      title: 'Enterprise',
+      key: 'enterprise',
+      description: 'Explore pitch competitions, hackathons, and mentorship for young entrepreneurs.',
+      icon: Users,
+      path: '/enterprise',
+      gradient: 'from-sunset-pink to-sunset-purple'
+    },
+  ];
+
   // Data constants
   const bills: Bill[] = [
   {
@@ -944,87 +975,145 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
             Read our research, check out our workshops, and take action
             to expand financial literacy education in schools across Massachusetts.
           </p>
-          <ProgramCards /> 
         </div>
       </section>
 
-      {/* Tabbed Content */}
-      <section id="our-work-tabs" className="py-16 bg-black">
-        <div ref={containerRef} className="max-w-6xl mx-auto px-4">
-          <motion.div
-            layout
-            className={
-              expandedSection
-                ? "grid grid-cols-1 gap-6"
-                : "grid grid-cols-1 md:grid-cols-3 gap-6"
-            }
-          >
-            {([
-              { key: "advocacy", label: "Advocacy" },
-              { key: "curriculum", label: "Curriculum" },
-              { key: "enterprise", label: "Enterprise" },
-            ] as { key: SectionKey; label: string }[]).map(({ key, label }) => {
-              const isOpen = expandedSection === key;
-              return (
-                <motion.div key={key} layout>
-                  <Card
-                    className={[
-                      "rounded-2xl bg-black/60 border border-white/10 transition-colors duration-300",
-                      isOpen
-                        ? "border-orange-400/70 shadow-[0_0_0_1px_rgba(251,146,60,.3)]"
-                        : "hover:border-orange-400/60",
-                    ].join(" ")}
+{/* Tabbed Content (Home-style 3 cards) */}
+<section id="our-work-tabs" className="py-16 bg-black">
+  <div ref={containerRef} className="max-w-6xl mx-auto px-4 ticky top-0 bg-black z-10">
+    <motion.div
+      layout
+      className={
+        expandedSection
+          ? "grid grid-cols-1 gap-6"
+          : "grid grid-cols-1 md:grid-cols-3 gap-6"
+      }
+    >
+      {([
+        {
+          key: "advocacy" as SectionKey,
+          title: "Advocacy",
+          description:
+            "Track bills, read our research, and advocate for financial literacy education in your district.",
+          Icon: Scale,
+          gradient: "from-sunset-purple to-sunset-orange",
+        },
+        {
+          key: "curriculum" as SectionKey,
+          title: "Curriculum",
+          description:
+            "Attend (or run) a financial literacy workshop in your town — designed by youth, for youth.",
+          Icon: BookOpen,
+          gradient: "from-sunset-orange to-sunset-pink",
+        },
+        {
+          key: "enterprise" as SectionKey,
+          title: "Enterprise",
+          description:
+            "Explore pitch competitions, hackathons, and mentorship for young entrepreneurs.",
+          Icon: Users,
+          gradient: "from-sunset-pink to-sunset-purple",
+        },
+      ]).map(({ key, title, description, Icon, gradient }) => {
+        const isOpen = expandedSection === key;
+
+        return (
+          <motion.div key={key} layout>
+            {/* Entire card is clickable to toggle open/close */}
+            <Card
+              onClick={() => setExpandedSection(isOpen ? null : key)}
+              aria-expanded={isOpen}
+              aria-controls={`section-panel-${key}`}
+              className={[
+                "group relative overflow-hidden rounded-2xl",
+                "bg-gradient-to-br from-gray-900/50 to-black",
+                "border border-white/10 transition-all duration-500",
+                isOpen
+                  ? "border-orange-400/70 shadow-[0_0_0_1px_rgba(251,146,60,.3)]"
+                  : "hover:border-white/20 hover:scale-[1.02]",
+              ].join(" ")}
+            >
+              {/* Top gradient bar */}
+              <div className={`h-2 bg-gradient-to-r ${gradient}`} />
+
+              {/* Hover color wash overlay (subtle) */}
+              <div
+                className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
+                aria-hidden
+              />
+
+              {/* Collapsed card content (icon, title, copy, CTA) */}
+              <div className="relative p-8">
+                {/* Icon pill with gradient bg */}
+                <div
+                  className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${gradient} mb-6`}
+                >
+                  <Icon className="h-8 w-8 text-white" />
+                </div>
+
+                {/* Title */}
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4 transition-colors duration-300 group-hover:text-sunset-pink">
+                  {title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-300 leading-relaxed">
+                  {description}
+                </p>
+
+                {/* Learn More row (kept for visual parity; click handled by card) */}
+                <div className="mt-6 flex items-center text-sunset-pink transition-transform duration-300 group-hover:translate-x-2">
+                  <span className="text-sm font-semibold">Learn More</span>
+                  <svg
+                    className="ml-2 h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden
                   >
-                    {/* CLICK TARGET: Header only */}
-                    <button
-                      type="button"
-                      onClick={() => setExpandedSection(isOpen ? null : key)}
-                      className="w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black rounded-2xl"
-                      aria-expanded={isOpen}
-                      aria-controls={`section-panel-${key}`}
-                    >
-                      <CardHeader className="flex items-center justify-between p-5 md:p-6">
-                        <span className="text-xl md:text-2xl font-semibold tracking-tight text-white">{label}</span>
-                        <ChevronDown
-                          className={`shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}
-                          aria-hidden
-                        />
-                      </CardHeader>
-                    </button>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </div>
+              </div>
 
-                    {/* EXPANDING REGION */}
-                    <AnimatePresence initial={false}>
-                      {isOpen && (
-                        <motion.div
-                          key="panel"
-                          layout
-                          initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                          animate={{ height: "auto", opacity: 1, marginTop: 16 }}
-                          exit={{ height: 0, opacity: 0, marginTop: 0 }}
-                          transition={motionTransition}
-                          className="overflow-hidden"
-                          id={`section-panel-${key}`}
-                        >
-                          {/* IMPORTANT: stopPropagation so clicks inside content don't toggle */}
-                          <CardContent
-                            className="p-0"
-                            onClick={(e) => e.stopPropagation()}
-                            onMouseDown={(e) => e.stopPropagation()}
-                          >
-                            {key === "advocacy" && <Advocacy />}
-                            {key === "curriculum" && <Curriculum />}
-                            {key === "enterprise" && <Enterprise />}
-                          </CardContent>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </Card>
-                </motion.div>
-              );
-            })}
+              {/* EXPANDING REGION (same logic as before) */}
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.div
+                    key="panel"
+                    layout
+                    initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                    animate={{ height: "auto", opacity: 1, marginTop: 16 }}
+                    exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                    transition={motionTransition}
+                    className="overflow-hidden"
+                    id={`section-panel-${key}`}
+                  >
+                    {/* Critical: stopPropagation so clicking inside content doesn't toggle/close */}
+                    <CardContent
+                      className="p-0"
+                      onClick={(e) => e.stopPropagation()}
+                      onMouseDown={(e) => e.stopPropagation()}
+                    >
+                      {key === "advocacy" && <Advocacy />}
+                      {key === "curriculum" && <Curriculum />}
+                      {key === "enterprise" && <Enterprise />}
+                    </CardContent>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </Card>
           </motion.div>
-        </div>
-      </section>
+        );
+      })}
+    </motion.div>
+  </div>
+</section>
 
       {/* About Section */}
       <section id="about" className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
