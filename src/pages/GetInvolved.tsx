@@ -303,21 +303,27 @@ function StickySections({
   });
 
   // fade/replace windows (tweak to taste)
-  const execOpacity = useTransform(scrollYProgress, [0.00, 0.25, 0.40], [1, 1, 0]);
-  const assocOpacity = useTransform(scrollYProgress, [0.25, 0.40, 0.65], [0, 1, 0]);
-  const finalOpacity = useTransform(scrollYProgress, [0.65, 0.80, 1.00], [0, 1, 1]);
+  const execOpacity = useTransform(scrollYProgress, [0.00, 0.20, 0.35], [1, 1, 0]);
+  const assocOpacity = useTransform(scrollYProgress, [0.25, 0.40, 0.60], [0, 1, 0]);
+  const finalOpacity = useTransform(scrollYProgress, [0.50, 0.70, 0.95], [0, 1, 1]);
+const slideUp = (from: number, to: number) =>
+  useTransform(scrollYProgress, [from, to], [40, 0]); // px
+
+const execY  = slideUp(0.00, 0.20);
+const assocY = slideUp(0.25, 0.40);
+const finalY = slideUp(0.50, 0.70);
 
   return (
-    <div ref={ref} className="relative h-[300vh]">
-      <motion.div className="sticky top-24" style={{ opacity: execOpacity }}>
+    <div ref={ref} className="relative h-[420vh]">
+      <motion.div className="sticky top-24" style={{ opacity: execOpacity, y: execY }}>
         <GridSection title="Executive Team" roles={execRoles} />
       </motion.div>
 
-      <motion.div className="sticky top-24" style={{ opacity: assocOpacity }}>
+      <motion.div className="sticky top-24" style={{ opacity: assocOpacity, y:assocY }}>
         <GridSection title="Associate Team" roles={associateRoles} />
       </motion.div>
 
-      <motion.div className="sticky top-24" style={{ opacity: finalOpacity }}>
+      <motion.div className="sticky top-24" style={{ opacity: finalOpacity, y: finalY }}>
         {finalBlock}
       </motion.div>
     </div>
