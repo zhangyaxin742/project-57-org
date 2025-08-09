@@ -13,32 +13,35 @@ import GetInvolved from "./pages/GetInvolved";
 import Footer from "./components/Footer";
 import ScrollToTop from "@/components/ui/scroll-to-top";
 import Brief from "./pages/Briefs";
+import { HelmetProvider } from "react-helmet-async";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-      <Analytics />
-        <ScrollToTop /> 
-        <Routes>
-          <Route path="/" element={<Index />} />
-            <Route path="/ourwork" element={<OurWork />} />
-            <Route path="/curriculum" element={<Navigate to="/ourwork#curriculum" replace />} />
-            <Route path="/enterprise" element={<Navigate to="/ourwork#enterprise" replace />} />
-          <Route path="/advocacy" element={<Navigate to="/ourwork#advocacy" replace />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/get-involved" element={<GetInvolved />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="/briefs/:slug" element={<Brief />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </TooltipProvider>
+    <HelmetProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+        <Analytics />
+          <ScrollToTop /> 
+          <Routes>
+            <Route path="/" element={<Index />} />
+              <Route path="/ourwork" element={<OurWork />} />
+              <Route path="/curriculum" element={<Navigate to="/ourwork#curriculum" replace />} />
+              <Route path="/enterprise" element={<Navigate to="/ourwork#enterprise" replace />} />
+            <Route path="/advocacy" element={<Navigate to="/ourwork#advocacy" replace />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/get-involved" element={<GetInvolved />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="/briefs/:slug" element={<Brief />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </TooltipProvider>
+    </HelmetProvider>
   </QueryClientProvider>
 );
 
