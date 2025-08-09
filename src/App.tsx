@@ -8,7 +8,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import OurWork from "./pages/OurWork";
-import About from "./pages/About";
 import GetInvolved from "./pages/GetInvolved";
 import Footer from "./components/Footer";
 import ScrollToTop from "@/components/ui/scroll-to-top";
