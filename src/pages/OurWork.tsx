@@ -90,7 +90,8 @@ const competitions = [
  // #endregion
 
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect, useMemo } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom'; 
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -114,6 +115,14 @@ import {
   ChevronDown, 
   Handshake } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+
+const VALID_TABS = ["advocacy", "curriculum", "enterprise"] as const;
+type TabKey = (typeof VALID_TABS)[number];
+
+const getTabFromHash = (hash: string): TabKey => {
+  const h = (hash || "").replace("#", "");
+  return (VALID_TABS as readonly string[]).includes(h) ? (h as TabKey) : "advocacy";
+};
 
 {/* Declare OurWork component */}
 
@@ -155,6 +164,37 @@ const OurWork = () => {
     date: string;
   };
 
+  // tab behaviors 
+
+    const location = useLocation();
+  const navigate = useNavigate();
+
+  const [activeTab, setActiveTab] = useState<TabKey>(() => getTabFromHash(location.hash));
+
+  // Sync with hash changes (e.g., user hits a deep link or back button)
+  useEffect(() => {
+    const next = getTabFromHash(location.hash);
+    setActiveTab(next);
+    // optional: scroll to the tabs top
+    const anchorEl = document.getElementById("our-work-tabs");
+    if (anchorEl) anchorEl.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [location.hash]);
+
+  // When tab changes, update the hash (replace so back button isn't spammy)
+  const handleTabChange = (val: string) => {
+    if (!VALID_TABS.includes(val as TabKey)) return;
+    setActiveTab(val as TabKey);
+    navigate(`${location.pathname}#${val}`, { replace: true });
+  };
+
+  const tabProps = useMemo(
+    () => ({
+      value: activeTab,
+      onValueChange: handleTabChange,
+    }),
+    [activeTab]
+  );
+  
   // Data constants
   const bills: Bill[] = [
   {
@@ -808,9 +848,9 @@ const getStatusColor = (status: BillStatus): string => {
       </section>
 
       {/* Tabbed Content */}
-      <section className="py-16 bg-black">
+      <section id="our-work-tabs" className="py-16 bg-black">
         <div className="max-w-6xl mx-auto px-4">
-          <Tabs defaultValue="advocacy" className="w-full">
+          <Tabs {...tabProps} className="w-full">
             <TabsList className="grid w-full grid-cols-3 bg-gray-800/50 border border-white/10">
               <TabsTrigger value="advocacy" className="text-white data-[state=active]:bg-sunset-gradient data-[state=active]:text-black">
                 Advocacy
