@@ -266,24 +266,55 @@ const OurWork = () => {
   const prefersReducedMotion = useReducedMotion();
   const motionTransition = prefersReducedMotion ? { duration: 0 } : { duration: 0.3 };
 
-  // on mount, open based on hash if present
-  useEffect(() => {
-    const hash = (location.hash || "").replace("#", "") as SectionKey;
-    if ((VALID_SECTIONS as readonly string[]).includes(hash)) {
-      setExpandedSection(hash);
-      setTimeout(() => containerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+useEffect(() => {
+  const hash = (location.hash || "").slice(1);
 
-  // whenever expandedSection changes, reflect in URL hash (or clear it)
-  useEffect(() => {
-    const newHash = expandedSection ? `#${expandedSection}` : "";
-    navigate(`${location.pathname}${newHash}`, { replace: true });
-    if (expandedSection) {
-      setTimeout(() => containerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
-    }
-  }, [expandedSection, navigate, location.pathname]);
+  if (VALID_SECTIONS.includes(hash as SectionKey)) {
+    setExpandedSection(hash as SectionKey);
+    // scroll to cards container (only for sections, not about)
+    setTimeout(() => containerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
+  } else if (hash === "about") {
+    // scroll to #about section
+    setTimeout(() => {
+      document.getElementById("about")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
+
+// when expandedSection changes: update hash BUT preserve #about
+useEffect(() => {
+  const currentHash = (location.hash || "").slice(1);
+
+  const nextHash =
+    expandedSection
+      ? `#${expandedSection}`
+      : currentHash === "about"
+        ? "#about" // preserve about when no section is open
+        : "";
+
+  // only navigate if the hash actually needs to change
+  if (nextHash !== location.hash) {
+    navigate(`${location.pathname}${nextHash}`, { replace: true });
+  }
+
+  // only scroll the cards container when opening a section (not when we're on #about)
+  if (expandedSection && currentHash !== "about") {
+    setTimeout(() => containerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
+  }
+}, [expandedSection, navigate, location.pathname, location.hash]);
+
+// OPTIONAL: react to hash changes while already on the page (e.g., user clicks nav About again)
+useEffect(() => {
+  const hash = (location.hash || "").slice(1);
+  if (hash === "about") {
+    // ensure cards are collapsed when going to About
+    if (expandedSection) setExpandedSection(null);
+    setTimeout(() => {
+      document.getElementById("about")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+  }
+}, [location.hash]); // intentionally depends on hash
   
   // Data constants
   const bills: Bill[] = [
