@@ -115,6 +115,9 @@ import {
   ChevronDown, 
   Handshake } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { getBriefs } from "../lib/briefs";
+import { formatMonthYear } from "../lib/utils";
+
 
 const VALID_TABS = ["advocacy", "curriculum", "enterprise"] as const;
 type TabKey = (typeof VALID_TABS)[number];
@@ -441,44 +444,6 @@ const OurWork = () => {
   }
 ];
 
-const policyBriefs: PolicyBrief[] = [
-    {
-      title: "The Impact of Peer-Led Financial Education on Youth Outcomes",
-      subheading: "Comprehensive analysis of peer education effectiveness in Massachusetts schools",
-      author: "Project 57 Research Team",
-      date: "Dec 2024",
-      readingTime: "8 min read"
-    },
-    {
-      title: "Legislative Barriers to Youth Financial Empowerment",
-      subheading: "Identifying policy gaps that limit young people's financial independence",
-      author: "Sarah Chen, Policy Analyst",
-      date: "Nov 2024",
-      readingTime: "12 min read"
-    },
-    {
-      title: "State-by-State Financial Literacy Requirements Analysis",
-      subheading: "Comparing Massachusetts standards with national best practices",
-      author: "Policy Research Coalition",
-      date: "Oct 2024",
-      readingTime: "15 min read"
-    },
-    {
-      title: "Digital Financial Literacy: Preparing Youth for Tomorrow",
-      subheading: "Addressing gaps in cryptocurrency and digital payment education",
-      author: "Tech Policy Institute",
-      date: "Sep 2024",
-      readingTime: "10 min read"
-    },
-    {
-      title: "Community-Based Financial Education Models",
-      subheading: "Best practices from grassroots organizations across Massachusetts",
-      author: "Community Finance Network",
-      date: "Aug 2024",
-      readingTime: "9 min read"
-    }
-  ];
-
 const getStatusColor = (status: BillStatus): string => {
     switch (status) {
       case 'Introduced': return 'bg-primary/20 text-primary border-primary/30';
@@ -507,12 +472,26 @@ const getStatusColor = (status: BillStatus): string => {
     }
   ];
 
+  const briefs = getBriefs(); 
+
+  // normalize mdx 
+  const articles = briefs.map(b => ({
+  slug: b.slug,
+  title: b.meta.title,
+  subheading: b.meta.description,
+  author: b.meta.author ?? "Project 57",
+  date: formatMonthYear?.(b.meta.date) ?? b.meta.date ?? "",
+  readingTime: b.meta.readingTime ?? "",
+  tags: b.meta.tags ?? [],
+}));
+
+// toggle logic 
   const [selectedBill, setSelectedBill] = useState(null);
   const [activeModal, setActiveModal] = useState(null);
   const [openFaq1, setOpenFaq1] = useState(false);
   const [openFaq2, setOpenFaq2] = useState(false);
-  const [showAllResearch, setShowAllResearch] = useState(false);
-  const displayedArticles = showAllResearch ? policyBriefs : policyBriefs.slice(0, 3);
+const [showAllResearch, setShowAllResearch] = useState(false);
+const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
 
   // Component definitions
   const Advocacy = () => (
@@ -549,10 +528,10 @@ const getStatusColor = (status: BillStatus): string => {
                 <CardContent className="pt-0">
                   <Button asChild
                     className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300 ripple-effect group-hover:scale-105">
-                    <Link to="/briefs/peer-led-education-impact" className="flex items-center justify-center"> 
-                    <FileText className="h-4 w-4 mr-2" />
-                    Read Now 
-                    </Link>
+<Link to={`/briefs/${article.slug}`} className="flex items-center justify-center">
+  <FileText className="h-4 w-4 mr-2" />
+  Read Now
+</Link>
                   </Button>
                 </CardContent>
               </Card>
