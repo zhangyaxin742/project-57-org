@@ -831,31 +831,43 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
       {/* Tabbed Content */}
       <section id="our-work-tabs" className="py-16 bg-black">
         <div className="max-w-6xl mx-auto px-4">
-          <Tabs {...tabProps} className="w-full">
-            <TabsList className="grid w-full grid-cols-3 bg-gray-800/50 border border-white/10">
-              <TabsTrigger value="advocacy" className="text-white data-[state=active]:bg-sunset-gradient data-[state=active]:text-black">
-                Advocacy
-              </TabsTrigger>
-              <TabsTrigger value="curriculum" className="text-white data-[state=active]:bg-sunset-gradient data-[state=active]:text-black">
-                Curriculum
-              </TabsTrigger>
-              <TabsTrigger value="enterprise" className="text-white data-[state=active]:bg-sunset-gradient data-[state=active]:text-black">
-                Enterprise
-              </TabsTrigger>
-            </TabsList>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Card
+              onClick={() => console.log("Advocacy card clicked")}
+              className="cursor-pointer bg-black/60 border border-white/10 hover:border-sunset-orange/60 transition-colors duration-300"
+            >
+              <CardHeader>
+                <CardTitle className="text-lg font-bold">Advocacy</CardTitle>
+                <CardDescription>
+                  Explore our research library, bill tracker, and civic action tools.
+                </CardDescription>
+              </CardHeader>
+            </Card>
 
-            <TabsContent value="advocacy" className="mt-8">
-              <Advocacy />
-            </TabsContent>
-            
-            <TabsContent value="curriculum" className="mt-8">
-              <Curriculum />
-            </TabsContent>
-            
-            <TabsContent value="enterprise" className="mt-8">
-              <Enterprise />
-            </TabsContent>
-          </Tabs>
+            <Card
+              onClick={() => console.log("Curriculum card clicked")}
+              className="cursor-pointer bg-black/60 border border-white/10 hover:border-sunset-orange/60 transition-colors duration-300"
+            >
+              <CardHeader>
+                <CardTitle className="text-lg font-bold">Curriculum</CardTitle>
+                <CardDescription>
+                  Discover workshops and learning experiences for students.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card
+              onClick={() => console.log("Enterprise card clicked")}
+              className="cursor-pointer bg-black/60 border border-white/10 hover:border-sunset-orange/60 transition-colors duration-300"
+            >
+              <CardHeader>
+                <CardTitle className="text-lg font-bold">Enterprise</CardTitle>
+                <CardDescription>
+                  Upcoming youth entrepreneurship and innovation programs.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
         </div>
       </section>
 
