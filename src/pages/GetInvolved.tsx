@@ -187,7 +187,7 @@ const volunteerRole: Role[] = [
   },
 ]
 
-const GridSection = ({ title, roles }: { title: string; roles: Role[] }) => {
+const GridSection = ({ title, roles, compact = false, }: { title: string; roles: Role[]; compact?: boolean}) => {
   const [expanded, setExpanded] = useState<number | null>(null); 
   const controls = useAnimation();
   const ref = useRef<HTMLDivElement | null>(null);
@@ -199,13 +199,13 @@ const GridSection = ({ title, roles }: { title: string; roles: Role[] }) => {
   return (
   <motion.section
       ref={ref}
-      className="py-12"
+      className={compact ? "": "py-12"}
       variants={sectionVariants}
       initial="hidden"
       animate={controls}
       transition={{ staggerChildren: 0.08 }}
   > 
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className={compact ? "": "max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"}>
       <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">{title}</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
@@ -246,37 +246,31 @@ const GridSection = ({ title, roles }: { title: string; roles: Role[] }) => {
                     }
                   >
                     {/* Header */}
-                    <CardHeader className="pb-2">
-                        <div
-    role="button"
-    tabIndex={0}
-    aria-expanded={isOpen}
-    onClick={() => setExpanded(isOpen ? null : idx)}
-    onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && setExpanded(isOpen ? null : idx)}
-    className="flex items-start justify-between gap-3 cursor-pointer select-none"
-  >
-    {/* Left: icon + titles */}
-    <div className="flex items-center gap-3">
-      <role.icon className="h-7 w-7 text-sunset-orange" />
-      <div>
-        <CardTitle className="text-white text-lg">{role.title}</CardTitle>
-        <p className="text-sunset-pink text-xs">{role.commitment}</p>
-      </div>
-    </div>
-
-    {/* Right: chevron + hint */}
-    <div className="flex items-center gap-2 text-xs text-gray-400">
-      {!isOpen && <span className="hidden sm:inline">Expand</span>}
-      <ChevronDown
-        className={`h-5 w-5 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
-        aria-hidden="true"
-      />
+<CardHeader className="pb-2">
+  <div className="flex items-center gap-3">
+    <role.icon className="h-7 w-7 text-sunset-orange" />
+    <div>
+      <CardTitle className="text-white text-lg">{role.title}</CardTitle>
+      <p className="text-sunset-pink text-xs">{role.commitment}</p>
     </div>
   </div>
 
-  {/* Keep your description below the clickable row */}
+  {/* description + chevron at the far right */}
   <CardDescription className="text-gray-300 mt-3">
-    {role.description}
+    <span className="inline">{role.description}</span>
+    <button
+      type="button"
+      aria-label={isOpen ? "Collapse" : "Expand"}
+      onClick={(e) => {
+        e.stopPropagation();
+        setExpanded(isOpen ? null : idx);
+      }}
+      className="ml-2 inline-flex items-center rounded-md p-1.5 align-middle text-sunset-orange hover:text-white/90 hover:bg-white/5 transition"
+    >
+      <ChevronDown
+        className={`h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
+      />
+    </button>
   </CardDescription>
 </CardHeader>
                     {/* Expandable body */}
@@ -341,9 +335,16 @@ function GetInvolved() {
 
       <GridSection title="Executive Team" roles={execPositions} />
       <GridSection title="Associate Team" roles={associatePositions} />
-      <GridSection title="Chapter President" roles={chapterPresident} />
-      <GridSection title="Event Volunteer" roles={volunteerRole} />
+      <section className = "py-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+    <div>
+      <GridSection compact title="Chapter President" roles={chapterPresident} />
     </div>
+          <div></div>
+      <GridSection compact title="Event Volunteer" roles={volunteerRole} />
+        </div>
+    </div>
+    </section>
   );
 }
 
