@@ -2,34 +2,34 @@
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Users, BookOpen, Megaphone, Heart, Gift, Calendar, ExternalLink, Mail } from 'lucide-react';
+import { Users, Megaphone, Heart, Gift, HandHeart, ExternalLink, Mail, ClipboardList } from 'lucide-react';
 
 const GetInvolved = () => {
   const opportunities = [
     {
-      title: "Student Ambassador",
+      title: "Executive Team",
       icon: Users,
       description: "Represent PROJECT 57 at your school and help expand our reach",
       commitment: "2-3 hours/week",
       benefits: ["Leadership experience", "Community service hours", "Networking opportunities"]
     },
     {
-      title: "Curriculum Contributor",
-      icon: BookOpen,
+      title: "Associate Team",
+      icon: ClipboardList,
       description: "Help develop and review financial literacy educational content",
       commitment: "Flexible",
       benefits: ["Build portfolio", "Gain teaching experience", "Impact curriculum design"]
     },
     {
-      title: "Advocacy Volunteer",
+      title: "Chapter President",
       icon: Megaphone,
       description: "Support legislative tracking and policy research efforts",
       commitment: "1-2 hours/week",
       benefits: ["Policy experience", "Research skills", "Civic engagement"]
     },
     {
-      title: "Event Support",
-      icon: Calendar,
+      title: "Volunteer",
+      icon: HandHeart,
       description: "Help organize workshops, competitions, and community events",
       commitment: "Event-based",
       benefits: ["Event planning skills", "Team collaboration", "Direct impact"]
