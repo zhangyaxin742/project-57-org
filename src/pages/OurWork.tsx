@@ -212,6 +212,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { getBriefs } from "../lib/briefs";
 import { formatMonthYear } from "../lib/utils";
+import ProgramCards from "../components/ProgramCards"; 
 
 const VALID_SECTIONS = ["advocacy", "curriculum", "enterprise"] as const;
 type SectionKey = (typeof VALID_SECTIONS)[number];
@@ -948,7 +949,6 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
 
       {/* Tabbed Content */}
       <section id="our-work-tabs" className="py-16 bg-black">
-             <ProgramCards />
         <div ref={containerRef} className="max-w-6xl mx-auto px-4">
           <motion.div
             layout
