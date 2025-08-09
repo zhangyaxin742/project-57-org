@@ -3,6 +3,9 @@ import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Users, Megaphone, Heart, Gift, HandHeart, ExternalLink, Mail, ClipboardCheck } from 'lucide-react';
+import { useRef } from 'react'; 
+
+const scroller = useRef<HTMLDivElement | null>(null);
 
 const GetInvolved = () => {
   const opportunities = [
@@ -78,48 +81,87 @@ const GetInvolved = () => {
       </section>
 
       {/* Volunteer Opportunities */}
-      <section className="py-20 bg-gray-900">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {opportunities.map((opportunity, index) => (
-              <Card key={index} className="bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300 hover:scale-105">
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-4">
-                    <opportunity.icon className="h-8 w-8 text-sunset-orange" />
-                    <div>
-                      <CardTitle className="text-white">{opportunity.title}</CardTitle>
-                      <p className="text-sunset-pink text-sm">{opportunity.commitment}</p>
-                    </div>
-                  </div>
-                  <CardDescription className="text-gray-300">
-                    {opportunity.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2 mb-4">
-                    <p className="text-sm font-semibold text-sunset-purple">Benefits:</p>
-                    <ul className="text-sm text-gray-300 space-y-1">
-                      {opportunity.benefits.map((benefit, idx) => (
-                        <li key={idx} className="flex items-center">
-                          <span className="text-sunset-pink mr-2">•</span>
-                          {benefit}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <Button 
-                    className="w-full bg-sunset-gradient hover:opacity-90 text-black font-semibold"
-                    onClick={() => window.open(opportunity.link, '_blank', "noopener, noreferrer")}
-                  >
-                    {opportunity.cta ?? "Apply"}
-                    <Mail className="ml-2 h-4 w-4" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+{/* Opportunities Carousel */}
+<section className="py-20 bg-gray-900">
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex items-center justify-between mb-6">
+      <h2 className="text-2xl md:text-3xl font-bold">Opportunities</h2>
+      {/* optional arrows */}
+      <div className="hidden md:flex gap-2">
+        <button
+          onClick={() => scroller.current?.scrollBy({ left: -520, behavior: 'smooth' })}
+          className="rounded-lg px-3 py-2 bg-white/5 hover:bg-white/10"
+        >‹</button>
+        <button
+          onClick={() => scroller.current?.scrollBy({ left: 520, behavior: 'smooth' })}
+          className="rounded-lg px-3 py-2 bg-white/5 hover:bg-white/10"
+        >›</button>
+      </div>
+    </div>
+
+    <div
+      ref={scroller}
+      className="
+        flex gap-6 overflow-x-auto scroll-smooth
+        snap-x snap-mandatory
+        [-ms-overflow-style:none] [scrollbar-width:none]
+      "
+      style={{scrollbarWidth:'none'} as any}
+    >
+      {/* hide scrollbars */}
+      <style>{`
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+      `}</style>
+
+      {opportunities.map((o, i) => (
+        <div
+          key={i}
+          className="
+            snap-center shrink-0
+            w-[88%] sm:w-[70%] md:w-[520px]
+          "
+        >
+          <Card className="h-full bg-gradient-to-b from-black/70 to-black/40 border border-white/10 hover:border-sunset-orange/60 transition">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-3">
+                <o.icon className="h-8 w-8 text-sunset-orange" />
+                <div>
+                  <CardTitle className="text-xl">{o.title}</CardTitle>
+                  <p className="text-sunset-pink text-sm">{o.commitment}</p>
+                </div>
+              </div>
+              <CardDescription className="text-gray-300 mt-4 text-base">
+                {o.description}
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="pt-0">
+              <div className="mt-4 rounded-xl bg-white/5 p-4">
+                <p className="text-sm font-semibold text-sunset-purple mb-2">Benefits</p>
+                <ul className="text-sm text-gray-200 space-y-2">
+                  {o.benefits.map((b, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-sunset-pink" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <a
+                href={o.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-sunset-gradient px-4 py-3 font-semibold text-black hover:opacity-90"
+              >
+                {o.cta ?? "Apply"}
+              </a>
+            </CardContent>
+          </Card>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
           </div>
   );
