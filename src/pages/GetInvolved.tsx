@@ -1,8 +1,8 @@
 import Navigation from '@/components/Navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Mail, Users, Megaphone, HandHeart, BookOpenCheck, Landmark, LineChart, Lightbulb, FileText } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useState, useRef } from 'react';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
 import type React from 'react';
 import type { Variants } from 'framer-motion';
 
@@ -287,7 +287,7 @@ const GridSection = ({ title, roles }: { title: string; roles: Role[] }) => {
   );
 };
 
-function StickySections({
+function SnapSections ({
   execRoles,
   associateRoles,
   finalBlock
@@ -296,39 +296,33 @@ function StickySections({
   associateRoles: Role[];
   finalBlock: React.ReactNode;
 }) {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end end"]
-  });
+return (
+ <div className="h-screen overflow-y-auto snap-y snap-mandatory scroll-pt-24">
+      {/* Exec */}
+      <section className="snap-start h-screen flex">
+        {/* inner scroller so tall grids don't break snapping */}
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 my-auto max-h-[calc(100vh-120px)] overflow-y-auto">
+          <GridSection title="Executive Team" roles={execRoles} />
+        </div>
+      </section>
 
-  // fade/replace windows (tweak to taste)
-  const execOpacity = useTransform(scrollYProgress, [0.00, 0.20, 0.35], [1, 1, 0]);
-  const assocOpacity = useTransform(scrollYProgress, [0.25, 0.40, 0.60], [0, 1, 0]);
-  const finalOpacity = useTransform(scrollYProgress, [0.50, 0.70, 0.95], [0, 1, 1]);
-const slideUp = (from: number, to: number) =>
-  useTransform(scrollYProgress, [from, to], [40, 0]); // px
+      {/* Associates */}
+      <section className="snap-start h-screen flex">
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 my-auto max-h-[calc(100vh-120px)] overflow-y-auto">
+          <GridSection title="Associate Team" roles={associateRoles} />
+        </div>
+      </section>
 
-const execY  = slideUp(0.00, 0.20);
-const assocY = slideUp(0.25, 0.40);
-const finalY = slideUp(0.50, 0.70);
-
-  return (
-    <div ref={ref} className="relative h-[420vh]">
-      <motion.div className="sticky top-24" style={{ opacity: execOpacity, y: execY }}>
-        <GridSection title="Executive Team" roles={execRoles} />
-      </motion.div>
-
-      <motion.div className="sticky top-24" style={{ opacity: assocOpacity, y:assocY }}>
-        <GridSection title="Associate Team" roles={associateRoles} />
-      </motion.div>
-
-      <motion.div className="sticky top-24" style={{ opacity: finalOpacity, y: finalY }}>
-        {finalBlock}
-      </motion.div>
+      {/* Chapter + Volunteer */}
+      <section className="snap-start h-screen flex items-center">
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+          {finalBlock}
+        </div>
+      </section>
     </div>
   );
 }
+
 
 function GetInvolved() {
   return (
@@ -349,7 +343,7 @@ function GetInvolved() {
       </section>
 
   {/* Sticky, replacing sections */}
-      <StickySections
+      <SnapSections
         execRoles={execPositions}
         associateRoles={associatePositions}
         finalBlock={
