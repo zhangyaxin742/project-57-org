@@ -944,6 +944,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
             Read our research, check out our workshops, and take action
             to expand financial literacy education in schools across Massachusetts.
           </p>
+          <ProgramCards /> 
         </div>
       </section>
 
