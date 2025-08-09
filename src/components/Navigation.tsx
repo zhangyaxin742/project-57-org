@@ -13,8 +13,10 @@ const Navigation = () => {
 
   const navItems: NavItem[] = [
     { name: 'Home', path: '/' },
-    { name: 'Our Work', path: '/ourwork'  },
-    { name: 'About',        path: '/about' },
+    { name: 'Our Work', 
+      dropdown: [ 
+      { name: 'About',        path: '/ourwork#about' }]
+    },
     { name: 'Get Involved', path: '/get-involved' },
   ];
 
