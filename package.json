@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
+    "@mdx-js/rollup": "^3.1.0",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-alert-dialog": "^1.1.1",
     "@radix-ui/react-aspect-ratio": "^1.1.0",
@@ -58,6 +59,8 @@
     "react-router-dom": "^6.26.2",
     "react-router-hash-link": "^2.4.3",
     "recharts": "^2.12.7",
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^4.0.1",
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
@@ -67,6 +70,7 @@
   "devDependencies": {
     "@eslint/js": "^9.9.0",
     "@tailwindcss/typography": "^0.5.15",
+    "@types/mdx": "^2.0.13",
     "@types/node": "^22.5.5",
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.0",
