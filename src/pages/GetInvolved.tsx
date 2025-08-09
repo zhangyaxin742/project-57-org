@@ -217,8 +217,8 @@ const GridSection = ({ title, roles, compact = false, }: { title: string; roles:
             variants={cardVariants}
             className={
               roles.length % 2 === 1 && idx === roles.length - 1
-                ? "md:col-span-2 flex justify-center w-full"
-                : "w-full"
+                ? "md:col-span-2 flex justify-center"
+                : ""
             }
           >
                 <motion.div
