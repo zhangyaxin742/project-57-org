@@ -8,7 +8,10 @@ const Navigation = () => {
   const [dropdownOpen, setDropdownOpen] = useState('');
   const location = useLocation();
 
-  const navItems = [
+  type DropdownItem = { name: string; path: string };
+  type NavItem = { name: string; path: string; dropdown?: DropdownItem[] };
+
+  const navItems: NavItem[] = [
     { name: 'Home', path: '/' },
     { name: 'Our Work', path: '/ourwork'  },
     { name: 'About',        path: '/about' },
