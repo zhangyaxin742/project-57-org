@@ -2,37 +2,57 @@
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Users, Megaphone, Heart, Gift, HandHeart, ExternalLink, Mail, ClipboardList } from 'lucide-react';
+import { Users, Megaphone, Heart, Gift, HandHeart, ExternalLink, Mail, ClipboardCheck } from 'lucide-react';
 
 const GetInvolved = () => {
   const opportunities = [
     {
       title: "Executive Team",
       icon: Users,
-      description: "Represent PROJECT 57 at your school and help expand our reach",
-      commitment: "2-3 hours/week",
-      benefits: ["Leadership experience", "Community service hours", "Networking opportunities"]
+      description: "Direct the statewide growth, operations, and strategy of Project 57.",
+      commitment: "5-10 hours/week",
+      benefits: [
+      "Lead dedicated teams across curriculum, policy, operations, marketing, and enterprise",
+      "Gain extensive project management & nonprofit leadership experience",
+      "Network with legislators, educators, and business leaders across the state",
+      "Build a competitive resume for college & internships"
+      ]
     },
     {
       title: "Associate Team",
-      icon: ClipboardList,
-      description: "Help develop and review financial literacy educational content",
-      commitment: "Flexible",
-      benefits: ["Build portfolio", "Gain teaching experience", "Impact curriculum design"]
+      icon: ClipboardCheck,
+      description: "Drive specialized initiatives in curriculum, policy, enterprise, or marketing.",
+      commitment: "3-5 hours/week",
+      benefits: [
+      "Own projects with real deliverables (e.g., published briefs, live workshops)",
+      "Collaborate with statewide peers & exec mentors",
+      "Develop skills in public speaking, outreach, and content creation",
+      "Showcase tangible outputs in a professional portfolio"
+      ]
     },
     {
       title: "Chapter President",
       icon: Megaphone,
-      description: "Support legislative tracking and policy research efforts",
-      commitment: "1-2 hours/week",
-      benefits: ["Policy experience", "Research skills", "Civic engagement"]
+      description: "Launch and lead a Project 57 chapter at your high school.",
+      commitment: "3-5 hours/week",
+      benefits: [
+      "Found and manage a local chapter impacting 10+ students annually",
+      "Coordinate workshops, advocacy campaigns, and recruitment",
+      "Serve as the link between your school and statewide leadership",
+      "Strengthen college apps with leadership, policy advocacy, and event planning credentials"
+      ]
     },
     {
       title: "Volunteer",
       icon: HandHeart,
-      description: "Help organize workshops, competitions, and community events",
-      commitment: "Event-based",
-      benefits: ["Event planning skills", "Team collaboration", "Direct impact"]
+      description: "Support events, workshops, hackathons, and outreach efforts.",
+      commitment: "Event-based / flexible",
+      benefits: [
+      "Earn verifiable community service hours through a local 501(c)(3)",
+      "Choose between one-off events and recurring contributions",
+      "Participate in statewide hackathons & advocacy drives",
+      "Make a direct impact on financial literacy education in your community"
+      ]
     }
   ];
 
