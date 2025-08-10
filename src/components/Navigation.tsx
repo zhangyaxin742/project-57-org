@@ -38,8 +38,7 @@ const Navigation = () => {
               Project 57
             </span>
           </RouterLink>
-
-          {/* Desktop Navigation */}
+          
        {/* Desktop Navigation */}
 <div className="hidden md:flex items-center space-x-8">
   {navItems.map(item => (
@@ -88,55 +87,6 @@ const Navigation = () => {
     </div>
   ))}
 </div>
-{/* Desktop Navigation */}
-<div className="hidden md:flex items-center space-x-8">
-  {navItems.map(item => (
-    <div key={item.name} className="relative">
-      {item.dropdown ? (
-        <div
-          className="relative group"
-          onMouseEnter={() => setDropdownOpen(item.name)}
-          onMouseLeave={() => setDropdownOpen('')}
-        >
-          {/* parent link goes to the item's path, not hardcoded ourwork */}
-          <RouterLink
-            to={item.path} // e.g. /ourwork or /get-involved
-            className="flex items-center space-x-1 text-white hover:text-sunset-pink transition-colors"
-            onClick={() => setDropdownOpen('')}
-          >
-            <span>{item.name}</span>
-            <ChevronDown className="h-4 w-4" />
-          </RouterLink>
-
-          {dropdownOpen === item.name && (
-            <div className="absolute top-full left-0 mt-2 w-48 bg-black/95 backdrop-blur-md rounded-lg border border-white/10 shadow-lg animate-fade-in before:content-[''] before:absolute before:top-[-8px] before:left-0 before:w-full before:h-8">
-              {item.dropdown.map(subItem => (
-                <HashLink
-                  key={subItem.name}
-                  smooth
-                  to={subItem.path} // keeps your #hash links
-                  className="block px-4 py-3 text-sm text-white hover:text-sunset-pink hover:bg-white/5 transition-colors first:rounded-t-lg last:rounded-b-lg"
-                >
-                  {subItem.name}
-                </HashLink>
-              ))}
-            </div>
-          )}
-        </div>
-      ) : (
-        <RouterLink
-          to={item.path}
-          className={`text-white hover:text-sunset-pink transition-colors ${
-            location.pathname === item.path ? 'text-sunset-pink' : ''
-          }`}
-        >
-          {item.name}
-        </RouterLink>
-      )}
-    </div>
-  ))}
-</div>
-
 
           {/* Mobile menu button */}
           <button
