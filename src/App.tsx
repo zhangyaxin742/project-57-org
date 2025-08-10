@@ -12,8 +12,33 @@ import Footer from "./components/Footer";
 import ScrollToTop from "@/components/ui/scroll-to-top";
 import Brief from "./pages/Briefs";
 import Contact from "./pages/Contact";
+import { useEffect, useState } from "react"; 
 
 const queryClient = new QueryClient();
+
+function HaloCursor() {
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setPos({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  return (
+    <div
+      style={{
+        position: "fixed",
+        inset: 0,
+        pointerEvents: "none",
+        zIndex: 5,
+        background: `radial-gradient(120px at ${pos.x}px ${pos.y}px, rgba(80,150,255,0.15), transparent 80%)`,
+      }}
+    />
+  );
+}
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -23,6 +48,7 @@ const App = () => (
       <BrowserRouter>
         <Analytics />
         <ScrollToTop />
+        <HaloCursor /> 
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/ourwork" element={<OurWork />} />
