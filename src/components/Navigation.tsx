@@ -19,7 +19,7 @@ const Navigation = () => {
     },
     { name: 'Get Involved', path: '/get-involved', 
     dropdown: [
-      { name: 'Contact', path: '/contact'}]
+      { name: 'Contact', path: '/get-involved#contact'}]
     },
   ];
 
