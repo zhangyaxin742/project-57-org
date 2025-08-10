@@ -18,7 +18,7 @@ const ImpactSection = () => {
     {
       number: '20+',
       label: 'Policymakers Engaged',
-      description: 'Pushing to mandate personal finance education in Massachusetts schools '
+      description: 'Pushing to mandate financial literacy education in Massachusetts schools '
     },
     {
       number: '6',
