@@ -8,7 +8,7 @@ const ScrollingStats = () => {
   const stats = [
     { number: '1 in 5', label: "teens can't create a basic budget." },
     { number: '63%', label: "of American adults can’t afford a $500 emergency." },
-    { number: '42%', label: "of states don't require financial literacy in schools." },
+    { number: '42%', label: "of states have zero financial literacy requirements." },
     { number: '250,000+', label: "teens risk a lifetime of financial hardship." }
   ];
 
