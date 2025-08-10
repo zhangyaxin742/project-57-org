@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,36 +11,34 @@ import GetInvolved from "./pages/GetInvolved";
 import Footer from "./components/Footer";
 import ScrollToTop from "@/components/ui/scroll-to-top";
 import Brief from "./pages/Briefs";
-
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
         <Analytics />
-          <ScrollToTop /> 
-          <Routes>
-            <Route path="/" element={<Index />} />
-              <Route path="/ourwork" element={<OurWork />} />
-              <Route path="/curriculum" element={<Navigate to="/ourwork#curriculum" replace />} />
-              <Route path="/enterprise" element={<Navigate to="/ourwork#enterprise" replace />} />
-            <Route path="/advocacy" element={<Navigate to="/ourwork#advocacy" replace />} />
-            <Route path="/about" element={<Navigate to="/ourwork#about" replace />} />
-            <Route path="/get-involved" element={<GetInvolved />} />
-             <Route path="/about" element={<Navigate to="/get-involved#contact" replace />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="/briefs/:slug" element={<Brief />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      </TooltipProvider>
-    
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/ourwork" element={<OurWork />} />
+          <Route path="/curriculum" element={<Navigate to="/ourwork#curriculum" replace />} />
+          <Route path="/enterprise" element={<Navigate to="/ourwork#enterprise" replace />} />
+          <Route path="/advocacy" element={<Navigate to="/ourwork#advocacy" replace />} />
+          <Route path="/about" element={<Navigate to="/ourwork#about" replace />} />
+          <Route path="/get-involved" element={<GetInvolved />} />
+          <Route path="/contact" element={<Contact />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/briefs/:slug" element={<Brief />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </TooltipProvider>
   </QueryClientProvider>
 );
 
