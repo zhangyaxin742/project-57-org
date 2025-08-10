@@ -40,57 +40,103 @@ const Navigation = () => {
           </RouterLink>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map(item => (
-              <div key={item.name} className="relative">
-                {item.dropdown ? (
-                  <div className = "relative group"
-                    onMouseEnter={() => setDropdownOpen(item.name)}
-                    onMouseLeave={() => setDropdownOpen('')}
-                  >
-                     <HashLink
-    smooth
-    to="/ourwork#top" // make sure you have <section id="top" /> at the top of OurWork
-    className="flex items-center space-x-1 text-white hover:text-sunset-pink transition-colors"
-    onClick={() => setDropdownOpen('')} // optional: close dropdown on click
-  >
-                      <span>{item.name}</span>
-                      <ChevronDown className="h-4 w-4" />
-                    </HashLink>
-                    {dropdownOpen === item.name && (
-                   <div
-          className="
-            absolute top-full left-0 mt-2 w-48 bg-black/95 backdrop-blur-md 
-            rounded-lg border border-white/10 shadow-lg animate-fade-in
-            before:content-[''] before:absolute before:top-[-8px] before:left-0 before:w-full before:h-8
-          "
+       {/* Desktop Navigation */}
+<div className="hidden md:flex items-center space-x-8">
+  {navItems.map(item => (
+    <div key={item.name} className="relative">
+      {item.dropdown ? (
+        <div
+          className="relative group"
+          onMouseEnter={() => setDropdownOpen(item.name)}
+          onMouseLeave={() => setDropdownOpen('')}
         >
-                        {item.dropdown.map(subItem => (
-                          <HashLink
-                            key={subItem.name}
-                            smooth
-                            to={subItem.path}
-                            className="block px-4 py-3 text-sm text-white hover:text-sunset-pink hover:bg-white/5 transition-colors first:rounded-t-lg last:rounded-b-lg"
-                          >
-                            {subItem.name}
-                          </HashLink>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <RouterLink
-                    to={item.path}
-                    className={`text-white hover:text-sunset-pink transition-colors ${
-                      location.pathname === item.path ? 'text-sunset-pink' : ''
-                    }`}
-                  >
-                    {item.name}
-                  </RouterLink>
-                )}
-              </div>
-            ))}
-          </div>
+          {/* parent link goes to the item's path, not hardcoded ourwork */}
+          <RouterLink
+            to={item.path} // e.g. /ourwork or /get-involved
+            className="flex items-center space-x-1 text-white hover:text-sunset-pink transition-colors"
+            onClick={() => setDropdownOpen('')}
+          >
+            <span>{item.name}</span>
+            <ChevronDown className="h-4 w-4" />
+          </RouterLink>
+
+          {dropdownOpen === item.name && (
+            <div className="absolute top-full left-0 mt-2 w-48 bg-black/95 backdrop-blur-md rounded-lg border border-white/10 shadow-lg animate-fade-in before:content-[''] before:absolute before:top-[-8px] before:left-0 before:w-full before:h-8">
+              {item.dropdown.map(subItem => (
+                <HashLink
+                  key={subItem.name}
+                  smooth
+                  to={subItem.path} // keeps your #hash links
+                  className="block px-4 py-3 text-sm text-white hover:text-sunset-pink hover:bg-white/5 transition-colors first:rounded-t-lg last:rounded-b-lg"
+                >
+                  {subItem.name}
+                </HashLink>
+              ))}
+            </div>
+          )}
+        </div>
+      ) : (
+        <RouterLink
+          to={item.path}
+          className={`text-white hover:text-sunset-pink transition-colors ${
+            location.pathname === item.path ? 'text-sunset-pink' : ''
+          }`}
+        >
+          {item.name}
+        </RouterLink>
+      )}
+    </div>
+  ))}
+</div>
+{/* Desktop Navigation */}
+<div className="hidden md:flex items-center space-x-8">
+  {navItems.map(item => (
+    <div key={item.name} className="relative">
+      {item.dropdown ? (
+        <div
+          className="relative group"
+          onMouseEnter={() => setDropdownOpen(item.name)}
+          onMouseLeave={() => setDropdownOpen('')}
+        >
+          {/* parent link goes to the item's path, not hardcoded ourwork */}
+          <RouterLink
+            to={item.path} // e.g. /ourwork or /get-involved
+            className="flex items-center space-x-1 text-white hover:text-sunset-pink transition-colors"
+            onClick={() => setDropdownOpen('')}
+          >
+            <span>{item.name}</span>
+            <ChevronDown className="h-4 w-4" />
+          </RouterLink>
+
+          {dropdownOpen === item.name && (
+            <div className="absolute top-full left-0 mt-2 w-48 bg-black/95 backdrop-blur-md rounded-lg border border-white/10 shadow-lg animate-fade-in before:content-[''] before:absolute before:top-[-8px] before:left-0 before:w-full before:h-8">
+              {item.dropdown.map(subItem => (
+                <HashLink
+                  key={subItem.name}
+                  smooth
+                  to={subItem.path} // keeps your #hash links
+                  className="block px-4 py-3 text-sm text-white hover:text-sunset-pink hover:bg-white/5 transition-colors first:rounded-t-lg last:rounded-b-lg"
+                >
+                  {subItem.name}
+                </HashLink>
+              ))}
+            </div>
+          )}
+        </div>
+      ) : (
+        <RouterLink
+          to={item.path}
+          className={`text-white hover:text-sunset-pink transition-colors ${
+            location.pathname === item.path ? 'text-sunset-pink' : ''
+          }`}
+        >
+          {item.name}
+        </RouterLink>
+      )}
+    </div>
+  ))}
+</div>
+
 
           {/* Mobile menu button */}
           <button
@@ -101,59 +147,58 @@ const Navigation = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden bg-black/95 backdrop-blur-md border-b border-white/10 animate-fade-in">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map(item => (
-                <div key={item.name} className = "relative">
-                  {item.dropdown ? (
-                    <>
- <HashLink
-    smooth
-    to="/ourwork#top" // make sure you have <section id="top" /> at the top of OurWork
-    className="flex items-center space-x-1 text-white hover:text-sunset-pink transition-colors"
-    onClick={() => setDropdownOpen('')} // optional: close dropdown on click
-  >
-                        <span>{item.name}</span>
-                        <ChevronDown
-                          className={`h-4 w-4 transition-transform ${
-                            dropdownOpen === item.name ? 'rotate-180' : ''
-                          }`}
-                        />
-                      </HashLink>
-                      {dropdownOpen === item.name && (
-                        <div className="pl-4 space-y-1">
-                          {item.dropdown.map(subItem => (
-                            <HashLink
-                              key={subItem.name}
-                              smooth
-                              to={subItem.path}
-                              className="block px-3 py-2 text-sm text-white hover:text-sunset-pink transition-colors"
-                              onClick={() => setIsOpen(false)}
-                            >
-                              {subItem.name}
-                            </HashLink>
-                          ))}
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <RouterLink
-                      to={item.path}
-                      className={`block px-3 py-2 text-white hover:text-sunset-pink transition-colors ${
-                        location.pathname === item.path ? 'text-sunset-pink' : ''
-                      }`}
+{/* Mobile Navigation */}
+{isOpen && (
+  <div className="md:hidden bg-black/95 backdrop-blur-md border-b border-white/10 animate-fade-in">
+    <div className="px-2 pt-2 pb-3 space-y-1">
+      {navItems.map(item => (
+        <div key={item.name} className="relative">
+          {item.dropdown ? (
+            <>
+              {/* same fix: use item.path */}
+              <RouterLink
+                to={item.path}
+                className="flex items-center space-x-1 text-white hover:text-sunset-pink transition-colors"
+                onClick={() => { setDropdownOpen(dropdownOpen === item.name ? '' : item.name); }}
+              >
+                <span>{item.name}</span>
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${dropdownOpen === item.name ? 'rotate-180' : ''}`}
+                />
+              </RouterLink>
+
+              {dropdownOpen === item.name && (
+                <div className="pl-4 space-y-1">
+                  {item.dropdown.map(subItem => (
+                    <HashLink
+                      key={subItem.name}
+                      smooth
+                      to={subItem.path}
+                      className="block px-3 py-2 text-sm text-white hover:text-sunset-pink transition-colors"
                       onClick={() => setIsOpen(false)}
                     >
-                      {item.name}
-                    </RouterLink>
-                  )}
+                      {subItem.name}
+                    </HashLink>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
-        )}
+              )}
+            </>
+          ) : (
+            <RouterLink
+              to={item.path}
+              className={`block px-3 py-2 text-white hover:text-sunset-pink transition-colors ${
+                location.pathname === item.path ? 'text-sunset-pink' : ''
+              }`}
+              onClick={() => setIsOpen(false)}
+            >
+              {item.name}
+            </RouterLink>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+)}
       </div>
     </nav>
   );
