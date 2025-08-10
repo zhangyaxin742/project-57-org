@@ -6,7 +6,7 @@ const ProgramCards = () => {
   const programs = [
     {
       title: 'Advocacy',
-      description: 'Track bills, read our research, and advocate for mandatory financial education in your district.',
+      description: 'Track bills, read our research, and advocate for mandatory personal finance education in your district.',
       icon: Scale,
       path: '/advocacy',
       gradient: 'from-sunset-purple to-sunset-orange'
@@ -20,7 +20,7 @@ const ProgramCards = () => {
     },
     {
       title: 'Enterprise',
-      description: 'Explore local pitch competitions, hackathons, and network with fellow young entrepreneurs.',
+      description: 'Explore pitch competitions, local hackathons, and network with fellow entrepreneurs.',
       icon: Users,
       path: '/enterprise',
       gradient: 'from-sunset-pink to-sunset-purple'
