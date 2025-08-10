@@ -20,7 +20,7 @@ const ProgramCards = () => {
     },
     {
       title: 'Enterprise',
-      description: 'Explore pitch competitions, hackathons, and network with local entrepreneurs.',
+      description: 'Explore local pitch competitions, hackathons, and network with fellow young entrepreneurs.',
       icon: Users,
       path: '/enterprise',
       gradient: 'from-sunset-pink to-sunset-purple'
