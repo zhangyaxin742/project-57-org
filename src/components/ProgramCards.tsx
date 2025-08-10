@@ -6,21 +6,21 @@ const ProgramCards = () => {
   const programs = [
     {
       title: 'Advocacy',
-      description: 'Track bills, read our research, and advocate for financial literacy education in your district.',
+      description: 'Track bills, read our research, and advocate for mandatory financial education in your district.',
       icon: Scale,
       path: '/advocacy',
       gradient: 'from-sunset-purple to-sunset-orange'
     }, 
         {
       title: 'Curriculum',
-      description: 'Attend (or run) a financial literacy workshop in your town — designed by youth, for youth.',
+      description: 'Lead (or attend) a financial literacy workshop in your town — designed by youth, for youth.',
       icon: BookOpen,
       path: '/curriculum',
       gradient: 'from-sunset-orange to-sunset-pink'
     },
     {
       title: 'Enterprise',
-      description: 'Explore pitch competitions, hackathons, and mentorship for young entrepreneurs.',
+      description: 'Explore pitch competitions, hackathons, and network with local entrepreneurs.',
       icon: Users,
       path: '/enterprise',
       gradient: 'from-sunset-pink to-sunset-purple'
