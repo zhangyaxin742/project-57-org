@@ -34,7 +34,7 @@ function HaloCursor() {
         inset: 0,
         pointerEvents: "none",
         zIndex: 5,
-        background: `radial-gradient(120px at ${pos.x}px ${pos.y}px, rgba(255,170, 0,1), transparent 80%)`,
+        background: `radial-gradient(120px at ${pos.x}px ${pos.y}px, rgba(255,170, 0,0.15), transparent 80%)`,
       }}
     />
   );
