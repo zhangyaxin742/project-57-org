@@ -461,7 +461,7 @@ const getStatusColor = (status: BillStatus): string => {
   const [openFaq1, setOpenFaq1] = useState(false);
   const [openFaq2, setOpenFaq2] = useState(false);
 const [showAllResearch, setShowAllResearch] = useState(false);
-const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
+const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
 
   // Component definitions
   const Advocacy = () => (
