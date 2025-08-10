@@ -42,7 +42,7 @@ const ScrollingStats = () => {
                 Crisis
           </h2>
           <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-            57% of Americans fail a basic financial literacy test. 
+            57% of Americans fail a basic financial literacy test. <br />
             Project 57 is changing that, one student at a time.
           </p>
         </div>
