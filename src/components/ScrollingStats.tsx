@@ -8,7 +8,7 @@ const ScrollingStats = () => {
   const stats = [
     { number: '1 in 5', label: "teens can't create a basic budget." },
     { number: '63%', label: "of American adults can’t afford a $500 emergency." },
-    { number: '42%', label: "of states don't require financial literacy in schools." },
+    { number: '94%', label: "of Massachusetts districts don't require financial literacy." },
     { number: '250,000+', label: "teens risk a lifetime of financial hardship." }
   ];
 
@@ -41,7 +41,7 @@ const ScrollingStats = () => {
               </span>
           </h2>
           <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-            57% of Americans fail a basic financial literacy test. 
+            57% of Americans graduate without the financial knowledge they need to succeed. 
             Project 57 is changing that, one student at a time.
           </p>
         </div>
