@@ -35,7 +35,7 @@ const ScrollingStats = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            The
+            The {""}
             <span className="bg-sunset-gradient bg-clip-text text-transparent">
     Financial Literacy {""}
             </span>
@@ -49,23 +49,13 @@ const ScrollingStats = () => {
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {stats.map((stat, index) => (
-          <div
-      key={index}
-      className="
-        transition-transform duration-200 ease-out
-        hover:scale-105
-        hover:shadow-[0_14px_40px_rgba(255,140,0,0.35)]
-        rounded-2xl
-      "
-    >
             <StatCard
-
+              key={index}
               number={stat.number}
               label={stat.label}
               isVisible={isVisible}
               delay={index * 200}
             />
-          </div>
           ))}
         </div>
       </div>
