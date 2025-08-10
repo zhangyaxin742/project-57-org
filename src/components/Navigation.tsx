@@ -30,7 +30,7 @@ const Navigation = () => {
           {/* Logo */}
           <RouterLink to="/" className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/547a147a-e3fa-42bc-bc39-35e32865f4fc.png" 
+              src="/assets/transparent-logo.png" 
               alt="Project 57" 
               className="h-10 w-10"
             />
