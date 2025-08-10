@@ -6,7 +6,7 @@ const ProgramCards = () => {
   const programs = [
     {
       title: 'Advocacy',
-      description: 'Track bills, read our research, and advocate for mandatory personal finance education in your district.',
+      description: 'Track bills, read our research, and advocate for mandatory personal financial education in your district.',
       icon: Scale,
       path: '/advocacy',
       gradient: 'from-sunset-purple to-sunset-orange'
