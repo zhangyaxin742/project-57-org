@@ -1,6 +1,6 @@
 import Navigation from '@/components/Navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, Users, ChevronRight, HandHeart, BookOpenCheck, Landmark, LineChart, GraduationCap, Lightbulb, ChartNoAxesCombined, FileText, Album, MessageCircleHeart} from 'lucide-react';
+import { ArrowRight, Users, ChevronRight, HandHeart, BookOpenCheck, Landmark, LineChart, GraduationCap, Lightbulb, ChartNoAxesCombined, FileText, Album, MessageCircleHeart} from 'lucide-react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -305,7 +305,7 @@ const GridSection = ({ title, roles, compact = false, centerLast = true, id, }: 
                         className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-sunset-gradient px-4 py-3 font-semibold text-black hover:opacity-90"
                         onClick={(e) => e.stopPropagation()} > 
 
-                        {role.cta} <Mail className="ml-2 h-4 w-4" />
+                        {role.cta} <ArrowRight className="ml-2 h-4 w-4" />
                       </a>
                     </CardContent>
                   </Card>
