@@ -969,7 +969,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
         <div className="flex gap-4">
           <div className="h-8 w-1 rounded bg-sunset-orange" />
           <div>
-            <h3 className="font-semibold text-white">Chapters: Local > Loud</h3>
+            <h3 className="font-semibold text-white">Chapters </h3>
             <p className="text-gray-400 text-sm">
               Organize by school. Win allies in your district. Ship proof, then replicate city by city.
             </p>
