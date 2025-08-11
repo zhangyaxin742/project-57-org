@@ -31,10 +31,10 @@ const Contact = () => {
     if (!form.current) return;
 
     emailjs.sendForm(
-      'service_iwm6b6n', // Replace with your EmailJS service ID
-      'template_c6b0eya', // Replace with your EmailJS template ID
+      'service_iwm6b6n',
+      'template_c6b0eya',
       form.current,
-      'xXAGTZO6e5pBEH4qw' // Replace with your EmailJS public key
+      'xXAGTZO6e5pBEH4qw'
     ).then(
       (result) => {
         console.log(result.text);
@@ -53,7 +53,7 @@ const Contact = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-32">
         {/* Background gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
 
@@ -72,7 +72,7 @@ const Contact = () => {
               Contact <span className="bg-sunset-gradient bg-clip-text text-transparent">Us</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-100 mb-8 leading-relaxed">
               Questions? Send us a message below or{" "}
               <a 
                 href="mailto:project57.connect@gmail.com" 
@@ -82,55 +82,73 @@ const Contact = () => {
               </a>.
             </p>
 
-            {/* Contact Form */}
-            <form ref={form} onSubmit={sendEmail} className="bg-gray-900 p-8 rounded-2xl shadow-lg space-y-6 text-left">
-              <div>
-                <label className="block text-gray-300 mb-2">Name</label>
-                <input 
-                  type="text" 
-                  name="user_name" 
-                  required
-                  className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-sunset-orange"
-                />
-              </div>
+            {/* Card wrapper to define against background */}
+            <div className="relative rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 shadow-xl shadow-black/40 ring-1 ring-white/5 p-6 sm:p-8 text-left focus-within:ring-2 focus-within:ring-sunset-pink/30">
+              {/* subtle glow behind the card */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -inset-2 rounded-3xl -z-10
+                           bg-[radial-gradient(60%_80%_at_50%_0%,rgba(236,72,153,.10),transparent)]"
+              />
 
-              <div>
-                <label className="block text-gray-300 mb-2">Email</label>
-                <input 
-                  type="email" 
-                  name="user_email" 
-                  required
-                  className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-sunset-orange"
-                />
-              </div>
+              {/* Contact Form */}
+              <form ref={form} onSubmit={sendEmail} className="space-y-6">
+                <div>
+                  <label className="block text-gray-100 mb-2">Name</label>
+                  <input 
+                    type="text" 
+                    name="user_name" 
+                    required
+                    className="w-full px-4 py-2 rounded-lg bg-black/40 text-white placeholder-gray-500
+                               border border-white/10 focus:outline-none focus:ring-2
+                               focus:ring-sunset-pink/30 focus:border-sunset-pink/50"
+                  />
+                </div>
 
-              <div>
-                <label className="block text-gray-300 mb-2">Subject</label>
-                <input 
-                  type="text" 
-                  name="subject" 
-                  required
-                  className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-sunset-orange"
-                />
-              </div>
+                <div>
+                  <label className="block text-gray-100 mb-2">Email</label>
+                  <input 
+                    type="email" 
+                    name="user_email" 
+                    required
+                    className="w-full px-4 py-2 rounded-lg bg-black/40 text-white placeholder-gray-500
+                               border border-white/10 focus:outline-none focus:ring-2
+                               focus:ring-sunset-pink/30 focus:border-sunset-pink/50"
+                  />
+                </div>
 
-              <div>
-                <label className="block text-gray-300 mb-2">Message</label>
-                <textarea 
-                  name="message" 
-                  rows={5} 
-                  required
-                  className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-sunset-orange"
-                ></textarea>
-              </div>
+                <div>
+                  <label className="block text-gray-100 mb-2">Subject</label>
+                  <input 
+                    type="text" 
+                    name="subject" 
+                    required
+                    className="w-full px-4 py-2 rounded-lg bg-black/40 text-white placeholder-gray-500
+                               border border-white/10 focus:outline-none focus:ring-2
+                               focus:ring-sunset-pink/30 focus:border-sunset-pink/50"
+                  />
+                </div>
 
-              <button 
-                type="submit" 
-                className="w-full py-3 bg-sunset-gradient text-white font-bold rounded-lg hover:opacity-90 transition duration-200"
-              >
-                Send Message
-              </button>
-            </form>
+                <div>
+                  <label className="block text-gray-100 mb-2">Message</label>
+                  <textarea 
+                    name="message" 
+                    rows={5} 
+                    required
+                    className="w-full px-4 py-2 rounded-lg bg-black/40 text-white placeholder-gray-500
+                               border border-white/10 focus:outline-none focus:ring-2
+                               focus:ring-sunset-pink/30 focus:border-sunset-pink/50"
+                  ></textarea>
+                </div>
+
+                <button 
+                  type="submit" 
+                  className="w-full py-3 bg-sunset-gradient text-white font-bold rounded-lg hover:opacity-90 transition duration-200"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
 
           </div>
         </div>
