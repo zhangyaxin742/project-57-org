@@ -838,7 +838,6 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
 
 {/* Sticky Card Header (Home-style 3 cards) */}
 <section id="our-work-tabs" className="-mt-6 bg-transparent">
-  <div className="absolute inset-x-0 -top-6 h-6 bg-gradient-to-b from-black/0 to-black" />
   <div
     ref={containerRef}
     className="
@@ -960,7 +959,6 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
         })}
       </motion.div>
     </div>
-  </div>
 </section>
 
       {/* Full-width expanding content panel */}
