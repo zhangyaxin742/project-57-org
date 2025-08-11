@@ -1103,24 +1103,14 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
       </h2>
     {/* Left: mission + pillars */}
     <div>
-      <p className="text-lg text-gray-300 mb-8">
-        14 and getting a job. 17 and taking out student loans. 18 and opening credit cards.<br /> 
-        When 250,000 futures are at stakes, financial literacy is not<em>— can not— </em>be optional. Yet Massachusetts—from our schools to our legislatures—continue to ignore the gap. 
+      <p className="text-lg text-gray-300 mt-4">
+        14 and getting a job. 17 and taking out student loans. 18 and opening credit cards.
+      </p>
+        <p className="mt-2 text-gray-400">
+        When 250,000 futures are at stake, financial literacy is not<em>— can not— </em>be optional. 
+          Yet Massachusetts—from our schools to our legislatures—continues to ignore the gap. 
         We fix that by going local, teaching by doing, and putting students <em> first.</em>
       </p>
-</div>
-<section className="grid lg:grid-cols-2 gap-10 items-start">
-  {/* LEFT */}
-  <div>
-    <h2 className="text-4xl font-extrabold text-white">
-      Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Mission</span>
-    </h2>
-    <p className="mt-4 text-gray-300">
-      Money skills that outlive graduation.
-    </p>
-    <p className="mt-2 text-gray-400">
-      Schools talk about literacy. We build it — student-run, district-level, with policy and proof.
-    </p>
 
     <ul className="mt-6 space-y-5">
       <li className="flex gap-3">
