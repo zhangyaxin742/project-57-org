@@ -1100,7 +1100,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
   <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
     {/* SECTION HEADER spans both columns */}
-    <h2 className="text-4xl md:text-5xl font-bold text-center -mt-6 mb-10">
+    <h2 className="text-4xl md:text-5xl font-bold text-center -mt-2 mb-10">
       Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Mission</span>
     </h2>
         <div className="grid md:grid-cols-2 gap-10 items-start">
@@ -1109,9 +1109,9 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
         14 and getting a job. 17 and taking out student loans. 18 and opening credit cards.
       </p>
         <p className="mt-4 text-gray-400">
-        When 250,000 futures are at stake, financial literacy is not &mdash; can not &mdash; be optional. 
-          Yet Massachusetts, from our schools to our legislatures, continues to ignore the gap. 
-        Project 57 fixes that by going local, teaching by doing, and putting students <em> first.</em>
+        When 250,000 futures are at stake, financial literacy can't <em>afford</em> to be optional. 
+          Yet Massachusetts — from our schools to our legislatures — continues to ignore the gap. < br/> 
+        Project 57 tackles that by going local, teaching by doing, and putting students <em> first.</em>
       </p>
       <div className="mt-8 flex flex-wrap gap-3">
           <Button className="bg-sunset-gradient text-black px-6 py-3 text-base rounded-xl">
