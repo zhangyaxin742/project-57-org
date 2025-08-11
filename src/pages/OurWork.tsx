@@ -1113,7 +1113,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
           Yet Massachusetts —from our schools to our legislatures— continues to ignore the gap. 
         We fix that by going local, teaching by doing, and putting students <em> first.</em>
       </p>
-      <div className="mt-10 flex flex-wrap gap-3">
+      <div className="mt-8 flex flex-wrap gap-3">
           <Button className="bg-sunset-gradient text-black px-6 py-3 text-base rounded-xl">
             Join Our Team
           </Button>
@@ -1124,7 +1124,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
         </div> 
 
           
-<div>
+<div className = "mt-6 md:mt-10">
         <ul className="space-y-5">
           {/* full-height color bar using a 2-col grid and self-stretch */}
           <li className="grid grid-cols-[6px_1fr] gap-3 items-start">
