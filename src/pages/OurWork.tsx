@@ -811,33 +811,31 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 relative items-center justify-center overflow-hidden 
-       bg-gradient-to-br from-black via-gray-900 to-black">
-        
+        <section className="pt-24 pb-16 relative items-center justify-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
+  <div className="pointer-events-none absolute inset-0">
         {/* Animated background elements */}
-        <div  className=" relative top-1/4 left-1/4 w-96 h-96 bg-sunset-orange/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="relative bottom-1/4 right-1/4 w-96 h-96 bg-sunset-purple/10 rounded-full blur-3xl animate-pulse" style={{
+        <div  className=" absolute top-1/4 left-1/4 w-96 h-96 bg-sunset-pink/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sunset-purple/10 rounded-full blur-3xl animate-pulse" 
+            style={{
           animationDelay: '1s'
         }}></div>
         
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-12">
-               <div className="animate-fade-in">
-          <h1 className="text-4xl text-white md:text-6xl font-bold mb-6 leading-tight">
-         Our  <span className="bg-sunset-gradient bg-clip-text text-transparent"> Work</span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10  leading-relaxed">
-            Read our research, check out our workshops, and take action
-            to expand financial literacy education in schools across Massachusetts.
-          </p>
-        </div>
-        </div>
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-black" />
+  <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-8 text-center">
+    <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+      Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Work</span>
+    </h1>
+    <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6 leading-relaxed">
+      Read our research, check out our workshops, and take action
+      to expand financial literacy education in schools across Massachusetts.
+    </p>
+  </div>
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-b from-transparent to-black" />
       </section>
 
 
 {/* Sticky Card Header (Home-style 3 cards) */}
-<section id="our-work-tabs" className="-mt-10 bg-transparent">
-  <div className="absolute inset-x-0 -top-6 h-6 bg-gradient-to-b from-black/0 to-black" />
+<section id="our-work-tabs" className="-mt-6 bg-transparent">
+
   <div
     ref={containerRef}
     className="
