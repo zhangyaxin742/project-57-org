@@ -812,7 +812,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
 
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-28">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
           <h1 className="text-4xl text-white md:text-6xl font-bold mb-6">
          Our  <span className="bg-sunset-gradient bg-clip-text text-transparent"> Work</span>
           </h1>
