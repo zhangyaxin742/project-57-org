@@ -1104,7 +1104,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
       Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Mission</span>
     </h2>
         <div className="grid md:grid-cols-2 gap-10 items-start">
-          <div>
+          <div className="flex flex-col justify-start">
       <p className="text-lg text-gray-300 mt-4">
         14 and getting a job. 17 and taking out student loans. 18 and opening credit cards.
       </p>
@@ -1124,7 +1124,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
         </div> 
 
           
-<div className = "mt-6 md:mt-10">
+<div className = "flex flex-col justify-start">
         <ul className="space-y-5">
           {/* full-height color bar using a 2-col grid and self-stretch */}
           <li className="grid grid-cols-[6px_1fr] gap-3 items-start">
