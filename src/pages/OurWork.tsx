@@ -752,11 +752,11 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
-        <h2 className="text-3xl font-bold text-white mb-12">
+        <h2 className="text-3xl font-bold text-white">
           Educational <span className="bg-sunset-gradient bg-clip-text text-transparent"> Workshops </span> 
         </h2>
  <Button
-            className="mt-4 sm:mt-0 bg-sunset-gradient hover:opacity-90 text-black font-medium flex items-center gap-2 px-5 py-2 rounded-lg"
+            className="bg-sunset-gradient hover:opacity-90 text-black font-medium flex items-center gap-2 px-5 py-2 rounded-lg sm:ml-4 mt-4 sm:mt-0"
             onClick={() => (window.location.href = "/contact")}
           >
             Request a Workshop
