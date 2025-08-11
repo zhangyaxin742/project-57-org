@@ -241,7 +241,7 @@ const GridSection = ({ title, roles, compact = false, centerLast = true, }: { ti
                 >
                   <Card
                     className={
-                      "border transition-colors " +
+                      "group border transition-colors " +
                       (isOpen
                         ? "bg-white/10 border-sunset-orange/70"
                         : "bg-black/60 border-white/10 hover:border-sunset-orange/60")
@@ -249,6 +249,7 @@ const GridSection = ({ title, roles, compact = false, centerLast = true, }: { ti
                   >
                     {/* Header */}
 <CardHeader className="pb-2">
+    <div className="flex items-start justify-between gap-3">
   <div className="flex items-center gap-3">
     <role.icon className="h-7 w-7 text-sunset-orange" />
     <div>
@@ -257,22 +258,25 @@ const GridSection = ({ title, roles, compact = false, centerLast = true, }: { ti
     </div>
   </div>
 
-  {/* description + chevron at the far right */}
-  <CardDescription className="text-gray-300 mt-3">
-    <span className="inline">{role.description}</span>
-    <button
+      <button
       type="button"
       aria-label={isOpen ? "Collapse" : "Expand"}
       onClick={(e) => {
         e.stopPropagation();
         setExpanded(isOpen ? null : idx);
       }}
-      className="ml-2 inline-flex items-center rounded-md p-1.5 align-middle text-sunset-orange hover:text-white/90 hover:bg-white/5 transition"
+      className="shrink-0 inline-flex items-center rounded-md p-1.5 text-sunset-orange hover:text-white/90 hover:bg-white/5 transition"
     >
-      <ChevronRight
-        className={`h-4 w-4 transition-transform ${isOpen ? "rotate-90" : ""}`}
+       <ChevronRight
+        className={`h-5 w-5 transition-transform duration-200 
+          ${isOpen ? "rotate-90" : "group-hover:translate-x-0.5"}`}
       />
     </button>
+</div>
+  {/* description + chevron at the far right */}
+  <CardDescription className="text-gray-300 mt-3">
+    {role.description}
+
   </CardDescription>
 </CardHeader>
                     {/* Expandable body */}
