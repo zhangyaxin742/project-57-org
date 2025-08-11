@@ -811,8 +811,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 relative flex items-center justify-center overflow-hidden 
-       bg-gradient-to-br from-black via-gray-900 to-black">
+      <section className="pt-24 pb-16 relative overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
         
         {/* Animated background elements */}
         <div  className=" relative top-1/4 left-1/4 w-96 h-96 bg-sunset-orange/10 rounded-full blur-3xl animate-pulse"></div>
@@ -1084,6 +1083,89 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
     </div>
   </div>
 </section>
+
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+  <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+    {/* Left: WHY */}
+    <div>
+      <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Mission</span>
+      </h2>
+      <p className="text-lg text-gray-300 mb-6">
+        Financial literacy can’t be optional. When it is, families pay for it for decades.
+        Project 57 builds a local, student-led engine that makes money skills normal — at school,
+        at home, and in the neighborhood.
+      </p>
+
+      <div className="space-y-4">
+        <div className="border-l-4 border-sunset-orange pl-4">
+          <h4 className="text-white font-semibold mb-1">Chapters: Local first</h4>
+          <p className="text-gray-400 text-sm">
+            Embedded in schools and towns so content reflects your community — not a generic slideshow.
+          </p>
+        </div>
+        <div className="border-l-4 border-sunset-pink pl-4">
+          <h4 className="text-white font-semibold mb-1">Student-led, student-heard</h4>
+          <p className="text-gray-400 text-sm">
+            Youth run workshops and advocate in their districts. When students speak, schools move.
+          </p>
+        </div>
+        <div className="border-l-4 border-sunset-purple pl-4">
+          <h4 className="text-white font-semibold mb-1">Entrepreneurship as practice</h4>
+          <p className="text-gray-400 text-sm">
+            Building real projects = budgeting, pricing, pitching, and accountability — literacy in action.
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-8 flex flex-wrap gap-3">
+        <a href="/get-involved" className="px-5 py-3 rounded-full bg-sunset-gradient text-black font-semibold hover:opacity-90 transition">
+          Start a Chapter
+        </a>
+        <a href="/ourwork#advocacy" className="px-5 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 transition">
+          Join Advocacy
+        </a>
+      </div>
+    </div>
+
+    {/* Right: Visuals */}
+    <div className="relative">
+      {/* subtle animated gradient blob */}
+      <div className="absolute -top-10 -right-10 w-64 h-64 rounded-full bg-sunset-gradient blur-3xl opacity-20" />
+
+      {/* Stat card */}
+      <div className="rounded-2xl border border-white/10 bg-black/50 p-6 mb-6">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-gray-300 text-sm">U.S. financial literacy today</span>
+          <span className="text-white font-semibold">57%</span>
+        </div>
+        <div className="h-3 w-full rounded-full bg-white/10 overflow-hidden">
+          <div className="h-full bg-sunset-gradient w-[57%]" />
+        </div>
+        <p className="text-gray-400 text-xs mt-2">
+          Our goal: raise this to 100% — starting locally, chapter by chapter.
+        </p>
+      </div>
+
+      {/* Pill grid */}
+      <div className="grid grid-cols-2 gap-4">
+        <div className="rounded-xl border border-white/10 bg-black/50 p-4">
+          <p className="text-sm text-gray-300">Workshops run by trained student leaders</p>
+        </div>
+        <div className="rounded-xl border border-white/10 bg-black/50 p-4">
+          <p className="text-sm text-gray-300">District-level advocacy & bill testimony</p>
+        </div>
+        <div className="rounded-xl border border-white/10 bg-black/50 p-4">
+          <p className="text-sm text-gray-300">Starter ventures & pitch programs</p>
+        </div>
+        <div className="rounded-xl border border-white/10 bg-black/50 p-4">
+          <p className="text-sm text-gray-300">Curriculum built for real life decisions</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Tabbed Modals */}
       {selectedBill && activeModal && (
