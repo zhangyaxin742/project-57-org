@@ -959,6 +959,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
         })}
       </motion.div>
     </div>
+  </div>
 </section>
 
       {/* Full-width expanding content panel */}
