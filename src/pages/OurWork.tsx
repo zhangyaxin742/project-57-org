@@ -815,7 +815,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
             key: "advocacy" as SectionKey,
             title: "Advocacy",
             description:
-              "Track bills, read our research, and advocate for financial literacy education in your district.",
+              "Track bills, read our research, and advocate for mandatory personal financial education in your district.",
             Icon: Scale,
             gradient: "from-sunset-purple to-sunset-orange",
           },
@@ -823,7 +823,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
             key: "curriculum" as SectionKey,
             title: "Curriculum",
             description:
-              "Attend (or run) a financial literacy workshop in your town — designed by youth, for youth.",
+              "Lead (or attend) a financial literacy workshop in your town — designed by youth, for youth.",
             Icon: BookOpen,
             gradient: "from-sunset-orange to-sunset-pink",
           },
@@ -831,7 +831,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
             key: "enterprise" as SectionKey,
             title: "Enterprise",
             description:
-              "Explore pitch competitions, hackathons, and mentorship for young entrepreneurs.",
+              "Explore pitch competitions, local hackathons, and network with fellow entrepreneurs.",
             Icon: Users,
             gradient: "from-sunset-pink to-sunset-purple",
           },
@@ -880,10 +880,20 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
                   <p className="text-gray-300 leading-relaxed">{description}</p>
 
                   <div className="mt-6 flex items-center text-sunset-pink transition-transform duration-300 group-hover:translate-x-2">
-                    <span className="text-sm font-semibold">Learn More</span>
-                    <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                    <span className="text-sm font-semibold">
+                      {isOpen ? "Collapse" : "Learn More"}
+</span>
+  <svg
+    className={`ml-2 h-4 w-4 transition-transform duration-300 ${
+      isOpen ? "rotate-90" : ""
+    }`}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    aria-hidden
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+  </svg>
                   </div>
 
                   {/* Active gradient indicator */}
