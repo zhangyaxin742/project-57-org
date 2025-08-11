@@ -351,14 +351,16 @@ function GetInvolved() {
       <span className="bg-sunset-gradient bg-clip-text text-transparent">Team</span>
     </>
   } roles={execPositions} />
-        <div className="h-8 w-full bg-gradient-to-b from-transparent via-white/5 to-transparent" />
+<div className="h-16 bg-gradient-to-b from-black via-gray-900/80 to-black" />
+
       <GridSection          title={
     <>
       <span className="text-white">Associate </span>
       <span className="bg-sunset-gradient bg-clip-text text-transparent">Team</span>
     </>
   } roles={associatePositions} />
-      <div className="h-8 w-full bg-gradient-to-b from-transparent via-white/5 to-transparent" />
+<div className="h-16 bg-gradient-to-b from-black via-gray-900/80 to-black" />
+
       <GridSection compact centerLast={false} 
          title={
     <>
@@ -366,7 +368,8 @@ function GetInvolved() {
       <span className="bg-sunset-gradient bg-clip-text text-transparent">Opportunities</span>
     </>
   } roles={[chapterPresident[0], volunteerRole[0]]} />
-        <div className="h-16 w-full bg-gradient-to-b from-transparent to-gray-900/30" />
+<div className="h-16 bg-gradient-to-b from-black via-gray-900/80 to-black" />
+
     </div>
   );
 }
