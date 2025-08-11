@@ -553,7 +553,6 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
               <TrendingUp className="h-4 w-4" />
               Powered by Billtrack50.com API
             </div>
-          </div>
           
           {/* Subheading */}
           <p className="text-gray-400 text-sm max-w-3xl mb-8">
@@ -751,9 +750,8 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
           </div>
         </div>
       </section>
-
-  );
-
+      </div>
+   );
   const Curriculum = () => (
     <div className="py-16 bg-gray-900">
       <div className="max-w-6xl mx-auto px-4">
@@ -935,9 +933,9 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
 
                   {/* Active gradient indicator */}
                  {isOpen && (
-                <div 
-                   className={`absolue inset-0 bg-gradient-to-br ${gradient} opacity-20 pointer-events-none`}
-                  aria-hidden="true" />
+        <div 
+          className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-20 pointer-events-none`}
+          aria-hidden="true" />
                 )}
                 </div>
               </Card>
