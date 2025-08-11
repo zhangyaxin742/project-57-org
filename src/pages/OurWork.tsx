@@ -819,7 +819,6 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
           <div className="relative bottom-1/4 right-1/4 w-96 h-96 bg-sunset-purple/10 rounded-full blur-3xl animate-pulse" style={{
           animationDelay: '1s'
         }}></div>
-        </div>
         
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-12">
                <div className="animate-fade-in">
