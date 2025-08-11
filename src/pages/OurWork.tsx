@@ -797,7 +797,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                         </div>
                       </div>
                     </CardHeader>
-                    <CardContent className="mt-8">
+                    <CardContent className="mt-auto">
                       <Button 
                         className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
                       >
@@ -829,7 +829,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                               {workshop.title}
                             </CardTitle>
                             <div className="text-gray-400 text-sm space-y-1">
-                              <div className="flex items-center gap-2">
+                              <div className="flex items-center gap-2 mt-auto">
                                 <MapPin className="h-4 w-4" />
                                 {workshop.location}
                               </div>
