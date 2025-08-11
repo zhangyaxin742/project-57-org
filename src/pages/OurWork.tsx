@@ -832,7 +832,6 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
             to expand financial literacy education in schools across Massachusetts.
           </p>
         </div>
-        </div>
       </section>
 
 
