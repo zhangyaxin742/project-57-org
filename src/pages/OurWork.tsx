@@ -1107,11 +1107,10 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
         14 and getting a job. 17 and taking out student loans. 18 and opening credit cards.
       </p>
         <p className="mt-2 text-gray-400">
-        When 250,000 futures are at stake, financial literacy is not<em>— can not— </em>be optional. 
-          Yet Massachusetts—from our schools to our legislatures—continues to ignore the gap. 
+        When 250,000 futures are at stake, financial literacy is not &mdash; can not &mdash; be optional. 
+          Yet Massachusetts —from our schools to our legislatures— continues to ignore the gap. 
         We fix that by going local, teaching by doing, and putting students <em> first.</em>
       </p>
-    </div> 
     
     <ul className="mt-6 space-y-5">
       <li className="flex gap-3">
@@ -1141,12 +1140,6 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
       In pilots, students built budgets in 20 minutes, improved credit knowledge by <span className="text-white font-semibold">42%</span>,
       and left with a first-step plan. <span className="text-gray-500">(Swap in real data.)</span>
     </p>
-
-    <div className="mt-6 flex flex-wrap gap-3">
-      <span className="px-3 py-1 rounded-full bg-white/5 text-gray-300">Student-run</span>
-      <span className="px-3 py-1 rounded-full bg-white/5 text-gray-300">District-level impact</span>
-      <span className="px-3 py-1 rounded-full bg-white/5 text-gray-300">Policy + practice</span>
-    </div>
   </div>
 
   {/* RIGHT */}
@@ -1198,12 +1191,11 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
     </div>
 
     <div className="mt-6 flex gap-3">
-      <Button className="bg-sunset-gradient text-black">Explore Programs</Button>
+      <Button className="bg-sunset-gradient text-black">Join Our Team</Button>
       <Button variant="outline" className="border-white/30 text-white">Start a Chapter</Button>
     </div>
   </div>
-</section>
-</div>
+        </div> 
 </section>
 
       {/* Tabbed Modals */}
