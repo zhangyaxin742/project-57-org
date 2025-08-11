@@ -751,7 +751,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
     <div className="py-16 bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12">
         <h2 className="text-3xl font-bold text-white">
           Educational <span className="bg-sunset-gradient bg-clip-text text-transparent"> Workshops </span> 
         </h2>
