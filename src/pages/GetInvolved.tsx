@@ -246,8 +246,8 @@ const GridSection = ({ title, roles, compact = false, centerLast = true, id, }: 
     "group overflow-hidden border rounded-xl transition-colors " +
         "bg-[linear-gradient(45deg,var(--tw-gradient-stops))] " + 
     (isOpen
-      ? "bg-gradient-to-b from-gray-900 via-gray-800 to-black border-sunset-orange/70"
-      : "bg-gradient-to-b from-black to-gray-900 border-white/10 hover:border-sunset-orange/60")
+      ? "from-gray-900 via-gray-800 to-black border-sunset-orange/70"
+      : "from-black to-gray-900 border-white/10 hover:border-sunset-orange/60")
   }
 >
                     {/* Header */}
