@@ -424,19 +424,19 @@ const getStatusColor = (status: BillStatus): string => {
 
   const workshops: Workshop[] = [
     {
-      title: "Financial Planning Workshop",
-      location: "Virtual",
-      date: "Dec 15, 2024"
+      title: "WTF Are Taxes? (And Other Conundrums)",
+      location: "Arlington, MA - TBD",
+      date: "Aug 18, 2025"
     },
     {
-      title: "Youth Entrepreneurship Bootcamp",
-      location: "Boston, MA",
-      date: "Jan 20, 2025"
+      title: "Scholarships & Financial Aid",
+      location: "Arlington, MA - TBD",
+      date: "Sept 1, 2025"
     },
     {
-      title: "Credit Building Masterclass",
-      location: "Virtual",
-      date: "Feb 10, 2025"
+      title: "Budgeting Is Shockingly Simple",
+      location: "Boston MA - TBD",
+      date: "Sept 14, 2025"
     }
   ];
 
@@ -829,8 +829,8 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
       Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Work</span>
     </h1>
     <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6 leading-relaxed">
-      Read our research, check out our workshops, and take action
-      to expand financial literacy education in schools across Massachusetts.
+      Read our research, drop by our workshops, and take action
+      to put financial literacy on the docket in Massachusetts.
     </p>
   </div>
           
