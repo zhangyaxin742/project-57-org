@@ -1097,12 +1097,12 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
 
       {/* About Section */}
       <section id="about" className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
-  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-4 sm:px-6 lg:px-8 items-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-        Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Mission</span>
-      </h2>
+  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-4 sm:px-6 lg:px-8 items-start">
     {/* Left: mission + pillars */}
     <div>
+                <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Mission</span>
+      </h2>
       <p className="text-lg text-gray-300 mt-4">
         14 and getting a job. 17 and taking out student loans. 18 and opening credit cards.
       </p>
@@ -1111,7 +1111,9 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
           Yet Massachusetts —from our schools to our legislatures— continues to ignore the gap. 
         We fix that by going local, teaching by doing, and putting students <em> first.</em>
       </p>
-    
+    </div>
+
+    <div>
     <ul className="mt-6 space-y-5">
       <li className="flex gap-3">
         <span className="h-6 w-1 rounded bg-gradient-to-b from-orange-400 to-pink-500 mt-1" />
@@ -1138,64 +1140,16 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
 
     <p className="mt-6 text-gray-400">
       In pilots, students built budgets in 20 minutes, improved credit knowledge by <span className="text-white font-semibold">42%</span>,
-      and left with a first-step plan. <span className="text-gray-500">(Swap in real data.)</span>
+      and left with a first-step plan. 
     </p>
-  </div>
 
   {/* RIGHT */}
-  <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
-    <p className="text-gray-300 mb-2">The Problem</p>
-    <div className="w-full h-2 rounded bg-white/10 overflow-hidden">
-      <div className="h-full w-[57%] bg-sunset-gradient" />
-    </div>
-    <p className="mt-2 text-gray-400">
-      Only <span className="text-white font-semibold">57%</span> of Americans are financially literate.
-    </p>
-
-    <div className="grid grid-cols-3 gap-3 mt-6">
-      <div className="rounded-xl border border-white/10 p-4">
-        <p className="text-white font-semibold">Chapters</p>
-        <p className="text-gray-400 text-sm">Local teams driving change</p>
-      </div>
-      <div className="rounded-xl border border-white/10 p-4">
-        <p className="text-white font-semibold">Workshops</p>
-        <p className="text-gray-400 text-sm">Peer-led, action-first</p>
-      </div>
-      <div className="rounded-xl border border-white/10 p-4">
-        <p className="text-white font-semibold">Advocacy</p>
-        <p className="text-gray-400 text-sm">Policy with receipts</p>
-      </div>
-      <div className="rounded-xl border border-white/10 p-4 col-span-3">
-        <p className="text-white font-semibold">Enterprise</p>
-        <p className="text-gray-400 text-sm">Applied literacy with real customers</p>
-      </div>
-    </div>
-
-    <div className="grid grid-cols-2 gap-3 mt-6">
-      <div className="rounded-xl bg-white/5 p-4">
-        <p className="text-white text-2xl font-bold">___</p>
-        <p className="text-gray-400 text-sm">Students trained</p>
-      </div>
-      <div className="rounded-xl bg-white/5 p-4">
-        <p className="text-white text-2xl font-bold">___</p>
-        <p className="text-gray-400 text-sm">Districts engaged</p>
-      </div>
-      <div className="rounded-xl bg-white/5 p-4">
-        <p className="text-white text-2xl font-bold">___%</p>
-        <p className="text-gray-400 text-sm">Avg. score lift</p>
-      </div>
-      <div className="rounded-xl bg-white/5 p-4">
-        <p className="text-white text-2xl font-bold">___</p>
-        <p className="text-gray-400 text-sm">Bills/resolutions moved</p>
-      </div>
-    </div>
-
-    <div className="mt-6 flex gap-3">
+    <div className="mt-6 flex flex-wrap gap-3">
       <Button className="bg-sunset-gradient text-black">Join Our Team</Button>
       <Button variant="outline" className="border-white/30 text-white">Start a Chapter</Button>
     </div>
-  </div>
         </div> 
+  </div>
 </section>
 
       {/* Tabbed Modals */}
