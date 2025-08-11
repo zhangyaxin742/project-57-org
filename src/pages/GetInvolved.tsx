@@ -343,15 +343,12 @@ function GetInvolved() {
             join our mission to finally put financial literacy education on the docket in Massachusetts.
           </p>
   </div>
-              </div>
-      </section>
-    
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-b from-transparent to-black" />
       </section>
-
+ 
       <GridSection title="Executive Team" roles={execPositions} />
       <GridSection title="Associate Team" roles={associatePositions} />
-      < div className = "mb-12">
+      <div className="mb-12">
       <GridSection compact centerLast={false} title="Local Opportunities" roles={[chapterPresident[0], volunteerRole[0]]} />
         </div>
     </div>
