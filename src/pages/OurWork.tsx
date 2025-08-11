@@ -549,10 +549,11 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
       </Tooltip>
     </TooltipProvider>
   </div>
-            <div className="text-sm text-gray-400 flex items-center gap-2">
+            <div className="text-sm text-gray-400 flex items-right gap-2">
               <TrendingUp className="h-4 w-4" />
               Powered by Billtrack50.com API
             </div>
+        </div>
           
           {/* Subheading */}
           <p className="text-gray-400 text-sm max-w-3xl mb-8">
@@ -568,7 +569,6 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
         <button
           onClick={() => setFaqOpen(false)}
           className="p-1 rounded-md hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/60"
-          aria-label="Close"
         >
           <X className="h-4 w-4" />
         </button>
