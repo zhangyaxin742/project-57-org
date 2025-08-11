@@ -345,9 +345,19 @@ function GetInvolved() {
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-b from-transparent to-black" />
       </section>
  
-      <GridSection title="Executive Team" roles={execPositions} />
+      <GridSection          title={
+    <>
+      <span className="text-white"> Executive </span>
+      <span className="bg-sunset-gradient bg-clip-text text-transparent">Team</span>
+    </>
+  } roles={execPositions} />
         <div className="h-8 w-full bg-gradient-to-b from-transparent via-white/5 to-transparent" />
-      <GridSection title="Associate Team" roles={associatePositions} />
+      <GridSection          title={
+    <>
+      <span className="text-white">Associate </span>
+      <span className="bg-sunset-gradient bg-clip-text text-transparent">Team</span>
+    </>
+  } roles={associatePositions} />
       <div className="h-8 w-full bg-gradient-to-b from-transparent via-white/5 to-transparent" />
       <GridSection compact centerLast={false} 
          title={
