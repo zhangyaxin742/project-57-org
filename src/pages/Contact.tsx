@@ -31,10 +31,10 @@ const Contact = () => {
     if (!form.current) return;
 
     emailjs.sendForm(
-      'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-      'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+      'service_iwm6b6n', // Replace with your EmailJS service ID
+      'template_c6b0eya', // Replace with your EmailJS template ID
       form.current,
-      'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+      'xXAGTZO6e5pBEH4qw' // Replace with your EmailJS public key
     ).then(
       (result) => {
         console.log(result.text);
