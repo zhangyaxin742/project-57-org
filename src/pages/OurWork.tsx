@@ -36,14 +36,6 @@ import { formatMonthYear } from "../lib/utils";
 const VALID_SECTIONS = ["advocacy", "curriculum", "enterprise"] as const;
 type SectionKey = (typeof VALID_SECTIONS)[number];
 
-type SectionMeta = {
-  key: SectionKey;
-  title: string;
-  description: string;
-  Icon: React.ComponentType<{ className?: string }>;
-  gradient: string; // tailwind gradient stops
-};
-
 // Declare OurWork component
 
 const OurWork = () => {
@@ -144,34 +136,33 @@ useEffect(() => {
   }
 }, [location.hash]); // intentionally depends on hash
   
-  const SECTIONS: SectionMeta[] = [
-  {
-    key: "advocacy",
-    title: "Advocacy",
-    description:
-    'Track bills, read our research, and advocate for mandatory personal financial education in your district.',
-    Icon: Scale,
-    gradient: "from-sunset-purple to-sunset-orange",
-  },
-  {
-    key: "curriculum",
-    title: "Curriculum",
-    description:
-      'Lead (or attend) a financial literacy workshop in your town — designed by youth, for youth.',
-    Icon: BookOpen,
-    gradient: "from-sunset-orange to-sunset-pink",
-  },
-  {
-    key: "enterprise",
-    title: "Enterprise",
-    description:
-      'Explore pitch competitions, local hackathons, and network with fellow entrepreneurs.',
-    Icon: Users,
-    gradient: "from-sunset-pink to-sunset-purple",
-  },
-];
 
+// Program Cards (again) 
 
+const OurCards = () => {
+  const sections = [
+    {
+      title: 'Advocacy',
+      description: 'Track bills, read our research, and advocate for mandatory personal financial education in your district.',
+      icon: Scale,
+      path: '/advocacy',
+      gradient: 'from-sunset-purple to-sunset-orange'
+    }, 
+        {
+      title: 'Curriculum',
+      description: 'Lead (or attend) a financial literacy workshop in your town — designed by youth, for youth.',
+      icon: BookOpen,
+      path: '/curriculum',
+      gradient: 'from-sunset-orange to-sunset-pink'
+    },
+    {
+      title: 'Enterprise',
+      description: 'Explore pitch competitions, local hackathons, and network with fellow entrepreneurs.',
+      icon: Users,
+      path: '/enterprise',
+      gradient: 'from-sunset-pink to-sunset-purple'
+    },
+  ];
 
   // Data constants
   const bills: Bill[] = [
@@ -786,90 +777,6 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
     </div>
   );
 
-function OurWorkCard({
-  meta,
-  isOpen,
-  onToggle,
-}: {
-  meta: SectionMeta;
-  isOpen: boolean;
-  onToggle: () => void;
-}) {
-  const { key, title, description, Icon, gradient } = meta;
-
-  return (
-    <motion.div layout>
-      {/* gradient outline wrapper when open */}
-      <div className={isOpen ? `p-[1.5px] rounded-2xl bg-gradient-to-br ${gradient}` : ""}>
-        <Card
-          onClick={onToggle}
-          aria-expanded={isOpen}
-          aria-controls={`section-panel-${key}`}
-          className={[
-            "group relative overflow-hidden rounded-2xl",
-            "bg-gradient-to-br from-gray-900/50 to-black",
-            "border border-white/10 transition-all duration-500",
-            "hover:scale-[1.02]",
-          ].join(" ")}
-        >
-          {/* Top gradient bar */}
-          <div className={`h-2 bg-gradient-to-r ${gradient}`} />
-
-          {/* Hover/active wash */}
-          <div
-            className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${gradient} ${
-              isOpen ? "opacity-15" : "opacity-0 group-hover:opacity-10"
-            } transition-opacity duration-500`}
-            aria-hidden
-          />
-
-          <div className="relative p-8">
-            <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${gradient} mb-6`}>
-              <Icon className="h-8 w-8 text-white" />
-            </div>
-
-            <h3
-              className={[
-                "text-xl md:text-2xl font-bold mb-4 transition-colors duration-300",
-                isOpen && key === "curriculum"
-                  ? "text-sunset-pink"
-                  : isOpen
-                  ? "text-white"
-                  : "text-gray-200 group-hover:text-sunset-pink",
-              ].join(" ")}
-            >
-              {title}
-            </h3>
-
-            <p className="text-gray-300 leading-relaxed">{description}</p>
-
-            {/* CTA swap */}
-            <div className="mt-6 inline-flex items-center text-sunset-pink transition-transform duration-300 group-hover:translate-x-2">
-              <span className="text-sm font-semibold">{isOpen ? "Collapse" : "Learn More"}</span>
-              <svg
-                className={`ml-2 h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </div>
-
-            {/* extra safety active overlay */}
-            {isOpen && (
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-10 pointer-events-none`}
-                aria-hidden="true"
-              />
-            )}
-          </div>
-        </Card>
-      </div>
-    </motion.div>
-  );
-}
   return (
     <div className="min-h-screen bg-black text-white">
       <Navigation />
@@ -903,16 +810,91 @@ function OurWorkCard({
         layout
         className="grid grid-cols-1 md:grid-cols-3 gap-6"  /* always 3 across on md+ */
       >
-        {SECTIONS.map((meta) => {
-          const isOpen = expandedSection === meta.key;
+        {([
+          {
+            key: "advocacy" as SectionKey,
+            title: "Advocacy",
+            description:
+              "Track bills, read our research, and advocate for financial literacy education in your district.",
+            Icon: Scale,
+            gradient: "from-sunset-purple to-sunset-orange",
+          },
+          {
+            key: "curriculum" as SectionKey,
+            title: "Curriculum",
+            description:
+              "Attend (or run) a financial literacy workshop in your town — designed by youth, for youth.",
+            Icon: BookOpen,
+            gradient: "from-sunset-orange to-sunset-pink",
+          },
+          {
+            key: "enterprise" as SectionKey,
+            title: "Enterprise",
+            description:
+              "Explore pitch competitions, hackathons, and mentorship for young entrepreneurs.",
+            Icon: Users,
+            gradient: "from-sunset-pink to-sunset-purple",
+          },
+        ]).map(({ key, title, description, Icon, gradient }) => {
+          const isOpen = expandedSection === key;
 
           return (
-            <OurWorkCard
-              key={meta.key}
-              meta={meta}
-              isOpen={isOpen}
-              onToggle={() => setExpandedSection(isOpen ? null : meta.key)}
-            />
+            <motion.div key={key} layout>
+              {/* Entire card is a trigger ONLY */}
+              <Card
+                onClick={() => setExpandedSection(isOpen ? null : key)}
+                aria-expanded={isOpen}
+                aria-controls={`section-panel-${key}`} /* single panel below */
+  className={[
+    "group relative overflow-hidden rounded-2xl",
+    "bg-gradient-to-br from-gray-900/50 to-black",
+    "border border-white/10 transition-all duration-500",
+    isOpen
+      ? "border-orange-400/70 shadow-[0_0_0_1px_rgba(251,146,60,.3)]"
+      : "hover:border-white/20 hover:scale-[1.02]",
+  ].join(" ")}
+              >
+                {/* Top gradient bar */}
+                <div className={`h-2 bg-gradient-to-r ${gradient}`} />
+
+                {/* Hover color wash overlay */}
+                <div
+                  className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                  aria-hidden
+                />
+
+                {/* Collapsed card content (icon, title, copy, CTA) */}
+                <div className="relative p-8">
+                  <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${gradient} mb-6`}>
+                    <Icon className="h-8 w-8 text-white" />
+                  </div>
+
+<h3
+  className={`text-xl md:text-2xl font-bold mb-4 transition-colors duration-300 ${
+    isOpen ? "text-sunset-pink" : "text-white group-hover:text-sunset-pink"
+  }`}
+>
+  {title}
+</h3>
+
+                  <p className="text-gray-300 leading-relaxed">{description}</p>
+
+                  <div className="mt-6 flex items-center text-sunset-pink transition-transform duration-300 group-hover:translate-x-2">
+                    <span className="text-sm font-semibold">Learn More</span>
+                    <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+
+                  {/* Active gradient indicator */}
+                 {isOpen && (
+                <div 
+                   className={`absolue inset-0 bg-gradient-to-br ${gradient} opacity-20 pointer-events-none`}
+                  aria-hidden="true" />
+                )}
+                </div>
+              </Card>
+            </motion.div>
           );
         })}
       </motion.div>
@@ -939,13 +921,9 @@ function OurWorkCard({
         onClick={(e) => e.stopPropagation()}
         onMouseDown={(e) => e.stopPropagation()}
       >
-{expandedSection === "advocacy" ? (
-            <Advocacy />
-          ) : expandedSection === "curriculum" ? (
-            <Curriculum />
-          ) : expandedSection === "enterprise" ? (
-            <Enterprise />
-          ) : null}
+        {expandedSection === "advocacy" && <Advocacy />}
+        {expandedSection === "curriculum" && <Curriculum />}
+        {expandedSection === "enterprise" && <Enterprise />}
       </div>
     </motion.div>
   )}
@@ -1183,5 +1161,8 @@ function OurWorkCard({
   );
 };
 
+// Final render for OurWork
+return <OurCards />;
+};
 
 export default OurWork;
