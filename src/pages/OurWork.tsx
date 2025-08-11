@@ -870,11 +870,6 @@ function OurWorkCard({
     </motion.div>
   );
 }
-const SECTION_PANELS: Record<SectionKey, React.ReactNode> = {
-  advocacy: <Advocacy />,
-  curriculum: <Curriculum />,
-  enterprise: <Enterprise />,
-};
   return (
     <div className="min-h-screen bg-black text-white">
       <Navigation />
@@ -944,7 +939,13 @@ const SECTION_PANELS: Record<SectionKey, React.ReactNode> = {
         onClick={(e) => e.stopPropagation()}
         onMouseDown={(e) => e.stopPropagation()}
       >
-        {SECTION_PANELS[expandedSection]}
+{expandedSection === "advocacy" ? (
+            <Advocacy />
+          ) : expandedSection === "curriculum" ? (
+            <Curriculum />
+          ) : expandedSection === "enterprise" ? (
+            <Enterprise />
+          ) : null}
       </div>
     </motion.div>
   )}
