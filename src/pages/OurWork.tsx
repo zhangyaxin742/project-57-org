@@ -811,17 +811,29 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
-          <h1 className="text-4xl text-white md:text-6xl font-bold mb-6">
+      <section className="pt-24 pb-16 absolute inset-0 flex items-center justify-center overflow-hidden 
+       bg-gradient-to-br from-black via-gray-900 to-black">
+        
+        {/* Animated background elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sunset-orange/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sunset-purple/10 rounded-full blur-3xl animate-pulse" style={{
+          animationDelay: '1s'
+        }}></div>
+        </div>
+        
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-12">
+               <div className="animate-fade-in">
+          <h1 className="text-4xl text-white md:text-6xl font-bold mb-6 leading-tight">
          Our  <span className="bg-sunset-gradient bg-clip-text text-transparent"> Work</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10  leading-relaxed">
             Read our research, check out our workshops, and take action
             to expand financial literacy education in schools across Massachusetts.
           </p>
         </div>
       </section>
+
 
 {/* Sticky Card Header (Home-style 3 cards) */}
 <section id="our-work-tabs" className="py-0 bg-black">
