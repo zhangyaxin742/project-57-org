@@ -818,7 +818,9 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sunset-purple/10 rounded-full blur-3xl animate-pulse" 
             style={{
           animationDelay: '1s'
-        }}></div>
+        }}
+            /> 
+  </div>
         
   <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-8 text-center">
     <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
@@ -829,6 +831,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
       to expand financial literacy education in schools across Massachusetts.
     </p>
   </div>
+          
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-b from-transparent to-black" />
       </section>
 
