@@ -792,16 +792,18 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
     <div className="py-16 bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-white mb-8">
-          Enterprise Programs
+          Founders & Hackathons
         </h2>
         <p className="text-gray-300 text-lg mb-8">
-          Coming soon - Youth entrepreneurship and financial innovation programs.
+          Coming soon in partnership with Dream Ventures!
         </p>
+        <Link to="/">
         <Button 
           className="bg-sunset-gradient hover:opacity-90 text-black font-medium px-8 py-3"
         >
-          Learn More
+          Home
         </Button>
+        </Link>
       </div>
     </div>
   );
