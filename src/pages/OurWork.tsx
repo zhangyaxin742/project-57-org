@@ -1109,7 +1109,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
         14 and filing taxes. 17 and taking out student loans. 18 and opening credit cards.
       </p>
         <p className="mt-4 text-gray-400">
-       By the time students face adulthood, they’ve already made choices they can’t undo. 
+       By the time students begin "adulting", they’ve already made choices they can’t undo. < br/>
           In Massachusetts, financial literacy still isn’t required — and that failure costs futures.
 <br/> 
 Project 57 fixes that. We go school by school, district by district, teaching money skills you can use tomorrow — and building the student voices to make it law.
