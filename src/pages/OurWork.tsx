@@ -764,38 +764,129 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
           </Button>
                 </div>
                   
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {workshops.map((workshop, index) => (
-            <Card 
-              key={index} 
-              className="h-full bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300"
-            >
-                  <div className="h-full flex flex-col">
-              <CardHeader>
-                <CardTitle className="text-white text-lg font-semibold">
-                  {workshop.title}
-                </CardTitle>
-                <div className="text-gray-400 text-sm space-y-1">
-                  <div className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4" />
-                    {workshop.location}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4" />
-                    {workshop.date}
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="mt-auto">
-                <Button 
-                  className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
+        {/* Marquee styles */}
+        <style>{`
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+        `}</style>
+
+        <div className="relative group" aria-label="Workshops gallery">
+          {/* Grid layer (unchanged markup) */}
+          <div className="transition-opacity duration-300 md:invisible md:opacity-0 md:pointer-events-none md:group-hover:visible md:group-hover:opacity-100 md:group-hover:pointer-events-auto motion-reduce:visible motion-reduce:opacity-100 motion-reduce:pointer-events-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {workshops.map((workshop, index) => (
+                <Card 
+                  key={index} 
+                  className="h-full bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300"
                 >
-                  Register Now
-                </Button>
-              </CardContent>
+                  <div className="h-full flex flex-col">
+                    <CardHeader>
+                      <CardTitle className="text-white text-lg font-semibold">
+                        {workshop.title}
+                      </CardTitle>
+                      <div className="text-gray-400 text-sm space-y-1">
+                        <div className="flex items-center gap-2">
+                          <MapPin className="h-4 w-4" />
+                          {workshop.location}
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Calendar className="h-4 w-4" />
+                          {workshop.date}
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="mt-auto">
+                      <Button 
+                        className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
+                      >
+                        Register Now
+                      </Button>
+                    </CardContent>
                   </div>
-            </Card>
-          ))}
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Marquee layer (desktop only) */}
+          {!prefersReducedMotion && (
+            <div className="pointer-events-none absolute inset-0 hidden md:block transition-opacity duration-300 group-hover:opacity-0 motion-reduce:hidden" data-marquee-container>
+              <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-background to-transparent pointer-events-none" />
+              <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent pointer-events-none" />
+              <div className="overflow-hidden">
+                <div className="flex gap-6 will-change-transform animate-[marquee_25s_linear_infinite] group-hover:[animation-play-state:paused]" data-marquee-track>
+                  {/* pass 1 */}
+                  {workshops.map((workshop, index) => (
+                    <div className="min-w-[320px] max-w-[360px]" key={`m1-${index}`}>
+                      <Card 
+                        className="h-full bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300"
+                      >
+                        <div className="h-full flex flex-col">
+                          <CardHeader>
+                            <CardTitle className="text-white text-lg font-semibold">
+                              {workshop.title}
+                            </CardTitle>
+                            <div className="text-gray-400 text-sm space-y-1">
+                              <div className="flex items-center gap-2">
+                                <MapPin className="h-4 w-4" />
+                                {workshop.location}
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <Calendar className="h-4 w-4" />
+                                {workshop.date}
+                              </div>
+                            </div>
+                          </CardHeader>
+                          <CardContent className="mt-auto">
+                            <Button 
+                              className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
+                            >
+                              Register Now
+                            </Button>
+                          </CardContent>
+                        </div>
+                      </Card>
+                    </div>
+                  ))}
+                  {/* pass 2 */}
+                  {workshops.map((workshop, index) => (
+                    <div className="min-w-[320px] max-w-[360px]" key={`m2-${index}`}>
+                      <Card 
+                        className="h-full bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300"
+                      >
+                        <div className="h-full flex flex-col">
+                          <CardHeader>
+                            <CardTitle className="text-white text-lg font-semibold">
+                              {workshop.title}
+                            </CardTitle>
+                            <div className="text-gray-400 text-sm space-y-1">
+                              <div className="flex items-center gap-2">
+                                <MapPin className="h-4 w-4" />
+                                {workshop.location}
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <Calendar className="h-4 w-4" />
+                                {workshop.date}
+                              </div>
+                            </div>
+                          </CardHeader>
+                          <CardContent className="mt-auto">
+                            <Button 
+                              className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
+                            >
+                              Register Now
+                            </Button>
+                          </CardContent>
+                        </div>
+                      </Card>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
