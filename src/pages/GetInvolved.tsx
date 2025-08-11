@@ -248,7 +248,7 @@ const GridSection = ({ title, roles, compact = false, centerLast = true, id, }: 
       ? "bg-gradient-to-b from-gray-900 via-gray-800 to-black border-sunset-orange/70"
       : "bg-gradient-to-b from-black via-gray-900 to-black border-white/10 hover:border-sunset-orange/60")
   }
-/>
+>
                     {/* Header */}
 <CardHeader className="pb-2">
   <div className="flex items-center gap-3">
