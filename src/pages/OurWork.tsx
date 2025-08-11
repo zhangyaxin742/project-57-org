@@ -571,6 +571,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
         <button
           onClick={() => setFaqOpen(false)}
           className="p-1 rounded-md hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/60"
+          aria-label="Close"
         >
           <X className="h-4 w-4" />
         </button>
