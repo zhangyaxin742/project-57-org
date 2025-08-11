@@ -361,7 +361,7 @@ function GetInvolved() {
   } roles={associatePositions} />
 <div className="h-32 bg-gradient-to-b from-black via-gray-800/80 to-black" />
 
-      <GridSection compact centerLast={false} 
+      <GridSection id="president" compact centerLast={false} 
          title={
     <>
       <span className="text-white">Local </span>
