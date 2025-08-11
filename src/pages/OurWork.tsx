@@ -1121,7 +1121,7 @@ Project 57 fixes that. We go school by school, district by district, teaching mo
           </Button>
         </Link>
           <Link to="/get-involved#president">
-  <Button className="bg-black border-2 border-transparent px-6 py-3 text-base rounded-xl bg-gradient-to-r from-orange-400 via-pink-500 to-purple-500 [border-image:linear-gradient(to_right,#fb923c,#ec4899,#8b5cf6)_1] text-transparent bg-clip-text">
+  <Button className="bg-black border-2 border-transparent px-6 py-3 text-base rounded-full bg-gradient-to-r from-orange-400 via-pink-500 to-purple-500 [border-image:linear-gradient(to_right,#fb923c,#ec4899,#8b5cf6)_1] text-transparent bg-clip-text">
     Start a Chapter
   </Button>
 </Link>

@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Mail, Users, ChevronRight, HandHeart, BookOpenCheck, Landmark, LineChart, Lightbulb, FileText } from 'lucide-react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import type React from 'react';
 import type { Variants } from 'framer-motion';
 
@@ -187,7 +188,7 @@ const volunteerRole: Role[] = [
   },
 ]
 
-const GridSection = ({ title, roles, compact = false, centerLast = true, }: { title: React.ReactNode; roles: Role[]; compact?: boolean; centerLast?: boolean;}) => {
+const GridSection = ({ title, roles, compact = false, centerLast = true, id, }: { title: React.ReactNode; roles: Role[]; compact?: boolean; centerLast?: boolean; id?: string;}) => {
   const [expanded, setExpanded] = useState<number | null>(null); 
   const controls = useAnimation();
   const ref = useRef<HTMLDivElement | null>(null);
@@ -199,6 +200,7 @@ const GridSection = ({ title, roles, compact = false, centerLast = true, }: { ti
   return (
   <motion.section
       ref={ref}
+      id={id}
       className={compact ? "": "py-12"}
       variants={sectionVariants}
       initial="hidden"
@@ -318,6 +320,15 @@ const GridSection = ({ title, roles, compact = false, centerLast = true, }: { ti
 };
 
 function GetInvolved() {
+  const location = useLocation();
+  useEffect(() => {
+    const hash = (location.hash || "").slice(1);
+    if (!hash) return;
+    setTimeout(() => {
+      document.getElementById(hash)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+  }, [location.hash]);
+
   return (
     <div className="min-h-screen bg-gradient from-gray-900 to-black to-gray-900 text-white">
       <Navigation />
