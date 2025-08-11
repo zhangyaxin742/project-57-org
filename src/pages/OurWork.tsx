@@ -815,41 +815,50 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
        bg-gradient-to-br from-black via-gray-900 to-black">
         
         {/* Animated background elements */}
-  <div className="pointer-events-none absolute inset-0">
-    <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sunset-orange/10 rounded-full blur-3xl animate-pulse" />
-    <div
-      className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sunset-purple/10 rounded-full blur-3xl animate-pulse"
-      style={{ animationDelay: "1s" }}
-    />
-  </div>
+        <div  className=" relative top-1/4 left-1/4 w-96 h-96 bg-sunset-orange/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="relative bottom-1/4 right-1/4 w-96 h-96 bg-sunset-purple/10 rounded-full blur-3xl animate-pulse" style={{
+          animationDelay: '1s'
+        }}></div>
         
-  <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-28 text-center">
-    <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-      Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Work</span>
-    </h1>
-    <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-      Read our research, check out our workshops, and take action
-      to expand financial literacy education in schools across Massachusetts.
-    </p>
-  </div>
-</section>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-12">
+               <div className="animate-fade-in">
+          <h1 className="text-4xl text-white md:text-6xl font-bold mb-6 leading-tight">
+         Our  <span className="bg-sunset-gradient bg-clip-text text-transparent"> Work</span>
+          </h1>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10  leading-relaxed">
+            Read our research, check out our workshops, and take action
+            to expand financial literacy education in schools across Massachusetts.
+          </p>
+        </div>
+        </div>
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-black" /> </div>
+      </section>
 
 
 {/* Sticky Card Header (Home-style 3 cards) */}
-<section id="our-work-tabs" className="py-0 bg-black">
+<section id="our-work-tabs" className="-mt-10 bg-transparent">
+  <div className="absolute inset-x-0 -top-6 h-6 bg-gradient-to-b from-black/0 to-black" />
   <div
     ref={containerRef}
     className="
       sticky top-16   /* adjust to your navbar height (64px => top-16) */
       z-30
-      bg-black/95 backdrop-blur-md
-      border-b border-white/10
+      bg-black/90 backdrop-blur-md
+      border-b border-transparent
+          shadow-[0_-6px_20px_rgba(0,0,0,0.35)]
     "
   >
     <div className="max-w-6xl mx-auto px-4 py-6">
       <motion.div
         layout
-        className="grid grid-cols-1 md:grid-cols-3 gap-6"  /* always 3 across on md+ */
+        className="grid grid-cols-1 md:grid-cols-3 gap-6" 
+          initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, amount: 0.3 }}
+  variants={{
+    hidden: {},
+    show: { transition: { staggerChildren: 0.08 } },
+  }}/* always 3 across on md+ */
       >
         {([
           {
