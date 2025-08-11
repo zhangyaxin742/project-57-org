@@ -13,12 +13,13 @@ const Footer = () => {
                 alt="Project 57" 
                 className="h-8 w-8"
               />
-              <span className="text-xl font-bold text-white">Project 57</span>
+              <span className="bg-sunset-gradient bg-clip-text text-transparent"> Project 57</span>
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
               Un-cooking financial futures, one student at a time. <br /> <br />
               <span className = "text-sm font-mono text-grey"> 
-                            © 2025 PROJECT 57. ALL RIGHTS RESERVED. </span>
+                            © 2025 PROJECT 57. ALL RIGHTS RESERVED. < br/> 
+              Proudly fiscally ponsored by Hack Club (HCB), a registered 501(c)(3). </span>
             </p>
           </div>
 
