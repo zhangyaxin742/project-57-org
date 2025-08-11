@@ -829,7 +829,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                               {workshop.title}
                             </CardTitle>
                             <div className="text-gray-400 text-sm space-y-1">
-                              <div className="flex items-center gap-2 mt-auto">
+                              <div className="flex items-center gap-2">
                                 <MapPin className="h-4 w-4" />
                                 {workshop.location}
                               </div>
