@@ -816,7 +816,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
           <h1 className="text-4xl text-white md:text-6xl font-bold mb-6">
          Our  <span className="bg-sunset-gradient bg-clip-text text-transparent"> Work</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-16">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
             Read our research, check out our workshops, and take action
             to expand financial literacy education in schools across Massachusetts.
           </p>
