@@ -811,7 +811,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 relative flex items-center justify-center overflow-hidden 
+      <section className="pt-24 pb-16 relative items-center justify-center overflow-hidden 
        bg-gradient-to-br from-black via-gray-900 to-black">
         
         {/* Animated background elements */}
