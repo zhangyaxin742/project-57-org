@@ -797,7 +797,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                         </div>
                       </div>
                     </CardHeader>
-                    <CardContent className="mt-auto">
+                    <CardContent className="mt-8">
                       <Button 
                         className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
                       >
