@@ -28,7 +28,8 @@ import {
   BookOpen, 
   ChevronDown, 
   Handshake, 
-HelpCircle } from 'lucide-react';
+HelpCircle, 
+ArrowRight } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
@@ -748,17 +749,28 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
    );
   const Curriculum = () => (
     <div className="py-16 bg-gray-900">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-white mb-12 text-center">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
+        <h2 className="text-3xl font-bold text-white mb-12">
           Educational <span className="bg-sunset-gradient bg-clip-text text-transparent"> Workshops </span> 
         </h2>
-        
+ <Button
+            className="mt-4 sm:mt-0 bg-sunset-gradient hover:opacity-90 text-black font-medium flex items-center gap-2 px-5 py-2 rounded-lg"
+            onClick={() => (window.location.href = "/contact")}
+          >
+            Request a Workshop
+            <ArrowRight className="w-4 h-4" />
+          </Button>
+                </div>
+                  
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {workshops.map((workshop, index) => (
             <Card 
               key={index} 
-              className="bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300"
+              className="h-full bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300"
             >
+                  <div className="h-full flex flex-col">
               <CardHeader>
                 <CardTitle className="text-white text-lg font-semibold">
                   {workshop.title}
@@ -774,13 +786,14 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                   </div>
                 </div>
               </CardHeader>
-              <CardContent>
+              <CardContent className="mt-auto">
                 <Button 
                   className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
                 >
                   Register Now
                 </Button>
               </CardContent>
+                  </div>
             </Card>
           ))}
         </div>
@@ -829,7 +842,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
       Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Work</span>
     </h1>
     <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6 leading-relaxed">
-      Read our research, drop by our workshops, and take action
+      Read our research, visit our workshops, and take action
       to put financial literacy on the docket in Massachusetts.
     </p>
   </div>
