@@ -1109,10 +1109,10 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
         14 and filing taxes. 17 and taking out student loans. 18 and opening credit cards.
       </p>
         <p className="mt-4 text-gray-400">
-      In Massachusetts, personal finance still isn’t required — and that failure costs futures daily.
+      In Massachusetts, personal finance still isn’t required — a failure that costs futures daily.
 <br/> 
 Project 57 fixes that. We go school by school, district by district, teaching money skills you can use today —
-          and building the coalition to mandate it tomorrow.
+          all to build a coalition that mandates it tomorrow.
       </p>
       <div className="mt-8 flex flex-wrap gap-3">
         <Link to="/get-involved">
