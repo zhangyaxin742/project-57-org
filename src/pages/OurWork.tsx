@@ -1109,17 +1109,21 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
         14 and getting a job. 17 and taking out student loans. 18 and opening credit cards.
       </p>
         <p className="mt-4 text-gray-400">
-        When 250,000 futures are at stake, financial literacy can't <em>afford</em> to be optional. 
-          Yet Massachusetts — from our schools to our legislatures — continues to ignore the gap. < br/> 
-        Project 57 tackles that by going local, teaching by doing, and putting students <em> first.</em>
+        When 250,000 futures are at stake, financial literacy can't <em>afford </em>to be optional. 
+          Yet Massachusetts — from our schools to our legislatures — continues to ignore the gap. 
+          Project 57 tackles that by going local and putting students <em> first.</em>
       </p>
       <div className="mt-8 flex flex-wrap gap-3">
+        <Link to="/get-involved">
           <Button className="bg-sunset-gradient text-black px-6 py-3 text-base rounded-xl">
             Join Our Team
           </Button>
+        </Link>
+          <Link to="/get-involved">
           <Button variant="outline" className="border-white/30 text-white px-6 py-3 text-base rounded-xl">
             Start a Chapter
           </Button>
+          </Link>
         </div>
         </div> 
 
