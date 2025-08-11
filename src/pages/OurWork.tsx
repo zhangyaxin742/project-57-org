@@ -1100,7 +1100,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
   <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
     {/* SECTION HEADER spans both columns */}
-    <h2 className="text-4xl md:text-5xl font-bold mb-8">
+    <h2 className="text-4xl md:text-5xl font-bold text-center mb-8">
       Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Mission</span>
     </h2>
         <div className="grid md:grid-cols-2 gap-10 items-start">
@@ -1113,12 +1113,17 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
           Yet Massachusetts —from our schools to our legislatures— continues to ignore the gap. 
         We fix that by going local, teaching by doing, and putting students <em> first.</em>
       </p>
-      <div className="mt-6 flex flex-wrap gap-3">
-      <Button className="bg-sunset-gradient text-black">Join Our Team</Button>
-      <Button variant="outline" className="border-white/30 text-white">Start a Chapter</Button>
-    </div>
+      <div className="mt-10 flex flex-wrap gap-3">
+          <Button className="bg-sunset-gradient text-black px-6 py-3 text-base rounded-xl">
+            Join Our Team
+          </Button>
+          <Button variant="outline" className="border-white/30 text-white px-6 py-3 text-base rounded-xl">
+            Start a Chapter
+          </Button>
+        </div>
         </div> 
 
+          
 <div>
         <ul className="space-y-5">
           {/* full-height color bar using a 2-col grid and self-stretch */}
@@ -1146,12 +1151,6 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
             </div>
           </li>
         </ul>
-
-        <p className="mt-6 text-gray-400">
-          In pilots, students built budgets in 20 minutes, improved credit knowledge by
-          <span className="text-white font-semibold"> 42%</span>, and left with a first-step plan.
-          <span className="text-gray-500"> (Swap in real data.)</span>
-        </p>
       </div>
     </div>
   </div>
