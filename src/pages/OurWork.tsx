@@ -560,7 +560,44 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
             Multiple identical bills have been filed to show unified support. They are grouped below for clarity.
           </p>
 
+              {/* FAQ Section */}
+<Dialog open={faqOpen} onOpenChange={setFaqOpen}>
+  <DialogContent className="max-w-lg bg-black/95 border-white/10 text-white">
+    <DialogHeader>
+      <DialogTitle className="flex items-center justify-between">
+        Bill Tracker FAQs
+        <button
+          onClick={() => setFaqOpen(false)}
+          className="p-1 rounded-md hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/60"
+          aria-label="Close"
+        >
+          <X className="h-4 w-4" />
+        </button>
+      </DialogTitle>
+    </DialogHeader>
+
+    <div className="space-y-4 text-sm text-gray-300">
+      <div>
+        <p className="font-medium text-white mb-1">Why do some bills look identical?</p>
+        <p>House and Senate often file matching bills to build support and move through both chambers.</p>
+      </div>
+      <div>
+        <p className="font-medium text-white mb-1">Which bill should I follow?</p>
+        <p>Focus on H.636 and S.421 as the primary vehicles; H.46 is the Treasurer’s supportive filing.</p>
+      </div>
+      <div>
+        <p className="font-medium text-white mb-1">What do the statuses mean?</p>
+        <p><span className="text-gray-200">Introduced</span> → filed; <span className="text-gray-200">In Committee</span> → under review; <span className="text-gray-200">Passed</span> → approved by a chamber.</p>
+      </div>
+      <div>
+        <p className="font-medium text-white mb-1">How can I help?</p>
+        <p>Call sponsors, submit testimony, and share our briefs with your school district.</p>
+      </div>
+    </div>
+  </DialogContent>
+</Dialog>
         
+        {/* Carousel */}
           <Carousel opts={{ loop: true}} className="w-full">
             <CarouselContent className="-ml-2 md:-ml-4">
               {bills.map((bill) => (
@@ -715,42 +752,6 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
         </div>
       </section>
 
-      {/* FAQ Section */}
-<Dialog open={faqOpen} onOpenChange={setFaqOpen}>
-  <DialogContent className="max-w-lg bg-black/95 border-white/10 text-white">
-    <DialogHeader>
-      <DialogTitle className="flex items-center justify-between">
-        Bill Tracker FAQs
-        <button
-          onClick={() => setFaqOpen(false)}
-          className="p-1 rounded-md hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/60"
-          aria-label="Close"
-        >
-          <X className="h-4 w-4" />
-        </button>
-      </DialogTitle>
-    </DialogHeader>
-
-    <div className="space-y-4 text-sm text-gray-300">
-      <div>
-        <p className="font-medium text-white mb-1">Why do some bills look identical?</p>
-        <p>House and Senate often file matching bills to build support and move through both chambers.</p>
-      </div>
-      <div>
-        <p className="font-medium text-white mb-1">Which bill should I follow?</p>
-        <p>Focus on H.636 and S.421 as the primary vehicles; H.46 is the Treasurer’s supportive filing.</p>
-      </div>
-      <div>
-        <p className="font-medium text-white mb-1">What do the statuses mean?</p>
-        <p><span className="text-gray-200">Introduced</span> → filed; <span className="text-gray-200">In Committee</span> → under review; <span className="text-gray-200">Passed</span> → approved by a chamber.</p>
-      </div>
-      <div>
-        <p className="font-medium text-white mb-1">How can I help?</p>
-        <p>Call sponsors, submit testimony, and share our briefs with your school district.</p>
-      </div>
-    </div>
-  </DialogContent>
-</Dialog>
   );
 
   const Curriculum = () => (
