@@ -940,7 +940,20 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
 </AnimatePresence>
 
       {/* About Section */}
-            <section id="about" className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
+      <section id="about" className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            Our <span className="bg-sunset-gradient bg-clip-text text-transparent"> Mission </span>
+          </h1>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            Project 57 was founded after a shocking statistic: <br/> 
+            Just 57% of Americans today are financially literate.
+          </p>
+        </div>
+      </section>
+
+      {/* Mission & Story Section */}
+<section className="py-20 bg-gradient-to-b from-black to-gray-900">
   <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-4 sm:px-6 lg:px-8 items-center">
     {/* Left: mission + pillars */}
     <div>
@@ -992,12 +1005,6 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
             </p>
           </div>
         </div>
-      </div>
-
-      <div className="mt-8 flex flex-wrap gap-3 text-sm text-gray-400">
-        <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">Student-run</span>
-        <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">District-level impact</span>
-        <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">Policy + Practice</span>
       </div>
     </div>
 
