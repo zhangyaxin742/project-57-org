@@ -187,7 +187,7 @@ const volunteerRole: Role[] = [
   },
 ]
 
-const GridSection = ({ title, roles, compact = false, centerLast = true, }: { title: string; roles: Role[]; compact?: boolean; centerLast?: boolean;}) => {
+const GridSection = ({ title, roles, compact = false, centerLast = true, }: { title: React.ReactNode; roles: Role[]; compact?: boolean; centerLast?: boolean;}) => {
   const [expanded, setExpanded] = useState<number | null>(null); 
   const controls = useAnimation();
   const ref = useRef<HTMLDivElement | null>(null);
@@ -357,7 +357,6 @@ function GetInvolved() {
     </>
   } roles={[chapterPresident[0], volunteerRole[0]]} />
         <div className="h-16 w-full bg-gradient-to-b from-transparent to-gray-900/30" />
-        </div>
     </div>
   );
 }
