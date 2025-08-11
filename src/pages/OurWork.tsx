@@ -781,8 +781,8 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                   key={index} 
                   className="h-full bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300"
                 >
-                  <div className="h-full flex flex-col">
-                    <CardHeader>
+                  <div className="h-full flex flex-col justify-center">
+                    <CardHeader className="mb-4">
                       <CardTitle className="text-white text-lg font-semibold">
                         {workshop.title}
                       </CardTitle>
@@ -797,7 +797,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                         </div>
                       </div>
                     </CardHeader>
-                    <CardContent className="mt-auto">
+                    <CardContent>
                       <Button 
                         className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
                       >
