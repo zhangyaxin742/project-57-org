@@ -1109,10 +1109,11 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
         14 and filing taxes. 17 and taking out student loans. 18 and opening credit cards.
       </p>
         <p className="mt-4 text-gray-400">
-       By the time students begin "adulting", they’ve already made choices they can’t undo. < br/>
-          In Massachusetts, financial literacy still isn’t required — and that failure costs futures.
+       By the time students begin "adulting", they’ve already made financial choices they can’t undo. < br/>
+          But in Massachusetts, personal finance still isn’t required — and that failure costs futures.
 <br/> 
-Project 57 fixes that. We go school by school, district by district, teaching money skills you can use tomorrow — and building the student voices to make it law.
+Project 57 fixes that. We go school by school, district by district, teaching money skills you can use today —
+          and building the coalition to mandate it tomorrow.
       </p>
       <div className="mt-8 flex flex-wrap gap-3">
         <Link to="/get-involved">
@@ -1135,24 +1136,24 @@ Project 57 fixes that. We go school by school, district by district, teaching mo
           <li className="grid grid-cols-[6px_1fr] gap-3 items-start">
             <span className="rounded-full bg-gradient-to-b from-orange-400 to-pink-500 self-stretch" />
             <div>
-              <p className="text-white font-semibold">Chapters → District change</p>
-              <p className="text-gray-400">Organize by school, win your district, then franchise by city.</p>
+              <p className="text-white font-semibold">Chapters → Districts → Statewide </p>
+              <p className="text-gray-400">Organize by school, win your district, and turn local advocacy into statewide change.</p>
             </div>
           </li>
 
           <li className="grid grid-cols-[6px_1fr] gap-3 items-start">
             <span className="rounded-full bg-gradient-to-b from-violet-400 to-pink-500 self-stretch" />
             <div>
-              <p className="text-white font-semibold">Students teaching students</p>
-              <p className="text-gray-400">Peer-led workshops on budgets, credit, FAFSA, and first jobs — built to use tomorrow.</p>
+              <p className="text-white font-semibold">Student-Led, Student-Built</p>
+              <p className="text-gray-400"> Run workshops, access a curated online resource bank, and check out our hackathons.</p>
             </div>
           </li>
 
           <li className="grid grid-cols-[6px_1fr] gap-3 items-start">
             <span className="rounded-full bg-gradient-to-b from-amber-400 to-rose-500 self-stretch" />
             <div>
-              <p className="text-white font-semibold">Policy + practice</p>
-              <p className="text-gray-400">We testify, track bills, and make financial literacy a graduation requirement.</p>
+              <p className="text-white font-semibold">Policy In Practice</p>
+              <p className="text-gray-400">Testify in hearings, track bills, run case studies, and push for financial literacy as a statewide mandate.</p>
             </div>
           </li>
         </ul>
