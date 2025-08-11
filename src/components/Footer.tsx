@@ -16,9 +16,9 @@ const Footer = () => {
               <span className="bg-sunset-gradient bg-clip-text text-transparent font-bold"> Project 57</span>
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
-              Un-cooking financial futures, one student at a time.
+              Un-cooking financial futures, one student at a time. </br>
               <span className = "text-sm font-mono text-grey mt-2"> 
-                            © 2025 PROJECT 57. ALL RIGHTS RESERVED. </span> 
+                            © 2025 PROJECT 57. ALL RIGHTS RESERVED. </span> </br>
                <span className="font-mono text-grey text-xs">
               Proud to receive fiscal sponsorship from Hack Club (HCB), a registered 501(c)(3). 
                </span>
