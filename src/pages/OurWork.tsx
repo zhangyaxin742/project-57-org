@@ -27,7 +27,10 @@ import {
   Mail,
   BookOpen, 
   ChevronDown, 
-  Handshake } from 'lucide-react';
+  Handshake, 
+HelpCircle,
+X } from 'lucide-react';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { getBriefs } from "../lib/briefs";
@@ -455,9 +458,8 @@ const getStatusColor = (status: BillStatus): string => {
 // toggle logic 
   const [selectedBill, setSelectedBill] = useState(null);
   const [activeModal, setActiveModal] = useState(null);
-  const [openFaq1, setOpenFaq1] = useState(false);
-  const [openFaq2, setOpenFaq2] = useState(false);
-const [showAllResearch, setShowAllResearch] = useState(false);
+const [faqOpen, setFaqOpen] = useState(false); 
+  const [showAllResearch, setShowAllResearch] = useState(false);
 const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
 
   // Component definitions
@@ -523,6 +525,30 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
             <h2 className="text-3xl md:text-4xl font-bold">
               Bill <span className="bg-sunset-gradient bg-clip-text text-transparent">Tracker</span>
             </h2>
+              {/* info icon */}
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <button
+            type="button"
+            onClick={() => setFaqOpen(true)}
+            aria-label="Bill Tracker FAQs"
+            className="
+              ml-1 inline-flex h-7 w-7 items-center justify-center
+              rounded-full border border-white/15 bg-white/5 text-gray-300
+              transition-all duration-200
+              hover:text-white hover:border-sunset-orange/60 hover:shadow-[0_0_0_2px_rgba(251,146,60,.25)]
+              focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/60
+              active:scale-95
+            "
+          >
+            <HelpCircle className="h-4 w-4" />
+          </button>
+        </TooltipTrigger>
+        <TooltipContent>Bill Tracker FAQs</TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+  </div>
             <div className="text-sm text-gray-400 flex items-center gap-2">
               <TrendingUp className="h-4 w-4" />
               Powered by Billtrack50.com API
@@ -533,7 +559,8 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
           <p className="text-gray-400 text-sm max-w-3xl mb-8">
             Multiple identical bills have been filed to show unified support. They are grouped below for clarity.
           </p>
-          
+
+        
           <Carousel opts={{ loop: true}} className="w-full">
             <CarouselContent className="-ml-2 md:-ml-4">
               {bills.map((bill) => (
@@ -689,32 +716,41 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-black">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="space-y-4">
-            <Collapsible open={openFaq1} onOpenChange={setOpenFaq1}>
-              <CollapsibleTrigger className="flex items-center justify-between w-full p-4 bg-black/50 border border-white/10 rounded-lg text-gray-300 hover:bg-gray-800 transition-all duration-300">
-                <span className="font-medium">Why are there multiple versions of the same bill?</span>
-                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openFaq1 ? 'rotate-180' : ''}`} />
-              </CollapsibleTrigger>
-              <CollapsibleContent className="p-4 bg-black/50 border border-white/10 border-t-0 rounded-b-lg text-gray-300">
-                Different legislators and the Treasurer filed identical bills in the House and Senate to show broad support and ensure the proposal moves procedurally through both chambers.
-              </CollapsibleContent>
-            </Collapsible>
-            
-            <Collapsible open={openFaq2} onOpenChange={setOpenFaq2}>
-              <CollapsibleTrigger className="flex items-center justify-between w-full p-4 bg-black/50 border border-white/10 rounded-lg text-gray-300 hover:bg-gray-800 transition-all duration-300">
-                <span className="font-medium">What should I support?</span>
-                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openFaq2 ? 'rotate-180' : ''}`} />
-              </CollapsibleTrigger>
-              <CollapsibleContent className="p-4 bg-black/50 border border-white/10 border-t-0 rounded-b-lg text-gray-300">
-                All versions with identical text are effectively the same proposal. We recommend focusing on H.636 and S.421, the primary House and Senate vehicles, while recognizing the Treasurer's filing (H.46) as supportive.
-              </CollapsibleContent>
-            </Collapsible>
-          </div>
-        </div>
-      </section>
+<Dialog open={faqOpen} onOpenChange={setFaqOpen}>
+  <DialogContent className="max-w-lg bg-black/95 border-white/10 text-white">
+    <DialogHeader>
+      <DialogTitle className="flex items-center justify-between">
+        Bill Tracker FAQs
+        <button
+          onClick={() => setFaqOpen(false)}
+          className="p-1 rounded-md hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/60"
+          aria-label="Close"
+        >
+          <X className="h-4 w-4" />
+        </button>
+      </DialogTitle>
+    </DialogHeader>
+
+    <div className="space-y-4 text-sm text-gray-300">
+      <div>
+        <p className="font-medium text-white mb-1">Why do some bills look identical?</p>
+        <p>House and Senate often file matching bills to build support and move through both chambers.</p>
+      </div>
+      <div>
+        <p className="font-medium text-white mb-1">Which bill should I follow?</p>
+        <p>Focus on H.636 and S.421 as the primary vehicles; H.46 is the Treasurer’s supportive filing.</p>
+      </div>
+      <div>
+        <p className="font-medium text-white mb-1">What do the statuses mean?</p>
+        <p><span className="text-gray-200">Introduced</span> → filed; <span className="text-gray-200">In Committee</span> → under review; <span className="text-gray-200">Passed</span> → approved by a chamber.</p>
+      </div>
+      <div>
+        <p className="font-medium text-white mb-1">How can I help?</p>
+        <p>Call sponsors, submit testimony, and share our briefs with your school district.</p>
+      </div>
     </div>
+  </DialogContent>
+</Dialog>
   );
 
   const Curriculum = () => (
@@ -941,19 +977,6 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
 
       {/* About Section */}
       <section id="about" className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Our <span className="bg-sunset-gradient bg-clip-text text-transparent"> Mission </span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Project 57 was founded after a shocking statistic: <br/> 
-            Just 57% of Americans today are financially literate.
-          </p>
-        </div>
-      </section>
-
-      {/* Mission & Story Section */}
-<section className="py-20 bg-gradient-to-b from-black to-gray-900">
   <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-4 sm:px-6 lg:px-8 items-center">
     {/* Left: mission + pillars */}
     <div>
@@ -1005,6 +1028,12 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
             </p>
           </div>
         </div>
+      </div>
+
+      <div className="mt-8 flex flex-wrap gap-3 text-sm text-gray-400">
+        <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">Student-run</span>
+        <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">District-level impact</span>
+        <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">Policy + Practice</span>
       </div>
     </div>
 
