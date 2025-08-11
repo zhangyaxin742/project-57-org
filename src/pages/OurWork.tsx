@@ -753,7 +753,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
 
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12">
         <h2 className="text-3xl font-bold text-white">
-          Educational <span className="bg-sunset-gradient bg-clip-text text-transparent"> Workshops </span> 
+          Our <span className="bg-sunset-gradient bg-clip-text text-transparent"> Workshops </span> 
         </h2>
  <Button
             className="bg-sunset-gradient hover:opacity-90 text-black font-medium flex items-center gap-2 px-5 py-2 rounded-lg sm:ml-4 mt-4 sm:mt-0"
@@ -1098,105 +1098,117 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
       {/* About Section */}
       <section id="about" className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
   <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-4 sm:px-6 lg:px-8 items-center">
-    {/* Left: mission + pillars */}
-    <div>
-      <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
         Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Mission</span>
       </h2>
+    {/* Left: mission + pillars */}
+    <div>
       <p className="text-lg text-gray-300 mb-8">
-        Financial literacy isn’t optional. When schools ignore it, students carry the costs for decades.
-        We fix that by going local, putting students in front, and teaching by doing.
+        14 and getting a job. 17 and taking out student loans. 18 and opening credit cards.<br /> 
+        When 250,000 futures are at stakes, financial literacy is not<em>— can not— </em>be optional. Yet Massachusetts—from our schools to our legislatures—continue to ignore the gap. 
+        We fix that by going local, teaching by doing, and putting students <em> first.</em>
       </p>
 
-      <div className="space-y-6">
-        <div className="flex gap-4">
-          <div className="h-8 w-1 rounded bg-sunset-orange" />
-          <div>
-            <h3 className="font-semibold text-white">Chapters </h3>
-            <p className="text-gray-400 text-sm">
-              Organize by school. Win allies in your district. Ship proof, then replicate city by city.
-            </p>
-          </div>
-        </div>
+<section className="grid lg:grid-cols-2 gap-10 items-start">
+  {/* LEFT */}
+  <div>
+    <h2 className="text-4xl font-extrabold text-white">
+      Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Mission</span>
+    </h2>
+    <p className="mt-4 text-gray-300">
+      Money skills that outlive graduation.
+    </p>
+    <p className="mt-2 text-gray-400">
+      Schools talk about literacy. We build it — student-run, district-level, with policy and proof.
+    </p>
 
-        <div className="flex gap-4">
-          <div className="h-8 w-1 rounded bg-sunset-pink" />
-          <div>
-            <h3 className="font-semibold text-white">Workshops: Students Teaching Students</h3>
-            <p className="text-gray-400 text-sm">
-              Practical, youth-led sessions on budgets, credit, FAFSA, and first jobs — built to use tomorrow.
-            </p>
-          </div>
+    <ul className="mt-6 space-y-5">
+      <li className="flex gap-3">
+        <span className="h-6 w-1 rounded bg-gradient-to-b from-orange-400 to-pink-500 mt-1" />
+        <div>
+          <p className="text-white font-semibold">Chapters → District change</p>
+          <p className="text-gray-400">Organize by school, win your district, then franchise by city.</p>
         </div>
+      </li>
+      <li className="flex gap-3">
+        <span className="h-6 w-1 rounded bg-gradient-to-b from-violet-400 to-pink-500 mt-1" />
+        <div>
+          <p className="text-white font-semibold">Students teaching students</p>
+          <p className="text-gray-400">Peer-led workshops on budgets, credit, FAFSA, and first jobs — built to use tomorrow.</p>
+        </div>
+      </li>
+      <li className="flex gap-3">
+        <span className="h-6 w-1 rounded bg-gradient-to-b from-amber-400 to-rose-500 mt-1" />
+        <div>
+          <p className="text-white font-semibold">Policy + practice</p>
+          <p className="text-gray-400">We testify, track bills, and make financial literacy a graduation requirement.</p>
+        </div>
+      </li>
+    </ul>
 
-        <div className="flex gap-4">
-          <div className="h-8 w-1 rounded bg-sunset-purple" />
-          <div>
-            <h3 className="font-semibold text-white">Advocacy: Make It Required</h3>
-            <p className="text-gray-400 text-sm">
-              Testimony, meetings, and district campaigns so financial literacy becomes a graduation requirement.
-            </p>
-          </div>
-        </div>
+    <p className="mt-6 text-gray-400">
+      In pilots, students built budgets in 20 minutes, improved credit knowledge by <span className="text-white font-semibold">42%</span>,
+      and left with a first-step plan. <span className="text-gray-500">(Swap in real data.)</span>
+    </p>
 
-        <div className="flex gap-4">
-          <div className="h-8 w-1 rounded bg-gradient-to-b from-sunset-orange to-sunset-pink" />
-          <div>
-            <h3 className="font-semibold text-white">Entrepreneurship: Applied Literacy</h3>
-            <p className="text-gray-400 text-sm">
-              Real projects, real customers, real stakes. Money skills that stick because they matter.
-            </p>
-          </div>
-        </div>
+    <div className="mt-6 flex flex-wrap gap-3">
+      <span className="px-3 py-1 rounded-full bg-white/5 text-gray-300">Student-run</span>
+      <span className="px-3 py-1 rounded-full bg-white/5 text-gray-300">District-level impact</span>
+      <span className="px-3 py-1 rounded-full bg-white/5 text-gray-300">Policy + practice</span>
+    </div>
+  </div>
+
+  {/* RIGHT */}
+  <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+    <p className="text-gray-300 mb-2">The Problem</p>
+    <div className="w-full h-2 rounded bg-white/10 overflow-hidden">
+      <div className="h-full w-[57%] bg-sunset-gradient" />
+    </div>
+    <p className="mt-2 text-gray-400">
+      Only <span className="text-white font-semibold">57%</span> of Americans are financially literate.
+    </p>
+
+    <div className="grid grid-cols-3 gap-3 mt-6">
+      <div className="rounded-xl border border-white/10 p-4">
+        <p className="text-white font-semibold">Chapters</p>
+        <p className="text-gray-400 text-sm">Local teams driving change</p>
       </div>
-
-      <div className="mt-8 flex flex-wrap gap-3 text-sm text-gray-400">
-        <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">Student-run</span>
-        <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">District-level impact</span>
-        <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">Policy + Practice</span>
+      <div className="rounded-xl border border-white/10 p-4">
+        <p className="text-white font-semibold">Workshops</p>
+        <p className="text-gray-400 text-sm">Peer-led, action-first</p>
+      </div>
+      <div className="rounded-xl border border-white/10 p-4">
+        <p className="text-white font-semibold">Advocacy</p>
+        <p className="text-gray-400 text-sm">Policy with receipts</p>
+      </div>
+      <div className="rounded-xl border border-white/10 p-4 col-span-3">
+        <p className="text-white font-semibold">Enterprise</p>
+        <p className="text-gray-400 text-sm">Applied literacy with real customers</p>
       </div>
     </div>
 
-    {/* Right: visual/stat block */}
-    <div className="relative">
-      <div className="absolute -inset-6 bg-sunset-gradient opacity-10 blur-3xl rounded-3xl" />
-      <div className="relative rounded-2xl border border-white/10 bg-black/40 p-6">
-        <div className="mb-6">
-          <p className="text-sm text-gray-400">The Problem</p>
-          <div className="mt-2 h-3 w-full rounded-full bg-white/10 overflow-hidden">
-            <div className="h-full w-[57%] bg-sunset-gradient" />
-          </div>
-          <p className="mt-2 text-gray-300 text-sm">Only <span className="text-white font-semibold">57%</span> of Americans are financially literate.</p>
-        </div>
-
-        <div className="grid grid-cols-2 gap-4">
-          <div className="rounded-xl bg-white/5 p-4 border border-white/10">
-            <p className="text-2xl font-bold text-white">+Chapters</p>
-            <p className="text-xs text-gray-400">Local teams driving change</p>
-          </div>
-          <div className="rounded-xl bg-white/5 p-4 border border-white/10">
-            <p className="text-2xl font-bold text-white">Workshops</p>
-            <p className="text-xs text-gray-400">Peer-led, action-first</p>
-          </div>
-          <div className="rounded-xl bg-white/5 p-4 border border-white/10">
-            <p className="text-2xl font-bold text-white">Advocacy</p>
-            <p className="text-xs text-gray-400">Policy with receipts</p>
-          </div>
-          <div className="rounded-xl bg-white/5 p-4 border border-white/10">
-            <p className="text-2xl font-bold text-white">Enterprise</p>
-            <p className="text-xs text-gray-400">Applied money skills</p>
-          </div>
-        </div>
-
-        <div className="mt-6 flex gap-3">
-          <a href="#our-work-tabs" className="px-4 py-2 rounded-lg bg-sunset-gradient text-black font-semibold hover:opacity-90 transition">
-            Explore Programs
-          </a>
-          <a href="/get-involved#contact" className="px-4 py-2 rounded-lg border border-white/15 text-white hover:bg-white/5 transition">
-            Start a Chapter
-          </a>
-        </div>
+    <div className="grid grid-cols-2 gap-3 mt-6">
+      <div className="rounded-xl bg-white/5 p-4">
+        <p className="text-white text-2xl font-bold">___</p>
+        <p className="text-gray-400 text-sm">Students trained</p>
       </div>
+      <div className="rounded-xl bg-white/5 p-4">
+        <p className="text-white text-2xl font-bold">___</p>
+        <p className="text-gray-400 text-sm">Districts engaged</p>
+      </div>
+      <div className="rounded-xl bg-white/5 p-4">
+        <p className="text-white text-2xl font-bold">___%</p>
+        <p className="text-gray-400 text-sm">Avg. score lift</p>
+      </div>
+      <div className="rounded-xl bg-white/5 p-4">
+        <p className="text-white text-2xl font-bold">___</p>
+        <p className="text-gray-400 text-sm">Bills/resolutions moved</p>
+      </div>
+    </div>
+
+    <div className="mt-6 flex gap-3">
+      <Button className="bg-sunset-gradient text-black">Explore Programs</Button>
+      <Button variant="outline" className="border-white/30 text-white">Start a Chapter</Button>
     </div>
   </div>
 </section>
