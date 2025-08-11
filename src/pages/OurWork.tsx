@@ -1097,12 +1097,14 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
 
       {/* About Section */}
       <section id="about" className="pt-24 pb-16 bg-gradient-to-b from-black to-gray-900">
-  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-4 sm:px-6 lg:px-8 items-start">
-    {/* Left: mission + pillars */}
-    <div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">
-        Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Mission</span>
-      </h2>
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    {/* SECTION HEADER spans both columns */}
+    <h2 className="text-4xl md:text-5xl font-bold mb-8">
+      Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Mission</span>
+    </h2>
+        <div className="grid md:grid-cols-2 gap-10 items-start">
+          <div>
       <p className="text-lg text-gray-300 mt-4">
         14 and getting a job. 17 and taking out student loans. 18 and opening credit cards.
       </p>
@@ -1111,44 +1113,47 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
           Yet Massachusetts —from our schools to our legislatures— continues to ignore the gap. 
         We fix that by going local, teaching by doing, and putting students <em> first.</em>
       </p>
-    </div>
-
-    <div>
-    <ul className="mt-6 space-y-5">
-      <li className="flex gap-3">
-        <span className="h-6 w-1 rounded bg-gradient-to-b from-orange-400 to-pink-500 mt-1" />
-        <div>
-          <p className="text-white font-semibold">Chapters → District change</p>
-          <p className="text-gray-400">Organize by school, win your district, then franchise by city.</p>
-        </div>
-      </li>
-      <li className="flex gap-3">
-        <span className="h-6 w-1 rounded bg-gradient-to-b from-violet-400 to-pink-500 mt-1" />
-        <div>
-          <p className="text-white font-semibold">Students teaching students</p>
-          <p className="text-gray-400">Peer-led workshops on budgets, credit, FAFSA, and first jobs — built to use tomorrow.</p>
-        </div>
-      </li>
-      <li className="flex gap-3">
-        <span className="h-6 w-1 rounded bg-gradient-to-b from-amber-400 to-rose-500 mt-1" />
-        <div>
-          <p className="text-white font-semibold">Policy + practice</p>
-          <p className="text-gray-400">We testify, track bills, and make financial literacy a graduation requirement.</p>
-        </div>
-      </li>
-    </ul>
-
-    <p className="mt-6 text-gray-400">
-      In pilots, students built budgets in 20 minutes, improved credit knowledge by <span className="text-white font-semibold">42%</span>,
-      and left with a first-step plan. 
-    </p>
-
-  {/* RIGHT */}
-    <div className="mt-6 flex flex-wrap gap-3">
+      <div className="mt-6 flex flex-wrap gap-3">
       <Button className="bg-sunset-gradient text-black">Join Our Team</Button>
       <Button variant="outline" className="border-white/30 text-white">Start a Chapter</Button>
     </div>
         </div> 
+
+<div>
+        <ul className="space-y-5">
+          {/* full-height color bar using a 2-col grid and self-stretch */}
+          <li className="grid grid-cols-[6px_1fr] gap-3 items-start">
+            <span className="rounded-full bg-gradient-to-b from-orange-400 to-pink-500 self-stretch" />
+            <div>
+              <p className="text-white font-semibold">Chapters → District change</p>
+              <p className="text-gray-400">Organize by school, win your district, then franchise by city.</p>
+            </div>
+          </li>
+
+          <li className="grid grid-cols-[6px_1fr] gap-3 items-start">
+            <span className="rounded-full bg-gradient-to-b from-violet-400 to-pink-500 self-stretch" />
+            <div>
+              <p className="text-white font-semibold">Students teaching students</p>
+              <p className="text-gray-400">Peer-led workshops on budgets, credit, FAFSA, and first jobs — built to use tomorrow.</p>
+            </div>
+          </li>
+
+          <li className="grid grid-cols-[6px_1fr] gap-3 items-start">
+            <span className="rounded-full bg-gradient-to-b from-amber-400 to-rose-500 self-stretch" />
+            <div>
+              <p className="text-white font-semibold">Policy + practice</p>
+              <p className="text-gray-400">We testify, track bills, and make financial literacy a graduation requirement.</p>
+            </div>
+          </li>
+        </ul>
+
+        <p className="mt-6 text-gray-400">
+          In pilots, students built budgets in 20 minutes, improved credit knowledge by
+          <span className="text-white font-semibold"> 42%</span>, and left with a first-step plan.
+          <span className="text-gray-500"> (Swap in real data.)</span>
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 

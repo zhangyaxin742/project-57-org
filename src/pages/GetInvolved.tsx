@@ -323,16 +323,30 @@ function GetInvolved() {
       <Navigation />
       
       {/* Hero */}
-      <section className="pt-24 pb-10">
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white animate-fade-in">
-            Get <span className="bg-sunset-gradient bg-clip-text text-transparent">Involved</span>
-          </h1>
+          <section className="pt-16 pb-16 relative items-center justify-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
+  <div className="pointer-events-none absolute inset-0">
+        {/* Animated background elements */}
+        <div  className=" absolute top-1/4 left-1/4 w-96 h-96 bg-sunset-pink/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sunset-purple/10 rounded-full blur-3xl animate-pulse" 
+            style={{
+          animationDelay: '1s'
+        }}
+            /> 
+  </div>
+        
+  <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-8 text-center">
+    <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+      Get <span className="bg-sunset-gradient bg-clip-text text-transparent">Involved</span>
+    </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
             Whether you're a freshman exploring opportunities or a senior who's been to ICDC several times over, 
             join our mission to finally put financial literacy education on the docket in Massachusetts.
           </p>
-        </div>
+  </div>
+              </div>
+      </section>
+    
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-b from-transparent to-black" />
       </section>
 
       <GridSection title="Executive Team" roles={execPositions} />
