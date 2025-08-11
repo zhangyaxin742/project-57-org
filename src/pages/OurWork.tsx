@@ -430,12 +430,12 @@ const getStatusColor = (status: BillStatus): string => {
       date: "Aug 18, 2025"
     },
     {
-      title: "Scholarships & Financial Aid",
+      title: "Scholarships, Financial Aid, & Planning for College",
       location: "Arlington, MA - TBD",
       date: "Sept 1, 2025"
     },
     {
-      title: "Budgeting Is Shockingly Simple",
+      title: "Budgeting Is... Shockingly Simple",
       location: "Boston MA - TBD",
       date: "Sept 14, 2025"
     }
