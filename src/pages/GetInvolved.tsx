@@ -205,7 +205,7 @@ const GridSection = ({ title, roles, compact = false, centerLast = true, }: { ti
       animate={controls}
       transition={{ staggerChildren: 0.08 }}
   > 
-    <div className={compact ? "": "max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"}>
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">{title}</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
@@ -339,7 +339,7 @@ function GetInvolved() {
       Get <span className="bg-sunset-gradient bg-clip-text text-transparent">Involved</span>
     </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-  Whether you’re new to high school or already organizing in your district, this is the year we make financial literacy non-negotiable in Massachusetts.
+  Whether you’re new to high school or already organizing in your district, 2025 is the year we make financial literacy non-negotiable in Massachusetts.
           </p>
   </div>
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-b from-transparent to-black" />
