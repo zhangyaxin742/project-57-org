@@ -172,11 +172,6 @@ useEffect(() => {
 ];
 
 
-  const SECTION_PANELS: Record<SectionKey, React.ReactNode> = {
-  advocacy: <Advocacy />,
-  curriculum: <Curriculum />,
-  enterprise: <Enterprise />,
-};
 
   // Data constants
   const bills: Bill[] = [
@@ -875,7 +870,11 @@ function OurWorkCard({
     </motion.div>
   );
 }
-    
+const SECTION_PANELS: Record<SectionKey, React.ReactNode> = {
+  advocacy: <Advocacy />,
+  curriculum: <Curriculum />,
+  enterprise: <Enterprise />,
+};
   return (
     <div className="min-h-screen bg-black text-white">
       <Navigation />
@@ -913,65 +912,12 @@ function OurWorkCard({
           const isOpen = expandedSection === meta.key;
 
           return (
-            <motion.div key={key} layout>
-              {/* Entire card is a trigger ONLY */}
-              <OurCards
-                              key={meta.key}
+            <OurWorkCard
+              key={meta.key}
               meta={meta}
               isOpen={isOpen}
-                onToggle={() => setExpandedSection(isOpen ? null : meta.key)}
-                aria-expanded={isOpen}
-                aria-controls={`section-panel-${key}`} /* single panel below */
-  className={[
-    "group relative overflow-hidden rounded-2xl",
-    "bg-gradient-to-br from-gray-900/50 to-black",
-    "border border-white/10 transition-all duration-500",
-    isOpen
-      ? "border-orange-400/70 shadow-[0_0_0_1px_rgba(251,146,60,.3)]"
-      : "hover:border-white/20 hover:scale-[1.02]",
-  ].join(" ")}
-              >
-                {/* Top gradient bar */}
-                <div className={`h-2 bg-gradient-to-r ${gradient}`} />
-
-                {/* Hover color wash overlay */}
-                <div
-                  className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
-                  aria-hidden
-                />
-
-                {/* Collapsed card content (icon, title, copy, CTA) */}
-                <div className="relative p-8">
-                  <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${gradient} mb-6`}>
-                    <Icon className="h-8 w-8 text-white" />
-                  </div>
-
-<h3
-  className={`text-xl md:text-2xl font-bold mb-4 transition-colors duration-300 ${
-    isOpen ? "text-white" : "text-gray-200 group-hover:text-sunset-pink"
-  }`}
->
-  {title}
-</h3>
-
-                  <p className="text-gray-300 leading-relaxed">{description}</p>
-
-                  <div className="mt-6 flex items-center text-sunset-pink transition-transform duration-300 group-hover:translate-x-2">
-                    <span className="text-sm font-semibold">Learn More</span>
-                    <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-
-                  {/* Active gradient indicator */}
-                 {isOpen && (
-                <div 
-                   className={`absolue inset-0 bg-gradient-to-br ${gradient} opacity-20 pointer-events-none`}
-                  aria-hidden="true" />
-                )}
-                </div>
-              </Card>
-            </motion.div>
+              onToggle={() => setExpandedSection(isOpen ? null : meta.key)}
+            />
           );
         })}
       </motion.div>
@@ -1236,8 +1182,5 @@ function OurWorkCard({
   );
 };
 
-// Final render for OurWork
-return <OurCards />;
-};
 
 export default OurWork;
