@@ -811,13 +811,12 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 absolute inset-0 flex items-center justify-center overflow-hidden 
+      <section className="pt-24 pb-16 relative flex items-center justify-center overflow-hidden 
        bg-gradient-to-br from-black via-gray-900 to-black">
         
         {/* Animated background elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sunset-orange/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sunset-purple/10 rounded-full blur-3xl animate-pulse" style={{
+        <div  className=" relative top-1/4 left-1/4 w-96 h-96 bg-sunset-orange/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="relative bottom-1/4 right-1/4 w-96 h-96 bg-sunset-purple/10 rounded-full blur-3xl animate-pulse" style={{
           animationDelay: '1s'
         }}></div>
         </div>
