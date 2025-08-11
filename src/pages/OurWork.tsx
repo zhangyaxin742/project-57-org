@@ -28,8 +28,7 @@ import {
   BookOpen, 
   ChevronDown, 
   Handshake, 
-HelpCircle,
-X } from 'lucide-react';
+HelpCircle } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
@@ -568,13 +567,6 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
     <DialogHeader>
       <DialogTitle className="flex items-center justify-between">
         Bill Tracker FAQs
-        <button
-          onClick={() => setFaqOpen(false)}
-          className="p-1 rounded-md hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/60"
-          aria-label="Close"
-        >
-          <X className="h-4 w-4" />
-        </button>
       </DialogTitle>
     </DialogHeader>
 
