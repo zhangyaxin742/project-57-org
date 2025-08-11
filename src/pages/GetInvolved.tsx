@@ -1,6 +1,6 @@
 import Navigation from '@/components/Navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, Users, ChevronRight, HandHeart, BookOpenCheck, Landmark, LineChart, Lightbulb, FileText } from 'lucide-react';
+import { Mail, Users, ChevronRight, HandHeart, BookOpenCheck, Landmark, LineChart, GraduationCap, Lightbulb, ChartNoAxesCombined, FileText, Album, MessageCircleHeart} from 'lucide-react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -36,7 +36,7 @@ const cardVariants: Variants = {
 const execPositions: Role[] = [
   {
     title: "Chief Curriculum Officer (CCO)",
-    icon: BookOpenCheck,
+    icon: Album,
     description: "Build and scale statewide financial literacy workshops and resources.",
     commitment: "~10 hrs/week",
     benefits: [
@@ -104,7 +104,7 @@ const execPositions: Role[] = [
 const associatePositions: Role[] = [
   {
     title: "Marketing Associate",
-    icon: LineChart,
+    icon: MessageCircleHeart,
     description: "Create content and amplify statewide campaigns.",
     commitment: "3–5 hrs/week",
     benefits: [
@@ -117,7 +117,7 @@ const associatePositions: Role[] = [
   },
   {
     title: "Enterprise Associate",
-    icon: Lightbulb,
+    icon: ChartNoAxesCombined,
     description: "Source founders and support hackathon logistics.",
     commitment: "3–5 hrs/week",
     benefits: [
@@ -159,7 +159,7 @@ const associatePositions: Role[] = [
 const chapterPresident: Role[] = [
   {
     title: "Chapter President",
-    icon: LineChart,
+    icon: GraduationCap,
     description: "Lead the push for financial literacy at your school — with full backing from the statewide Project 57 network.",
     commitment: "3–5 hrs/week",
     benefits: [
