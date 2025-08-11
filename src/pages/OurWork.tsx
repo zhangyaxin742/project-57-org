@@ -1121,23 +1121,10 @@ Project 57 fixes that. We go school by school, district by district, teaching mo
           </Button>
         </Link>
           <Link to="/get-involved#president">
-   <Button
-    variant="ghost"
-    className="relative group inline-flex items-center justify-center overflow-hidden
-               rounded-xl border-2 border-transparent px-6 py-3 font-semibold"
-  >
-    {/* Gradient border layer */}
-    <span className="absolute inset-0 rounded-xl p-[2px] bg-sunset-gradient" />
-
-    {/* Inner fill (black) */}
-    <span className="relative flex items-center justify-center rounded-[10px] bg-black px-6 py-3">
-      {/* Gradient text */}
-      <span className="bg-sunset-gradient bg-clip-text text-transparent">
-        Start a Chapter
-      </span>
-    </span>
+  <Button className="bg-black border-2 border-transparent px-6 py-3 text-base rounded-xl bg-gradient-to-r from-orange-400 via-pink-500 to-purple-500 [border-image:linear-gradient(to_right,#fb923c,#ec4899,#8b5cf6)_1] text-transparent bg-clip-text">
+    Start a Chapter
   </Button>
-          </Link>
+</Link>
         </div>
         </div> 
 
