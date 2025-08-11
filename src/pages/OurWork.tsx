@@ -831,7 +831,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
           </p>
         </div>
         </div>
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-black" /> </div>
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-black" />
       </section>
 
 
