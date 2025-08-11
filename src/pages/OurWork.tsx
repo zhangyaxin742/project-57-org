@@ -585,7 +585,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
       </div>
       <div>
         <p className="font-medium text-white mb-1">How can I help?</p>
-        <p>Call sponsors, submit testimony, and share our briefs with your school district.</p>
+        <p>So many ways! Join our team, call sponsors, submit testimony, or share our briefs with your school district--or even share our survey with your district and run a case study.</p>
       </div>
     </div>
   </DialogContent>
@@ -1152,7 +1152,7 @@ Project 57 fixes that. We go school by school, district by district, teaching mo
             <span className="rounded-full bg-gradient-to-b from-amber-400 to-rose-500 self-stretch" />
             <div>
               <p className="text-white font-semibold">Policy In Practice</p>
-              <p className="text-gray-400">Testify in hearings, track bills, run case studies, and push for financial literacy as a statewide mandate.</p>
+              <p className="text-gray-400">Testify in hearings, track bills, run case studies, and push for financial literacy as a statewide requirement.</p>
             </div>
           </li>
         </ul>
@@ -1160,8 +1160,6 @@ Project 57 fixes that. We go school by school, district by district, teaching mo
     </div>
   </div>
 </section>
-
-      {/* Tabbed Modals */}
 
       {/* Tabbed Modals */}
       {selectedBill && activeModal && (

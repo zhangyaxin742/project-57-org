@@ -37,11 +37,11 @@ const execPositions: Role[] = [
     title: "Chief Curriculum Officer (CCO)",
     icon: BookOpenCheck,
     description: "Build and scale statewide financial literacy workshops and resources.",
-    commitment: "≈10 hrs/week",
+    commitment: "~10 hrs/week",
     benefits: [
-      "Approve 5–10 workshop proposals/month",
-      "Ship 2 live workshop plans/month",
-      "Oversee 10+ resources/month in the bank",
+      "Lead a statewide education initiative recognized by legislators and press",
+      "Graduate with 20+ published workshop plans in your portfolio",
+      "Work alongside policy, marketing, and operations executives your age",
     ],
     link: "https://forms.gle/BEZx25HUU8Me1Q5K8",
     cta: "Apply for CCO"
@@ -50,11 +50,11 @@ const execPositions: Role[] = [
     title: "Chief Policy Officer (CPO)",
     icon: Landmark,
     description: "Lead legislative research, testimony, and statewide advocacy.",
-    commitment: "≈10 hrs/week",
+    commitment: "~10 hrs/week",
     benefits: [
-      "Publish 1 article/week + 1 brief/quarter",
-      "Coordinate testimony & legislator outreach",
-      "Run weekly policy syncs",
+"Testify in front of lawmakers and have your name in state hearing records",
+      "Publish briefs and op-eds cited by local media and nonprofits",
+      "Run an advocacy network with direct connections to state-level decision makers",
     ],
     link: "https://forms.gle/BEZx25HUU8Me1Q5K8",
     cta: "Apply for CPO"
@@ -63,11 +63,11 @@ const execPositions: Role[] = [
     title: "Chief Marketing Officer (CMO)",
     icon: LineChart,
     description: "Own brand, content, and growth across IG/TikTok/LinkedIn.",
-    commitment: "≈10 hrs/week",
+    commitment: "~10 hrs/week",
     benefits: [
-      "Post 3+ carousels & 2+ reels per platform weekly",
-      "Track KPIs monthly",
-      "Lead a marketing associate pod",
+   "Grow a statewide brand to 10k+ combined followers",
+      "Run high-visibility campaigns featured in partner org channels",
+      "Lead a creative team producing portfolio-ready content weekly",
     ],
     link: "https://forms.gle/BEZx25HUU8Me1Q5K8",
     cta: "Apply for CMO"
@@ -76,11 +76,11 @@ const execPositions: Role[] = [
     title: "Chief Operating Officer (COO)",
     icon: Users,
     description: "Build chapters, train leaders, and run district operations.",
-    commitment: "≈10 hrs/week",
+    commitment: "~10 hrs/week",
     benefits: [
-      "Recruit 10–15 Chapter Presidents",
-      "Maintain statewide ops dashboard",
-      "Run weekly chapter leader calls",
+ "Recruit and mentor a statewide network of Chapter Presidents",
+            "Be known as the organizer who scaled Project 57 to every district",
+      "Graduate with proven leadership in a 501(c)(3)-sponsored initiative",
     ],
     link: "https://forms.gle/BEZx25HUU8Me1Q5K8",
     cta: "Apply for COO"
@@ -89,11 +89,11 @@ const execPositions: Role[] = [
     title: "Chief Innovation Officer (CIO)",
     icon: Lightbulb,
     description: "Run founder spotlights and two hackathons by Summer ‘26.",
-    commitment: "≈10 hrs/week",
+    commitment: "~10 hrs/week",
     benefits: [
-      "Lead 2 hackathons (virtual + Boston)",
-      "Source 5–7 founder features/month",
-      "Manage enterprise associates",
+  "Host hackathons bringing together 100+ students, founders, and sponsors",
+      "Curate and publish founder features read across the state",
+      "Graduate with innovation projects recognized by partner organizations",
     ],
     link: "https://forms.gle/BEZx25HUU8Me1Q5K8",
     cta: "Apply for CIO"
@@ -107,9 +107,9 @@ const associatePositions: Role[] = [
     description: "Create content and amplify statewide campaigns.",
     commitment: "3–5 hrs/week",
     benefits: [
-      "Post 2–3 pieces/week",
-      "Run outreach to schools/media weekly",
-      "Track performance in shared dashboard",
+      "Have your work seen by thousands of students across Massachusetts",
+      "Drive campaigns that land in schools, media, and student feeds",
+      "Graduate with a portfolio of growth wins tied to a statewide brand",
     ],
     link: "https://forms.gle/i77LyrGBKr7mofxs8",
     cta: "Apply as Marketing Associate"
@@ -120,9 +120,9 @@ const associatePositions: Role[] = [
     description: "Source founders and support hackathon logistics.",
     commitment: "3–5 hrs/week",
     benefits: [
-      "Verify/interview founders monthly",
-      "Promote to FBLA/DECA & clubs statewide",
-      "Maintain clean outreach records",
+      "Interview and spotlight student founders from across the state",
+      "Get behind-the-scenes access to statewide hackathons and events",
+      "Build a founder network you can tap for years to come",
     ],
     link: "https://forms.gle/i77LyrGBKr7mofxs8",
     cta: "Apply as Enterprise Associate"
@@ -133,9 +133,9 @@ const associatePositions: Role[] = [
     description: "Design and deliver monthly workshops in your community.",
     commitment: "3–5 hrs/week",
     benefits: [
-      "Run 1+ local workshop/month",
-      "Draft 1–2 explainers/month",
-      "Update resource bank with vetted sources",
+      "Host workshops that put your name in front of students and educators",
+      "Publish explainer content that gets used in multiple districts",
+      "Shape the statewide resource bank with tools you choose",
     ],
     link: "https://forms.gle/i77LyrGBKr7mofxs8",
     cta: "Apply as Curriculum Associate"
@@ -146,9 +146,9 @@ const associatePositions: Role[] = [
     description: "Support bill tracking, writing, and legislator outreach.",
     commitment: "3–5 hrs/week",
     benefits: [
-      "Write 1–2 posts/month",
-      "Help prep testimony & petitions",
-      "Distribute + analyze survey data",
+      "Get credited on briefs and testimony sent to the State House",
+      "Work alongside peers to influence actual legislation",
+      "Collect data that shapes how policymakers see student priorities",
     ],
     link: "https://forms.gle/i77LyrGBKr7mofxs8",
     cta: "Apply as Policy Associate"
@@ -159,12 +159,12 @@ const chapterPresident: Role[] = [
   {
     title: "Chapter President",
     icon: LineChart,
-    description: "Launch and lead a Project 57 chapter at your school; run workshops, advocacy, and recruitment.",
+    description: "Lead the push for financial literacy at your school — with full backing from the statewide Project 57 network.",
     commitment: "3–5 hrs/week",
     benefits: [
-      "Build a team of 5–10 members",
-      "Gain leadership experience and mentorship",
-      "Join a statewide network of leaders",
+            "Be the voice for financial literacy with admins and your school board",
+      "Push for graduation requirements and policy changes that outlast you",
+      "Get direct support, resources, and training from statewide leadership",
     ],
     link: "https://forms.gle/Fbu1pSboTZzRoiBYA",
     cta: "Start A Chapter"
@@ -178,9 +178,9 @@ const volunteerRole: Role[] = [
     description: "Help at workshops, hackathons, and outreach drives—low commitment, real impact.",
     commitment: "Event-based / flexible",
     benefits: [
-      "Earn verifiable hours via 501(c)(3) sponsorship",
-      "Pick one-off events or recurring projects",
-      "Join advocacy & hackathon crews statewide",
+      "Get verifiable service hours you can submit to your school or college apps",
+      "Pick and choose events or projects that fit your schedule",
+      "Join statewide teams at workshops, hackathons, and advocacy events",
     ],
     link: "https://forms.gle/Fm6r326rC72Hff449",
     cta: "Sign Up to Volunteer"
@@ -327,7 +327,7 @@ function GetInvolved() {
   <div className="pointer-events-none absolute inset-0">
         {/* Animated background elements */}
         <div  className=" absolute top-1/4 left-1/4 w-96 h-96 bg-sunset-pink/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sunset-purple/10 rounded-full blur-3xl animate-pulse" 
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sunset-orange/10 rounded-full blur-3xl animate-pulse" 
             style={{
           animationDelay: '1s'
         }}
@@ -339,8 +339,7 @@ function GetInvolved() {
       Get <span className="bg-sunset-gradient bg-clip-text text-transparent">Involved</span>
     </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-            Whether you're a freshman exploring opportunities or a senior who's been to ICDC several times over, 
-            join our mission to finally put financial literacy education on the docket in Massachusetts.
+  Whether you’re new to high school or already organizing in your district, this is the year we make financial literacy non-negotiable in Massachusetts.
           </p>
   </div>
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-b from-transparent to-black" />
