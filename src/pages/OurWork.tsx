@@ -522,6 +522,8 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
       <section className="py-20 bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8">
+
+                  <div className="flex items-center gap-2">
             <h2 className="text-3xl md:text-4xl font-bold">
               Bill <span className="bg-sunset-gradient bg-clip-text text-transparent">Tracker</span>
             </h2>
