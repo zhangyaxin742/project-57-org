@@ -1108,7 +1108,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
         When 250,000 futures are at stakes, financial literacy is not<em>— can not— </em>be optional. Yet Massachusetts—from our schools to our legislatures—continue to ignore the gap. 
         We fix that by going local, teaching by doing, and putting students <em> first.</em>
       </p>
-
+</div>
 <section className="grid lg:grid-cols-2 gap-10 items-start">
   {/* LEFT */}
   <div>
@@ -1212,6 +1212,10 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
     </div>
   </div>
 </section>
+</div>
+</section>
+
+      {/* Tabbed Modals */}
 
       {/* Tabbed Modals */}
       {selectedBill && activeModal && (
