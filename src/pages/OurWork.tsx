@@ -458,7 +458,7 @@ const getStatusColor = (status: BillStatus): string => {
   const [activeModal, setActiveModal] = useState(null);
 const [faqOpen, setFaqOpen] = useState(false); 
   const [showAllResearch, setShowAllResearch] = useState(false);
-const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
+const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
 
   // Component definitions
   const Advocacy = () => (
@@ -467,7 +467,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 2);
       <section className="py-16 bg-gray-900">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-white mb-12 text-center">
-            Our Research
+            Our <span className="bg-sunset-gradient bg-clip-text text-transparent">  Research </span>
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
