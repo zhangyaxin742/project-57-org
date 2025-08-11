@@ -1109,8 +1109,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
         14 and filing taxes. 17 and taking out student loans. 18 and opening credit cards.
       </p>
         <p className="mt-4 text-gray-400">
-       By the time students begin "adulting", they’ve already made financial choices they can’t undo. < br/>
-          But in Massachusetts, personal finance still isn’t required — and that failure costs futures.
+      In Massachusetts, personal finance still isn’t required — and that failure costs futures daily.
 <br/> 
 Project 57 fixes that. We go school by school, district by district, teaching money skills you can use today —
           and building the coalition to mandate it tomorrow.
