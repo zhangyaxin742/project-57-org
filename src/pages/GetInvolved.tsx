@@ -354,7 +354,7 @@ function GetInvolved() {
   Whether you’re new to high school or already organizing in your district, 2025 is the year we make financial literacy non-negotiable in Massachusetts.
           </p>
   </div>
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-b from-transparent to-black" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-b from-transparent to-black" />
       </section>
  
       <GridSection          title={
@@ -363,7 +363,7 @@ function GetInvolved() {
       <span className="bg-sunset-gradient bg-clip-text text-transparent">Team</span>
     </>
   } roles={execPositions} />
-<div className="pointer-events-none -my-12 h-28 w-full bg-gradient-to-b from-transparent via-sunset-purple/20 to-transparent" />
+<div className="pointer-events-none -my-12 h-28 w-full bg-gradient-to-b from-transparent via-gray-800/20 to-transparent" />
 
       <GridSection          title={
     <>
@@ -371,7 +371,7 @@ function GetInvolved() {
       <span className="bg-sunset-gradient bg-clip-text text-transparent">Team</span>
     </>
   } roles={associatePositions} />
-      <div className="pointer-events-none -my-12 h-28 w-full bg-gradient-to-b from-transparent via-sunset-purple/20 to-transparent" />
+      <div className="pointer-events-none -my-12 h-28 w-full bg-gradient-to-b from-transparent via-gray-800/20 to-transparent" />
 
       <GridSection id="president" compact centerLast={false} 
          title={
@@ -380,7 +380,7 @@ function GetInvolved() {
       <span className="bg-sunset-gradient bg-clip-text text-transparent">Opportunities</span>
     </>
   } roles={[chapterPresident[0], volunteerRole[0]]} />
-            <div className="pointer-events-none -my-16 h-40 w-full bg-gradient-to-b from-transparent via-sunset-purple/20 to-transparent" />
+            <div className="pointer-events-none -my-8 h-40 w-full bg-gradient-to-b from-transparent via-gray-800/20 to-transparent" />
 
     </div>
   );
