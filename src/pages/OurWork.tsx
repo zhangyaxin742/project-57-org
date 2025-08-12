@@ -899,7 +899,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
           Founders & <span className="bg-sunset-gradient bg-clip-text text-transparent"> Hackathons </span>
         </h2>
         <p className="text-gray-300 text-lg mb-8">
-          Coming soon in partnership with <a href="https://dream-venture.github.io/hackathon/" target="_blank" rel="noopener noreferrer"> DreamVenture! </a>
+          Coming soon in partnership with <a href="https://dream-venture.github.io/hackathon/" target="_blank" rel="noopener noreferrer" className="text-sunset-orange hover:underline"> DreamVenture! </a>
         </p>
         <Link to="/">
         <Button 
