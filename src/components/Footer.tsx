@@ -29,9 +29,9 @@ const Footer = () => {
           <div>
             <h3 className="bg-gradient-to-r from-sunset-purple to-sunset-pink bg-clip-text text-transparent font-semibold mb-4">Our Work</h3>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="/legislative" className="hover:text-brand-orange transition-colors">Advocacy</a></li>
-              <li><a href="/curriculum" className="hover:text-brand-orange transition-colors">Curriculum</a></li>
-              <li><a href="/enterprise" className="hover:text-brand-orange transition-colors">Enterprise</a></li>
+              <li><a href="/ourwork#advocacy" className="hover:text-brand-orange transition-colors">Advocacy</a></li>
+              <li><a href="/ourwork#curriculum" className="hover:text-brand-orange transition-colors">Curriculum</a></li>
+              <li><a href="/ourwork#enterprise" className="hover:text-brand-orange transition-colors">Enterprise</a></li>
             </ul>
           </div>
 
@@ -39,7 +39,7 @@ const Footer = () => {
           <div>
             <h3 className="bg-gradient-to-r from-sunset-pink to-sunset-orange bg-clip-text text-transparent font-semibold mb-4">Organization</h3>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="/about" className="hover:text-brand-orange transition-colors">About</a></li>
+              <li><a href="/ourwork#about" className="hover:text-brand-orange transition-colors">About</a></li>
               <li><a href="/get-involved" className="hover:text-brand-orange transition-colors">Get Involved</a></li>
               <li><a href="/contact" className="hover:text-brand-orange transition-colors">Contact</a></li>
             </ul>
