@@ -363,7 +363,7 @@ function GetInvolved() {
       <span className="bg-sunset-gradient bg-clip-text text-transparent">Team</span>
     </>
   } roles={execPositions} />
-<div className="pointer-events-none -my-12 h-28 w-full bg-gradient-to-b from-transparent via-gray-800/20 to-transparent" />
+<div className="pointer-events-none -my-12 h-28 w-full bg-gradient-to-b from-transparent via-gray-800/50 to-transparent" />
 
       <GridSection          title={
     <>
@@ -371,7 +371,7 @@ function GetInvolved() {
       <span className="bg-sunset-gradient bg-clip-text text-transparent">Team</span>
     </>
   } roles={associatePositions} />
-      <div className="pointer-events-none -my-12 h-28 w-full bg-gradient-to-b from-transparent via-gray-800/20 to-transparent" />
+      <div className="pointer-events-none -my-12 h-28 w-full bg-gradient-to-b from-transparent via-gray-800/50 to-transparent" />
 
       <GridSection id="president" compact centerLast={false} 
          title={
@@ -380,7 +380,7 @@ function GetInvolved() {
       <span className="bg-sunset-gradient bg-clip-text text-transparent">Opportunities</span>
     </>
   } roles={[chapterPresident[0], volunteerRole[0]]} />
-            <div className="pointer-events-none -my-8 h-40 w-full bg-gradient-to-b from-transparent via-gray-800/20 to-transparent" />
+            <div className="pointer-events-none -my-8 h-40 w-full bg-gradient-to-b from-transparent via-gray-800/50 to-transparent" />
 
     </div>
   );
