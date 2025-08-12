@@ -44,6 +44,22 @@ type SectionKey = (typeof VALID_SECTIONS)[number];
 const OurWork = () => {
   // Define types
   type BillStatus = 'Introduced' | 'In Committee' | 'Passed' | 'Rejected';
+
+const STATUS_CLASSES: Record<BillStatus, string> = {
+  Introduced: 'bg-blue-500/15 text-blue-300 border-blue-400/30',
+  'In Committee': 'bg-yellow-400/15 text-yellow-300 border-yellow-400/30',
+  Passed: 'bg-green-500/15 text-green-300 border-green-500/30',
+  Rejected: 'bg-red-500/15 text-red-300 border-red-500/30',
+};
+
+const DOT_CLASSES: Record<BillStatus, string> = {
+  Introduced: 'bg-blue-400',
+  'In Committee': 'bg-yellow-400',
+  Passed: 'bg-green-400',
+  Rejected: 'bg-red-400',
+};
+
+const getStatusClasses = (status: BillStatus) => STATUS_CLASSES[status];
   
   type Sponsor = {
     name: string;
@@ -585,7 +601,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
       </div>
       <div>
         <p className="font-medium text-white mb-1">How can I help?</p>
-        <p>So many ways! Join our team, call sponsors, submit testimony, or share our briefs with your school district--or even share our survey with your district and run a case study.</p>
+        <p>So many ways! Join our team, call sponsors, submit testimony, share our briefs—feel free to take our <a href="https://forms.gle/AmwJTBNKe25YgHmD9">survey</a> to your school and run a case study.</p>
       </div>
     </div>
   </DialogContent>
@@ -602,9 +618,13 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
   <CardTitle className="text-white text-[15px] text-lg font-bold">
     {bill.title}
   </CardTitle>
-    <Badge className={`${getStatusColor(bill.status)} text-white text-[10px] whitespace-nowrap`}>
-    {bill.status}
-  </Badge>
+<Badge
+  variant="outline"
+  className={`border ${getStatusClasses(bill.status)} text-[10px] whitespace-nowrap px-2.5 py-1 rounded-full flex items-center gap-1`}
+>
+  <span className={`inline-block h-2 w-2 rounded-full ${DOT_CLASSES[bill.status]}`} />
+  {bill.status}
+</Badge>
                       </div>
                       <div className="text-sunset-orange font-semibold text-sm mb-3">
                         {bill.number}
