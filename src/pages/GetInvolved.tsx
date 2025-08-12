@@ -371,7 +371,7 @@ function GetInvolved() {
       <span className="bg-sunset-gradient bg-clip-text text-transparent">Team</span>
     </>
   } roles={associatePositions} />
-      <div className="pointer-events-none -my-12 h-28 w-full bg-gradient-to-b from-transparent via-gray-800/50 to-transparent" />
+      <div className="pointer-events-none -my-8 h-28 w-full bg-gradient-to-b from-transparent via-gray-800/50 to-transparent" />
 
       <GridSection id="president" compact centerLast={false} 
          title={
