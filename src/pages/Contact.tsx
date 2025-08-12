@@ -40,7 +40,7 @@ const Contact = () => {
       form.current?.reset();
       setStatus('idle');
       setResetProgress(100);
-    }, 5000);
+    }, 3000);
     return () => { cancelAnimationFrame(raf); clearTimeout(t); };
   }, [status]);
   
@@ -206,7 +206,7 @@ setStatus('error');
                     {status === 'sent' && (
                       <div className="absolute left-3 right-3 -bottom-1 h-1 rounded-full bg-white/15 overflow-hidden">
                         <div
-                          className="h-full bg-white/80 transition-[width] duration-[5000ms] ease-linear"
+                          className="h-full bg-white/80 transition-[width] duration-[3000ms] ease-linear"
                           style={{ width: `${resetProgress}%` }}
                         />
                       </div>
