@@ -33,19 +33,6 @@ const cardVariants: Variants = {
    }
 };
 
-const Bridge = ({ className = "" }) => (
-  <div
-    aria-hidden
-    className={
-      // overlaps the bottom of the previous section and the top of the next
-      "pointer-events-none -my-12 h-28 w-full " +
-      // soft band that’s strongest in the middle
-      "bg-[linear-gradient(180deg,transparent,rgba(139,92,246,.22),rgba(236,72,153,.22),transparent)] " +
-      className
-    }
-  />
-);
-
 const execPositions: Role[] = [
   {
     title: "Chief Curriculum Officer (CCO)",
@@ -376,7 +363,8 @@ function GetInvolved() {
       <span className="bg-sunset-gradient bg-clip-text text-transparent">Team</span>
     </>
   } roles={execPositions} />
-<Bridge />
+<div className="pointer-events-none -my-12 h-28 w-full
+  bg-[linear-gradient(180deg,transparent,theme(colors.sunset-purple/22),theme(colors.gray-900/22),transparent)]" />
 
       <GridSection          title={
     <>
@@ -384,7 +372,8 @@ function GetInvolved() {
       <span className="bg-sunset-gradient bg-clip-text text-transparent">Team</span>
     </>
   } roles={associatePositions} />
-<Bridge />
+      <div className="pointer-events-none -my-12 h-28 w-full
+  bg-[linear-gradient(180deg,transparent,theme(colors.sunset-purple/22),theme(colors.gray-900/22),transparent)]" />
 
       <GridSection id="president" compact centerLast={false} 
          title={
@@ -393,7 +382,8 @@ function GetInvolved() {
       <span className="bg-sunset-gradient bg-clip-text text-transparent">Opportunities</span>
     </>
   } roles={[chapterPresident[0], volunteerRole[0]]} />
-<Bridge className="h-40 -my-16" />
+            <div className="pointer-events-none -my-16 h-32 w-full
+  bg-[linear-gradient(180deg,transparent,theme(colors.sunset-purple/22),theme(colors.gray-900/22),transparent)]" />
 
     </div>
   );
