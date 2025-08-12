@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Navigation from '../components/Navigation';
 import { useNavigate } from 'react-router-dom';
 import { motion } from "framer-motion";
@@ -17,6 +17,11 @@ const Contact = () => {
   const navigate = useNavigate(); 
   const form = useRef<HTMLFormElement>(null);
 
+    // NEW: button + reset state
+  type Status = 'idle' | 'sending' | 'sent' | 'error';
+  const [status, setStatus] = useState<Status>('idle');
+  const [resetProgress, setResetProgress] = useState(100);
+  
   useEffect(() => {
     document.body.style.opacity = '0';
     setTimeout(() => {
@@ -25,10 +30,25 @@ const Contact = () => {
     }, 100);
   }, []);
 
+
+    // NEW: handle the 5s auto-reset when sent
+  useEffect(() => {
+    if (status !== 'sent') return;
+    setResetProgress(100);              // fill bar
+    const raf = requestAnimationFrame(() => setResetProgress(0)); // then shrink
+    const t = setTimeout(() => {
+      form.current?.reset();
+      setStatus('idle');
+      setResetProgress(100);
+    }, 5000);
+    return () => { cancelAnimationFrame(raf); clearTimeout(t); };
+  }, [status]);
+  
   const sendEmail = (e) => {
     e.preventDefault();
 
     if (!form.current) return;
+    setStatus('sending');
 
     emailjs.sendForm(
       'service_iwm6b6n',
@@ -36,18 +56,33 @@ const Contact = () => {
       form.current,
       'xXAGTZO6e5pBEH4qw'
     ).then(
-      (result) => {
-        console.log(result.text);
-        alert('Message sent successfully!');
-        form.current?.reset();
+      () => {
+        setStatus('sent');
       },
-      (error) => {
-        console.log(error.text);
-        alert('Failed to send message. Please try again.');
+      () => {
+setStatus('error');
       }
     );
   };
 
+    const Spinner = () => (
+    <svg className="h-5 w-5 animate-spin" viewBox="0 0 24 24" fill="none">
+      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
+      <path className="opacity-90" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/>
+    </svg>
+  );
+  const CheckCircle = () => (
+    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+      <circle cx="12" cy="12" r="10" className="text-black" fill="currentColor"/>
+      <path d="M9.5 12.5l2 2 3.5-4.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+  const ErrorIcon = () => (
+    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+      <path d="M12 7v6m0 4h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+  );
 
   return (
     <div className="min-h-screen bg-black">
@@ -142,12 +177,42 @@ const Contact = () => {
                   ></textarea>
                 </div>
 
-                <button 
-                  type="submit" 
-                  className="w-full py-3 bg-sunset-gradient text-white font-semibold rounded-lg hover:opacity-90 transition duration-200"
-                >
-                  Send Message
-                </button>
+<div>
+                  <button
+                    type="submit"
+                    disabled={status === 'sending' || status === 'sent'}
+                    className={`relative w-full py-3 rounded-lg font-semibold transition duration-200
+                      ${status === 'sent'
+                        ? 'bg-sunset-gradient text-black cursor-default'
+                        : status === 'sending'
+                          ? 'bg-sunset-gradient text-white opacity-80 cursor-not-allowed'
+                          : status === 'error'
+                            ? 'bg-red-600 text-white hover:opacity-90'
+                            : 'bg-sunset-gradient text-white hover:opacity-90'}`}
+                  >
+                    <span className="inline-flex items-center justify-center gap-2">
+                      {status === 'sending' && <Spinner />}
+                      {status === 'sent' && <CheckCircle />}
+                      {status === 'error' && <ErrorIcon />}
+                      <span>
+                        {status === 'sending' ? 'Sending…'
+                          : status === 'sent' ? 'Message Sent'
+                          : status === 'error' ? 'Failed — Try Again'
+                          : 'Send Message'}
+                      </span>
+                    </span>
+
+                    {/* 5s reset bar (only when sent) */}
+                    {status === 'sent' && (
+                      <div className="absolute left-3 right-3 -bottom-1 h-1 rounded-full bg-white/15 overflow-hidden">
+                        <div
+                          className="h-full bg-white/80 transition-[width] duration-[5000ms] ease-linear"
+                          style={{ width: `${resetProgress}%` }}
+                        />
+                      </div>
+                    )}
+                  </button>
+                </div>
               </form>
             </div>
 
