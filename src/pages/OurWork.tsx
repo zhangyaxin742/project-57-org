@@ -489,8 +489,8 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {displayedArticles.map((article, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300 animate-fade-in group"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -509,27 +509,28 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent className="pt-0">
-                  <Button asChild
-                    className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300 ripple-effect group-hover:scale-105">
-<Link to={`/briefs/${article.slug}`} className="flex items-center justify-center">
-  <FileText className="h-4 w-4 mr-2" />
-  Read Now
-</Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Button 
-              onClick={() => setShowAllResearch(prev => !prev)}
-              className="bg-sunset-gradient hover:opacity-90 text-black font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
-            >
-              {showAllResearch ? "Hide Briefs" : "Show All Briefs"}
-            </Button>
-          </div>
+<CardContent className="pt-0">
+  <Button
+    className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300 ripple-effect group-hover:scale-105"
+  >
+    {/* <Link to={`/briefs/${article.slug}`} className="flex items-center justify-center"> */}
+    <div className="flex items-center justify-center">
+      <FileText className="h-4 w-4 mr-2" />
+      Read Now
+    </div>
+    {/* </Link> */}
+  </Button>
+</CardContent>
+        </Card>
+        ))}
+      </div><div className="text-center">
+        <Button
+          onClick={() => setShowAllResearch(prev => !prev)}
+          className="bg-sunset-gradient hover:opacity-90 text-black font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
+        >
+          {showAllResearch ? "Hide Briefs" : "Show All Briefs"}
+        </Button>
+      </div>
         </div>
       </section>
 
@@ -1376,9 +1377,6 @@ Project 57 fixes that. We go school by school, district by district, teaching mo
     </div>
   );
 };
-
-// Final render for OurWork
-return <OurCards />;
 };
 
 export default OurWork;
