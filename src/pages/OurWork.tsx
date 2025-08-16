@@ -193,7 +193,7 @@ const OurCards = () => {
         Requiring Financial Education in Schools </>
     ),
     number: "H.46/S.421/H.636",
-    summary: "Establishes curriculum standards, a statewide Financial Literacy Trust Fund, and effectively mandates that personal financial lieracy shall be taught in all schools K-12.",
+    summary: "Establishes curriculum standards, a statewide Financial Literacy Trust Fund, and effectively mandates that personal financial literacy be taught in schools K-12.",
     status: "In Committee",
     urls: [
       "https://legiscan.com/MA/text/H46/id/3046995/Massachusetts-2025-H46-Introduced.pdf",
@@ -364,7 +364,7 @@ const OurCards = () => {
       ),
     number: "S.423",
     summary:
-      "Embeds financial literacy standards into existing maths, history, social sciences, technology, or business curriculum.",
+      "Establishes baseline financial literacy standards; embeds them into existing maths, history, social sciences, technology, or business curriculum.",
     status: "Introduced",
     url: "https://legiscan.com/MA/text/S423/id/3164156/Massachusetts-2025-S423-Introduced.pdf", 
     sponsors: [
@@ -393,7 +393,7 @@ const OurCards = () => {
       ),
     number: "H.627",
     summary:
-      "Establishes both a Financial Literacy Trust Fund, a half-semester standalone course requirement for high school graduation, and a dedicated legislaive commission to examine and improve financial literacy statewide.",
+      "Requires a standalone, half-semester personal finance course for high school graduation, alongside dedicated legislative commission to improve financial literacy statewide.",
     status: "Introduced",
     url: "https://legiscan.com/MA/text/H627/id/3167243/Massachusetts-2025-H627-Introduced.pdf",
     sponsors: [
@@ -414,7 +414,7 @@ const OurCards = () => {
         Relative to Personal Financial Literacy </>
       ),
     number: "H.594", 
-    summary: "Establishes a Financial Literacy Trust Fund, dedicated standards, and a standalone high school graduation requirement of 1 semester of financial literacy education.",
+    summary: "Establishes a Financial Literacy Trust Fund, comprehensive standards, and requires 1 semester of financial literacy education for high school graduation.",
     status: "In Committee",
     url: "https://legiscan.com/MA/text/H594/id/3170318/Massachusetts-2025-H594-Introduced.pdf", 
     sponsors: [
@@ -443,12 +443,12 @@ const getStatusColor = (status: BillStatus): string => {
     {
       title: "WTF Are Taxes? (And Other Conundrums)",
       location: "Arlington, MA - TBD",
-      date: "Aug 18, 2025"
+      date: "Aug 22, 2025"
     },
     {
       title: "Scholarships, Financial Aid, & Planning for College",
       location: "Arlington, MA - TBD",
-      date: "Sept 1, 2025"
+      date: "Aug 29, 2025"
     },
     {
       title: "Budgeting Is... Shockingly Simple",
@@ -612,11 +612,12 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
           <Carousel opts={{ loop: true}} className="w-full">
             <CarouselContent className="-ml-2 md:-ml-4">
               {bills.map((bill) => (
-                <CarouselItem key={bill.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                 <Card className="flex flex-col justify-between bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300 h-full p-6">
-  <CardHeader className="pb-3">
+                <CarouselItem key={bill.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">       
+                  <Card className="flex flex-col bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300
+                     h-full min-h-[360px] rounded-2xl">
+  <CardHeader className="px-6 pt-8 pb-6 space-y-3">
 <div className="flex justify-between items-start mb-2">
-  <CardTitle className="text-white text-[15px] text-lg font-bold">
+  <CardTitle className="text-white text-lg font-bold leading-tight">
     {bill.title}
   </CardTitle>
 <Badge
@@ -634,7 +635,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                         {bill.summary}
                       </p>
                     </CardHeader>
-                    <CardContent className="pt-0 mt-auto">
+                    <CardContent className= "px-6 pb-6 mt-auto">
                       <div className="flex gap-2">
                         {bill.urls ? (
                           <Button
