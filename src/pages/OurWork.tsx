@@ -393,7 +393,7 @@ const OurCards = () => {
       ),
     number: "H.627",
     summary:
-      "Requires a standalone, half-semester personal finance course for high school graduation, alongside dedicated legislative commission to improve financial literacy statewide.",
+      "Requires a standalone, half-semester personal finance course for high school graduation, alongside a legislative commission to improve financial literacy statewide.",
     status: "Introduced",
     url: "https://legiscan.com/MA/text/H627/id/3167243/Massachusetts-2025-H627-Introduced.pdf",
     sponsors: [
