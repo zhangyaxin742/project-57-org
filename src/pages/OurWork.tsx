@@ -193,7 +193,7 @@ const OurCards = () => {
         Requiring Financial Education in Schools </>
     ),
     number: "H.46/S.421/H.636",
-    summary: "Requires comprehensive financial literacy education in all Massachusetts high schools. Establishes minimum curriculum standards and teacher certification requirements.",
+    summary: "Establishes curriculum standards, a statewide Financial Literacy Trust Fund, and effectively mandates that personal financial lieracy shall be taught in all schools K-12.",
     status: "In Committee",
     urls: [
       "https://legiscan.com/MA/text/H46/id/3046995/Massachusetts-2025-H46-Introduced.pdf",
@@ -364,7 +364,7 @@ const OurCards = () => {
       ),
     number: "S.423",
     summary:
-      "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
+      "Embeds financial literacy standards into existing maths, history, social sciences, technology, or business curriculum.",
     status: "Introduced",
     url: "https://legiscan.com/MA/text/S423/id/3164156/Massachusetts-2025-S423-Introduced.pdf", 
     sponsors: [
@@ -393,7 +393,7 @@ const OurCards = () => {
       ),
     number: "H.627",
     summary:
-      "Enhanced protections against predatory lending targeting students. Requires additional disclosures for credit products marketed to young adults.",
+      "Establishes both a Financial Literacy Trust Fund, a half-semester standalone course requirement for high school graduation, and a dedicated legislaive commission to examine and improve financial literacy statewide.",
     status: "Introduced",
     url: "https://legiscan.com/MA/text/H627/id/3167243/Massachusetts-2025-H627-Introduced.pdf",
     sponsors: [
@@ -414,7 +414,7 @@ const OurCards = () => {
         Relative to Personal Financial Literacy </>
       ),
     number: "H.594", 
-    summary: "hamilton!!",
+    summary: "Establishes a Financial Literacy Trust Fund, dedicated standards, and a standalone high school graduation requirement of 1 semester of financial literacy education.",
     status: "In Committee",
     url: "https://legiscan.com/MA/text/H594/id/3170318/Massachusetts-2025-H594-Introduced.pdf", 
     sponsors: [
