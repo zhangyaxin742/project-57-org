@@ -388,8 +388,8 @@ const OurCards = () => {
     id: 6,
     title: (
       <>
-      An Act <br /> 
-      Relative to the Strengthening of Financial Literacy Throughout the Commonwealth </>
+      An Act Relative to the Strengthening <br /> 
+        of Financial Literacy Throughout the Commonwealth </>
       ),
     number: "H.627",
     summary:
@@ -613,8 +613,8 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
             <CarouselContent className="-ml-2 md:-ml-4">
               {bills.map((bill) => (
                 <CarouselItem key={bill.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card className="flex flex-col justify-between  bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300 h-full">
-                    <CardHeader className="pb-3 pt-6">
+                 <Card className="flex flex-col justify-between bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300 h-full p-6">
+  <CardHeader className="pb-3">
 <div className="flex justify-between items-start mb-2">
   <CardTitle className="text-white text-[15px] text-lg font-bold">
     {bill.title}
