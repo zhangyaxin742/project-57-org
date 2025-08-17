@@ -20,7 +20,7 @@ const Footer = () => {
               <span className = "text-sm font-mono text-grey mt-2"> 
                             © 2025 PROJECT 57. ALL RIGHTS RESERVED. </span> <br />
                <span className="font-mono text-grey text-xs">
-              Proud to receive fiscal sponsorship from Hack Club Bank (HCB), a registered 501(c)(3) nonprofit (EINL 81-2908499). 
+              Proud to receive fiscal sponsorship from Hack Club Bank (HCB), a registered 501(c)(3) nonprofit (EIN: 81-2908499). 
                </span>
             </p>
           </div>
