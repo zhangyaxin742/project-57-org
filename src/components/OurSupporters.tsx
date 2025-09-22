@@ -26,13 +26,13 @@ export default function OurSupporters() {
           .marquee { position: relative; overflow: hidden; background: var(--bg); }
           .track {
             display: flex; align-items: center; gap: 2rem;
-            width: max-content; /* shrink-wrap contents */
+            width: 200%; /* shrink-wrap contents */
             will-change: transform;
             animation: marquee 20s linear infinite;
           }
           .marquee:hover .track { animation-play-state: paused; }
 
-          .group { display: flex; align-items: center; gap: 2rem; flex: 0 0 auto; }
+          .group { display: flex; align-items: center; gap: 2rem; flex: 0 0 50%; }
           .chip {
             flex: 0 0 auto;
             color: white; background: rgba(255,255,255,0.06);
@@ -43,7 +43,7 @@ export default function OurSupporters() {
           }
           .logo {
             width: 140px; height: 64px; object-fit: contain; display: block;
-            filter: grayscale(100%) opacity(.85);
+            filter: grayscale(0) opacity(.85);
             transition: transform .18s ease, filter .18s ease, opacity .18s ease;
           }
           .logo:hover { filter: grayscale(0) opacity(1); transform: scale(1.04); }
