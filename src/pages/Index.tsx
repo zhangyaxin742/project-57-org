@@ -49,14 +49,14 @@ const navigate = useNavigate();
             
        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
   <button
-    onClick={() => navigate('/get-involved')}
+    onClick={() => navigate('/ourwork#curriculum')}
     className="group relative px-8 py-4 bg-sunset-gradient rounded-full text-white font-semibold text-lg hover:scale-105 transition-transform duration-300 ripple-effect"
   >
     <span className="relative z-10">Start Your Journey</span>
   </button>
   
   <button
-    onClick={() => navigate('/ourwork#curriculum')}
+    onClick={() => navigate('/about')}
     className="px-8 py-4 border-2 border-white/20 rounded-full text-white font-semibold text-lg hover:border-sunset-pink hover:text-sunset-pink transition-colors duration-300"
   >
     Read Our Mission
