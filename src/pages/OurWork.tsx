@@ -441,19 +441,28 @@ const getStatusColor = (status: BillStatus): string => {
 
   const workshops: Workshop[] = [
     {
-      title: "WTF Are Taxes? (And Other Conundrums)",
-      location: "Arlington, MA - TBD",
-      date: "Aug 22, 2025"
+      title: "College Financing Demystified - What They Don't Tell You",
+      location: "Virtual",
+      date: "Sept 24, 2025", 
+      link: "https://luma.com/9si2fi29",
     },
     {
-      title: "Scholarships, Financial Aid, & Planning for College",
+      title: "College Financing Demystified - The FAFSA Scares Me",
       location: "Arlington, MA - TBD",
-      date: "Aug 29, 2025"
+      date: "Sept 27, 2025"
+      link: "https://luma.com/sz3hg1v5",
     },
     {
-      title: "Budgeting Is... Shockingly Simple",
-      location: "Boston MA - TBD",
-      date: "Sept 14, 2025"
+      title: "College Financing Demystified - Congrats, You're In! What Now?",
+      location: "Arlington, MA - Robbins Library",
+      date: "Oct 4, 2025", 
+      link: "https://luma.com/8gcax6fi",
+    },
+        {
+      title: "Investing 101 - Yes, Even You Can Do It!",
+      location: "Arlington, MA - Robbins Library",
+      date: "Oct 12, 2025"
+      link: "https://luma.com/y8oihfxk",
     }
   ];
 
@@ -821,10 +830,13 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                     </CardHeader>
                     <CardContent>
                       <Button 
+                      asChild 
                         className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
                       >
+                        <Link href={workshop.link} target="_blank" rel="noopener noreferrer">
                         Register Now
                       </Button>
+                      </Link>
                     </CardContent>
                   </div>
                 </Card>
