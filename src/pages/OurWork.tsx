@@ -851,7 +851,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
               <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-background to-transparent pointer-events-none" />
               <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent pointer-events-none" />
               <div className="overflow-hidden">
-                <div className="flex gap-6 will-change-transform animate-[marquee_25s_linear_infinite] group-hover:[animation-play-state:paused]" data-marquee-track>
+                <div className="flex items-start gap-6 will-change-transform animate-[marquee_25s_linear_infinite] group-hover:[animation-play-state:paused]" data-marquee-track>
                   {/* pass 1 */}
                   {workshops.map((workshop, index) => (
                     <div className="min-w-[320px] max-w-[360px]" key={`m1-${index}`}>
@@ -860,7 +860,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                       >
                         <div className="h-full flex flex-col">
                           <CardHeader>
-                            <CardTitle className="text-white text-lg font-semibold">
+                            <CardTitle className="text-white text-lg font-semibold line-clamp-2">
                               {workshop.title}
                             </CardTitle>
                             <div className="text-gray-400 text-sm space-y-1">
