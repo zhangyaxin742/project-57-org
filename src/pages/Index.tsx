@@ -66,9 +66,8 @@ const navigate = useNavigate();
 
           </div>
         </div>
-                <OurSupporters />
       </section>
-
+    <OurSupporters />
       <ScrollingStats />
       <ImpactSection />
       <ProgramCards />
