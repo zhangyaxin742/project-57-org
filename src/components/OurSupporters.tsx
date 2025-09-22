@@ -18,75 +18,56 @@ export default function OurSupporters({ embedded = false, glass = false, fullBle
 
   return (
     <section className={cn(embedded ? "py-0" : "py-12")}>
-      <div
-        className={cn(
-          fullBleed
-            ? "w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
-            : "w-full"
-        )}
-      >
-        <style>{`
-          @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-          .marquee {
-            position: relative; overflow: hidden;
-            ${glass
-              ? "background: rgba(255,255,255,0.06); backdrop-filter: blur(8px); border-top: 1px solid rgba(255,255,255,0.10); border-bottom: 1px solid rgba(255,255,255,0.08);"
-              : "background: transparent;"
-            }
-          }
-
-          /* exact 200% track so -50% = one full group, no lag */
-          .track {
-            display: flex; align-items: center;
-            width: 200%; will-change: transform;
-            animation: marquee 20s linear infinite;
-          }
-          .marquee:hover .track { animation-play-state: paused; }
-
-          .group {
-            display: flex; align-items: center; gap: 2rem;
-            flex: 0 0 50%; white-space: nowrap;
-          }
-
-          .chip {
-            flex: 0 0 auto; color: #fff;
-            background: rgba(255,255,255,.10);
-            border: 1px solid rgba(255,255,255,.16);
-            padding: .5rem .9rem; border-radius: 9999px;
-            font-weight: 700; white-space: nowrap;
-          }
-
-          .logo {
-            width: 140px; height: 64px; object-fit: contain; display: block;
-            filter: opacity(.95);
-            transition: transform .18s ease, opacity .18s ease;
-          }
-          .logo:hover { filter: opacity(1); transform: scale(1.04); }
-        `}</style>
-
-        <div className="marquee">
-          <div className="track">
+      <div className="w-full">
+        <div 
+          className={cn(
+            "relative overflow-hidden group",
+            glass && "bg-white/[0.06] backdrop-blur-sm border-t border-white/10 border-b border-white/[0.08]"
+          )}
+        >
+          <div className="flex items-center w-[200%] animate-marquee group-hover:[animation-play-state:paused]">
             {/* pass 1 */}
-            <div className="group">
-              <span className="chip">
+            <div className="flex items-center gap-8 flex-[0_0_50%] whitespace-nowrap">
+              <span className="flex-none text-white bg-white/10 border border-white/[0.16] px-4 py-2 rounded-full font-bold whitespace-nowrap">
                 Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Supporters</span>
               </span>
               {partners.map((p) => (
-                <a key={p.src} href={p.href} target="_blank" rel="noopener noreferrer" aria-label={p.alt}>
-                  <img className="logo" src={p.src} alt={p.alt} />
+                <a 
+                  key={p.src} 
+                  href={p.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label={p.alt}
+                  className="block"
+                >
+                  <img 
+                    className="w-[140px] h-16 object-contain block opacity-95 transition-all duration-200 ease-out hover:opacity-100 hover:scale-105" 
+                    src={p.src} 
+                    alt={p.alt} 
+                  />
                 </a>
               ))}
             </div>
 
             {/* pass 2 (duplicate for seamless loop) */}
-            <div className="group" aria-hidden="true">
-              <span className="chip">
+            <div className="flex items-center gap-8 flex-[0_0_50%] whitespace-nowrap" aria-hidden="true">
+              <span className="flex-none text-white bg-white/10 border border-white/[0.16] px-4 py-2 rounded-full font-bold whitespace-nowrap">
                 Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Supporters</span>
               </span>
               {partners.map((p) => (
-                <a key={`dup-${p.src}`} href={p.href} target="_blank" rel="noopener noreferrer" aria-label={p.alt}>
-                  <img className="logo" src={p.src} alt={p.alt} />
+                <a 
+                  key={`dup-${p.src}`} 
+                  href={p.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label={p.alt}
+                  className="block"
+                >
+                  <img 
+                    className="w-[140px] h-16 object-contain block opacity-95 transition-all duration-200 ease-out hover:opacity-100 hover:scale-105" 
+                    src={p.src} 
+                    alt={p.alt} 
+                  />
                 </a>
               ))}
             </div>
