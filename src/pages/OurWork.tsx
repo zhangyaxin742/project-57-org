@@ -808,7 +808,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
           {/* Grid layer (unchanged markup) */}
           <div className="transition-opacity duration-300 md:invisible md:opacity-0 md:pointer-events-none md:group-hover:visible md:group-hover:opacity-100 md:group-hover:pointer-events-auto motion-reduce:visible motion-reduce:opacity-100 motion-reduce:pointer-events-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {workshops.map((workshop, index) => (
+              {workshops.slice(0, 3).map((workshop, index) => (
                 <Card 
                   key={index} 
                   className="h-full bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300"
@@ -847,14 +847,14 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
 
           {/* Marquee layer (desktop only) */}
           {!prefersReducedMotion && (
-            <div className="pointer-events-none absolute inset-0 hidden md:block transition-opacity duration-300 group-hover:opacity-0 motion-reduce:hidden" data-marquee-container>
+            <div className="pointer-events-none absolute inset-0 hidden md:block transition-opacity duration-300 group-hover:opacity-0 motion-reduce:hidden max-w-full overflow-x-hidden" data-marquee-container>
               <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-background to-transparent pointer-events-none" />
               <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent pointer-events-none" />
-              <div className="overflow-hidden">
-                <div className="flex items-start gap-6 will-change-transform animate-[marquee_25s_linear_infinite] group-hover:[animation-play-state:paused]" data-marquee-track>
+              <div className="overflow-x-hidden w-full max-w-full">
+                <div className="flex items-start gap-6 will-change-transform animate-[marquee_25s_linear_infinite] group-hover:[animation-play-state:paused] w-max" data-marquee-track>
                   {/* pass 1 */}
                   {workshops.map((workshop, index) => (
-                    <div className="min-w-[320px] max-w-[360px]" key={`m1-${index}`}>
+                    <div className="w-[340px] flex-shrink-0" key={`m1-${index}`}>
                       <Card 
                         className="h-full bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300"
                       >
@@ -887,7 +887,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                   ))}
                   {/* pass 2 */}
                   {workshops.map((workshop, index) => (
-                    <div className="min-w-[320px] max-w-[360px]" key={`m2-${index}`}>
+                    <div className="w-[340px] flex-shrink-0" key={`m2-${index}`}>
                       <Card 
                         className="h-full bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300"
                       >
