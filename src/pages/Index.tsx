@@ -56,7 +56,7 @@ const navigate = useNavigate();
   </button>
   
   <button
-    onClick={() => navigate('/about')}
+    onClick={() => navigate('/ourwork#curriculum')}
     className="px-8 py-4 border-2 border-white/20 rounded-full text-white font-semibold text-lg hover:border-sunset-pink hover:text-sunset-pink transition-colors duration-300"
   >
     Read Our Mission
