@@ -18,13 +18,7 @@ export default function OurSupporters({ embedded = false, glass = false, fullBle
 
   return (
     <section className={cn(embedded ? "py-0" : "py-12")}>
-      <div
-        className={cn(
-          fullBleed
-            ? "w-screen"
-            : "w-full"
-        )}
-      >
+      <div className="w-full">
         <style>{`
           @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
