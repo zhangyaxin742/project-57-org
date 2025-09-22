@@ -74,16 +74,12 @@ const Index = () => {
             <div className="pb-20" />
           </div>
         </div>
-
-        {/* ===== Fixed/isolated marquee at hero bottom (does not affect layout) ===== */}
-        <div className="absolute inset-x-0 bottom-0">
-          <OurSupporters embedded glass fullBleed />
-        </div>
       </section>
 
       <ScrollingStats />
       <ImpactSection />
       <ProgramCards />
+          <OurSupporters embedded glass fullBleed />
     </div>
   );
 };
