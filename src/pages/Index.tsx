@@ -115,54 +115,45 @@ const navigate = useNavigate();
                   href="https://partner1.example.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Partner 1"
+                  aria-label="MEFA (Massachusetts Educational Financing Authority)"
                 >
-                  <img src="/assets/partner1.png" alt="Partner 1" className="partner-logo" />
+                  <img src="/assets/mefa-text.png" alt="MEFA" className="partner-logo" />
                 </a>
 
                 <a
                   href="https://partner2.example.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Partner 2"
+                  aria-label="MFEC (Massachusetts Financial Educators' Council)"
                 >
-                  <img src="/assets/partner2.png" alt="Partner 2" className="partner-logo" />
+                  <img src="/assets/MFEC.png" alt="MFEC" className="partner-logo" />
                 </a>
 
                 <a
                   href="https://partner3.example.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Partner 3"
+                  aria-label="The Midas Collaborative"
                 >
-                  <img src="/assets/partner3.png" alt="Partner 3" className="partner-logo" />
+                  <img src="/assets/midas.png" alt="F.E.N." className="partner-logo" />
                 </a>
 
                 <a
                   href="https://partner4.example.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Partner 4"
+                  aria-label="OEE (Office of Economic Empowerment)"
                 >
-                  <img src="/assets/partner4.png" alt="Partner 4" className="partner-logo" />
+                  <img src="/assets/oee.png" alt="OEE" className="partner-logo" />
                 </a>
 
                 <a
                   href="https://partner5.example.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Partner 5"
+                  aria-label="The Babson Financial Literacy Project"
                 >
-                  <img src="/assets/partner5.png" alt="Partner 5" className="partner-logo" />
-                </a>
-
-                <a
-                  href="https://partner6.example.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Partner 6"
-                >
-                  <img src="/assets/partner6.png" alt="Partner 6" className="partner-logo" />
+                  <img src="/assets/babson.png" alt="BFLP" className="partner-logo" />
                 </a>
               </div>
 
