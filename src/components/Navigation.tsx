@@ -15,7 +15,8 @@ const Navigation = () => {
     { name: 'Home', path: '/' },
     { name: 'Our Work',path: '/ourwork',
       dropdown: [ 
-      { name: 'About',        path: '/ourwork#about' }]
+      { name: 'About',        path: '/ourwork#about' }, 
+    { name: 'Media', path: '/media'}]
     },
     { name: 'Get Involved', path: '/get-involved', 
     dropdown: [

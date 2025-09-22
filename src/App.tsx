@@ -59,6 +59,7 @@ const App = () => (
           <Route path="/get-involved" element={<GetInvolved />} />
            <Route path="/get-involved#president" element={<Navigate to="/get-involved#president" replace />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/media" element={<Navigate to="/media" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="/briefs/:slug" element={<Brief />} />
           <Route path="*" element={<NotFound />} />
