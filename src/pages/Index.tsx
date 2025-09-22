@@ -66,13 +66,12 @@ const navigate = useNavigate();
 
           </div>
         </div>
-        
+                <OurSupporters />
       </section>
 
       <ScrollingStats />
       <ImpactSection />
       <ProgramCards />
-        <OurSupporters />
     </div>;
 };
 export default Index;
