@@ -93,6 +93,7 @@ const getStatusClasses = (status: BillStatus) => STATUS_CLASSES[status];
     title: string;
     location: string;
     date: string;
+    link: string; 
   };
 
   // tab behaviors 
@@ -449,7 +450,7 @@ const getStatusColor = (status: BillStatus): string => {
     {
       title: "College Financing Demystified - The FAFSA Scares Me",
       location: "Arlington, MA - TBD",
-      date: "Sept 27, 2025"
+      date: "Sept 27, 2025",
       link: "https://luma.com/sz3hg1v5",
     },
     {
@@ -461,7 +462,7 @@ const getStatusColor = (status: BillStatus): string => {
         {
       title: "Investing 101 - Yes, Even You Can Do It!",
       location: "Arlington, MA - Robbins Library",
-      date: "Oct 12, 2025"
+      date: "Oct 12, 2025",
       link: "https://luma.com/y8oihfxk",
     }
   ];
@@ -833,10 +834,10 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                       asChild 
                         className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
                       >
-                        <Link href={workshop.link} target="_blank" rel="noopener noreferrer">
-                        Register Now
+  <a href={workshop.link} target="_blank" rel="noopener noreferrer">
+    Register Now
+  </a>
                       </Button>
-                      </Link>
                     </CardContent>
                   </div>
                 </Card>
