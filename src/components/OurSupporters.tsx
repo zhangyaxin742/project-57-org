@@ -28,7 +28,7 @@ export default function OurSupporters() {
             display: flex; align-items: center; gap: 2rem;
             width: max-content; /* shrink-wrap contents */
             will-change: transform;
-            animation: marquee 20s linear infinite;
+            animation: marquee 15s linear infinite;
           }
           .marquee:hover .track { animation-play-state: paused; }
 
@@ -62,7 +62,7 @@ export default function OurSupporters() {
           <div className="track">
             {/* pass 1 */}
             <div className="group">
-              <span className="chip">Our Supporters</span>
+              <span className="chip">Our <span className="bg-sunset-gradient bg-clip-text text-transparent"> Supporters</span> </span>
               {partners.map(p => (
                 <a key={p.src} href={p.href} target="_blank" rel="noopener noreferrer" aria-label={p.alt}>
                   <img className="logo" src={p.src} alt={p.alt} />
