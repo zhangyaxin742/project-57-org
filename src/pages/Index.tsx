@@ -4,6 +4,7 @@ import ScrollingStats from '../components/ScrollingStats';
 import ImpactSection from '../components/ImpactSection';
 import ProgramCards from '../components/ProgramCards';
 import { useNavigate } from 'react-router-dom';
+import OurSupporters from '@/components/OurSupporters';
 const Index = () => {
 
 const navigate = useNavigate(); 
@@ -71,122 +72,7 @@ const navigate = useNavigate();
       <ScrollingStats />
       <ImpactSection />
       <ProgramCards />
-      {/* Our Partners Section */}
-      <section className="py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Our Supporters</h2>
-
-          {/* Marquee styles (kept local to this component) */}
-          <style>{`
-            @keyframes marquee {
-              0% { transform: translateX(0); }
-              100% { transform: translateX(-50%); }
-            }
-            .marquee { position: relative; overflow: hidden; }
-            .marquee-track {
-              display: flex;
-              gap: 2rem;
-              align-items: center;
-              will-change: transform;
-              animation: marquee 20s linear infinite;
-            }
-            /* pause animation when hovering anywhere in the marquee (including on logos) */
-            .marquee:hover .marquee-track { animation-play-state: paused; }
-            .partner-logo {
-              width: 140px;
-              height: 64px;
-              object-fit: contain;
-              filter: grayscale(100%) opacity(.85);
-              transition: transform .18s ease, filter .18s ease, opacity .18s ease;
-            }
-            .partner-logo:hover {
-              filter: grayscale(0) opacity(1);
-              transform: scale(1.04);
-            }
-            /* ensure duplicated content sits inline for seamless loop */
-            .marquee-track > .marquee-group { display: flex; gap: 2rem; align-items: center; }
-          `}</style>
-
-          <div className="marquee mt-4">
-            <div className="marquee-track">
-              {/* First set of partner logos */}
-              <div className="marquee-group">
-                <a
-                  href="https://partner1.example.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="MEFA (Massachusetts Educational Financing Authority)"
-                >
-                  <img src="/assets/mefa-text.png" alt="MEFA" className="partner-logo" />
-                </a>
-
-                <a
-                  href="https://partner2.example.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="MFEC (Massachusetts Financial Educators' Council)"
-                >
-                  <img src="/assets/MFEC.png" alt="MFEC" className="partner-logo" />
-                </a>
-
-                <a
-                  href="https://partner3.example.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="The Midas Collaborative"
-                >
-                  <img src="/assets/midas.png" alt="F.E.N." className="partner-logo" />
-                </a>
-
-                <a
-                  href="https://partner4.example.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="OEE (Office of Economic Empowerment)"
-                >
-                  <img src="/assets/oee.png" alt="OEE" className="partner-logo" />
-                </a>
-
-                <a
-                  href="https://partner5.example.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="The Babson Financial Literacy Project"
-                >
-                  <img src="/assets/babson.png" alt="BFLP" className="partner-logo" />
-                </a>
-              </div>
-
-              {/* Duplicate the same group for a continuous seamless loop */}
-              <div className="marquee-group" aria-hidden="true">
-                <a href="https://partner1.example.com" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/partner1.png" alt="" className="partner-logo" />
-                </a>
-
-                <a href="https://partner2.example.com" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/partner2.png" alt="" className="partner-logo" />
-                </a>
-
-                <a href="https://partner3.example.com" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/partner3.png" alt="" className="partner-logo" />
-                </a>
-
-                <a href="https://partner4.example.com" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/partner4.png" alt="" className="partner-logo" />
-                </a>
-
-                <a href="https://partner5.example.com" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/partner5.png" alt="" className="partner-logo" />
-                </a>
-
-                <a href="https://partner6.example.com" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/partner6.png" alt="" className="partner-logo" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        <OurSupporters />
     </div>;
 };
 export default Index;
