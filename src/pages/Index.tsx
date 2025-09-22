@@ -74,7 +74,7 @@ const navigate = useNavigate();
       {/* Our Partners Section */}
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Our Partners</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Our Supporters</h2>
 
           {/* Marquee styles (kept local to this component) */}
           <style>{`
