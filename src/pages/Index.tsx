@@ -63,14 +63,16 @@ const navigate = useNavigate();
     Read Our Mission
   </button>
 </div>
-
+<div className="mt-8 left-0 right-0 -bottom-10">
+  <OurSupporters embedded={true} />
+</div>
           </div>
         </div>
       </section>
-    <OurSupporters />
       <ScrollingStats />
       <ImpactSection />
       <ProgramCards />
     </div>;
 };
 export default Index;
+
