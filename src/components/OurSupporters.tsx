@@ -21,7 +21,7 @@ export default function OurSupporters({ embedded = false, glass = false, fullBle
       <div
         className={cn(
           fullBleed
-            ? "w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
+            ? "w-screen"
             : "w-full"
         )}
       >
