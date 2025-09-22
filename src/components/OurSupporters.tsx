@@ -16,30 +16,42 @@ export default function OurSupporters() {
 
                 <style>{`
                     @keyframes marquee {
-                        from { transform: translateX(0); }
-                        to   { transform: translateX(-50%); }
+                        0%   { transform: translate3d(0,0,0); }
+                        100% { transform: translate3d(-50%,0,0); }
                     }
-                    .marquee { position: relative; overflow: hidden; }
+
+                    .marquee { position: relative; overflow: hidden; --bg: #ffffff; background: #ffffff; }
                     .fade-l, .fade-r {
                         position:absolute; top:0; bottom:0; width:64px; pointer-events:none;
                     }
                     .fade-l { left:0; background:linear-gradient(to right, var(--bg, #0b1220), transparent); }
                     .fade-r { right:0; background:linear-gradient(to left, var(--bg, #0b1220), transparent); }
 
+                    /* track is 200% wide so moving -50% equals one full pass */
                     .track {
-                        display:flex; gap:2rem; align-items:center;
+                        display:flex;
+                        align-items:center;
+                        width:200%;
                         will-change: transform;
                         animation: marquee 20s linear infinite;
                     }
                     .marquee:hover .track { animation-play-state: paused; }
 
-                    .group { display:flex; gap:2rem; align-items:center; }
+                    /* each group is an unshrinkable block (no wrapping or shrinking) */
+                    .group {
+                        display:flex;
+                        gap:2rem;            /* spacing BETWEEN logos inside each group */
+                        align-items:center;
+                        flex: 0 0 auto;     /* important: prevent shrinking so the duplicate aligns exactly */
+                    }
+
                     .logo {
                         width:140px; height:64px; object-fit:contain;
-                        filter:grayscale(100%) opacity(.85);
+                        display:block;      /* remove inline whitespace */
+                        filter: opacity(.85);
                         transition: transform .18s ease, filter .18s ease, opacity .18s ease;
                     }
-                    .logo:hover { filter:grayscale(0) opacity(1); transform:scale(1.04); }
+                    .logo:hover { filter: opacity(1); transform:scale(1.04); }
                 `}</style>
 
                 <div className="marquee mt-4">
