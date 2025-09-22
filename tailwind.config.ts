@@ -132,6 +132,14 @@ export default {
 						transform: 'scale(4)',
 						opacity: '0'
 					}
+				},
+				'marquee': {
+					'0%': {
+						transform: 'translateX(0%)'
+					},
+					'100%': {
+						transform: 'translateX(-50%)'
+					}
 				}
 			},
 			animation: {
@@ -140,7 +148,8 @@ export default {
 				'fade-in': 'fade-in 0.6s ease-out',
 				'slide-in-right': 'slide-in-right 0.6s ease-out',
 				'counter-up': 'counter-up 0.8s ease-out',
-				'ripple': 'ripple 0.6s linear'
+				'ripple': 'ripple 0.6s linear',
+				'marquee': 'marquee 20s linear infinite'
 			}
 		}
 	},
