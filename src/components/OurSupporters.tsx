@@ -1,83 +1,89 @@
 import React from "react";
 
 const partners = [
-    { href: "https://www.mefa.org/",  src: "/assets/mefa-text.png", alt: "MEFA" },
-    { href: "https://ma.financialeducatorscouncil.org/", src: "/assets/MFEC.png", alt: "MFEC" },
-    { href: "https://www.midascollab.org/", src: "/assets/midas.png", alt: "The Midas Collaborative" },
-    { href: "https://www.mass.gov/orgs/office-of-economic-empowerment", src: "/assets/oee.png", alt: "OEE" },
-    { href: "https://www.babson.edu/the-babson-financial-literacy-project/", src: "/assets/babson.png", alt: "BFLP" },
+  { href: "https://www.mefa.org/",  src: "/assets/mefa-text.png", alt: "MEFA" },
+  { href: "https://ma.financialeducatorscouncil.org/", src: "/assets/MFEC.png", alt: "MFEC" },
+  { href: "https://www.midascollab.org/", src: "/assets/midas.png", alt: "The Midas Collaborative" },
+  { href: "https://www.mass.gov/orgs/office-of-economic-empowerment", src: "/assets/oee.png", alt: "OEE" },
+  { href: "https://www.babson.edu/the-babson-financial-literacy-project/", src: "/assets/babson.png", alt: "BFLP" },
 ];
 
 export default function OurSupporters() {
-    return (
-        <section className="py-16">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Our Supporters</h2>
+  return (
+    <section
+      className="py-12"
+      // match site background via Tailwind CSS var
+      style={{ ["--bg" as any]: "hsl(var(--background))" }}
+    >
+      {/* Full-bleed container */}
+      <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
 
-                <style>{`
-                    @keyframes marquee {
-                        0%   { transform: translate3d(0,0,0); }
-                        100% { transform: translate3d(-50%,0,0); }
-                    }
+        <style>{`
+          @keyframes marquee {
+            from { transform: translate3d(0,0,0); }
+            to   { transform: translate3d(-50%,0,0); }
+          }
+          .marquee { position: relative; overflow: hidden; background: var(--bg); }
+          .track {
+            display: flex; align-items: center; gap: 2rem;
+            width: max-content; /* shrink-wrap contents */
+            will-change: transform;
+            animation: marquee 20s linear infinite;
+          }
+          .marquee:hover .track { animation-play-state: paused; }
 
-                    .marquee { position: relative; overflow: hidden; --bg: #ffffff; background: #ffffff; }
-                    .fade-l, .fade-r {
-                        position:absolute; top:0; bottom:0; width:64px; pointer-events:none;
-                    }
-                    .fade-l { left:0; background:linear-gradient(to right, var(--bg, #0b1220), transparent); }
-                    .fade-r { right:0; background:linear-gradient(to left, var(--bg, #0b1220), transparent); }
+          .group { display: flex; align-items: center; gap: 2rem; flex: 0 0 auto; }
+          .chip {
+            flex: 0 0 auto;
+            color: white; background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: .5rem .9rem; border-radius: 9999px;
+            font-weight: 700; letter-spacing: .01em;
+            white-space: nowrap;
+          }
+          .logo {
+            width: 140px; height: 64px; object-fit: contain; display: block;
+            filter: grayscale(100%) opacity(.85);
+            transition: transform .18s ease, filter .18s ease, opacity .18s ease;
+          }
+          .logo:hover { filter: grayscale(0) opacity(1); transform: scale(1.04); }
 
-                    /* track is 200% wide so moving -50% equals one full pass */
-                    .track {
-                        display:flex;
-                        align-items:center;
-                        width:200%;
-                        will-change: transform;
-                        animation: marquee 20s linear infinite;
-                    }
-                    .marquee:hover .track { animation-play-state: paused; }
+          .fade {
+            position: absolute; top: 0; bottom: 0; width: 64px; pointer-events: none;
+          }
+          .fade.left  { left: 0;  background: linear-gradient(to right, var(--bg), transparent); }
+          .fade.right { right: 0; background: linear-gradient(to left,  var(--bg), transparent); }
+        `}</style>
 
-                    /* each group is an unshrinkable block (no wrapping or shrinking) */
-                    .group {
-                        display:flex;
-                        gap:2rem;            /* spacing BETWEEN logos inside each group */
-                        align-items:center;
-                        flex: 0 0 auto;     /* important: prevent shrinking so the duplicate aligns exactly */
-                    }
+        <div className="marquee">
+          <div className="fade left" />
+          <div className="fade right" />
 
-                    .logo {
-                        width:140px; height:64px; object-fit:contain;
-                        display:block;      /* remove inline whitespace */
-                        filter: opacity(.85);
-                        transition: transform .18s ease, filter .18s ease, opacity .18s ease;
-                    }
-                    .logo:hover { filter: opacity(1); transform:scale(1.04); }
-                `}</style>
-
-                <div className="marquee mt-4">
-                    <div className="fade-l" />
-                    <div className="fade-r" />
-
-                    <div className="track">
-                        {/* pass 1 */}
-                        <div className="group">
-                            {partners.map(p => (
-                                <a key={p.src} href={p.href} target="_blank" rel="noopener noreferrer" aria-label={p.alt}>
-                                    <img className="logo" src={p.src} alt={p.alt} />
-                                </a>
-                            ))}
-                        </div>
-                        {/* pass 2 (aria-hidden for accessibility) */}
-                        <div className="group" aria-hidden="true">
-                            {partners.map(p => (
-                                <a key={`dup-${p.src}`} href={p.href} target="_blank" rel="noopener noreferrer" aria-label={p.alt}>
-                                    <img className="logo" src={p.src} alt={p.alt} />
-                                </a>
-                            ))}
-                        </div>
-                    </div>
-                </div>
+          <div className="track">
+            {/* pass 1 */}
+            <div className="group">
+              <span className="chip">Our Supporters</span>
+              {partners.map(p => (
+                <a key={p.src} href={p.href} target="_blank" rel="noopener noreferrer" aria-label={p.alt}>
+                  <img className="logo" src={p.src} alt={p.alt} />
+                </a>
+              ))}
             </div>
-        </section>
-    );
+            {/* pass 2 (duplicate for seamless loop) */}
+            <div className="group" aria-hidden="true">
+              <span className="chip">Our Supporters</span>
+              {partners.map(p => (
+                <a key={`dup-${p.src}`} href={p.href} target="_blank" rel="noopener noreferrer" aria-label={p.alt}>
+                  <img className="logo" src={p.src} alt={p.alt} />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Optional standard padding container below, if you need more section content later */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+    </section>
+  );
 }
