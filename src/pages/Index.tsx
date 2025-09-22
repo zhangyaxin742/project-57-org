@@ -59,7 +59,7 @@ const Index = () => {
                 onClick={() => navigate("/ourwork#curriculum")}
                 className="group relative h-14 min-w-[260px] px-8 bg-sunset-gradient rounded-full text-white font-semibold text-lg hover:scale-105 transition-transform duration-300"
               >
-                <span className="relative z-10">Start Your Journey</span>
+                <span className="relative z-10">RSVP Today</span>
               </button>
 
               <button
