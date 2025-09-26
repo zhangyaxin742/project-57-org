@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import ScrollToTop from "@/components/ui/scroll-to-top";
 import Brief from "./pages/Briefs";
 import Contact from "./pages/Contact";
+import Media from "./pages/Media";
 import { useEffect, useState } from "react"; 
 
 const queryClient = new QueryClient();
@@ -59,7 +60,7 @@ const App = () => (
           <Route path="/get-involved" element={<GetInvolved />} />
            <Route path="/get-involved#president" element={<Navigate to="/get-involved#president" replace />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/media" element={<Navigate to="/media" replace />} />
+        <Route path="/media" element={<Media />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="/briefs/:slug" element={<Brief />} />
           <Route path="*" element={<NotFound />} />
