@@ -248,11 +248,11 @@ const MediaCard = ({ item, onClick }: { item: MediaItem; onClick: () => void }) 
       >
         {item.thumbnail && (
           <div className="relative h-48 bg-muted rounded-t-lg overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+            <div className="absolute inset-0 bg-sunset-gradient-subtle flex items-center justify-center">
               {getIcon()}
             </div>
             {item.featured && (
-              <Badge className="absolute top-2 right-2 bg-primary text-primary-foreground">
+              <Badge className="absolute top-2 right-2 bg-sunset-gradient text-white border-0">
                 Featured
               </Badge>
             )}
@@ -308,8 +308,8 @@ const MediaModal = ({ item, isOpen, onClose }: { item: MediaItem | null; isOpen:
         <div className="space-y-4">
           {item.thumbnail && (
             <div className="h-64 bg-muted rounded-lg overflow-hidden">
-              <div className="h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <Play className="w-12 h-12 text-muted-foreground" />
+              <div className="h-full bg-sunset-gradient-subtle flex items-center justify-center">
+                <Play className="w-12 h-12 text-sunset-orange" />
               </div>
             </div>
           )}
@@ -342,7 +342,7 @@ const MediaModal = ({ item, isOpen, onClose }: { item: MediaItem | null; isOpen:
           )}
           
           <div className="flex gap-2 pt-4">
-            <Button className="flex-1">
+            <Button className="flex-1 bg-sunset-gradient hover:bg-sunset-gradient/90 text-white">
               <Eye className="w-4 h-4 mr-2" />
               View Full Content
             </Button>
@@ -378,7 +378,7 @@ export default function MediaPage(): JSX.Element {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-16 pb-12 bg-gradient-to-br from-primary/5 to-accent/5">
+      <section className="pt-16 pb-12 bg-sunset-gradient-subtle">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -387,7 +387,7 @@ export default function MediaPage(): JSX.Element {
             className="text-center"
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Project 57 <span className="text-primary">In the Media</span>
+              Project 57 <span className="text-sunset-orange">In the Media</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Discover our latest videos, press coverage, photo galleries, and thought leadership articles 
@@ -436,7 +436,7 @@ export default function MediaPage(): JSX.Element {
                 key={filter.key}
                 variant={selectedFilter === filter.key ? "default" : "outline"}
                 onClick={() => setSelectedFilter(filter.key as any)}
-                className="text-sm"
+                className={`text-sm ${selectedFilter === filter.key ? 'bg-sunset-gradient text-white hover:bg-sunset-gradient/90' : ''}`}
               >
                 {filter.label}
               </Button>
