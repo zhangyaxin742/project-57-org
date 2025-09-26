@@ -18,59 +18,52 @@ export default function OurSupporters({ embedded = false, glass = false, fullBle
 
   return (
     <section className={cn(embedded ? "py-0" : "py-12")}>
-      <div className="w-full">
+      <div className="w-full max-w-7xl mx-auto px-4">
         <div 
           className={cn(
-            "relative overflow-hidden group",
-            glass && "bg-white/[0.06] backdrop-blur-sm border-t border-white/10 border-b border-white/[0.08]"
+            "relative p-6 rounded-2xl",
+            glass && "bg-white/[0.06] backdrop-blur-sm border border-white/10"
           )}
         >
-          <div className="flex items-center w-[200%] animate-marquee group-hover:[animation-play-state:paused]">
-            {/* pass 1 */}
-            <div className="flex items-center gap-8 flex-[0_0_50%] whitespace-nowrap">
-              <span className="flex-none text-white bg-white/10 border border-white/[0.16] px-4 py-2 rounded-full font-bold whitespace-nowrap">
+          {/* Mosaic Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6">
+            {/* Header Tile */}
+            <div className="col-span-2 md:col-span-3 lg:col-span-1 flex items-center justify-center bg-white/5 border border-white/[0.16] rounded-xl p-4 min-h-[120px] transition-all duration-300 ease-out hover:scale-105 hover:bg-sunset-gradient hover:border-sunset-orange/50 hover:shadow-lg hover:shadow-sunset-orange/20">
+              <span className="text-center text-white font-bold text-sm lg:text-base">
                 Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Supporters</span>
               </span>
-              {partners.map((p) => (
-                <a 
-                  key={p.src} 
-                  href={p.href} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  aria-label={p.alt}
-                  className="block"
-                >
-                  <img 
-                    className="w-[140px] h-16 object-contain block opacity-95 transition-all duration-200 ease-out hover:opacity-100 hover:scale-105" 
-                    src={p.src} 
-                    alt={p.alt} 
-                  />
-                </a>
-              ))}
             </div>
 
-            {/* pass 2 (duplicate for seamless loop) */}
-            <div className="flex items-center gap-8 flex-[0_0_50%] whitespace-nowrap" aria-hidden="true">
-              <span className="flex-none text-white bg-white/10 border border-white/[0.16] px-4 py-2 rounded-full font-bold whitespace-nowrap">
-                Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Supporters</span>
-              </span>
-              {partners.map((p) => (
+            {/* Partner Tiles */}
+            {partners.map((partner, index) => (
+              <div 
+                key={partner.src}
+                className="group relative col-span-1 lg:col-span-1"
+              >
                 <a 
-                  key={`dup-${p.src}`} 
-                  href={p.href} 
+                  href={partner.href} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  aria-label={p.alt}
-                  className="block"
+                  aria-label={partner.alt}
+                  className="block relative overflow-hidden bg-white/5 border border-white/[0.16] rounded-xl p-4 min-h-[120px] transition-all duration-300 ease-out hover:scale-110 hover:z-10 hover:shadow-2xl hover:shadow-sunset-orange/30 group"
                 >
-                  <img 
-                    className="w-[140px] h-16 object-contain block opacity-95 transition-all duration-200 ease-out hover:opacity-100 hover:scale-105" 
-                    src={p.src} 
-                    alt={p.alt} 
-                  />
+                  {/* Sunset gradient overlay - appears on hover */}
+                  <div className="absolute inset-0 bg-sunset-gradient opacity-0 group-hover:opacity-20 transition-opacity duration-300 ease-out rounded-xl" />
+                  
+                  {/* Border glow effect */}
+                  <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-sunset-orange/50 transition-all duration-300 ease-out" />
+                  
+                  {/* Logo container */}
+                  <div className="relative z-10 flex items-center justify-center h-full">
+                    <img 
+                      className="max-w-full max-h-12 object-contain opacity-90 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:brightness-110 group-hover:saturate-110" 
+                      src={partner.src} 
+                      alt={partner.alt} 
+                    />
+                  </div>
                 </a>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
