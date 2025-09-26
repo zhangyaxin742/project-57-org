@@ -331,7 +331,7 @@ function GetInvolved() {
   }, [location.hash]);
 
   return (
-    <div className="min-h-screen bg-gradient from-gray-900 to-black to-gray-900 text-white">
+    <div className="min-h-screen bg-gradient from-gray-900 to-black to-gray-900 text-white overflow-y-scroll no-scrollbar">
       <Navigation />
       
       {/* Hero */}

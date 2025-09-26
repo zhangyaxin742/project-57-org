@@ -948,7 +948,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
   );
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white overflow-y-scroll no-scrollbar">
       <Navigation />
 
       {/* Hero Section */}

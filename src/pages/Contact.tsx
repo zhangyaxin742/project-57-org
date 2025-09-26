@@ -85,7 +85,7 @@ setStatus('error');
   );
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-black overflow-y-scroll no-scrollbar">
       <Navigation />
 
       {/* Hero Section */}

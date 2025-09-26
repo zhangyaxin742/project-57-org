@@ -18,7 +18,7 @@ class BriefErrorBoundary extends React.Component<{ children: React.ReactNode }, 
   render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen bg-background text-foreground flex items-center justify-center px-6">
+        <div className="min-h-screen bg-background text-foreground flex items-center justify-center px-6 overflow-y-scroll no-scrollbar">
           <div className="max-w-md text-center">
             <h1 className="text-2xl font-bold mb-2">There was a problem loading this brief.</h1>
             <p className="text-muted-foreground mb-6">Please go back and try another brief.</p>
