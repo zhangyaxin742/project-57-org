@@ -21,37 +21,35 @@ export default function OurSupporters({ embedded = false, glass = false, fullBle
 
   return (
     <section className={cn(embedded ? "py-0" : "py-16", "bg-gray-900")}>
-      <div className={cn("max-w-6xl mx-auto px-4", glass && "bg-white/[0.06] backdrop-blur-sm border border-white/10 rounded-2xl p-8")}>
-        
-        {/* Section Heading */}
-        <h2 className="text-3xl font-bold text-white mb-12 text-center">
+      {/* Section Heading - Constrained width for readability */}
+      <div className={cn("max-w-6xl mx-auto px-4 mb-12", glass && "bg-white/[0.06] backdrop-blur-sm border border-white/10 rounded-2xl p-8")}>
+        <h2 className="text-3xl font-bold text-white text-center">
           Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Supporters</span>
         </h2>
+      </div>
 
-        {/* Marquee Container */}
-        <div className="relative overflow-hidden marquee-pause">
-          <div className="animate-marquee flex items-center gap-12">
-            {marqueePartners.map((partner, index) => (
-              <a
-                key={`${partner.alt}-${index}`}
-                href={partner.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={partner.alt}
-                className="flex-shrink-0 transition-transform duration-300 hover:scale-110 hover:z-10"
-              >
-                <div className="h-16 w-24 bg-white/95 rounded-lg p-2 flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  <img
-                    src={partner.src}
-                    alt={partner.alt}
-                    className="max-h-full max-w-full object-contain"
-                  />
-                </div>
-              </a>
-            ))}
-          </div>
+      {/* Full-width Marquee Container */}
+      <div className="relative overflow-hidden marquee-pause w-full">
+        <div className="animate-marquee flex items-center gap-12">
+          {marqueePartners.map((partner, index) => (
+            <a
+              key={`${partner.alt}-${index}`}
+              href={partner.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={partner.alt}
+              className="flex-shrink-0 transition-transform duration-300 hover:scale-110 hover:z-10"
+            >
+              <div className="h-16 w-24 bg-white/95 rounded-lg p-2 flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <img
+                  src={partner.src}
+                  alt={partner.alt}
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
+            </a>
+          ))}
         </div>
-
       </div>
     </section>
   );
