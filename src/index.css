@@ -91,4 +91,8 @@
     width: 300px;
     height: 300px;
   }
+
+  .marquee-pause:hover .animate-marquee {
+    animation-play-state: paused;
+  }
 }
