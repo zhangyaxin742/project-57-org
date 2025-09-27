@@ -40,11 +40,11 @@ export default function OurSupporters({ embedded = false, glass = false, fullBle
                 aria-label={partner.alt}
                 className="flex-shrink-0 transition-transform duration-300 hover:scale-110 hover:z-10"
               >
-                <div className="h-6 w-6 bg-white/95 rounded-lg flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="h-16 w-24 bg-white/95 rounded-lg p-2 flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <img
                     src={partner.src}
                     alt={partner.alt}
-                    className="h-full w-full object-contain"
+                    className="max-h-full max-w-full object-contain"
                   />
                 </div>
               </a>
