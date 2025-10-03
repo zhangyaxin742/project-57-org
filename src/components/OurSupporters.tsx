@@ -24,7 +24,8 @@ export default function OurSupporters({
     <section
       className={cn(
         embedded ? "py-0" : "py-16",
-        "bg-gray-900",
+        // vertical gradient from black at top to white at bottom
+        "bg-gradient-to-b from-black to-white",
         glass && "bg-white/[0.06] backdrop-blur-sm"
       )}
     >
@@ -57,8 +58,6 @@ export default function OurSupporters({
                 rel="noopener noreferrer"
                 aria-label={p.alt}
                 className={cn(
-                  // Glass tile
-                  "group block rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm",
                   // Layout & spacing
                   "aspect-[3/2] p-4",
                   // Effects
