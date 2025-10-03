@@ -36,6 +36,14 @@
     --ring: 0 0% 80%;
 
     --radius: 0.75rem;
+      --sidebar-background: 0 0% 98%;
+  --sidebar-foreground: 0 0% 10%;
+  --sidebar-primary: 0 0% 10%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 0 0% 92%;
+  --sidebar-accent-foreground: 0 0% 10%;
+  --sidebar-border: 0 0% 85%;
+  --sidebar-ring: 0 0% 80%;
   }
 
   .dark {
@@ -79,9 +87,12 @@
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+  :where(*, *::before, *::after) { border-color: hsl(var(--border)); }
+}
+@layer base {
+  html { color-scheme: light dark; }
+}
+
 
   html,
   body {
