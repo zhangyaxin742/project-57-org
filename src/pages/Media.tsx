@@ -386,18 +386,20 @@ export default function MediaPage(): JSX.Element {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-                    <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Project 57
-              <span className="bg-sunset-gradient bg-clip-text text-transparent">
-                In The Media
-              </span>
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Discover our latest videos, press coverage, photo galleries, and thought leadership articles 
-              showcasing our impact on youth financial literacy advocacy.
-            </p>
+            <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <div className="animate-fade-in">
+                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                  Project 57
+                  <span className="bg-sunset-gradient bg-clip-text text-transparent">
+                    In The Media
+                  </span>
+                </h1>
+                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                  Discover our latest videos, press coverage, photo galleries, and thought leadership articles 
+                  showcasing our impact on youth financial literacy advocacy.
+                </p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
