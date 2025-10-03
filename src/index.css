@@ -110,7 +110,6 @@
     display: none;
     /* Chrome, Safari, Opera */
   }
-}
 
 @layer components {
   .ripple-effect {

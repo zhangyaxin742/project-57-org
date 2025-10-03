@@ -20,14 +20,36 @@ export default {
 		},
 		extend: {
 			colors: {
-				border: 'hsl(var(--border))',
-				input: 'hsl(var(--input))',
-				ring: 'hsl(var(--ring))',
-				background: 'hsl(var(--background))',
-				foreground: 'hsl(var(--foreground))',
+				border: {
+					DEFAULT: 'hsl(var(--border))',
+					light: 'hsl(0 0% 85%)',
+					dark: 'hsl(0 0% 15%)'
+				},
+				input: {
+					DEFAULT: 'hsl(var(--input))',
+					light: 'hsl(0 0% 85%)',
+					dark: 'hsl(0 0% 15%)'
+				},
+				ring: {
+					DEFAULT: 'hsl(var(--ring))',
+					light: 'hsl(0 0% 80%)',
+					dark: 'hsl(0 0% 20%)'
+				},
+				background: {
+					DEFAULT: 'hsl(var(--background))',
+					light: 'hsl(0 0% 100%)',
+					dark: 'hsl(0 0% 5%)'
+				},
+				foreground: {
+					DEFAULT: 'hsl(var(--foreground))',
+					light: 'hsl(0 0% 5%)',
+					dark: 'hsl(0 0% 98%)'
+				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					light: 'hsl(0 0% 5%)',
+					dark: 'hsl(0 0% 98%)'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
