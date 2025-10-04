@@ -46,13 +46,13 @@ const ImpactSection = () => {
   }, []);
 
   return (
-    <section id="impact-section" className="py-20 bg-background">
+    <section id="impact-section" className="py-20 bg-black">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Impact</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+          <p className="text-gray-300 text-lg max-w-3xl mx-auto">
             Since our founding, Project 57 has been transforming financial literacy in Massachusetts—one student, one school, and one bill at a time.
           </p>
         </div>
@@ -61,7 +61,7 @@ const ImpactSection = () => {
           {impacts.map((impact, index) => (
             <div
               key={index}
-              className={`text-center p-6 rounded-2xl bg-card border border-border transition-all duration-700 hover:border-sunset-pink/30 hover:scale-105 ${
+              className={`text-center p-6 rounded-2xl bg-gradient-to-br from-gray-900 to-black border border-white/10 transition-all duration-700 hover:border-sunset-pink/30 hover:scale-105 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}
@@ -69,8 +69,8 @@ const ImpactSection = () => {
               <div className="text-3xl md:text-4xl font-bold bg-sunset-gradient bg-clip-text text-transparent mb-2">
                 {impact.number}
               </div>
-              <div className="text-foreground font-semibold mb-2">{impact.label}</div>
-              <div className="text-muted-foreground text-sm">{impact.description}</div>
+              <div className="text-white font-semibold mb-2">{impact.label}</div>
+              <div className="text-gray-400 text-sm">{impact.description}</div>
             </div>
           ))}
         </div>

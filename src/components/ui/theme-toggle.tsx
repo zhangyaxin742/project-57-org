@@ -11,9 +11,9 @@ export default function ThemeToggle() {
 
   // Active chip style when current theme is active (always true for single-chip)
   const active =
-    'border-border bg-foreground/15 text-foreground shadow-sm';
+    'border-white/20 bg-white/15 text-white shadow-[0_8px_30px_rgba(255,255,255,0.08)]';
   const inactive =
-    'border-border bg-foreground/5 text-foreground/80 hover:bg-foreground/10';
+    'border-white/10 bg-white/5 text-white/80 hover:bg-white/10';
 
   return (
     <button
@@ -23,7 +23,7 @@ export default function ThemeToggle() {
       aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
       className={cn(
         'inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition',
-        'focus:outline-none focus:ring-2 focus:ring-ring',
+        'focus:outline-none focus:ring-2 focus:ring-white/30',
         isDark ? active : inactive
       )}
     >

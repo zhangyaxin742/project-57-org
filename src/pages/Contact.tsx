@@ -72,9 +72,9 @@ setStatus('error');
     </svg>
   );
   const CheckCircle = () => (
-    <svg className="h-5 w-5" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="10" className="text-foreground" fill="currentColor"/>
-      <path d="M9.5 12.5l2 2 3.5-4.5" className="text-background" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+      <circle cx="12" cy="12" r="10" className="text-black" fill="currentColor"/>
+      <path d="M9.5 12.5l2 2 3.5-4.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   );
   const ErrorIcon = () => (
@@ -85,13 +85,13 @@ setStatus('error');
   );
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-black">
       <Navigation />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-32">
         {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-muted to-background"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
 
         {/* Animated background elements */}
         <div className="absolute inset-0">
@@ -104,11 +104,11 @@ setStatus('error');
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Contact <span className="bg-sunset-gradient bg-clip-text text-transparent">Us</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-100 mb-8 leading-relaxed">
               Questions? Send us a message below or{" "}
               <a 
                 href="mailto:project57.connect@gmail.com" 
@@ -119,7 +119,7 @@ setStatus('error');
             </p>
 
             {/* Card wrapper to define against background */}
-            <div className="relative rounded-2xl bg-card backdrop-blur-md border border-border shadow-xl ring-1 ring-border p-6 sm:p-8 text-left focus-within:ring-2 focus-within:ring-sunset-pink/30">
+            <div className="relative rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 shadow-xl shadow-black/40 ring-1 ring-white/5 p-6 sm:p-8 text-left focus-within:ring-2 focus-within:ring-sunset-pink/30">
               {/* subtle glow behind the card */}
               <div
                 aria-hidden
@@ -130,50 +130,50 @@ setStatus('error');
               {/* Contact Form */}
               <form ref={form} onSubmit={sendEmail} className="space-y-6">
                 <div>
-                  <label className="block text-foreground mb-2">Name</label>
+                  <label className="block text-gray-100 mb-2">Name</label>
                   <input 
                     type="text" 
                     name="user_name" 
                     required
-                    className="w-full px-4 py-2 rounded-lg bg-input text-foreground placeholder:text-muted-foreground
-                               border border-border focus:outline-none focus:ring-2
-                               focus:ring-ring focus:border-ring"
+                    className="w-full px-4 py-2 rounded-lg bg-black/40 text-white placeholder-gray-500
+                               border border-white/10 focus:outline-none focus:ring-2
+                               focus:ring-sunset-pink/30 focus:border-sunset-pink/50"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-foreground mb-2">Email</label>
+                  <label className="block text-gray-100 mb-2">Email</label>
                   <input 
                     type="email" 
                     name="user_email" 
                     required
-                    className="w-full px-4 py-2 rounded-lg bg-input text-foreground placeholder:text-muted-foreground
-                               border border-border focus:outline-none focus:ring-2
-                               focus:ring-ring focus:border-ring"
+                    className="w-full px-4 py-2 rounded-lg bg-black/40 text-white placeholder-gray-500
+                               border border-white/10 focus:outline-none focus:ring-2
+                               focus:ring-sunset-pink/30 focus:border-sunset-pink/50"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-foreground mb-2">Subject</label>
+                  <label className="block text-gray-100 mb-2">Subject</label>
                   <input 
                     type="text" 
                     name="subject" 
                     required
-                    className="w-full px-4 py-2 rounded-lg bg-input text-foreground placeholder:text-muted-foreground
-                               border border-border focus:outline-none focus:ring-2
-                               focus:ring-ring focus:border-ring"
+                    className="w-full px-4 py-2 rounded-lg bg-black/40 text-white placeholder-gray-500
+                               border border-white/10 focus:outline-none focus:ring-2
+                               focus:ring-sunset-pink/30 focus:border-sunset-pink/50"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-foreground mb-2">Message</label>
+                  <label className="block text-gray-100 mb-2">Message</label>
                   <textarea 
                     name="message" 
                     rows={5} 
                     required
-                    className="w-full px-4 py-2 rounded-lg bg-input text-foreground placeholder:text-muted-foreground
-                               border border-border focus:outline-none focus:ring-2
-                               focus:ring-ring focus:border-ring"
+                    className="w-full px-4 py-2 rounded-lg bg-black/40 text-white placeholder-gray-500
+                               border border-white/10 focus:outline-none focus:ring-2
+                               focus:ring-sunset-pink/30 focus:border-sunset-pink/50"
                   ></textarea>
                 </div>
 
@@ -183,12 +183,12 @@ setStatus('error');
                     disabled={status === 'sending' || status === 'sent'}
                     className={`relative w-full py-3 rounded-lg font-semibold transition duration-200
                       ${status === 'sent'
-                        ? 'bg-sunset-gradient text-foreground cursor-default'
+                        ? 'bg-sunset-gradient text-black cursor-default'
                         : status === 'sending'
-                          ? 'bg-sunset-gradient text-foreground opacity-80 cursor-not-allowed'
+                          ? 'bg-sunset-gradient text-white opacity-80 cursor-not-allowed'
                           : status === 'error'
-                            ? 'bg-red-600 text-foreground hover:opacity-90'
-                            : 'bg-sunset-gradient text-foreground hover:opacity-90'}`}
+                            ? 'bg-red-600 text-white hover:opacity-90'
+                            : 'bg-sunset-gradient text-white hover:opacity-90'}`}
                   >
                     <span className="inline-flex items-center justify-center gap-2">
                       {status === 'sending' && <Spinner />}
@@ -204,9 +204,9 @@ setStatus('error');
 
                     {/* 5s reset bar (only when sent) */}
                     {status === 'sent' && (
-                      <div className="absolute left-3 right-3 -bottom-1 h-1 rounded-full bg-foreground/15 overflow-hidden">
+                      <div className="absolute left-3 right-3 -bottom-1 h-1 rounded-full bg-white/15 overflow-hidden">
                         <div
-                          className="h-full bg-foreground/80 transition-[width] duration-[3000ms] ease-linear"
+                          className="h-full bg-white/80 transition-[width] duration-[3000ms] ease-linear"
                           style={{ width: `${resetProgress}%` }}
                         />
                       </div>

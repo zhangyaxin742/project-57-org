@@ -491,9 +491,9 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
   const Advocacy = () => (
     <div className="space-y-16">
       {/* Policy Brief Library */}
-      <section className="py-16 bg-muted">
+      <section className="py-16 bg-gray-900">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">
             Our <span className="bg-sunset-gradient bg-clip-text text-transparent">  Research </span>
           </h2>
 
@@ -501,17 +501,17 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
             {displayedArticles.map((article, index) => (
               <Card
                 key={index}
-                className="bg-card border-border hover:border-sunset-orange/50 transition-all duration-300 animate-fade-in group"
+                className="bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300 animate-fade-in group"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-foreground text-lg font-semibold leading-tight mb-2">
+                  <CardTitle className="text-white text-lg font-semibold leading-tight mb-2">
                     {article.title}
                   </CardTitle>
-                  <p className="text-muted-foreground text-sm mb-3">
+                  <p className="text-gray-400 text-sm mb-3">
                     {article.subheading}
                   </p>
-                  <div className="text-xs text-muted-foreground space-y-1">
+                  <div className="text-xs text-gray-500 space-y-1">
                     <div>By {article.author}</div>
                     <div className="flex justify-between">
                       <span>{article.date}</span>
@@ -521,7 +521,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                 </CardHeader>
 <CardContent className="pt-0">
   <Button
-    className="w-full bg-sunset-gradient hover:opacity-90 text-foreground font-medium transition-all duration-300 ripple-effect group-hover:scale-105"
+    className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300 ripple-effect group-hover:scale-105"
   >
     {/* <Link to={`/briefs/${article.slug}`} className="flex items-center justify-center"> */}
     <div className="flex items-center justify-center">
@@ -536,7 +536,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
       </div><div className="text-center">
         <Button
           onClick={() => setShowAllResearch(prev => !prev)}
-          className="bg-sunset-gradient hover:opacity-90 text-foreground font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
+          className="bg-sunset-gradient hover:opacity-90 text-black font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
         >
           {showAllResearch ? "Hide Briefs" : "Show All Briefs"}
         </Button>
@@ -545,7 +545,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
       </section>
 
       {/* Bill Tracker */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8">
 
@@ -563,9 +563,9 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
             aria-label="Bill Tracker FAQs"
             className="
               ml-1 inline-flex h-7 w-7 items-center justify-center
-              rounded-full border border-border bg-foreground/5 text-muted-foreground
+              rounded-full border border-white/15 bg-white/5 text-gray-300
               transition-all duration-200
-              hover:text-foreground hover:border-sunset-orange/60 hover:shadow-[0_0_0_2px_rgba(251,146,60,.25)]
+              hover:text-white hover:border-sunset-orange/60 hover:shadow-[0_0_0_2px_rgba(251,146,60,.25)]
               focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/60
               active:scale-95
             "
@@ -623,11 +623,11 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
             <CarouselContent className="-ml-2 md:-ml-4">
               {bills.map((bill) => (
                 <CarouselItem key={bill.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">       
-                  <Card className="flex flex-col bg-card border-border hover:border-sunset-orange/50 transition-all duration-300
+                  <Card className="flex flex-col bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300
                      h-full min-h-[360px] rounded-2xl">
   <CardHeader className="px-6 pt-8 pb-6 space-y-3">
 <div className="flex justify-between items-start mb-2">
-  <CardTitle className="text-foreground text-lg font-bold leading-tight">
+  <CardTitle className="text-white text-lg font-bold leading-tight">
     {bill.title}
   </CardTitle>
 <Badge
@@ -641,7 +641,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                       <div className="text-sunset-orange font-semibold text-sm mb-3">
                         {bill.number}
                       </div>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
+                      <p className="text-gray-300 text-sm leading-relaxed">
                         {bill.summary}
                       </p>
                     </CardHeader>
@@ -650,7 +650,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                         {bill.urls ? (
                           <Button
                             size="sm"
-                            className="flex-1 bg-sunset-gradient hover:opacity-90 text-foreground font-medium transition-all duration-300"
+                            className="flex-1 bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
                             onClick={() => {
                               setSelectedBill(bill);
                               setActiveModal('text');
@@ -662,7 +662,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                           <Button
                             asChild
                             size="sm"
-                            className="flex-1 bg-sunset-gradient hover:opacity-90 text-foreground font-medium transition-all duration-300"
+                            className="flex-1 bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
                           >
                             <a href={bill.url} target="_blank" rel="noopener noreferrer">
                               View Full Text
@@ -672,7 +672,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                         <Button 
                           size="sm"
                           variant="outline"
-                          className="flex-1 border-border text-muted-foreground hover:bg-muted transition-all duration-300"
+                          className="flex-1 border-gray-600 text-gray-300 hover:bg-gray-800 transition-all duration-300"
                           onClick={() => {
                             setSelectedBill(bill);
                             setActiveModal(bill.sponsorsByBill ? 'sponsors' : 'sponsors-single');
@@ -686,32 +686,32 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex -left-12 border-border bg-card hover:bg-muted" />
-            <CarouselNext className="hidden md:flex -right-12 border-border bg-card hover:bg-muted" />
+            <CarouselPrevious className="hidden md:flex -left-12 border-gray-600 bg-black/50 hover:bg-gray-800" />
+            <CarouselNext className="hidden md:flex -right-12 border-gray-600 bg-black/50 hover:bg-gray-800" />
           </Carousel>
         </div>
       </section>
     
       {/* Civic Action Center */}
-      <section className="py-20 bg-muted">
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 animate-fade-in">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 animate-fade-in">
               Civic Action <span className="bg-sunset-gradient bg-clip-text text-transparent">Center</span>
             </h2>
             <div className="w-24 h-1 bg-sunset-gradient mx-auto animate-scale-in" style={{ animationDelay: '0.2s' }}></div>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-card border-2 border-transparent hover:border-sunset-orange/50 transition-all duration-500 animate-fade-in group">
+            <Card className="bg-black/50 border-2 border-transparent hover:border-sunset-orange/50 transition-all duration-500 animate-fade-in group bg-gradient-to-br from-black/50 to-gray-900">
               <CardHeader className="text-center pb-6">
                 <div className="mx-auto w-16 h-16 bg-gradient-to-r from-sunset-orange to-sunset-pink rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Calendar className="h-8 w-8 text-foreground" />
+                  <Calendar className="h-8 w-8 text-white" />
                 </div>
-                <CardTitle className="text-2xl text-foreground mb-3">
+                <CardTitle className="text-2xl text-white mb-3">
                   Upcoming Hearings
                 </CardTitle>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-gray-300 leading-relaxed">
                   Stay informed about legislative hearings and public comment opportunities 
                   that impact financial literacy education.
                 </p>
@@ -719,7 +719,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
               <CardContent className="text-center">
                 <Button 
                   size="lg"
-                  className="bg-gradient-to-r from-sunset-orange to-sunset-pink hover:opacity-90 text-foreground font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
+                  className="bg-gradient-to-r from-sunset-orange to-sunset-pink hover:opacity-90 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
                   onClick={() => window.open('https://malegislature.gov/Events', '_blank')}
                 >
                   View Calendar
@@ -727,15 +727,15 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
               </CardContent>
             </Card>
 
-            <Card className="bg-card border-2 border-transparent hover:border-sunset-pink/50 transition-all duration-500 animate-fade-in group" style={{ animationDelay: '0.1s' }}>
+            <Card className="bg-black/50 border-2 border-transparent hover:border-sunset-pink/50 transition-all duration-500 animate-fade-in group bg-gradient-to-br from-black/50 to-gray-900" style={{ animationDelay: '0.1s' }}>
               <CardHeader className="text-center pb-6">
                 <div className="mx-auto w-16 h-16 bg-gradient-to-r from-sunset-pink to-sunset-purple rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Users className="h-8 w-8 text-foreground" />
+                  <Users className="h-8 w-8 text-white" />
                 </div>
-                <CardTitle className="text-2xl text-foreground mb-3">
+                <CardTitle className="text-2xl text-white mb-3">
                   Intro to Lobbying
                 </CardTitle>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-gray-300 leading-relaxed">
                   Learn the fundamentals of effective advocacy with our comprehensive 
                   guide to youth lobbying and civic engagement.
                 </p>
@@ -743,7 +743,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
               <CardContent className="text-center">
                 <Button 
                   size="lg"
-                  className="bg-gradient-to-r from-sunset-pink to-sunset-purple hover:opacity-90 text-foreground font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
+                  className="bg-gradient-to-r from-sunset-pink to-sunset-purple hover:opacity-90 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
                   onClick={() => window.open('#', '_blank')}
                 >
                   Download Guide
@@ -751,15 +751,15 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
               </CardContent>
             </Card>
 
-            <Card className="bg-card border-2 border-transparent hover:border-sunset-purple/50 transition-all duration-500 animate-fade-in group" style={{ animationDelay: '0.2s' }}>
+            <Card className="bg-black/50 border-2 border-transparent hover:border-sunset-purple/50 transition-all duration-500 animate-fade-in group bg-gradient-to-br from-black/50 to-gray-900" style={{ animationDelay: '0.2s' }}>
               <CardHeader className="text-center pb-6">
                 <div className="mx-auto w-16 h-16 bg-gradient-to-r from-sunset-purple to-sunset-orange rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <FileText className="h-8 w-8 text-foreground" />
+                  <FileText className="h-8 w-8 text-white" />
                 </div>
-                <CardTitle className="text-2xl text-foreground mb-3">
+                <CardTitle className="text-2xl text-white mb-3">
                   Scripts & Shareables
                 </CardTitle>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-gray-300 leading-relaxed">
                   Access ready-to-use advocacy materials, social media templates, 
                   and talking points for your legislative outreach.
                 </p>
@@ -767,7 +767,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
               <CardContent className="text-center">
                 <Button 
                   size="lg"
-                  className="bg-gradient-to-r from-sunset-purple to-sunset-orange hover:opacity-90 text-foreground font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
+                  className="bg-gradient-to-r from-sunset-purple to-sunset-orange hover:opacity-90 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
                   onClick={() => window.open('#', '_blank')}
                 >
                   Get Shareables
@@ -780,15 +780,15 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
       </div>
    );
   const Curriculum = () => (
-    <div className="py-16 bg-background">
+    <div className="py-16 bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12">
-        <h2 className="text-3xl font-bold text-foreground">
+        <h2 className="text-3xl font-bold text-white">
           Our <span className="bg-sunset-gradient bg-clip-text text-transparent"> Workshops </span> 
         </h2>
  <Button
-            className="bg-sunset-gradient hover:opacity-90 text-foreground font-medium flex items-center gap-2 px-5 py-2 rounded-lg sm:ml-4 mt-4 sm:mt-0"
+            className="bg-sunset-gradient hover:opacity-90 text-black font-medium flex items-center gap-2 px-5 py-2 rounded-lg sm:ml-4 mt-4 sm:mt-0"
             onClick={() => (window.location.href = "/contact")}
           >
             Request a Workshop
@@ -811,14 +811,14 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
               {workshops.slice(0, 3).map((workshop, index) => (
                 <Card 
                   key={index} 
-                  className="h-full bg-card border-border hover:border-sunset-orange/50 transition-all duration-300"
+                  className="h-full bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300"
                 >
                   <div className="h-full flex flex-col justify-center">
                     <CardHeader className="mb-4">
-                      <CardTitle className="text-foreground text-lg font-semibold">
+                      <CardTitle className="text-white text-lg font-semibold">
                         {workshop.title}
                       </CardTitle>
-                      <div className="text-muted-foreground text-sm space-y-1">
+                      <div className="text-gray-400 text-sm space-y-1">
                         <div className="flex items-center gap-2">
                           <MapPin className="h-4 w-4" />
                           {workshop.location}
@@ -832,7 +832,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                     <CardContent>
                       <Button 
                       asChild 
-                        className="w-full bg-sunset-gradient hover:opacity-90 text-foreground font-medium transition-all duration-300"
+                        className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
                       >
   <a href={workshop.link} target="_blank" rel="noopener noreferrer">
     Register Now
@@ -856,14 +856,14 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                   {workshops.map((workshop, index) => (
                     <div className="w-[340px] flex-shrink-0" key={`m1-${index}`}>
                       <Card 
-                        className="h-full bg-card border-border hover:border-sunset-orange/50 transition-all duration-300"
+                        className="h-full bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300"
                       >
                         <div className="h-full flex flex-col">
                           <CardHeader>
-                            <CardTitle className="text-foreground text-lg font-semibold line-clamp-2">
+                            <CardTitle className="text-white text-lg font-semibold line-clamp-2">
                               {workshop.title}
                             </CardTitle>
-                            <div className="text-muted-foreground text-sm space-y-1">
+                            <div className="text-gray-400 text-sm space-y-1">
                               <div className="flex items-center gap-2">
                                 <MapPin className="h-4 w-4" />
                                 {workshop.location}
@@ -876,7 +876,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                           </CardHeader>
                           <CardContent className="mt-auto">
                             <Button 
-                              className="w-full bg-sunset-gradient hover:opacity-90 text-foreground font-medium transition-all duration-300"
+                              className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
                             >
                               Register Now
                             </Button>
@@ -889,14 +889,14 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
                   {workshops.map((workshop, index) => (
                     <div className="w-[340px] flex-shrink-0" key={`m2-${index}`}>
                       <Card 
-                        className="h-full bg-card border-border hover:border-sunset-orange/50 transition-all duration-300"
+                        className="h-full bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300"
                       >
                         <div className="h-full flex flex-col">
                           <CardHeader>
-                            <CardTitle className="text-foreground text-lg font-semibold">
+                            <CardTitle className="text-white text-lg font-semibold">
                               {workshop.title}
                             </CardTitle>
-                            <div className="text-muted-foreground text-sm space-y-1">
+                            <div className="text-gray-400 text-sm space-y-1">
                               <div className="flex items-center gap-2">
                                 <MapPin className="h-4 w-4" />
                                 {workshop.location}

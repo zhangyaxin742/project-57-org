@@ -30,7 +30,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-md">
+    <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/90 backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -55,7 +55,7 @@ const Navigation = () => {
                     >
                       <RouterLink
                         to={item.path}
-                        className="flex items-center space-x-1 text-foreground transition-colors hover:text-sunset-pink"
+                        className="flex items-center space-x-1 text-white transition-colors hover:text-sunset-pink"
                         onClick={() => setDropdownOpen('')}
                       >
                         <span>{item.name}</span>
@@ -63,13 +63,13 @@ const Navigation = () => {
                       </RouterLink>
 
                       {dropdownOpen === item.name && (
-                        <div className="before:absolute before:top-[-8px] before:left-0 before:h-8 before:w-full absolute left-0 top-full mt-2 w-48 animate-fade-in rounded-lg border border-border bg-popover backdrop-blur-md shadow-lg">
+                        <div className="before:absolute before:top-[-8px] before:left-0 before:h-8 before:w-full absolute left-0 top-full mt-2 w-48 animate-fade-in rounded-lg border border-white/10 bg-black/95 backdrop-blur-md shadow-lg">
                           {item.dropdown.map((sub) => (
                             <HashLink
                               key={sub.name}
                               smooth
                               to={sub.path}
-                              className="block px-4 py-3 text-sm text-foreground transition-colors hover:bg-foreground/5 hover:text-sunset-pink first:rounded-t-lg last:rounded-b-lg"
+                              className="block px-4 py-3 text-sm text-white transition-colors hover:bg-white/5 hover:text-sunset-pink first:rounded-t-lg last:rounded-b-lg"
                             >
                               {sub.name}
                             </HashLink>
@@ -80,7 +80,7 @@ const Navigation = () => {
                   ) : (
                     <RouterLink
                       to={item.path}
-                      className={`text-foreground transition-colors hover:text-sunset-pink ${
+                      className={`text-white transition-colors hover:text-sunset-pink ${
                         location.pathname === item.path ? 'text-sunset-pink' : ''
                       }`}
                     >
@@ -92,7 +92,7 @@ const Navigation = () => {
             </div>
 
             {/* Divider + Theme chip on the far right */}
-            <div className="ml-6 pl-6 border-l border-border">
+            <div className="ml-6 pl-6 border-l border-white/10">
               <ThemeToggle />
             </div>
           </div>
@@ -100,7 +100,7 @@ const Navigation = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-foreground transition-colors hover:text-sunset-pink"
+            className="md:hidden text-white transition-colors hover:text-sunset-pink"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -108,7 +108,7 @@ const Navigation = () => {
 
         {/* Mobile */}
         {isOpen && (
-          <div className="md:hidden animate-fade-in border-b border-border bg-popover backdrop-blur-md">
+          <div className="md:hidden animate-fade-in border-b border-white/10 bg-black/95 backdrop-blur-md">
             <div className="px-4 py-4">
               <ThemeToggle />
             </div>
@@ -119,7 +119,7 @@ const Navigation = () => {
                     <>
                       <RouterLink
                         to={item.path}
-                        className="flex items-center space-x-1 text-foreground transition-colors hover:text-sunset-pink"
+                        className="flex items-center space-x-1 text-white transition-colors hover:text-sunset-pink"
                         onClick={() =>
                           setDropdownOpen(dropdownOpen === item.name ? '' : item.name)
                         }
@@ -138,7 +138,7 @@ const Navigation = () => {
                               key={sub.name}
                               smooth
                               to={sub.path}
-                              className="block px-3 py-2 text-sm text-foreground transition-colors hover:text-sunset-pink"
+                              className="block px-3 py-2 text-sm text-white transition-colors hover:text-sunset-pink"
                               onClick={() => setIsOpen(false)}
                             >
                               {sub.name}
@@ -150,7 +150,7 @@ const Navigation = () => {
                   ) : (
                     <RouterLink
                       to={item.path}
-                      className={`block px-3 py-2 text-foreground transition-colors hover:text-sunset-pink ${
+                      className={`block px-3 py-2 text-white transition-colors hover:text-sunset-pink ${
                         location.pathname === item.path ? 'text-sunset-pink' : ''
                       }`}
                       onClick={() => setIsOpen(false)}

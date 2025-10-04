@@ -244,10 +244,10 @@ const GridSection = ({ title, roles, compact = false, centerLast = true, id, }: 
 <Card
   className={
     "group overflow-hidden border rounded-xl transition-colors " +
-        "bg-card " + 
+        "bg-[linear-gradient(30deg,var(--tw-gradient-stops))] " + 
     (isOpen
-      ? "border-sunset-orange/70"
-      : "border-border hover:border-sunset-orange/60")
+      ? "from-black via-gray-900 via-gray-800 to-black border-sunset-orange/70"
+      : "from-black to-gray-900 border-white/10 hover:border-sunset-orange/60")
   }
 >
                     {/* Header */}
@@ -255,7 +255,7 @@ const GridSection = ({ title, roles, compact = false, centerLast = true, id, }: 
   <div className="flex items-center gap-3">
     <role.icon className="h-7 w-7 text-sunset-orange" />
     <div className="flex items-center gap-2">
-      <CardTitle className="text-foreground text-lg">{role.title}</CardTitle>
+      <CardTitle className="text-white text-lg">{role.title}</CardTitle>
       <button
         type="button"
         aria-label={isOpen ? "Collapse" : "Expand"}
@@ -263,7 +263,7 @@ const GridSection = ({ title, roles, compact = false, centerLast = true, id, }: 
           e.stopPropagation();
           setExpanded(isOpen ? null : idx);
         }}
-        className="ml-1 inline-flex items-center rounded-md p-1.5 align-middle text-sunset-orange hover:text-foreground/90 hover:bg-foreground/10 transition"
+        className="ml-1 inline-flex items-center rounded-md p-1.5 align-middle text-sunset-orange hover:text-white/90 hover:bg-white/5 transition"
       >
         <ChevronRight
           className={`h-4 w-4 transition-transform ${isOpen ? "rotate-90" : ""}`}
@@ -274,7 +274,7 @@ const GridSection = ({ title, roles, compact = false, centerLast = true, id, }: 
 
   <p className="text-sunset-pink text-xs">{role.commitment}</p>
 
-  <CardDescription className="text-muted-foreground mt-3">
+  <CardDescription className="text-gray-300 mt-3">
     <span className="inline">{role.description}</span>
   </CardDescription>
 </CardHeader>
@@ -290,7 +290,7 @@ const GridSection = ({ title, roles, compact = false, centerLast = true, id, }: 
                         }}
                         className={isOpen ? "overflow-visible" : "overflow-hidden"}
                         id={`role-panel-${idx}`}>
-                        <ul className="text-sm text-muted-foreground space-y-2">
+                        <ul className="text-sm text-gray-200 space-y-2">
                           {role.benefits.map((b, i) => (
                             <li key={i} className="flex items-start gap-2">
                               <span className="mt-1 h-1.5 w-1.5 rounded-full bg-sunset-pink" />
@@ -303,8 +303,8 @@ const GridSection = ({ title, roles, compact = false, centerLast = true, id, }: 
                         href={role.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-sunset-gradient px-4 py-3 font-semibold text-foreground hover:opacity-90"
-                        onClick={(e) => e.stopPropagation()} >
+                        className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-sunset-gradient px-4 py-3 font-semibold text-black hover:opacity-90"
+                        onClick={(e) => e.stopPropagation()} > 
 
                         {role.cta} <ArrowRight className="ml-2 h-4 w-4" />
                       </a>
@@ -331,11 +331,11 @@ function GetInvolved() {
   }, [location.hash]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-gradient from-gray-900 to-black to-gray-900 text-white">
       <Navigation />
       
       {/* Hero */}
-          <section className="pt-16 pb-16 relative items-center justify-center overflow-hidden bg-gradient-to-br from-background via-muted to-background">
+          <section className="pt-16 pb-16 relative items-center justify-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
   <div className="pointer-events-none absolute inset-0">
         {/* Animated background elements */}
         <div  className=" absolute top-1/4 left-1/4 w-96 h-96 bg-sunset-pink/10 rounded-full blur-3xl animate-pulse"></div>
@@ -359,28 +359,28 @@ function GetInvolved() {
  
       <GridSection          title={
     <>
-      <span className="text-foreground"> Executive </span>
+      <span className="text-white"> Executive </span>
       <span className="bg-sunset-gradient bg-clip-text text-transparent">Team</span>
     </>
   } roles={execPositions} />
-<div className="pointer-events-none -my-12 h-28 w-full bg-gradient-to-b from-transparent via-muted/50 to-transparent" />
+<div className="pointer-events-none -my-12 h-28 w-full bg-gradient-to-b from-transparent via-gray-800/50 to-transparent" />
 
       <GridSection          title={
     <>
-      <span className="text-foreground">Associate </span>
+      <span className="text-white">Associate </span>
       <span className="bg-sunset-gradient bg-clip-text text-transparent">Team</span>
     </>
   } roles={associatePositions} />
-      <div className="pointer-events-none -my-4 h-28 w-full bg-gradient-to-b from-transparent via-muted/50 to-transparent" />
+      <div className="pointer-events-none -my-4 h-28 w-full bg-gradient-to-b from-transparent via-gray-800/50 to-transparent" />
 
       <GridSection id="president" compact centerLast={false} 
          title={
     <>
-      <span className="text-foreground">Local </span>
+      <span className="text-white">Local </span>
       <span className="bg-sunset-gradient bg-clip-text text-transparent">Opportunities</span>
     </>
   } roles={[chapterPresident[0], volunteerRole[0]]} />
-            <div className="pointer-events-none -my-12 h-36 w-full bg-gradient-to-b from-transparent to-muted/80 to-transparent" />
+            <div className="pointer-events-none -my-12 h-36 w-full bg-gradient-to-b from-transparent to-gray-800/80 to-transparent" />
 
     </div>
   );

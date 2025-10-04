@@ -342,7 +342,7 @@ const MediaModal = ({ item, isOpen, onClose }: { item: MediaItem | null; isOpen:
           )}
           
           <div className="flex gap-2 pt-4">
-            <Button className="flex-1 bg-sunset-gradient hover:bg-sunset-gradient/90 text-foreground">
+            <Button className="flex-1 bg-sunset-gradient hover:bg-sunset-gradient/90 text-white">
               <Eye className="w-4 h-4 mr-2" />
               View Full Content
             </Button>
@@ -388,7 +388,7 @@ export default function MediaPage(): JSX.Element {
           >
             <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <div className="animate-fade-in">
-                <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
                   Project 57 { }
                   <span className="bg-sunset-gradient bg-clip-text text-transparent">
                     In The Media
