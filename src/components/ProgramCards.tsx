@@ -28,13 +28,13 @@ const ProgramCards = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+    <section className="py-20 bg-muted">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Our {""} <span className="bg-sunset-gradient bg-clip-text text-transparent"> Work </span>
           </h2>
-          <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
             Three comprehensive pathways to financial empowerment.
           </p>
         </div>
@@ -44,7 +44,7 @@ const ProgramCards = () => {
             <Link
               key={index}
               to={program.path}
-              className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/50 to-black border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-105 ripple-effect"
+              className="group relative overflow-hidden rounded-2xl bg-card border border-border hover:border-border/50 transition-all duration-500 hover:scale-105 ripple-effect"
             >
               <div className={`h-2 bg-gradient-to-r ${program.gradient}`}></div>
               <div className={`absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-20 transition-opacity duration-500 ${program.gradient}`}>
@@ -52,14 +52,14 @@ const ProgramCards = () => {
               
               <div className="relative p-8">
                 <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${program.gradient} mb-6`}>
-                  <program.icon className="h-8 w-8 text-white" />
+                  <program.icon className="h-8 w-8 text-foreground" />
                 </div>
                 
-                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-sunset-pink transition-colors">
+                <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-sunset-pink transition-colors">
                   {program.title}
                 </h3>
                 
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed">
                   {program.description}
                 </p>
                 

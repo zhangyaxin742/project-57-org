@@ -24,9 +24,9 @@ export default function OurSupporters({
     <section
       className={cn(
         embedded ? "py-0" : "py-16",
-        // vertical gradient from black at top to white at bottom
-        "bg-gradient-to-b from-black to-white",
-        glass && "bg-white/[0.06] backdrop-blur-sm"
+        // theme-aware gradient
+        "bg-gradient-to-b from-muted to-background dark:from-background dark:to-muted",
+        glass && "bg-foreground/[0.06] backdrop-blur-sm"
       )}
     >
       {/* Heading */}
@@ -36,7 +36,7 @@ export default function OurSupporters({
           "mb-10"
         )}
       >
-        <h2 className="text-3xl font-bold text-white text-center">
+        <h2 className="text-3xl font-bold text-foreground text-center">
           Our <span className="bg-sunset-gradient bg-clip-text text-transparent">Supporters</span>
         </h2>
       </div>
@@ -64,7 +64,7 @@ export default function OurSupporters({
                   "shadow-sm hover:shadow-lg transition-all duration-200",
                   "hover:-translate-y-0.5 focus-visible:-translate-y-0.5",
                   // Focus ring
-                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 )}
               >
                 <div className="h-full w-full grid place-items-center">

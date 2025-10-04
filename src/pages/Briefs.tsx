@@ -51,7 +51,7 @@ export default function Brief () {
   const url = `${origin}/briefs/${slug}`;
 
   return (
-    <article className="min-h-screen bg-black text-white">
+    <article className="min-h-screen bg-background text-foreground">
       <Navigation />
       <Helmet>
         <title>{meta.title ? `${meta.title} | Project 57` : "Brief | Project 57"}</title>
@@ -73,7 +73,7 @@ export default function Brief () {
           url
         })}</script>
       </Helmet>
-      <div className="max-w-3xl mx-auto px-4 py-24 prose prose-invert">
+      <div className="max-w-3xl mx-auto px-4 py-24 prose dark:prose-invert">
         <BriefErrorBoundary>
           <Component />
         </BriefErrorBoundary>
