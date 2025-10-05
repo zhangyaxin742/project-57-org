@@ -35,7 +35,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { getBriefs } from "../lib/briefs";
 import { formatMonthYear } from "../lib/utils";
-import { Thumbnail } from "@/components/utils/thumbnail";
+import { Thumbnail } from "@/components/ui/thumbnail";
 
 const VALID_SECTIONS = ["advocacy", "curriculum", "enterprise"] as const;
 type SectionKey = (typeof VALID_SECTIONS)[number];
@@ -845,38 +845,49 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
           <div className="transition-opacity duration-300 md:invisible md:opacity-0 md:pointer-events-none md:group-hover:visible md:group-hover:opacity-100 md:group-hover:pointer-events-auto motion-reduce:visible motion-reduce:opacity-100 motion-reduce:pointer-events-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {workshops.slice(0, 3).map((workshop, index) => (
-                <Card 
-                  key={index} 
-                  className="h-full bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300"
-                >
-                  <div className="h-full flex flex-col justify-center">
-                    <CardHeader className="mb-4">
-                      <CardTitle className="text-white text-lg font-semibold">
-                        {workshop.title}
-                      </CardTitle>
-                      <div className="text-gray-400 text-sm space-y-1">
-                        <div className="flex items-center gap-2">
-                          <MapPin className="h-4 w-4" />
-                          {workshop.location}
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Calendar className="h-4 w-4" />
-                          {workshop.date}
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <Button 
-                      asChild 
-                        className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
-                      >
-  <a href={workshop.link} target="_blank" rel="noopener noreferrer">
-    Register Now
-  </a>
-                      </Button>
-                    </CardContent>
-                  </div>
-                </Card>
+<Card 
+  key={index} 
+  className="h-full bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300"
+>
+  <div className="h-full flex flex-col">
+    <Thumbnail thumb={workshop.thumbnail} />
+    <CardHeader className="mb-2">
+      <CardTitle className="text-white text-lg font-semibold">
+        {workshop.title}
+      </CardTitle>
+      <div className="text-gray-400 text-sm space-y-1">
+        <div className="flex items-center gap-2">
+          <MapPin className="h-4 w-4" />
+          {workshop.location}
+        </div>
+        <div className="flex items-center gap-2">
+          <Calendar className="h-4 w-4" />
+          {workshop.date}
+        </div>
+      </div>
+    </CardHeader>
+    <CardContent className="mt-auto">
+      <Button
+        asChild
+        className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
+      >
+        <a
+          href={
+            workshop.status === "completed" && workshop.replayLink
+              ? workshop.replayLink
+              : workshop.link
+          }
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {workshop.status === "completed" && workshop.replayLink
+            ? "Watch Recording"
+            : "Register Now"}
+        </a>
+      </Button>
+    </CardContent>
+  </div>
+</Card>
               ))}
             </div>
           </div>
@@ -888,76 +899,128 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
               <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent pointer-events-none" />
               <div className="overflow-x-hidden w-full max-w-full">
                 <div className="flex items-start gap-6 will-change-transform animate-[marquee_25s_linear_infinite] group-hover:[animation-play-state:paused] w-max" data-marquee-track>
-                  {/* pass 1 */}
-                  {workshops.map((workshop, index) => (
-                    <div className="w-[340px] flex-shrink-0" key={`m1-${index}`}>
-                      <Card 
-                        className="h-full bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300"
-                      >
-                        <div className="h-full flex flex-col">
-                          <CardHeader>
-                            <CardTitle className="text-white text-lg font-semibold line-clamp-2">
-                              {workshop.title}
-                            </CardTitle>
-                            <div className="text-gray-400 text-sm space-y-1">
-                              <div className="flex items-center gap-2">
-                                <MapPin className="h-4 w-4" />
-                                {workshop.location}
-                              </div>
-                              <div className="flex items-center gap-2">
-                                <Calendar className="h-4 w-4" />
-                                {workshop.date}
-                              </div>
-                            </div>
-                          </CardHeader>
-                          <CardContent className="mt-auto">
-                            <Button 
-                              className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
-                            >
-                              Register Now
-                            </Button>
-                          </CardContent>
-                        </div>
-                      </Card>
-                    </div>
-                  ))}
-                  {/* pass 2 */}
-                  {workshops.map((workshop, index) => (
-                    <div className="w-[340px] flex-shrink-0" key={`m2-${index}`}>
-                      <Card 
-                        className="h-full bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300"
-                      >
-                        <div className="h-full flex flex-col">
-                          <CardHeader>
-                            <CardTitle className="text-white text-lg font-semibold">
-                              {workshop.title}
-                            </CardTitle>
-                            <div className="text-gray-400 text-sm space-y-1">
-                              <div className="flex items-center gap-2">
-                                <MapPin className="h-4 w-4" />
-                                {workshop.location}
-                              </div>
-                              <div className="flex items-center gap-2">
-                                <Calendar className="h-4 w-4" />
-                                {workshop.date}
-                              </div>
-                            </div>
-                          </CardHeader>
-                          <CardContent className="mt-auto">
-                            <Button 
-                              className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
-                            >
-                              Register Now
-                            </Button>
-                          </CardContent>
-                        </div>
-                      </Card>
-                    </div>
-                  ))}
+{/* pass 1 */}
+{upcoming.map((workshop, index) => (
+  <div className="w-[340px] flex-shrink-0" key={`m1-${index}`}>
+    <Card className="h-full bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300">
+      <div className="h-full flex flex-col">
+        <Thumbnail thumb={workshop.thumbnail} />
+        <CardHeader>
+          <CardTitle className="text-white text-lg font-semibold line-clamp-2">
+            {workshop.title}
+          </CardTitle>
+          <div className="text-gray-400 text-sm space-y-1">
+            <div className="flex items-center gap-2">
+              <MapPin className="h-4 w-4" />
+              {workshop.location}
+            </div>
+            <div className="flex items-center gap-2">
+              <Calendar className="h-4 w-4" />
+              {workshop.date}
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent className="mt-auto">
+          <Button
+            asChild
+            className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
+          >
+            <a href={workshop.link} target="_blank" rel="noopener noreferrer">
+              Register Now
+            </a>
+          </Button>
+        </CardContent>
+      </div>
+    </Card>
+  </div>
+))}
+
+/* pass 2 */
+{upcoming.map((workshop, index) => (
+  <div className="w-[340px] flex-shrink-0" key={`m2-${index}`}>
+    <Card className="h-full bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300">
+      <div className="h-full flex flex-col">
+        <Thumbnail thumb={workshop.thumbnail} />
+        <CardHeader>
+          <CardTitle className="text-white text-lg font-semibold">
+            {workshop.title}
+          </CardTitle>
+          <div className="text-gray-400 text-sm space-y-1">
+            <div className="flex items-center gap-2">
+              <MapPin className="h-4 w-4" />
+              {workshop.location}
+            </div>
+            <div className="flex items-center gap-2">
+              <Calendar className="h-4 w-4" />
+              {workshop.date}
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent className="mt-auto">
+          <Button
+            asChild
+            className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
+          >
+            <a href={workshop.link} target="_blank" rel="noopener noreferrer">
+              Register Now
+            </a>
+          </Button>
+        </CardContent>
+      </div>
+    </Card>
+  </div>
+))}   
                 </div>
               </div>
             </div>
           )}
+{/* Completed section */}
+{completed.length > 0 && (
+  <div className="mt-16">
+    <h3 className="text-2xl font-semibold text-white mb-6">Completed Workshops</h3>
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {completed.map((workshop, index) => (
+        <Card
+          key={`c-${index}`}
+          className="h-full bg-black/40 border-white/10 hover:border-sunset-orange/50 transition-all duration-300"
+        >
+          <div className="h-full flex flex-col">
+            <Thumbnail thumb={workshop.thumbnail} />
+            <CardHeader className="mb-2">
+              <CardTitle className="text-white text-lg font-semibold">
+                {workshop.title}
+              </CardTitle>
+              <div className="text-gray-400 text-sm space-y-1">
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-4 w-4" />
+                  {workshop.location}
+                </div>
+                <div className="flex items-center gap-2">
+                  <Calendar className="h-4 w-4" />
+                  {workshop.date}
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent className="mt-auto">
+              <Button
+                asChild
+                className="w-full bg-sunset-gradient hover:opacity-90 text-black font-medium transition-all duration-300"
+              >
+                <a
+                  href={workshop.replayLink || workshop.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {workshop.replayLink ? "Watch Recording" : "View Details"}
+                </a>
+              </Button>
+            </CardContent>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+)}
         </div>
       </div>
     </div>
