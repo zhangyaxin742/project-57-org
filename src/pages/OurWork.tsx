@@ -89,12 +89,23 @@ const getStatusClasses = (status: BillStatus) => STATUS_CLASSES[status];
     readingTime: string;
   };
 
-  type Workshop = {
-    title: string;
-    location: string;
-    date: string;
-    link: string; 
+ type Workshop = {
+  title: string;
+  location: string;
+  date: string;            // display string; use ISO separately if you sort
+  link: string;            // registration/details
+  status: 'upcoming' | 'completed';
+  replayLink?: string;     // for completed
+  thumbnail?: {
+    type: 'youtube' | 'canva' | 'image';
+    url: string;
+    alt?: string;          // optional, for images
   };
+};
+
+// curriculum splits 
+const upcoming = workshops.filter(w => w.status === "upcoming");
+const completed = workshops.filter(w => w.status === "completed");
 
   // tab behaviors 
 
@@ -446,24 +457,48 @@ const getStatusColor = (status: BillStatus): string => {
       location: "Virtual",
       date: "Sept 24, 2025", 
       link: "https://luma.com/9si2fi29",
+      status: "completed", 
+      replayLink: "https://www.youtube.com/watch?v=example", 
+      thumbnail: {
+        type: "youtube", 
+        url: "https://img.youtube.com/vi/example/hqdefault.jpg"
+      }
     },
     {
       title: "College Financing Demystified - The FAFSA Scares Me",
-      location: "Arlington, MA - TBD",
-      date: "Sept 27, 2025",
+      location: "Virtual",
+      date: "October 4th, 2025",
       link: "https://luma.com/sz3hg1v5",
+      status: "completed", 
+      replayLink: "https://www.youtube.com/watch?v=example", 
+      thumbnail: {
+        type: "youtube", 
+        url: "https://img.youtube.com/vi/example/hqdefault.jpg"
+      }
     },
     {
       title: "College Financing Demystified - Congrats, You're In! What Now?",
       location: "Arlington, MA - Robbins Library",
-      date: "Oct 4, 2025", 
+      date: "Oct 12, 2025", 
       link: "https://luma.com/8gcax6fi",
+      status: "upcoming", 
+      replayLink: "https://www.youtube.com/watch?v=example", 
+      thumbnail: {
+        type: "youtube", 
+        url: "https://img.youtube.com/vi/example/hqdefault.jpg"
+      }
     },
         {
       title: "Investing 101 - Yes, Even You Can Do It!",
       location: "Arlington, MA - Robbins Library",
-      date: "Oct 12, 2025",
+      date: "Oct 26, 2025",
       link: "https://luma.com/y8oihfxk",
+      status: "completed", 
+      replayLink: "https://www.youtube.com/watch?v=example", 
+      thumbnail: {
+        type: "youtube", 
+        url: "https://img.youtube.com/vi/example/hqdefault.jpg"
+      }
     }
   ];
 
