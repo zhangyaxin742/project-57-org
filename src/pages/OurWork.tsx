@@ -35,6 +35,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { getBriefs } from "../lib/briefs";
 import { formatMonthYear } from "../lib/utils";
+import { Thumbnail } from "@/components/utils/thumbnail";
 
 const VALID_SECTIONS = ["advocacy", "curriculum", "enterprise"] as const;
 type SectionKey = (typeof VALID_SECTIONS)[number];
