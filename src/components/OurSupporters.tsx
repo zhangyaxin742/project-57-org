@@ -53,36 +53,37 @@ export default function OurSupporters({
           )}
         >
           {partners.map((p) => (
-            <li key={p.alt}>
-              <a
-                href={p.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={p.alt}
-                className={cn(
-                  // Layout & spacing
-                  "aspect-[3/2] p-4",
-                  // Effects
-                  "shadow-sm hover:shadow-lg transition-all duration-200",
-                  "hover:-translate-y-0.5 focus-visible:-translate-y-0.5",
-                  // Focus ring
-                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
-                )}
-              >
-                <div className="h-full w-full grid place-items-center">
-                  <img
-                    src={p.src}
-                    alt={p.alt}
-                    loading="lazy"
-                    className={cn(
-                      "max-h-full max-w-full object-contain",
-                      // Slightly muted until hover/focus for a clean look
-                      "opacity-80 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity"
-                    )}
-                  />
-                </div>
-              </a>
-            </li>
+<li key={p.alt}>
+  <a
+    href={p.href}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={p.alt}
+    className={cn(
+      "group",                     // <-- add group so group-hover works
+      "aspect-[3/2] p-4 rounded-xl",
+      "bg-white/5 border border-white/10", // optional: makes boxes look uniform
+      "shadow-sm hover:shadow-lg transition-all duration-200",
+      "hover:-translate-y-0.5 focus-visible:-translate-y-0.5",
+      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
+    )}
+  >
+    <div className="h-full w-full grid place-items-center">
+      <img
+        src={p.src}
+        alt={p.alt}
+        loading="lazy"
+        className={cn(
+          // Standardize by height (adjust numbers to taste)
+          "h-10 sm:h-12 md:h-14 lg:h-16 w-auto",  // <-- key line
+          "object-contain",
+          "opacity-80 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity"
+        )}
+      />
+    </div>
+  </a>
+</li>
+
           ))}
         </ul>
       </div>
