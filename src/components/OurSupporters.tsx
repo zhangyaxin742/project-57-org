@@ -27,7 +27,7 @@ export default function OurSupporters({
       className={cn(
         embedded ? "py-0" : "py-16",
         // vertical gradient from black at top to white at bottom
-        "bg-gradient-to-b from-black to-white",
+        "bg-gradient-to-b from-black to-white py-16 pb-18",
         glass && "bg-white/[0.06] backdrop-blur-sm"
       )}
     >
@@ -49,7 +49,7 @@ export default function OurSupporters({
     className={cn(
       // 2 x 4 grid
       "grid gap-8",
-      "grid-cols-2 md:grid-cols-4"
+      "grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
     )}
   >
     {partners.map((p) => (
