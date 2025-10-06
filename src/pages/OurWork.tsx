@@ -882,7 +882,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
           {/* Grid layer (unchanged markup) */}
           <div className="transition-opacity duration-300 md:invisible md:opacity-0 md:pointer-events-none md:group-hover:visible md:group-hover:opacity-100 md:group-hover:pointer-events-auto motion-reduce:visible motion-reduce:opacity-100 motion-reduce:pointer-events-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {workshops.slice(0, 3).map((workshop, index) => (
+              {upcoming.slice(0, 3).map((workshop, index) => (
 <Card 
   key={index} 
   className="h-full bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300"
