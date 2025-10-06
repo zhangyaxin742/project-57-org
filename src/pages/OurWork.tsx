@@ -104,9 +104,7 @@ const getStatusClasses = (status: BillStatus) => STATUS_CLASSES[status];
   };
 };
 
-// curriculum splits 
-const upcoming = workshop.filter(w => w.status === "upcoming");
-const completed = workshop.filter(w => w.status === "completed");
+// curriculum splits will be defined after workshops array
 
   // tab behaviors 
 
@@ -489,7 +487,7 @@ const getStatusColor = (status: BillStatus): string => {
         url: "https://img.youtube.com/vi/example/hqdefault.jpg"
       }
     },
-        {
+    {
       title: "Investing 101 - Yes, Even You Can Do It!",
       location: "Arlington, MA - Robbins Library",
       date: "Oct 26, 2025",
@@ -500,8 +498,48 @@ const getStatusColor = (status: BillStatus): string => {
         type: "youtube", 
         url: "https://img.youtube.com/vi/example/hqdefault.jpg"
       }
+    },
+    {
+      title: "Credit Building 101 - Start Your Financial Journey Right",
+      location: "Virtual",
+      date: "Nov 15, 2025",
+      link: "https://luma.com/credit101",
+      status: "upcoming", 
+      replayLink: "", 
+      thumbnail: {
+        type: "youtube", 
+        url: "https://img.youtube.com/vi/example/hqdefault.jpg"
+      }
+    },
+    {
+      title: "Smart Budgeting - Make Your Money Work For You",
+      location: "Boston, MA - Public Library",
+      date: "Dec 3, 2025",
+      link: "https://luma.com/budgeting",
+      status: "upcoming", 
+      replayLink: "", 
+      thumbnail: {
+        type: "youtube", 
+        url: "https://img.youtube.com/vi/example/hqdefault.jpg"
+      }
+    },
+    {
+      title: "Tax Season Prep - What Students Need to Know",
+      location: "Virtual",
+      date: "Jan 20, 2026",
+      link: "https://luma.com/taxprep",
+      status: "upcoming", 
+      replayLink: "", 
+      thumbnail: {
+        type: "youtube", 
+        url: "https://img.youtube.com/vi/example/hqdefault.jpg"
+      }
     }
   ];
+
+  // curriculum splits 
+  const upcoming = workshops.filter(w => w.status === "upcoming");
+  const completed = workshops.filter(w => w.status === "completed");
 
   const briefs = getBriefs();
 
@@ -935,7 +973,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
   </div>
 ))}
 
-/* pass 2 */
+{/* pass 2 */}
 {upcoming.map((workshop, index) => (
   <div className="w-[340px] flex-shrink-0" key={`m2-${index}`}>
     <Card className="h-full bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300">
