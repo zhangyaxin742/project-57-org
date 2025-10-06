@@ -105,8 +105,8 @@ const getStatusClasses = (status: BillStatus) => STATUS_CLASSES[status];
 };
 
 // curriculum splits 
-const upcoming = workshops.filter(w => w.status === "upcoming");
-const completed = workshops.filter(w => w.status === "completed");
+const upcoming = workshop.filter(w => w.status === "upcoming");
+const completed = workshop.filter(w => w.status === "completed");
 
   // tab behaviors 
 
