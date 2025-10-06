@@ -483,8 +483,8 @@ const getStatusColor = (status: BillStatus): string => {
       status: "upcoming", 
       replayLink: "https://www.youtube.com/watch?v=example", 
       thumbnail: {
-        type: "youtube", 
-        url: "https://img.youtube.com/vi/example/hqdefault.jpg"
+        type: "image", 
+        url: "https://www.pexels.com/photo/photo-of-people-doing-handshakes-3183197/"
       }
     },
     {
@@ -495,8 +495,8 @@ const getStatusColor = (status: BillStatus): string => {
       status: "upcoming", 
       replayLink: "https://www.youtube.com/watch?v=example", 
       thumbnail: {
-        type: "youtube", 
-        url: "https://img.youtube.com/vi/example/hqdefault.jpg"
+        type: "image", 
+        url: "https://share.google/images/S2Si3EuGyCgNtPsbm"
       }
     },
     {
@@ -507,8 +507,8 @@ const getStatusColor = (status: BillStatus): string => {
       status: "upcoming", 
       replayLink: "", 
       thumbnail: {
-        type: "youtube", 
-        url: "https://img.youtube.com/vi/example/hqdefault.jpg"
+        type: "image", 
+        url: "https://share.google/images/ntHvcBHBAhm4zhxVP"
       }
     },
     {
@@ -519,8 +519,8 @@ const getStatusColor = (status: BillStatus): string => {
       status: "upcoming", 
       replayLink: "", 
       thumbnail: {
-        type: "youtube", 
-        url: "https://img.youtube.com/vi/example/hqdefault.jpg"
+        type: "image", 
+        url: "https://share.google/images/Ps0IzfzpGEORqoS0m"
       }
     },
     {
@@ -531,8 +531,8 @@ const getStatusColor = (status: BillStatus): string => {
       status: "upcoming", 
       replayLink: "", 
       thumbnail: {
-        type: "youtube", 
-        url: "https://img.youtube.com/vi/example/hqdefault.jpg"
+        type: "image", 
+        url: "https://share.google/images/Q1Dzt7n1NzeqSRgT8"
       }
     }
   ];
