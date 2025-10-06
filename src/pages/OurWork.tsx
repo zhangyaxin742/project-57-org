@@ -457,7 +457,7 @@ const getStatusColor = (status: BillStatus): string => {
       date: "Sept 24, 2025", 
       link: "https://luma.com/9si2fi29",
       status: "completed", 
-      replayLink: "https://www.youtube.com/watch?v=example", 
+      replayLink: "https://youtu.be/6oKAOyEEmAg", 
       thumbnail: {
         type: "youtube", 
         url: "https://img.youtube.com/vi/example/hqdefault.jpg"
@@ -469,7 +469,7 @@ const getStatusColor = (status: BillStatus): string => {
       date: "October 4th, 2025",
       link: "https://luma.com/sz3hg1v5",
       status: "completed", 
-      replayLink: "https://www.youtube.com/watch?v=example", 
+      replayLink: "https://youtu.be/DbS70DVuzhA", 
       thumbnail: {
         type: "youtube", 
         url: "https://img.youtube.com/vi/example/hqdefault.jpg"
@@ -492,7 +492,7 @@ const getStatusColor = (status: BillStatus): string => {
       location: "Arlington, MA - Robbins Library",
       date: "Oct 26, 2025",
       link: "https://luma.com/y8oihfxk",
-      status: "completed", 
+      status: "upcoming", 
       replayLink: "https://www.youtube.com/watch?v=example", 
       thumbnail: {
         type: "youtube", 
