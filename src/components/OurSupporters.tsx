@@ -44,49 +44,51 @@ export default function OurSupporters({
       </div>
 
       {/* Grid */}
-      <div className={cn(fullBleed ? "w-full px-4" : "max-w-6xl mx-auto px-4")}>
-        <ul
-          className={cn(
-            "grid gap-6",
-            // Responsive columns
-            "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4"
-          )}
-        >
-          {partners.map((p) => (
-<li key={p.alt}>
-  <a
-    href={p.href}
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label={p.alt}
+<div className={cn(fullBleed ? "w-full px-4" : "max-w-6xl mx-auto px-4")}>
+  <ul
     className={cn(
-      "group",                     // <-- add group so group-hover works
-      "aspect-[3/2] p-4 rounded-xl",
-      "bg-white/5 border border-white/10", // optional: makes boxes look uniform
-      "shadow-sm hover:shadow-lg transition-all duration-200",
-      "hover:-translate-y-0.5 focus-visible:-translate-y-0.5",
-      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
+      // 2 x 4 grid
+      "grid gap-8",
+      "grid-cols-2 md:grid-cols-4"
     )}
   >
-    <div className="h-full w-full grid place-items-center">
-      <img
-        src={p.src}
-        alt={p.alt}
-        loading="lazy"
-        className={cn(
-          // Standardize by height (adjust numbers to taste)
-          "h-10 sm:h-12 md:h-14 lg:h-16 w-auto",  // <-- key line
-          "object-contain",
-          "opacity-80 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity"
-        )}
-      />
-    </div>
-  </a>
-</li>
+    {partners.map((p) => (
+      <li key={p.alt} className="flex items-center justify-center">
+        <a
+          href={p.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={p.alt}
+          className="block"
+        >
+          {/* Uniform logo box — no card UI */}
+          <div
+            className="
+              w-full
+              h-24
+              md:h-28
+              aspect-[4/3]            /* same box ratio for every logo */
+              flex items-center justify-center
+              overflow-hidden
+            "
+          >
+            <img
+              src={p.src}
+              alt={p.alt}
+              loading="lazy"
+              className="
+                object-contain
+                w-full h-full        /* scale to box without distortion */
+                max-h-[96px] md:max-h-[112px]  /* hard cap to standardize visual height */
+              "
+            />
+          </div>
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
 
-          ))}
-        </ul>
-      </div>
     </section>
   );
 }
