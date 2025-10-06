@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useLocation, Link as RouterLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { ChevronDown, Menu, X } from 'lucide-react';
-import ThemeToggle from './ui/theme-toggle'; // <-- match actual filename/casing
+import ThemeToggle from './ui/ThemeToggle'; // <-- match actual filename/casing
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
