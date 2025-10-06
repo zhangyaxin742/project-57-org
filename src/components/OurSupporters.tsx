@@ -65,8 +65,6 @@ export default function OurSupporters({
           <div
             className="
               w-full
-              h-24
-              md:h-28
               aspect-[4/3]            /* same box ratio for every logo */
               flex items-center justify-center
               overflow-hidden
