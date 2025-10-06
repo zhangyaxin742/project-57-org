@@ -508,7 +508,7 @@ const getStatusColor = (status: BillStatus): string => {
       replayLink: "", 
       thumbnail: {
         type: "image", 
-        url: "https://share.google/images/ntHvcBHBAhm4zhxVP"
+        url: "https://www.shutterstock.com/image-photo/online-credit-card-payment-purchases-600nw-1722681316.jpg"
       }
     },
     {
@@ -520,7 +520,7 @@ const getStatusColor = (status: BillStatus): string => {
       replayLink: "", 
       thumbnail: {
         type: "image", 
-        url: "https://share.google/images/Ps0IzfzpGEORqoS0m"
+        url: "https://media.istockphoto.com/id/1434116614/photo/teamwork-diversity-and-sales-manager-planning-branding-ideas-with-a-creative-designer-on-a.jpg?s=612x612&w=0&k=20&c=0qDHz0EDKEgxqcRP7V-YWaGv9nrjKDXG5lz8svrlbcQ="
       }
     },
     {
@@ -532,7 +532,7 @@ const getStatusColor = (status: BillStatus): string => {
       replayLink: "", 
       thumbnail: {
         type: "image", 
-        url: "https://share.google/images/Q1Dzt7n1NzeqSRgT8"
+        url: "https://thumbs.dreamstime.com/b/shot-two-pretty-young-businesswomen-drinking-coffee-taking-break-sewing-workshop-136115470.jpg"
       }
     }
   ];
