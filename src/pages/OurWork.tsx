@@ -484,7 +484,7 @@ const getStatusColor = (status: BillStatus): string => {
       replayLink: "https://www.youtube.com/watch?v=example", 
       thumbnail: {
         type: "image", 
-        url: "https://www.pexels.com/photo/photo-of-people-doing-handshakes-3183197/"
+        url: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?_gl=1*pz671o*_ga*MTA1Njc4NTA4Ny4xNzU5NzYyNzg3*_ga_8JE65Q40S6*czE3NTk3NjI3ODckbzEkZzEkdDE3NTk3NjM1OTIkajU2JGwwJGgw"
       }
     },
     {
@@ -496,7 +496,7 @@ const getStatusColor = (status: BillStatus): string => {
       replayLink: "https://www.youtube.com/watch?v=example", 
       thumbnail: {
         type: "image", 
-        url: "https://share.google/images/S2Si3EuGyCgNtPsbm"
+        url: "https://media.istockphoto.com/id/1487894858/photo/candlestick-chart-and-data-of-financial-market.jpg?s=612x612&w=0&k=20&c=wZ6vVmbm4BV2JOePSnNNz-0aFVOJZ0P9nhdeOMGUg5I="
       }
     },
     {
