@@ -937,7 +937,7 @@ const displayedArticles = showAllResearch ? articles : articles.slice(0, 3);
   </div>
 ))}
 
-/* pass 2 */
+{/* pass 2 */}
 {upcoming.map((workshop, index) => (
   <div className="w-[340px] flex-shrink-0" key={`m2-${index}`}>
     <Card className="h-full bg-black/50 border-white/10 hover:border-sunset-orange/50 transition-all duration-300">
