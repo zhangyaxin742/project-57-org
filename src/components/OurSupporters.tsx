@@ -13,13 +13,13 @@ export default function OurSupporters({
   fullBleed = false,
 }: Props) {
   const partners = [
-    { href: "https://www.mefa.org/", src: "/assets/mefa-text.png", alt: "MEFA" },
+        { href: "https://www.babson.edu/the-babson-financial-literacy-project/", src: "/assets/babson.png", alt: "BFLP" },
+        { href: "https://www.institutionforsavings.com/", src: "/assets/institution-for-savings.png", alt: "Institution for Savings" },
+     { href: "https://www.midascollab.org/", src: "/assets/midas.png", alt: "The Midas Collaborative" },
+         { href: "https://www.mass.gov/orgs/office-of-economic-empowerment", src: "/assets/oee.png", alt: "OEE" },
     { href: "https://ma.financialeducatorscouncil.org/", src: "/assets/MFEC.png", alt: "MFEC" },
-    { href: "https://www.midascollab.org/", src: "/assets/midas.png", alt: "The Midas Collaborative" },
-    { href: "https://www.mass.gov/orgs/office-of-economic-empowerment", src: "/assets/oee.png", alt: "OEE" },
-    { href: "https://www.babson.edu/the-babson-financial-literacy-project/", src: "/assets/babson.png", alt: "BFLP" },
    { href: "https://www.rocklandtrust.com/", src: "/assets/rockland-trust.png", alt: "Rockland Trust" },
-  { href: "https://www.institutionforsavings.com/", src: "/assets/institution-for-savings.png", alt: "Institution for Savings" }
+       { href: "https://www.mefa.org/", src: "/assets/mefa-text.png", alt: "MEFA" },
   ];
 
   return (
@@ -49,7 +49,7 @@ export default function OurSupporters({
           className={cn(
             "grid gap-6",
             // Responsive columns
-            "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+            "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4"
           )}
         >
           {partners.map((p) => (
