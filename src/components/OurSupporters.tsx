@@ -18,6 +18,8 @@ export default function OurSupporters({
     { href: "https://www.midascollab.org/", src: "/assets/midas.png", alt: "The Midas Collaborative" },
     { href: "https://www.mass.gov/orgs/office-of-economic-empowerment", src: "/assets/oee.png", alt: "OEE" },
     { href: "https://www.babson.edu/the-babson-financial-literacy-project/", src: "/assets/babson.png", alt: "BFLP" },
+   { href: "https://www.rocklandtrust.com/", src: "/assets/rockland-trust.png", alt: "Rockland Trust" },
+  { href: "https://www.institutionforsavings.com/", src: "/assets/institution-for-savings.png", alt: "Institution for Savings" }
   ];
 
   return (
