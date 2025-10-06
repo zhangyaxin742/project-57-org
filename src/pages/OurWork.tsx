@@ -460,7 +460,7 @@ const getStatusColor = (status: BillStatus): string => {
       replayLink: "https://youtu.be/6oKAOyEEmAg", 
       thumbnail: {
         type: "youtube", 
-        url: "https://img.youtube.com/vi/example/hqdefault.jpg"
+        url: "https://youtu.be/6oKAOyEEmAg"
       }
     },
     {
@@ -472,7 +472,7 @@ const getStatusColor = (status: BillStatus): string => {
       replayLink: "https://youtu.be/DbS70DVuzhA", 
       thumbnail: {
         type: "youtube", 
-        url: "https://img.youtube.com/vi/example/hqdefault.jpg"
+        url: "https://youtu.be/DbS70DVuzhA"
       }
     },
     {
