@@ -104,9 +104,7 @@ const getStatusClasses = (status: BillStatus) => STATUS_CLASSES[status];
   };
 };
 
-// curriculum splits 
-const upcoming = workshops.filter(w => w.status === "upcoming");
-const completed = workshops.filter(w => w.status === "completed");
+// curriculum splits will be defined after workshops array
 
   // tab behaviors 
 
@@ -502,6 +500,10 @@ const getStatusColor = (status: BillStatus): string => {
       }
     }
   ];
+
+  // curriculum splits 
+  const upcoming = workshops.filter(w => w.status === "upcoming");
+  const completed = workshops.filter(w => w.status === "completed");
 
   const briefs = getBriefs();
 
