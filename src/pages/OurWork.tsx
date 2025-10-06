@@ -487,13 +487,49 @@ const getStatusColor = (status: BillStatus): string => {
         url: "https://img.youtube.com/vi/example/hqdefault.jpg"
       }
     },
-        {
+    {
       title: "Investing 101 - Yes, Even You Can Do It!",
       location: "Arlington, MA - Robbins Library",
       date: "Oct 26, 2025",
       link: "https://luma.com/y8oihfxk",
       status: "completed", 
       replayLink: "https://www.youtube.com/watch?v=example", 
+      thumbnail: {
+        type: "youtube", 
+        url: "https://img.youtube.com/vi/example/hqdefault.jpg"
+      }
+    },
+    {
+      title: "Credit Building 101 - Start Your Financial Journey Right",
+      location: "Virtual",
+      date: "Nov 15, 2025",
+      link: "https://luma.com/credit101",
+      status: "upcoming", 
+      replayLink: "", 
+      thumbnail: {
+        type: "youtube", 
+        url: "https://img.youtube.com/vi/example/hqdefault.jpg"
+      }
+    },
+    {
+      title: "Smart Budgeting - Make Your Money Work For You",
+      location: "Boston, MA - Public Library",
+      date: "Dec 3, 2025",
+      link: "https://luma.com/budgeting",
+      status: "upcoming", 
+      replayLink: "", 
+      thumbnail: {
+        type: "youtube", 
+        url: "https://img.youtube.com/vi/example/hqdefault.jpg"
+      }
+    },
+    {
+      title: "Tax Season Prep - What Students Need to Know",
+      location: "Virtual",
+      date: "Jan 20, 2026",
+      link: "https://luma.com/taxprep",
+      status: "upcoming", 
+      replayLink: "", 
       thumbnail: {
         type: "youtube", 
         url: "https://img.youtube.com/vi/example/hqdefault.jpg"
